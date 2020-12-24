@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PictureCardView" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+            <connections>
+                <outlet property="bgPictureCardView" destination="OeI-rd-qy3" id="x5l-H0-9aZ"/>
+                <outlet property="btnOption1" destination="oHl-6v-PyU" id="33T-BU-UXx"/>
+                <outlet property="btnOption2" destination="Y2f-4X-6fi" id="5rH-6D-S4h"/>
+                <outlet property="btnOption3" destination="1sj-Ew-gBu" id="XVO-uu-tsa"/>
+                <outlet property="btnOption4" destination="8XR-pZ-gsV" id="47S-Db-h8j"/>
+                <outlet property="clocketView" destination="UTc-Pu-dhR" id="lHT-MP-kKq"/>
+                <outlet property="pictureCardView" destination="i5M-Pr-FkT" id="ZD6-EU-0Bh"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YellowBtnBg" translatesAutoresizingMaskIntoConstraints="NO" id="OeI-rd-qy3">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTc-Pu-dhR" customClass="Clocket" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                    <rect key="frame" x="93" y="69" width="228" height="227.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="UTc-Pu-dhR" secondAttribute="height" multiplier="1:1" id="NU9-h9-sMu"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="laO-Vy-yMV" userLabel="optionView">
+                    <rect key="frame" x="10" y="692" width="394" height="160"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHl-6v-PyU" customClass="ButtonCardOptionExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="14.5" width="191" height="55"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="55" id="4jq-ei-2td"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="yellowBubbleBg"/>
+                            <connections>
+                                <action selector="funcBtnOption1:" destination="-1" eventType="touchUpInside" id="csj-18-NKZ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2f-4X-6fi" customClass="ButtonCardOptionExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                            <rect key="frame" x="203" y="14.5" width="191" height="55"/>
+                            <state key="normal" title="Button" backgroundImage="yellowBubbleBg"/>
+                            <connections>
+                                <action selector="funcBtnOption2:" destination="-1" eventType="touchUpInside" id="eVj-Dl-I80"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQu-PM-J9e" userLabel="seperator_V_View">
+                            <rect key="frame" x="196" y="23" width="2" height="114"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="2" id="1I5-W0-HMd"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9s-gN-Max" userLabel="seperator_H_View">
+                            <rect key="frame" x="77" y="79.5" width="240" height="1"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="G9j-1T-1Kr"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sj-Ew-gBu" customClass="ButtonCardOptionExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="90.5" width="191" height="55"/>
+                            <state key="normal" title="Button" backgroundImage="yellowBubbleBg"/>
+                            <connections>
+                                <action selector="funcBtnOption3:" destination="-1" eventType="touchUpInside" id="PJB-nd-rjf"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8XR-pZ-gsV" customClass="ButtonCardOptionExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                            <rect key="frame" x="203" y="90.5" width="191" height="55"/>
+                            <state key="normal" title="Button" backgroundImage="yellowBubbleBg"/>
+                            <connections>
+                                <action selector="funcBtnOption4:" destination="-1" eventType="touchUpInside" id="vHG-t3-WJN"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="UQu-PM-J9e" firstAttribute="centerX" secondItem="laO-Vy-yMV" secondAttribute="centerX" id="1Cx-iL-7mm"/>
+                        <constraint firstItem="1sj-Ew-gBu" firstAttribute="leading" secondItem="oHl-6v-PyU" secondAttribute="leading" id="3Ea-1y-Qak"/>
+                        <constraint firstItem="8XR-pZ-gsV" firstAttribute="trailing" secondItem="Y2f-4X-6fi" secondAttribute="trailing" id="3Pl-Xz-ayf"/>
+                        <constraint firstItem="UQu-PM-J9e" firstAttribute="centerY" secondItem="laO-Vy-yMV" secondAttribute="centerY" id="451-H4-axQ"/>
+                        <constraint firstItem="Y9s-gN-Max" firstAttribute="width" secondItem="laO-Vy-yMV" secondAttribute="width" multiplier="0.609137" id="4Jj-Ca-nNV"/>
+                        <constraint firstItem="1sj-Ew-gBu" firstAttribute="top" secondItem="Y9s-gN-Max" secondAttribute="bottom" constant="10" id="6vn-Ay-BWs"/>
+                        <constraint firstItem="Y9s-gN-Max" firstAttribute="centerX" secondItem="laO-Vy-yMV" secondAttribute="centerX" id="DIi-nO-cMd"/>
+                        <constraint firstItem="UQu-PM-J9e" firstAttribute="height" secondItem="laO-Vy-yMV" secondAttribute="height" multiplier="0.711111" id="KsX-iN-KW1"/>
+                        <constraint firstItem="Y2f-4X-6fi" firstAttribute="bottom" secondItem="oHl-6v-PyU" secondAttribute="bottom" id="NRT-qL-s2G"/>
+                        <constraint firstItem="1sj-Ew-gBu" firstAttribute="height" secondItem="oHl-6v-PyU" secondAttribute="height" id="O2Y-P8-lTC"/>
+                        <constraint firstItem="Y2f-4X-6fi" firstAttribute="height" secondItem="oHl-6v-PyU" secondAttribute="height" id="Qnn-qN-eHK"/>
+                        <constraint firstItem="1sj-Ew-gBu" firstAttribute="trailing" secondItem="oHl-6v-PyU" secondAttribute="trailing" id="Rfb-da-nfC"/>
+                        <constraint firstItem="UQu-PM-J9e" firstAttribute="leading" secondItem="oHl-6v-PyU" secondAttribute="trailing" constant="5" id="UOr-jh-eMF"/>
+                        <constraint firstItem="Y9s-gN-Max" firstAttribute="centerY" secondItem="laO-Vy-yMV" secondAttribute="centerY" id="ctW-J8-xIL"/>
+                        <constraint firstItem="8XR-pZ-gsV" firstAttribute="top" secondItem="1sj-Ew-gBu" secondAttribute="top" id="eFw-e1-H4T"/>
+                        <constraint firstItem="8XR-pZ-gsV" firstAttribute="height" secondItem="oHl-6v-PyU" secondAttribute="height" id="hef-pk-9aX"/>
+                        <constraint firstItem="Y9s-gN-Max" firstAttribute="top" secondItem="oHl-6v-PyU" secondAttribute="bottom" constant="10" id="kqP-yl-wM6"/>
+                        <constraint firstItem="oHl-6v-PyU" firstAttribute="leading" secondItem="laO-Vy-yMV" secondAttribute="leading" id="tFC-mt-qD4"/>
+                        <constraint firstItem="Y2f-4X-6fi" firstAttribute="leading" secondItem="UQu-PM-J9e" secondAttribute="trailing" constant="5" id="tH1-GM-w22"/>
+                        <constraint firstAttribute="trailing" secondItem="Y2f-4X-6fi" secondAttribute="trailing" id="v3Q-bQ-mez"/>
+                        <constraint firstItem="8XR-pZ-gsV" firstAttribute="leading" secondItem="Y2f-4X-6fi" secondAttribute="leading" id="vGi-C7-dzq"/>
+                        <constraint firstAttribute="height" constant="160" id="zzu-hR-SM7"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="OeI-rd-qy3" secondAttribute="bottom" id="04d-Dw-KT2"/>
+                <constraint firstItem="OeI-rd-qy3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Dgn-Mk-7YU"/>
+                <constraint firstItem="UTc-Pu-dhR" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.55" id="Eo5-QK-u7D"/>
+                <constraint firstItem="UTc-Pu-dhR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="U3i-VR-ezz"/>
+                <constraint firstItem="laO-Vy-yMV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="UHA-Nm-Dhr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="laO-Vy-yMV" secondAttribute="bottom" constant="10" id="W39-y8-75b"/>
+                <constraint firstAttribute="trailing" secondItem="OeI-rd-qy3" secondAttribute="trailing" id="Y2n-tH-Xqe"/>
+                <constraint firstItem="OeI-rd-qy3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="c4g-uI-oip"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="laO-Vy-yMV" secondAttribute="trailing" constant="10" id="pVG-VC-bcx"/>
+                <constraint firstItem="UTc-Pu-dhR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="vdj-V1-fQc"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="YellowBtnBg" width="161" height="56"/>
+        <image name="yellowBubbleBg" width="107" height="60"/>
+    </resources>
+</document>

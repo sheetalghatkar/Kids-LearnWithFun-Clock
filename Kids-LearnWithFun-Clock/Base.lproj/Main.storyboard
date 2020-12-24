@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bcF-rk-WBQ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="LEz-Sj-Ag5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y3J-AZ-MaW">
+                                <rect key="frame" x="10" y="44" width="359.5" height="359.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="y3J-AZ-MaW" secondAttribute="height" multiplier="1:1" id="6jc-ap-QTz"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhg-U5-g1u" userLabel="tileContainerView">
+                                <rect key="frame" x="25" y="383.5" width="364" height="458.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Foj-tp-Iqp" userLabel="LearnView" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="98.5" width="250" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeMenuBtnBg" translatesAutoresizingMaskIntoConstraints="NO" id="4cp-bD-NI7">
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kit-mc-1WV" customClass="ButtonHomeMenuExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                                <rect key="frame" x="102" y="10" width="46" height="30"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="funcLearnTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4e8-u0-YvE"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Kit-mc-1WV" firstAttribute="centerY" secondItem="Foj-tp-Iqp" secondAttribute="centerY" id="0C4-rg-SBz"/>
+                                            <constraint firstItem="4cp-bD-NI7" firstAttribute="width" secondItem="Foj-tp-Iqp" secondAttribute="width" id="8oA-3X-Fsj"/>
+                                            <constraint firstItem="4cp-bD-NI7" firstAttribute="height" secondItem="Foj-tp-Iqp" secondAttribute="height" id="XQp-ie-46p"/>
+                                            <constraint firstItem="Kit-mc-1WV" firstAttribute="centerX" secondItem="Foj-tp-Iqp" secondAttribute="centerX" id="aaN-oR-83T"/>
+                                            <constraint firstItem="4cp-bD-NI7" firstAttribute="centerX" secondItem="Foj-tp-Iqp" secondAttribute="centerX" id="bhV-AF-gEP"/>
+                                            <constraint firstItem="4cp-bD-NI7" firstAttribute="centerY" secondItem="Foj-tp-Iqp" secondAttribute="centerY" id="lbR-2D-RJv"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShowShadow" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNv-Hf-JLZ" userLabel="GuessView" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="168.5" width="250" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeMenuBtnBg" translatesAutoresizingMaskIntoConstraints="NO" id="OHO-zf-SiX" userLabel="llll">
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhy-O6-GYA" customClass="ButtonHomeMenuExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                                <rect key="frame" x="102" y="10" width="46" height="30"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="funcGuessTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pad-vP-Z3K"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="MTB-8s-RJN"/>
+                                            <constraint firstItem="Rhy-O6-GYA" firstAttribute="centerY" secondItem="cNv-Hf-JLZ" secondAttribute="centerY" id="UCO-Um-T5q"/>
+                                            <constraint firstItem="Rhy-O6-GYA" firstAttribute="centerX" secondItem="cNv-Hf-JLZ" secondAttribute="centerX" id="heo-xn-s7z"/>
+                                            <constraint firstAttribute="width" constant="250" id="rhg-X4-xiS"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShowShadow" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ac6-e6-PoD" userLabel="seperatorView">
+                                        <rect key="frame" x="132" y="228.5" width="100" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Cvn-Hh-G6g"/>
+                                            <constraint firstAttribute="width" constant="100" id="l8J-uj-z2Q"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BDg-YG-NIM" userLabel="setView" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="239.5" width="250" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeMenuBtnBg" translatesAutoresizingMaskIntoConstraints="NO" id="qOy-vm-QIb">
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ir2-Pc-cVk" customClass="ButtonHomeMenuExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                                <rect key="frame" x="102" y="10" width="46" height="30"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="funcSetTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YGf-1f-mOZ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="ir2-Pc-cVk" firstAttribute="centerX" secondItem="BDg-YG-NIM" secondAttribute="centerX" id="BPw-cz-KCI"/>
+                                            <constraint firstAttribute="height" constant="50" id="Roe-xr-fXy"/>
+                                            <constraint firstItem="ir2-Pc-cVk" firstAttribute="centerY" secondItem="BDg-YG-NIM" secondAttribute="centerY" id="nEr-9N-Zce"/>
+                                            <constraint firstAttribute="width" constant="250" id="pRX-8k-BeX"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShowShadow" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D95-74-XdG" userLabel="playWithClockView" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="309.5" width="250" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeMenuBtnBg" translatesAutoresizingMaskIntoConstraints="NO" id="WI2-Ao-8aO">
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.93333333333333335" green="0.69411764705882351" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoX-3g-FuO" customClass="ButtonHomeMenuExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                                <rect key="frame" x="102" y="10" width="46" height="30"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="funcSetTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QE4-T7-IsT"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="aoX-3g-FuO" firstAttribute="centerX" secondItem="D95-74-XdG" secondAttribute="centerX" id="7dl-6Q-OPd"/>
+                                            <constraint firstAttribute="width" constant="250" id="PTi-b6-w1o"/>
+                                            <constraint firstItem="aoX-3g-FuO" firstAttribute="centerY" secondItem="D95-74-XdG" secondAttribute="centerY" id="m5B-VA-SiT"/>
+                                            <constraint firstAttribute="height" constant="50" id="rTN-Bp-zLH"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShowShadow" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9az-o4-B0b" userLabel="testView" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="379.5" width="250" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeMenuBtnBg" translatesAutoresizingMaskIntoConstraints="NO" id="b9E-xy-taa">
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7YO-fa-yUr" customClass="ButtonHomeMenuExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                                <rect key="frame" x="102" y="10" width="46" height="30"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="funcTestTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Pu-76-UK3"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="7YO-fa-yUr" firstAttribute="centerY" secondItem="9az-o4-B0b" secondAttribute="centerY" id="OmJ-A0-eZn"/>
+                                            <constraint firstItem="7YO-fa-yUr" firstAttribute="centerX" secondItem="9az-o4-B0b" secondAttribute="centerX" id="Orw-wD-D6y"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShowShadow" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="33M-Mh-cHk" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                        <rect key="frame" x="292" y="369.5" width="40" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxi-hj-Oy5">
+                                                <rect key="frame" x="2.5" y="2.5" width="35" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="35" id="Wt1-mo-BFQ"/>
+                                                    <constraint firstAttribute="width" secondItem="Qxi-hj-Oy5" secondAttribute="height" multiplier="1:1" id="Yvv-Qa-5Ns"/>
+                                                </constraints>
+                                                <state key="normal" image="Lock"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Qxi-hj-Oy5" firstAttribute="centerY" secondItem="33M-Mh-cHk" secondAttribute="centerY" id="Vbo-cL-xBg"/>
+                                            <constraint firstAttribute="width" constant="40" id="Zj8-2w-XKe"/>
+                                            <constraint firstItem="Qxi-hj-Oy5" firstAttribute="centerX" secondItem="33M-Mh-cHk" secondAttribute="centerX" id="o5l-aG-FZH"/>
+                                            <constraint firstAttribute="width" secondItem="33M-Mh-cHk" secondAttribute="height" id="oB0-Oi-a1k"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="round" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Foj-tp-Iqp" firstAttribute="width" secondItem="cNv-Hf-JLZ" secondAttribute="width" id="3Ve-sk-fSw"/>
+                                    <constraint firstItem="cNv-Hf-JLZ" firstAttribute="top" secondItem="Foj-tp-Iqp" secondAttribute="bottom" constant="20" id="4UQ-bw-0ox"/>
+                                    <constraint firstItem="33M-Mh-cHk" firstAttribute="leading" secondItem="9az-o4-B0b" secondAttribute="trailing" constant="-15" id="8v2-Gx-4hU"/>
+                                    <constraint firstItem="D95-74-XdG" firstAttribute="top" secondItem="BDg-YG-NIM" secondAttribute="bottom" constant="20" id="AiZ-8r-sXp"/>
+                                    <constraint firstItem="cNv-Hf-JLZ" firstAttribute="centerX" secondItem="yhg-U5-g1u" secondAttribute="centerX" id="Cxl-eW-5B4"/>
+                                    <constraint firstItem="Foj-tp-Iqp" firstAttribute="centerX" secondItem="yhg-U5-g1u" secondAttribute="centerX" id="Dgu-lv-wEN"/>
+                                    <constraint firstItem="9az-o4-B0b" firstAttribute="height" secondItem="cNv-Hf-JLZ" secondAttribute="height" id="Fn0-6w-1eQ"/>
+                                    <constraint firstItem="9az-o4-B0b" firstAttribute="width" secondItem="cNv-Hf-JLZ" secondAttribute="width" id="TJT-qt-XxU"/>
+                                    <constraint firstItem="33M-Mh-cHk" firstAttribute="top" secondItem="9az-o4-B0b" secondAttribute="top" constant="-10" id="Ual-0b-0cQ"/>
+                                    <constraint firstItem="9az-o4-B0b" firstAttribute="top" secondItem="D95-74-XdG" secondAttribute="bottom" constant="20" id="Un3-3t-JOY"/>
+                                    <constraint firstItem="D95-74-XdG" firstAttribute="centerX" secondItem="yhg-U5-g1u" secondAttribute="centerX" id="Yug-8Y-mbO"/>
+                                    <constraint firstItem="9az-o4-B0b" firstAttribute="centerX" secondItem="yhg-U5-g1u" secondAttribute="centerX" id="fdI-2Y-75v"/>
+                                    <constraint firstItem="ac6-e6-PoD" firstAttribute="top" secondItem="cNv-Hf-JLZ" secondAttribute="bottom" constant="10" id="gFR-0Z-xWR"/>
+                                    <constraint firstItem="ac6-e6-PoD" firstAttribute="centerY" secondItem="yhg-U5-g1u" secondAttribute="centerY" id="gTK-mK-dTv"/>
+                                    <constraint firstItem="BDg-YG-NIM" firstAttribute="top" secondItem="ac6-e6-PoD" secondAttribute="bottom" constant="10" id="glP-gq-khl"/>
+                                    <constraint firstItem="BDg-YG-NIM" firstAttribute="centerX" secondItem="ac6-e6-PoD" secondAttribute="centerX" id="jv1-hM-QMf"/>
+                                    <constraint firstItem="ac6-e6-PoD" firstAttribute="centerX" secondItem="yhg-U5-g1u" secondAttribute="centerX" id="oHU-vz-HOc"/>
+                                    <constraint firstItem="Foj-tp-Iqp" firstAttribute="height" secondItem="cNv-Hf-JLZ" secondAttribute="height" id="rjO-m1-nyI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="y3J-AZ-MaW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7Ce-DQ-YFp"/>
+                            <constraint firstItem="yhg-U5-g1u" firstAttribute="top" secondItem="y3J-AZ-MaW" secondAttribute="bottom" constant="-20" id="CfM-y2-yEb"/>
+                            <constraint firstItem="LEz-Sj-Ag5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QPk-a8-rxI"/>
+                            <constraint firstItem="LEz-Sj-Ag5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Rmr-T7-HUx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yhg-U5-g1u" secondAttribute="bottom" constant="20" id="Tv3-VZ-PR1"/>
+                            <constraint firstItem="yhg-U5-g1u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="g7B-fZ-fU4"/>
+                            <constraint firstItem="y3J-AZ-MaW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="j5r-Iq-z8b"/>
+                            <constraint firstItem="LEz-Sj-Ag5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kFT-de-xpd"/>
+                            <constraint firstAttribute="bottom" secondItem="LEz-Sj-Ag5" secondAttribute="bottom" id="ot7-qx-Oj5"/>
+                            <constraint firstItem="y3J-AZ-MaW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" constant="1" id="po7-fM-GWG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yhg-U5-g1u" secondAttribute="trailing" constant="25" id="rcI-VW-OZf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LGr-t3-phw"/>
+                    <connections>
+                        <outlet property="btnGuessClock" destination="Rhy-O6-GYA" id="oXA-6l-ttK"/>
+                        <outlet property="btnLearnClock" destination="Kit-mc-1WV" id="Bad-Az-EoJ"/>
+                        <outlet property="btnPlayWithClock" destination="aoX-3g-FuO" id="1f5-6E-ftd"/>
+                        <outlet property="btnSetClock" destination="ir2-Pc-cVk" id="qQq-SW-ket"/>
+                        <outlet property="btnTestClock" destination="7YO-fa-yUr" id="61o-h9-P4f"/>
+                        <outlet property="imgViewGif" destination="y3J-AZ-MaW" id="Wul-by-wbe"/>
+                        <outlet property="viewGuessClock" destination="cNv-Hf-JLZ" id="A0L-hF-W5F"/>
+                        <outlet property="viewLearnClock" destination="Foj-tp-Iqp" id="HvP-fX-hDl"/>
+                        <outlet property="viewPlayWithClock" destination="D95-74-XdG" id="Vz9-R3-2ZA"/>
+                        <outlet property="viewSetClock" destination="BDg-YG-NIM" id="ygi-Fr-tie"/>
+                        <outlet property="viewTestClock" destination="9az-o4-B0b" id="b8j-jH-6XQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="97.767857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="j5e-6t-cLJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="bcF-rk-WBQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EhK-F1-fA4">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Tnc-QK-RqO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KnL-f5-ZDd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="190" y="-216"/>
+        </scene>
+        <!--Picture View Controller-->
+        <scene sceneID="vWT-Zs-SqO">
+            <objects>
+                <viewController storyboardIdentifier="PictureViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g7z-YB-fXP" customClass="PictureViewController" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7eQ-Sy-AVf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="alT-WC-Iu3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgCropScreen" translatesAutoresizingMaskIntoConstraints="NO" id="2G3-K6-JdQ">
+                                <rect key="frame" x="249" y="-41" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2G3-K6-JdQ" secondAttribute="height" multiplier="1:1" id="Tyf-Fi-WIj"/>
+                                    <constraint firstAttribute="height" constant="250" id="hsr-YL-xJR"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ujg-Ek-may">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="745"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ujg-Ek-may" secondAttribute="height" multiplier="1:1.8" id="5MN-FD-HcK"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8L-fe-b12">
+                                <rect key="frame" x="15" y="59" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="0Lq-P4-nhR"/>
+                                    <constraint firstAttribute="height" constant="50" id="Whg-PU-hpD"/>
+                                </constraints>
+                                <state key="normal" image="HomeIcon"/>
+                                <connections>
+                                    <action selector="funcBackToHome:" destination="g7z-YB-fXP" eventType="touchUpInside" id="CgG-iq-vS8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBr-zE-kzi">
+                                <rect key="frame" x="349" y="59" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="OVJ-n1-Ryw"/>
+                                    <constraint firstAttribute="height" constant="50" id="b8e-hN-1pf"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="funcSound_ON_OFF:" destination="g7z-YB-fXP" eventType="touchUpInside" id="WDa-if-iqC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ujg-Ek-may" firstAttribute="width" secondItem="7eQ-Sy-AVf" secondAttribute="width" multiplier="1:1" id="BH9-uP-q4k"/>
+                            <constraint firstItem="QLr-4l-5Fb" firstAttribute="trailing" secondItem="iBr-zE-kzi" secondAttribute="trailing" constant="15" id="IJw-Ze-HPM"/>
+                            <constraint firstItem="alT-WC-Iu3" firstAttribute="leading" secondItem="QLr-4l-5Fb" secondAttribute="leading" id="NCh-r9-2LY"/>
+                            <constraint firstItem="iBr-zE-kzi" firstAttribute="centerY" secondItem="M8L-fe-b12" secondAttribute="centerY" id="TlX-Yv-lrP"/>
+                            <constraint firstItem="M8L-fe-b12" firstAttribute="top" secondItem="QLr-4l-5Fb" secondAttribute="top" constant="15" id="VQj-g3-jpW"/>
+                            <constraint firstItem="ujg-Ek-may" firstAttribute="centerX" secondItem="7eQ-Sy-AVf" secondAttribute="centerX" id="XZx-yY-EkP"/>
+                            <constraint firstItem="2G3-K6-JdQ" firstAttribute="centerY" secondItem="iBr-zE-kzi" secondAttribute="centerY" id="a69-Do-cqx"/>
+                            <constraint firstItem="QLr-4l-5Fb" firstAttribute="trailing" secondItem="alT-WC-Iu3" secondAttribute="trailing" id="aS2-PV-2xx"/>
+                            <constraint firstItem="M8L-fe-b12" firstAttribute="leading" secondItem="QLr-4l-5Fb" secondAttribute="leading" constant="15" id="dL1-cT-2eE"/>
+                            <constraint firstItem="alT-WC-Iu3" firstAttribute="top" secondItem="7eQ-Sy-AVf" secondAttribute="top" id="hBB-dT-KKq"/>
+                            <constraint firstItem="2G3-K6-JdQ" firstAttribute="centerX" secondItem="iBr-zE-kzi" secondAttribute="centerX" id="j1g-5U-sP6"/>
+                            <constraint firstAttribute="bottom" secondItem="alT-WC-Iu3" secondAttribute="bottom" id="vyW-wG-i9q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QLr-4l-5Fb"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="bgScreen" destination="alT-WC-Iu3" id="QiP-Dh-ogP"/>
+                        <outlet property="btnSound" destination="iBr-zE-kzi" id="yMw-9Q-JPJ"/>
+                        <outlet property="picViewcontainer" destination="ujg-Ek-may" id="an9-Go-Krt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZGX-vX-iwV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-388.40579710144931" y="-42.1875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="HomeBgImage" width="640" height="960"/>
+        <image name="HomeIcon" width="188" height="188"/>
+        <image name="HomeMenuBtnBg" width="211" height="60"/>
+        <image name="Lock" width="75" height="75"/>
+        <image name="bgCropScreen" width="100" height="110"/>
+    </resources>
+</document>
