@@ -12,7 +12,7 @@ import UIKit
 class ClockFace: UIImageView {
     
     private var staticClockFaceImage: UIImage?
-    private var diameter: CGFloat { return min(frame.width, frame.height) }
+    private var diameter = CommanCode.SCREEN_WIDTH * CommanCode.CLOCKET_WIDTH_PERCENT              // CGFloat { return max(frame.width, frame.height) }
     
     var lineWidthCoefficient = CGFloat(100.0)
     
@@ -20,8 +20,11 @@ class ClockFace: UIImageView {
         return diameter / lineWidthCoefficient
     }()
     
-    var lineColor = UIColor.black.cgColor
-    var clockFaceSolidColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0).cgColor
+    var lineColor = CommanCode.CLOCK_TICK_Color.cgColor
+    var clockFaceSolidColor = UIColor.clear.cgColor
+    
+        //UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0).cgColor
+    
     
     var markOffset = CGFloat(2.0)
     var minuteMarkLength = CGFloat(3.0)
@@ -36,10 +39,15 @@ class ClockFace: UIImageView {
     var digitFontCoefficient = CGFloat(10.0)
     var digitFont: UIFont { return UIFont(name: digitFontName, size: diameter/digitFontCoefficient)! }
     var digitOffset: CGFloat { return (quarterMarkLength * lineWidth)/2 + 1.0 }
-    var digitColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0) /* #7c7c7c */
+    var digitColor = CommanCode.Clock_Dial_COLOR
+        //CommanCode.ORANGE_Color
+    
+        
+        
+        //UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0) /* #7c7c7c */
     
     var enableLogo = true
-    var logoText = "Clocket"
+    var logoText = ""
     var logoColor = UIColor(red: 70/255, green: 70/255, blue: 70/255, alpha: 1.0) /* #7c7c7c */
     var logoFontName = "HelveticaNeue-bold"
     var logoFontCoefficient = CGFloat(20.0)
@@ -60,6 +68,7 @@ class ClockFace: UIImageView {
     
     convenience init(frame: CGRect, staticClockFaceImage: UIImage?) {
         self.init(frame: frame)
+
         self.staticClockFaceImage = staticClockFaceImage
         setup()
     }
@@ -68,6 +77,7 @@ class ClockFace: UIImageView {
     func setup() {
         image = staticClockFaceImage ?? drawClockFace()
         translatesAutoresizingMaskIntoConstraints = false
+        
     }
     
     
@@ -92,9 +102,13 @@ class ClockFace: UIImageView {
         return renderer.image { (ctx) in
             let rectangle = CGRect(x: lineWidth/2.0, y: lineWidth/2.0, width: diameter-lineWidth, height: diameter-lineWidth)
             ctx.cgContext.setFillColor(clockFaceSolidColor)
-            ctx.cgContext.setStrokeColor(lineColor)
+            ctx.cgContext.setStrokeColor(CommanCode.Clock_Dial_COLOR.cgColor)
             ctx.cgContext.setLineWidth(lineWidth)
             ctx.cgContext.addEllipse(in: rectangle)
+//            ctx.cgContext.setShadow(offset: CGSize(width: 4.0, height: 4.0), blur: 1.0, color: CommanCode.CLock_didgit_Shadow.cgColor)
+            
+            ctx.cgContext.setShadow(offset: .zero, blur: 5, color: CommanCode.CLock_didgit_Shadow.cgColor)
+
             ctx.cgContext.drawPath(using: .fillStroke)
         }
     }
@@ -112,6 +126,7 @@ class ClockFace: UIImageView {
                 ctx.cgContext.setLineWidth(minuteMarkWidth * lineWidth)
                 
                 if mark % 15 == 0 {
+                    print("Line width:",quarterMarkWidth * lineWidth)
                     ctx.cgContext.setLineWidth(quarterMarkWidth * lineWidth)
                     endPoint = CGPoint(x: startPoint.x - quarterMarkLength * lineWidth, y: 0)
                 } else if mark % 5 == 0 {
@@ -119,6 +134,7 @@ class ClockFace: UIImageView {
                     endPoint = CGPoint(x: startPoint.x - fiveMinuteMarkLength * lineWidth, y: 0)
                 }
                 ctx.cgContext.addLine(to: endPoint)
+//                ctx.cgContext.addArc(tangent1End: startPoint, tangent2End: endPoint, radius:4.0)
                 ctx.cgContext.drawPath(using: .fillStroke)
                 ctx.cgContext.rotate(by: CGFloat(Double.pi/30))
             }
@@ -136,8 +152,12 @@ class ClockFace: UIImageView {
         
         let center = CGPoint(x: diameter/2 - halfFontHeight/2,
                              y: diameter/2 - halfFontHeight)
-        let digitDistanceFromCenter = (diameter-lineWidth)/2 - fontHeight/4 - digitOffset
-        let attrs = [NSAttributedString.Key.font: digitFont, NSAttributedString.Key.foregroundColor: digitColor] as [NSAttributedString.Key : Any]
+        let digitDistanceFromCenter = ((diameter-lineWidth)/2 - fontHeight/4 - digitOffset) - 3
+        let shadow = NSShadow()
+        shadow.shadowColor = UIColor.yellow  //CommanCode.CLock_didgit_Shadow
+        shadow.shadowBlurRadius = 1
+
+        let attrs = [NSAttributedString.Key.font: digitFont, NSAttributedString.Key.foregroundColor: digitColor, NSAttributedString.Key.shadow: shadow] as [NSAttributedString.Key : Any]
         
         return renderer.image { (ctx) in
             for i in 1...12 {
@@ -164,7 +184,7 @@ class ClockFace: UIImageView {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
         let attrs = [NSAttributedString.Key.font: logoFont,
-                     NSAttributedString.Key.foregroundColor: logoColor,
+                     NSAttributedString.Key.foregroundColor: CommanCode.Clock_Digit_Color,
                      NSAttributedString.Key.paragraphStyle: paragraphStyle] as [NSAttributedString.Key : Any]
         let originLogo = CGPoint(x: center.x - diameter/4,
                                  y: center.y + diameter/5 - halfFontHeight)

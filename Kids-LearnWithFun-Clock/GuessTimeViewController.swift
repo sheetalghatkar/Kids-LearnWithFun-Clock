@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FLAnimatedImage
+//import FLAnimatedImage
 
 class GuessTimeViewController: UIViewController {
 //    @IBOutlet var picCardView: GuessTimeCardView!

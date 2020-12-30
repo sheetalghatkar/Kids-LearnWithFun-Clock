@@ -12,15 +12,6 @@ import UIKit
 open class Clocket: UIView, UIGestureRecognizerDelegate {
     
     private let translateToRadian = Double.pi/180.0
-    
-    open var hourHandColor: UIColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.0)
-    open var hourHandLength: CGFloat = 0.6
-    open var hourHandWidth: CGFloat = 0.1
-    
-    open var minuteHandLength: CGFloat = 0.8
-    open var minuteHandWidth: CGFloat = 0.07
-    open var minuteHandColor: UIColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0)
-    
     open var secondHandLength: CGFloat = 0.9
     open var secondHandWidth: CGFloat = 0.03
     open var secondHandColor: UIColor = UIColor(red: 232/255, green: 60/255, blue: 60/255, alpha: 1.0)
@@ -36,13 +27,20 @@ open class Clocket: UIView, UIGestureRecognizerDelegate {
     @IBInspectable open var manualTimeSetAllowed: Bool = true
     @IBInspectable open var countDownTimer: Bool = false
     @IBInspectable open var handShadow: Bool = true
+    var isHourHandTouch = false
+    var isMinuteHandTouch = false
+
     
-//    var getHour : Int
-//    var getMinute : Int
-//    var getSecond : Int
-    
+    var viewpHourHand = UIView()
+    var hourHandFirstSubview = UIView()
+    var hourHandSecondImage = UIImageView()
+
+    var viewpMinuteHand  = UIView()
+    var minuteHandFirstSubview = UIView()
+    var minuteHandSecondImage = UIImageView()
+
     public struct LocalTime {
-        var hour: Int?     //= 7
+        var hour: Int?
         var minute: Int?
         var second: Int = 1
     }
@@ -52,11 +50,7 @@ open class Clocket: UIView, UIGestureRecognizerDelegate {
     open var refreshInterval: TimeInterval = 1.0
     
     private var clockFace = UIImageView()
-    private var hourHand = ClockHand()
-    private var minuteHand = ClockHand()
-    private var secondHand = ClockHand()
     private var secondHandCircle = UIImageView()
-    
     weak open var clockDelegate: ClocketDelegate?
     
     
@@ -73,95 +67,181 @@ open class Clocket: UIView, UIGestureRecognizerDelegate {
     
     
     private func setup() {
-        backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
-        setupHands()
+
         setupClockFace()
         setupGestures()
     }
     
-    
-    private func setupHands() {
-        let hourHandParameters = ClockHandParameters(frame: frame,
-                                                     length: hourHandLength,
-                                                     width: hourHandWidth,
-                                                     tailLength: handTailLength,
-                                                     color: hourHandColor,
-                                                     shadowIsOn: handShadow,
-                                                     initValue: Double((localTime.hour ?? 1) * 30))
-        hourHand = ClockHand(parameters: hourHandParameters)
-        
-        let minuteHandParameters = ClockHandParameters(frame: frame,
-                                                       length: minuteHandLength,
-                                                       width: minuteHandWidth,
-                                                       tailLength: handTailLength,
-                                                       color: minuteHandColor,
-                                                       shadowIsOn: handShadow,
-                                                       initValue: Double((localTime.minute ?? 1) * 6))
-        minuteHand = ClockHand(parameters: minuteHandParameters)
-        
-        let secondHandParameters = ClockHandParameters(frame: frame,
-                                                       length: secondHandLength,
-                                                       width: secondHandWidth,
-                                                       tailLength: handTailLength,
-                                                       color: secondHandColor,
-                                                       shadowIsOn: handShadow,
-                                                       initValue: Double(localTime.second * 6))
-        secondHand = ClockHand(parameters: secondHandParameters)
-        
-        secondHandCircle = SecondHandCircle(radius: diameter/2,
-                                            circleDiameter: secondHandCircleDiameter,
-                                            lineWidth: lineWidth,
-                                            color: secondHandColor)
-    }
-    
-    
     private func setupClockFace() {
         clockFace = ClockFace(frame: frame)
-        //    clockFace = ClockFace(frame: self.frame, staticClockFaceImage: UIImage(named: "clockface"))
-        
+     /*   if UIDevice.current.hasNotch */
         addSubview(clockFace)
-        addSubview(hourHand)
-        addSubview(minuteHand)
-        addSubview(secondHand)
-        addSubview(secondHandCircle)
+//      clockFace.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor).isActive = true
+//      clockFace.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor).isActive = true
+//      clockFace.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor).isActive = true
+//      clockFace.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
         
-        clockFace.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor).isActive = true
-        clockFace.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor).isActive = true
-        clockFace.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor).isActive = true
-        clockFace.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
-        
-        secondHandCircle.centerXAnchor.constraint(equalTo: clockFace.centerXAnchor).isActive = true
-        secondHandCircle.centerYAnchor.constraint(equalTo: clockFace.centerYAnchor).isActive = true
-        secondHandCircle.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor).isActive = true
-        secondHandCircle.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
-        
-        hourHand.centerXAnchor.constraint(equalTo: clockFace.centerXAnchor).isActive = true
-        hourHand.centerYAnchor.constraint(equalTo: clockFace.centerYAnchor).isActive = true
-        hourHand.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor).isActive = true
-        hourHand.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
-        
-        minuteHand.centerXAnchor.constraint(equalTo: clockFace.centerXAnchor).isActive = true
-        minuteHand.centerYAnchor.constraint(equalTo: clockFace.centerYAnchor).isActive = true
-        minuteHand.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor).isActive = true
-        minuteHand.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
-        
-        secondHand.centerXAnchor.constraint(equalTo: clockFace.centerXAnchor).isActive = true
-        secondHand.centerYAnchor.constraint(equalTo: clockFace.centerYAnchor).isActive = true
-        secondHand.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor).isActive = true
-        secondHand.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
+        setUpHourHand()
+        setUpMinuteHand()
+        clockFace.layer.masksToBounds = false
+        clockFace.layer.cornerRadius = 8; // if you like rounded corners
+        clockFace.layer.shadowOffset = CGSize(width: 5, height: 5)
+        clockFace.layer.shadowRadius = 5;
+        clockFace.layer.shadowOpacity = 0.5;
     }
+    func setUpHourHand() {
+        viewpHourHand.frame.size = CGSize(width: (CommanCode.SCREEN_WIDTH * CommanCode.CLOCKET_WIDTH_PERCENT) - 120, height: 52.0)
+        viewpHourHand.backgroundColor = UIColor.clear
+        viewpHourHand.center.x = ((CommanCode.SCREEN_WIDTH * CommanCode.CLOCKET_WIDTH_PERCENT)/2)
+        viewpHourHand.center.y = ((CommanCode.SCREEN_WIDTH * CommanCode.CLOCKET_WIDTH_PERCENT)/2)
+        viewpHourHand.isUserInteractionEnabled = true
+        self.addSubview(viewpHourHand)
+        
+        hourHandFirstSubview.isUserInteractionEnabled = true
+        hourHandFirstSubview = UIView(frame: CGRect(x: 0, y: 0, width: ((viewpHourHand.frame.width)/2)-15, height: viewpHourHand.frame.height))
+        hourHandFirstSubview.backgroundColor = UIColor.clear
+        viewpHourHand.addSubview(hourHandFirstSubview)
+        
+        hourHandSecondImage.isUserInteractionEnabled = true
+        hourHandSecondImage = UIImageView(frame: CGRect(x: hourHandFirstSubview.frame.width , y: 0, width: (viewpHourHand.frame.width)/2, height: viewpHourHand.frame.height))
+        hourHandSecondImage.image = CommanCode.HOUR_HAND_IMG
+        minuteHandSecondImage.contentMode = .scaleAspectFill
+
+        hourHandSecondImage.backgroundColor = UIColor.clear
+        viewpHourHand.addSubview(hourHandSecondImage)
+        viewpHourHand.alpha = 0.7
+    }
+    
+    func setUpMinuteHand() {
+        let centerImageView = UIImageView()
+        centerImageView.frame.size = CGSize(width: 45, height: 45)
+        centerImageView.frame.origin.x = ((self.frame.size.width)/2) - (centerImageView.frame.size.width/2)
+        centerImageView.frame.origin.y = (self.frame.size.height)/2 - (centerImageView.frame.size.height/2)
+        centerImageView.backgroundColor = UIColor.blue
+        centerImageView.layer.cornerRadius = 23.5
+        
+//        centerImageView.center.y = ((self.clockFace.frame.size.height)/2)
+//        centerImageView.image = CommanCode.CLOCK_CENTER_IMG
+        
+        viewpMinuteHand.frame.size = CGSize(width: (CommanCode.SCREEN_WIDTH * CommanCode.CLOCKET_WIDTH_PERCENT), height: 52.0)
+        viewpMinuteHand.backgroundColor = UIColor.clear
+        viewpMinuteHand.center.x = ((CommanCode.SCREEN_WIDTH * CommanCode.CLOCKET_WIDTH_PERCENT)/2)
+        viewpMinuteHand.center.y = ((CommanCode.SCREEN_WIDTH * CommanCode.CLOCKET_WIDTH_PERCENT)/2)
+        viewpMinuteHand.isUserInteractionEnabled = true
+        self.addSubview(viewpMinuteHand)
+
+        minuteHandFirstSubview.isUserInteractionEnabled = true
+        minuteHandFirstSubview = UIView(frame: CGRect(x: 0, y: 0, width: (viewpMinuteHand.frame.width)/2, height: viewpMinuteHand.frame.height))
+        minuteHandFirstSubview.backgroundColor = UIColor.clear
+        viewpMinuteHand.addSubview(minuteHandFirstSubview)
+        
+        minuteHandSecondImage.isUserInteractionEnabled = true
+        minuteHandSecondImage = UIImageView(frame: CGRect(x: (minuteHandFirstSubview.frame.width)-15 , y: 0, width: ((viewpMinuteHand .frame.width)/2) - 20, height: viewpMinuteHand .frame.height))
+        minuteHandSecondImage.image = CommanCode.MINUTE_HAND_IMG
+        minuteHandSecondImage.contentMode = .scaleAspectFill
+        minuteHandSecondImage.backgroundColor = UIColor.clear
+        viewpMinuteHand.addSubview(minuteHandSecondImage)
+        
+//        self.addSubview(centerImageView)
+        viewpMinuteHand.alpha = 0.7
+    }
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch:UITouch = touches.first!
+       // print("-----touchesBegan-------",touch.view)
+        if touch.view == viewpHourHand {
+            print("Hour image touched")
+            viewpMinuteHand.alpha = 0.7
+            viewpHourHand.alpha = 1.0
+            isHourHandTouch = true
+            isMinuteHandTouch = false
+        } else if touch.view == viewpMinuteHand {
+            isMinuteHandTouch = true
+            isHourHandTouch = false
+            viewpHourHand.alpha = 0.7
+            viewpMinuteHand.alpha = 1.0
+            print("Minute image touched")
+        }
+    }
+
+
+    open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch:UITouch = touches.first!
+      //  print("-----touchesEnded-------",touch)
+
+            if touch.view == viewpHourHand {
+                print("Hour image released")
+                isHourHandTouch = false
+                viewpMinuteHand.alpha = 0.7
+            } else if touch.view == viewpMinuteHand {
+                print("Minute image released")
+                isMinuteHandTouch = false
+                viewpHourHand.alpha = 0.7
+            }
+    }
+    @objc private func handleTap(recognizer: UIPanGestureRecognizer){
+      //  print("##########################################")
+        if isMinuteHandTouch || isHourHandTouch {
+        print("Inside handleTap")
+        if !manualTimeSetAllowed {return}
+        let tapLocation = recognizer.location(in: self)
+        guard let view = recognizer.view else { return }
+        let viewSize = min(view.bounds.size.width, view.bounds.size.height)
+        let center = CGPoint(x: viewSize/2.0, y: viewSize/2.0)
+        let distanceToCenter = sqrt(pow((tapLocation.x - center.x), 2) + pow((tapLocation.y - center.y), 2))
+
+       /* //tap within the circle smaller than hand tail to set the second hand to zero
+        if distanceToCenter < min(10.0, viewSize/10.0) {
+            if localTime.second != 0 {
+                secondHand.updateHandAngle(angle: CGFloat(0), duration: 0.5)
+            } else {
+                secondHand.updateHandAngle(angle: CGFloat(2*Double.pi/3), duration: 1.0)
+                secondHand.updateHandAngle(angle: CGFloat(4*Double.pi/3), duration: 1.0)
+                secondHand.updateHandAngle(angle: CGFloat(0.0), duration: 1.0)
+            }
+            localTime.second = 0
+            clockDelegate?.timeIsSetManually()
+            return
+        }*/
+        let handRadianAngle = Double(Float.pi - atan2f((Float(tapLocation.x - center.x)),
+                                                       (Float(tapLocation.y - center.y))))
+
+        //tap or pan on the outer area of the clockface to set the minute hand
+//        if distanceToCenter / max(10.0, viewSize/2) > hourHandLength * 1.1 {
+        if isMinuteHandTouch {
+            viewpMinuteHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.1)
+            let newMinuteValue = Int(0.5 + handRadianAngle * 30 / Double.pi) % 60
+
+            if newMinuteValue == 0 && localTime.minute == 59 {
+                localTime.hour = ((localTime.hour ?? 1) + 1) % 12
+            } else if newMinuteValue == 59 && localTime.minute == 0 {
+                localTime.hour = ((localTime.hour ?? 1) - 1) % 12
+            }
+            localTime.minute = newMinuteValue
+
+            //tap or pan on the area of the clockface between the center and the edge to set the hour hand
+        } else if isHourHandTouch {
+        //} else if distanceToCenter / (viewSize/2) < hourHandLength {
+            localTime.hour = Int(handRadianAngle * 6 / Double.pi)
+            let hourDegree = Double(localTime.hour ?? 1) * 30.0 + Double(localTime.minute ?? 1) * 0.5
+           // print("###hourDegree###",hourDegree)
+            viewpHourHand.updateHandAngle(angle: CGFloat(hourDegree * translateToRadian), duration: 0.5)
+        }
+        clockDelegate?.timeIsSetManually()
+        } else {
+            print("Touch parent view")
+        }
+    }
+
     
     
     private func setupGestures() {
-        let tapRecognizer = UITapGestureRecognizer(target: self, action:#selector(handleTap(recognizer:)))
-        tapRecognizer.delegate = self
-        self.addGestureRecognizer(tapRecognizer)
         let panRecognizer = UIPanGestureRecognizer(target: self, action:#selector(handlePan(recognizer:)))
         panRecognizer.delegate = self
         self.addGestureRecognizer(panRecognizer)
     }
-    
+
+
     
     open func setLocalTime(hour: Int, minute: Int, second: Int) {
         localTime.hour = hour % 12
@@ -228,10 +308,10 @@ open class Clocket: UIView, UIGestureRecognizerDelegate {
     
     
     private func updateHands() {
-        secondHand.updateHandAngle(angle: CGFloat(Double(localTime.second * 6) * translateToRadian))
-        minuteHand.updateHandAngle(angle: CGFloat(Double((localTime.minute ?? 1) * 6) * translateToRadian))
+       // secondHand.updateHandAngle(angle: CGFloat(Double(localTime.second * 6) * translateToRadian))
+        viewpHourHand.updateHandAngle(angle: CGFloat(Double((localTime.minute ?? 1) * 6) * translateToRadian))
         let hourDegree = Double(localTime.hour ?? 1) * 30.0 + Double(localTime.minute ?? 1) * 0.5
-        hourHand.updateHandAngle(angle: CGFloat(hourDegree * translateToRadian))
+        viewpMinuteHand.updateHandAngle(angle: CGFloat(hourDegree * translateToRadian))
     }
     
     
@@ -240,7 +320,6 @@ open class Clocket: UIView, UIGestureRecognizerDelegate {
         clockDelegate?.countDownExpired()
     }
     
-    
     @objc private func handlePan(recognizer: UIPanGestureRecognizer) {
         if !manualTimeSetAllowed {return}
         switch recognizer.state {
@@ -248,56 +327,27 @@ open class Clocket: UIView, UIGestureRecognizerDelegate {
             handleTap(recognizer: recognizer)
             break
         case .ended:
+            viewpHourHand.alpha = 0.7
+            viewpMinuteHand.alpha = 0.7
+            isHourHandTouch = false
+            isMinuteHandTouch = false
             clockDelegate?.timeIsSetManually()
         default:
             break
         }
     }
     
-    
-    @objc private func handleTap(recognizer: UIPanGestureRecognizer){
-        if !manualTimeSetAllowed {return}
-        let tapLocation = recognizer.location(in: self)
-        guard let view = recognizer.view else { return }
-        let viewSize = min(view.bounds.size.width, view.bounds.size.height)
-        let center = CGPoint(x: viewSize/2.0, y: viewSize/2.0)
-        let distanceToCenter = sqrt(pow((tapLocation.x - center.x), 2) + pow((tapLocation.y - center.y), 2))
-        
-        //tap within the circle smaller than hand tail to set the second hand to zero
-        if distanceToCenter < min(10.0, viewSize/10.0) {
-            if localTime.second != 0 {
-                secondHand.updateHandAngle(angle: CGFloat(0), duration: 0.5)
-            } else {
-                secondHand.updateHandAngle(angle: CGFloat(2*Double.pi/3), duration: 1.0)
-                secondHand.updateHandAngle(angle: CGFloat(4*Double.pi/3), duration: 1.0)
-                secondHand.updateHandAngle(angle: CGFloat(0.0), duration: 1.0)
-            }
-            localTime.second = 0
-            clockDelegate?.timeIsSetManually()
-            return
-        }
-        let handRadianAngle = Double(Float.pi - atan2f((Float(tapLocation.x - center.x)),
-                                                       (Float(tapLocation.y - center.y))))
-        
-        //tap or pan on the outer area of the clockface to set the minute hand
-        if distanceToCenter / max(10.0, viewSize/2) > hourHandLength * 1.1 {
-            minuteHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.1)
-            let newMinuteValue = Int(0.5 + handRadianAngle * 30 / Double.pi) % 60
-            
-            if newMinuteValue == 0 && localTime.minute == 59 {
-                localTime.hour = ((localTime.hour ?? 1) + 1) % 12
-            } else if newMinuteValue == 59 && localTime.minute == 0 {
-                localTime.hour = ((localTime.hour ?? 1) - 1) % 12
-            }
-            localTime.minute = newMinuteValue
-            
-            //tap or pan on the area of the clockface between the center and the edge to set the hour hand
-        } else if distanceToCenter / (viewSize/2) < hourHandLength {
-            localTime.hour = Int(handRadianAngle * 6 / Double.pi)
-        }
-        let hourDegree = Double(localTime.hour ?? 1) * 30.0 + Double(localTime.minute ?? 1) * 0.5
-        hourHand.updateHandAngle(angle: CGFloat(hourDegree * translateToRadian), duration: 0.5)
-        clockDelegate?.timeIsSetManually()
+}
+
+extension UIView {
+    func updateHandAngle(angle: CGFloat, duration: Double = 0.5) {
+        UIView.animate(withDuration: duration,
+                       delay: 0.0,
+                       options: .curveEaseInOut,
+                       animations: { self.transform = CGAffineTransform(rotationAngle: angle) },
+                       completion: { (finished: Bool) in
+                        return
+        })
     }
 }
 

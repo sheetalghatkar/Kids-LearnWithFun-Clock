@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import FLAnimatedImage
+//import FLAnimatedImage
 
 class GuessTimeCardView: UIView {
-        @IBOutlet weak var pictureImageView: FLAnimatedImageView!
+      //  @IBOutlet weak var pictureImageView: FLAnimatedImageView!
         @IBOutlet var guessTimeCardView: UIView!
         @IBOutlet var parentCardView: UIView!
         var nibName = "GuessTimeCardView"

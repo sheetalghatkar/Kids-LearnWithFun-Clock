@@ -7,24 +7,31 @@
 //
 
 import UIKit
-import FLAnimatedImage
+//import FLAnimatedImage
 import AVFoundation
+
+protocol PictureCardViewProtocol : class {
+    func addGestureToCard()
+}
 
 @IBDesignable class PictureCardView: UIView {
     @IBOutlet weak var pictureCardView: UIView!
+    @IBOutlet weak var buttonView: UIView!
     @IBOutlet weak var bgPictureCardView: UIImageView!
-    @IBOutlet var clocketView : Clocket!
-    
+    @IBOutlet var clocketView : SetClocket!
+    weak var delegatePictureCardProtocol : PictureCardViewProtocol?
+
     @IBOutlet weak var btnOption1 : ButtonCardOptionExt!
     @IBOutlet weak var btnOption2 : UIButton!
     @IBOutlet weak var btnOption3 : UIButton!
     @IBOutlet weak var btnOption4 : UIButton!
+    var successIndex = 0 
     
     var hour : Int = 12
     var minute : Int = 12
     
     var player = AVAudioPlayer()
-
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
     var nibName = "PictureCardView"
 
         override init(frame: CGRect) {
@@ -56,10 +63,6 @@ import AVFoundation
             bgPictureCardView.layer.borderWidth = 1
             bgPictureCardView.layer.borderColor = CommanCode.Card_BUTTON_BORDER_COLOR.cgColor
            // setupOptions()
-//            btnOption1.setTitle("10 Hour 12 Minute", for: .normal)
-//            btnOption2.setTitle("1 Hour 15 Minute", for: .normal)
-//            btnOption3.setTitle("7 Hour 30 Minute", for: .normal)
-//            btnOption4.setTitle("9 Hour 46 Minute", for: .normal)
         }
         
         func loadViewFromNib() -> UIView {
@@ -90,25 +93,71 @@ import AVFoundation
         }
     }
     @IBAction func funcBtnOption1(_ sender: UIButton) {
-        sender.setBackgroundImage(UIImage(named: "Red_Bubble"), for: .normal)
-        sender.showsTouchWhenHighlighted = true
-        playSoundOnButtonClick(isTrue: false)
+        if successIndex == 0 {
+            successButton(getButtonInstance: sender, isSuccess: true)
+        } else {
+            successButton(getButtonInstance: sender, isSuccess: false)
+        }
     }
     @IBAction func funcBtnOption2(_ sender: UIButton) {
-        sender.setBackgroundImage(UIImage(named: "Red_Bubble"), for: .normal)
-        sender.showsTouchWhenHighlighted = true
-        playSoundOnButtonClick(isTrue: false)
+        if successIndex == 1 {
+            successButton(getButtonInstance: sender, isSuccess: true)
+        } else {
+            successButton(getButtonInstance: sender, isSuccess: false)
+        }
+//        let gifImageView = UIImageView()
+//        gifImageView.frame.size  = CGSize(width: 300, height: 300)
+//        gifImageView.center = sender.center
+//        let crackerGif = UIImage.gifImageWithName("fireworks03")
+//        gifImageView.image  = crackerGif
+//        self.buttonView.addSubview(gifImageView)
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) {
+//            gifImageView.removeFromSuperview()
+//        }
     }
     @IBAction func funcBtnOption3(_ sender: UIButton) {
-        sender.setBackgroundImage(UIImage(named: "Green_Bubble"), for: .normal)
-        sender.showsTouchWhenHighlighted = true
-        sender.layer.borderColor = CommanCode.Correct_Option_Border_COLOR.cgColor
-        playSoundOnButtonClick(isTrue: true)
+        if successIndex == 2 {
+            successButton(getButtonInstance: sender, isSuccess: true)
+        } else {
+            successButton(getButtonInstance: sender, isSuccess: false)
+        }
     }
     @IBAction func funcBtnOption4(_ sender: UIButton) {
-        sender.showsTouchWhenHighlighted = true
-        sender.setBackgroundImage(UIImage(named: "Red_Bubble"), for: .normal)
-        playSoundOnButtonClick(isTrue: false)
+        if successIndex == 3 {
+            successButton(getButtonInstance: sender, isSuccess: true)
+        } else {
+            successButton(getButtonInstance: sender, isSuccess: false)
+        }
+    }
+    
+    func successButton(getButtonInstance : UIButton, isSuccess: Bool) {
+        if isSuccess {
+            getButtonInstance.setBackgroundImage(UIImage(named: "Green_Bubble"), for: .normal)
+            getButtonInstance.showsTouchWhenHighlighted = true
+            getButtonInstance.layer.borderColor = CommanCode.Correct_Option_Border_COLOR.cgColor
+            let gifImageView = UIImageView()
+            gifImageView.frame.size  = CGSize(width: 300, height: 300)
+            gifImageView.center = getButtonInstance.center
+           /* let crackerGif = UIImage.gifImageWithName("GreenCracker")
+            gifImageView.image  = crackerGif
+            self.buttonView.addSubview(gifImageView)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) {
+                gifImageView.removeFromSuperview()
+            }*/
+            if appDelegate.IS_Sound_ON {
+                playSoundOnButtonClick(isTrue: true)
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [self] in
+                self.delegatePictureCardProtocol?.addGestureToCard()
+            }
+        } else {
+            getButtonInstance.showsTouchWhenHighlighted = true
+            getButtonInstance.layer.borderColor = UIColor.red.cgColor
+            getButtonInstance.setBackgroundImage(UIImage(named: "Red_Bubble"), for: .normal)
+            if appDelegate.IS_Sound_ON {
+                playSoundOnButtonClick(isTrue: false)
+            }
+        }
     }
 }
 

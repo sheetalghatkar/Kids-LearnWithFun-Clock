@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,6 +16,7 @@
                 <outlet property="btnOption2" destination="Y2f-4X-6fi" id="5rH-6D-S4h"/>
                 <outlet property="btnOption3" destination="1sj-Ew-gBu" id="XVO-uu-tsa"/>
                 <outlet property="btnOption4" destination="8XR-pZ-gsV" id="47S-Db-h8j"/>
+                <outlet property="buttonView" destination="laO-Vy-yMV" id="8TT-yt-VYq"/>
                 <outlet property="clocketView" destination="UTc-Pu-dhR" id="lHT-MP-kKq"/>
                 <outlet property="pictureCardView" destination="i5M-Pr-FkT" id="ZD6-EU-0Bh"/>
             </connections>
@@ -26,9 +29,9 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YellowBtnBg" translatesAutoresizingMaskIntoConstraints="NO" id="OeI-rd-qy3">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTc-Pu-dhR" customClass="Clocket" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTc-Pu-dhR" customClass="SetClocket" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
                     <rect key="frame" x="93" y="69" width="228" height="227.5"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="UTc-Pu-dhR" secondAttribute="height" multiplier="1:1" id="NU9-h9-sMu"/>
                     </constraints>
@@ -36,7 +39,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="laO-Vy-yMV" userLabel="optionView">
                     <rect key="frame" x="10" y="692" width="394" height="160"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHl-6v-PyU" customClass="ButtonCardOptionExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHl-6v-PyU" customClass="ButtonCardOptionExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="14.5" width="191" height="55"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -47,7 +50,7 @@
                                 <action selector="funcBtnOption1:" destination="-1" eventType="touchUpInside" id="csj-18-NKZ"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2f-4X-6fi" customClass="ButtonCardOptionExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2f-4X-6fi" customClass="ButtonCardOptionExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
                             <rect key="frame" x="203" y="14.5" width="191" height="55"/>
                             <state key="normal" title="Button" backgroundImage="yellowBubbleBg"/>
                             <connections>
@@ -68,14 +71,14 @@
                                 <constraint firstAttribute="height" constant="1" id="G9j-1T-1Kr"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sj-Ew-gBu" customClass="ButtonCardOptionExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sj-Ew-gBu" customClass="ButtonCardOptionExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="90.5" width="191" height="55"/>
                             <state key="normal" title="Button" backgroundImage="yellowBubbleBg"/>
                             <connections>
                                 <action selector="funcBtnOption3:" destination="-1" eventType="touchUpInside" id="PJB-nd-rjf"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8XR-pZ-gsV" customClass="ButtonCardOptionExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8XR-pZ-gsV" customClass="ButtonCardOptionExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
                             <rect key="frame" x="203" y="90.5" width="191" height="55"/>
                             <state key="normal" title="Button" backgroundImage="yellowBubbleBg"/>
                             <connections>
@@ -110,6 +113,7 @@
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="OeI-rd-qy3" secondAttribute="bottom" id="04d-Dw-KT2"/>
@@ -123,12 +127,14 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="laO-Vy-yMV" secondAttribute="trailing" constant="10" id="pVG-VC-bcx"/>
                 <constraint firstItem="UTc-Pu-dhR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="vdj-V1-fQc"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
         </view>
     </objects>
     <resources>
         <image name="YellowBtnBg" width="161" height="56"/>
         <image name="yellowBubbleBg" width="107" height="60"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

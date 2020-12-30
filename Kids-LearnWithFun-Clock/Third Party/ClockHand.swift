@@ -5,7 +5,6 @@
 //  Created by Andrey Filonov on 11/11/2018.
 //  Copyright © 2018 Andrey Filonov. All rights reserved.
 //
-
 import UIKit
 
 
@@ -56,7 +55,7 @@ class ClockHand: UIImageView {
     }
     
     
-    func updateHandAngle(angle: CGFloat, duration: Double = 0.5) {
+    func updateHandAngleSetClock(angle: CGFloat, duration: Double = 0.5) {
         UIView.animate(withDuration: duration,
                        delay: 0.0,
                        options: .curveEaseInOut,
@@ -87,3 +86,4 @@ class SecondHandCircle: UIImageView {
         translatesAutoresizingMaskIntoConstraints = false
     }
 }
+

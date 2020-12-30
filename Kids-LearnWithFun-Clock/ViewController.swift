@@ -90,7 +90,15 @@ class ViewController: UIViewController {
     }
     //IBAction Set Time
     @IBAction func funcSetTime(_ sender: UIButton) {
+        let timeViewC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SetTimeViewController") as! SetTimeViewController
+        self.navigationController?.pushViewController(timeViewC, animated: true)
     }
+    //IBAction Match Time
+    @IBAction func funcPlayWithClock(_ sender: UIButton) {
+        let playClockVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlayWithClockController") as! PlayWithClockController
+        self.navigationController?.pushViewController(playClockVC, animated: true)
+    }
+
     //IBAction Match Time
     @IBAction func funcTestTime(_ sender: UIButton) {
     }

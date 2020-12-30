@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bcF-rk-WBQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bcF-rk-WBQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,6 +19,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="LEz-Sj-Ag5">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y3J-AZ-MaW">
                                 <rect key="frame" x="10" y="44" width="359.5" height="359.5"/>
@@ -31,7 +34,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Foj-tp-Iqp" userLabel="LearnView" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
                                         <rect key="frame" x="57" y="98.5" width="250" height="50"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeMenuBtnBg" translatesAutoresizingMaskIntoConstraints="NO" id="4cp-bD-NI7">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4cp-bD-NI7">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -39,15 +42,14 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kit-mc-1WV" customClass="ButtonHomeMenuExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
-                                                <rect key="frame" x="102" y="10" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kit-mc-1WV" customClass="ButtonHomeMenuExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                                <rect key="frame" x="110" y="10" width="30" height="30"/>
                                                 <connections>
                                                     <action selector="funcLearnTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4e8-u0-YvE"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="Kit-mc-1WV" firstAttribute="centerY" secondItem="Foj-tp-Iqp" secondAttribute="centerY" id="0C4-rg-SBz"/>
                                             <constraint firstItem="4cp-bD-NI7" firstAttribute="width" secondItem="Foj-tp-Iqp" secondAttribute="width" id="8oA-3X-Fsj"/>
@@ -69,7 +71,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNv-Hf-JLZ" userLabel="GuessView" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
                                         <rect key="frame" x="57" y="168.5" width="250" height="50"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeMenuBtnBg" translatesAutoresizingMaskIntoConstraints="NO" id="OHO-zf-SiX" userLabel="llll">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OHO-zf-SiX" userLabel="llll">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <userDefinedRuntimeAttributes>
@@ -78,15 +80,14 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhy-O6-GYA" customClass="ButtonHomeMenuExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
-                                                <rect key="frame" x="102" y="10" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhy-O6-GYA" customClass="ButtonHomeMenuExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                                <rect key="frame" x="110" y="10" width="30" height="30"/>
                                                 <connections>
                                                     <action selector="funcGuessTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pad-vP-Z3K"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="MTB-8s-RJN"/>
                                             <constraint firstItem="Rhy-O6-GYA" firstAttribute="centerY" secondItem="cNv-Hf-JLZ" secondAttribute="centerY" id="UCO-Um-T5q"/>
@@ -114,7 +115,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BDg-YG-NIM" userLabel="setView" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
                                         <rect key="frame" x="57" y="239.5" width="250" height="50"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeMenuBtnBg" translatesAutoresizingMaskIntoConstraints="NO" id="qOy-vm-QIb">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qOy-vm-QIb">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <userDefinedRuntimeAttributes>
@@ -123,15 +124,14 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ir2-Pc-cVk" customClass="ButtonHomeMenuExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
-                                                <rect key="frame" x="102" y="10" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ir2-Pc-cVk" customClass="ButtonHomeMenuExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                                <rect key="frame" x="110" y="10" width="30" height="30"/>
                                                 <connections>
-                                                    <action selector="funcSetTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YGf-1f-mOZ"/>
+                                                    <action selector="funcSetTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ePp-4V-z1a"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="ir2-Pc-cVk" firstAttribute="centerX" secondItem="BDg-YG-NIM" secondAttribute="centerX" id="BPw-cz-KCI"/>
                                             <constraint firstAttribute="height" constant="50" id="Roe-xr-fXy"/>
@@ -151,25 +151,24 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D95-74-XdG" userLabel="playWithClockView" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
                                         <rect key="frame" x="57" y="309.5" width="250" height="50"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeMenuBtnBg" translatesAutoresizingMaskIntoConstraints="NO" id="WI2-Ao-8aO">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WI2-Ao-8aO">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.93333333333333335" green="0.69411764705882351" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoX-3g-FuO" customClass="ButtonHomeMenuExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
-                                                <rect key="frame" x="102" y="10" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoX-3g-FuO" customClass="ButtonHomeMenuExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                                <rect key="frame" x="110" y="10" width="30" height="30"/>
                                                 <connections>
-                                                    <action selector="funcSetTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QE4-T7-IsT"/>
+                                                    <action selector="funcPlayWithClock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XaF-gB-A6x"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="aoX-3g-FuO" firstAttribute="centerX" secondItem="D95-74-XdG" secondAttribute="centerX" id="7dl-6Q-OPd"/>
                                             <constraint firstAttribute="width" constant="250" id="PTi-b6-w1o"/>
@@ -189,7 +188,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9az-o4-B0b" userLabel="testView" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
                                         <rect key="frame" x="57" y="379.5" width="250" height="50"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeMenuBtnBg" translatesAutoresizingMaskIntoConstraints="NO" id="b9E-xy-taa">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b9E-xy-taa">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <userDefinedRuntimeAttributes>
@@ -198,15 +197,14 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7YO-fa-yUr" customClass="ButtonHomeMenuExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
-                                                <rect key="frame" x="102" y="10" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7YO-fa-yUr" customClass="ButtonHomeMenuExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                                <rect key="frame" x="110" y="10" width="30" height="30"/>
                                                 <connections>
                                                     <action selector="funcTestTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Pu-76-UK3"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="7YO-fa-yUr" firstAttribute="centerY" secondItem="9az-o4-B0b" secondAttribute="centerY" id="OmJ-A0-eZn"/>
                                             <constraint firstItem="7YO-fa-yUr" firstAttribute="centerX" secondItem="9az-o4-B0b" secondAttribute="centerX" id="Orw-wD-D6y"/>
@@ -233,7 +231,7 @@
                                                 <state key="normal" image="Lock"/>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="Qxi-hj-Oy5" firstAttribute="centerY" secondItem="33M-Mh-cHk" secondAttribute="centerY" id="Vbo-cL-xBg"/>
                                             <constraint firstAttribute="width" constant="40" id="Zj8-2w-XKe"/>
@@ -268,7 +266,8 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="y3J-AZ-MaW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7Ce-DQ-YFp"/>
                             <constraint firstItem="yhg-U5-g1u" firstAttribute="top" secondItem="y3J-AZ-MaW" secondAttribute="bottom" constant="-20" id="CfM-y2-yEb"/>
@@ -282,7 +281,6 @@
                             <constraint firstItem="y3J-AZ-MaW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" constant="1" id="po7-fM-GWG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yhg-U5-g1u" secondAttribute="trailing" constant="25" id="rcI-VW-OZf"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="LGr-t3-phw"/>
                     <connections>
@@ -380,6 +378,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="QLr-4l-5Fb"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ujg-Ek-may" firstAttribute="width" secondItem="7eQ-Sy-AVf" secondAttribute="width" multiplier="1:1" id="BH9-uP-q4k"/>
@@ -395,7 +394,6 @@
                             <constraint firstItem="2G3-K6-JdQ" firstAttribute="centerX" secondItem="iBr-zE-kzi" secondAttribute="centerX" id="j1g-5U-sP6"/>
                             <constraint firstAttribute="bottom" secondItem="alT-WC-Iu3" secondAttribute="bottom" id="vyW-wG-i9q"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="QLr-4l-5Fb"/>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
@@ -408,12 +406,109 @@
             </objects>
             <point key="canvasLocation" x="-388.40579710144931" y="-42.1875"/>
         </scene>
+        <!--Set Time View Controller-->
+        <scene sceneID="A2v-Ik-hMc">
+            <objects>
+                <viewController storyboardIdentifier="SetTimeViewController" id="irR-tW-XvX" customClass="SetTimeViewController" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LYF-zq-5bK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="TjK-sd-jeF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dt0-4r-aaf" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                <rect key="frame" x="31" y="139" width="352" height="352"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="round" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9YI-Gi-lMD">
+                                <rect key="frame" x="5" y="49" width="80" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Ykm-X9-TwG"/>
+                                    <constraint firstAttribute="width" constant="80" id="rEI-6w-oBq"/>
+                                </constraints>
+                                <state key="normal" image="setTimeHomeIcon"/>
+                                <connections>
+                                    <action selector="funcBackToHome:" destination="irR-tW-XvX" eventType="touchUpInside" id="cRA-TH-cEF"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9y6-ha-cev" customClass="Clocket" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                <rect key="frame" x="31" y="139" width="352" height="352"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9y6-ha-cev" secondAttribute="height" multiplier="1:1" id="m1u-b2-zan"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CenterClockImg1" translatesAutoresizingMaskIntoConstraints="NO" id="wcy-LM-qp5">
+                                <rect key="frame" x="184.5" y="292.5" width="45" height="45"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="jNn-71-3fE"/>
+                                    <constraint firstAttribute="height" constant="45" id="sfF-bg-LMz"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xO5-XE-fkb"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Dt0-4r-aaf" firstAttribute="width" secondItem="9y6-ha-cev" secondAttribute="width" id="10T-uT-fj2"/>
+                            <constraint firstItem="wcy-LM-qp5" firstAttribute="centerY" secondItem="Dt0-4r-aaf" secondAttribute="centerY" id="1t0-0D-stM"/>
+                            <constraint firstItem="TjK-sd-jeF" firstAttribute="trailing" secondItem="xO5-XE-fkb" secondAttribute="trailing" id="2Yv-U6-DZ4"/>
+                            <constraint firstItem="TjK-sd-jeF" firstAttribute="leading" secondItem="xO5-XE-fkb" secondAttribute="leading" id="2zl-1k-zqO"/>
+                            <constraint firstItem="9YI-Gi-lMD" firstAttribute="leading" secondItem="xO5-XE-fkb" secondAttribute="leading" constant="5" id="7Vo-rF-qbp"/>
+                            <constraint firstItem="9y6-ha-cev" firstAttribute="top" secondItem="9YI-Gi-lMD" secondAttribute="bottom" constant="10" id="AEk-go-a2Y"/>
+                            <constraint firstAttribute="bottom" secondItem="TjK-sd-jeF" secondAttribute="bottom" id="Cnz-ZM-54I"/>
+                            <constraint firstItem="Dt0-4r-aaf" firstAttribute="centerX" secondItem="9y6-ha-cev" secondAttribute="centerX" id="EId-Dl-gCY"/>
+                            <constraint firstItem="9y6-ha-cev" firstAttribute="centerX" secondItem="LYF-zq-5bK" secondAttribute="centerX" id="NYg-cU-TS7"/>
+                            <constraint firstItem="9YI-Gi-lMD" firstAttribute="top" secondItem="xO5-XE-fkb" secondAttribute="top" constant="5" id="Thv-Uv-5pL"/>
+                            <constraint firstItem="Dt0-4r-aaf" firstAttribute="height" secondItem="9y6-ha-cev" secondAttribute="height" id="Uwd-b4-ytY"/>
+                            <constraint firstItem="9y6-ha-cev" firstAttribute="width" secondItem="LYF-zq-5bK" secondAttribute="width" multiplier="0.85" id="VVD-PU-GfA"/>
+                            <constraint firstItem="Dt0-4r-aaf" firstAttribute="centerY" secondItem="9y6-ha-cev" secondAttribute="centerY" id="Zlx-2W-b0w"/>
+                            <constraint firstItem="wcy-LM-qp5" firstAttribute="centerX" secondItem="Dt0-4r-aaf" secondAttribute="centerX" id="ddr-Oy-tkn"/>
+                            <constraint firstItem="TjK-sd-jeF" firstAttribute="top" secondItem="LYF-zq-5bK" secondAttribute="top" id="zzL-gq-hxl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="viewClocket" destination="9y6-ha-cev" id="e1i-Wc-hDf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="agk-vr-Zij" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="745" y="-640"/>
+        </scene>
+        <!--Play With Clock Controller-->
+        <scene sceneID="rge-rl-tLt">
+            <objects>
+                <viewController storyboardIdentifier="PlayWithClockController" id="mfM-ef-9u9" customClass="PlayWithClockController" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LId-zX-22f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="jEz-XQ-I2T"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="twz-tS-kil" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-461" y="603"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="CenterClockImg1" width="201" height="196"/>
         <image name="HomeBgImage" width="640" height="960"/>
         <image name="HomeIcon" width="188" height="188"/>
-        <image name="HomeMenuBtnBg" width="211" height="60"/>
         <image name="Lock" width="75" height="75"/>
         <image name="bgCropScreen" width="100" height="110"/>
+        <image name="setTimeHomeIcon" width="512" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

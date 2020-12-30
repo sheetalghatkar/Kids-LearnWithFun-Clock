@@ -3,11 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33F0EE27ADD5DFB2A2135078 /* Pods_Kids_LearnWithFun_ClockTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0F6B3994E40B4673537E05 /* Pods_Kids_LearnWithFun_ClockTests.framework */; };
+		4F08829B25986B9E00E99167 /* PlayWithClockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F08829A25986B9E00E99167 /* PlayWithClockController.swift */; };
+		4F128EB42597115E00B5575C /* SetTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F128EB32597115E00B5575C /* SetTimeViewController.swift */; };
+		4F1ABE192595F35100256AB8 /* starFalling.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F1ABE182595F35100256AB8 /* starFalling.gif */; };
+		4F1ABE1E2595F71800256AB8 /* GreenCracker.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F1ABE1D2595F71800256AB8 /* GreenCracker.gif */; };
+		4F1E7D6C259CC70000A8A39B /* SetClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E7D6B259CC70000A8A39B /* SetClockFace.swift */; };
+		4F1E7D71259CC7C300A8A39B /* SetClocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E7D70259CC7C300A8A39B /* SetClocket.swift */; };
+		4F5F382B2594D02200992FE3 /* Cracker.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F5F382A2594D02200992FE3 /* Cracker.gif */; };
+		4F5F383E2594E87200992FE3 /* fireworks03.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F5F383D2594E87200992FE3 /* fireworks03.gif */; };
 		700E2E5A258A12100042EC2D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E2E59258A12100042EC2D /* UIButtonExtension.swift */; };
 		700E2E5D258A86790042EC2D /* WrongSelection.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 700E2E5C258A86790042EC2D /* WrongSelection.mp3 */; };
 		700E2E5F258A88580042EC2D /* WellDone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 700E2E5E258A88580042EC2D /* WellDone.mp3 */; };
@@ -40,8 +47,6 @@
 		709EAEB82580DBA000F8FEEC /* ClockLearn.gif in Resources */ = {isa = PBXBuildFile; fileRef = 709EAEB72580DBA000F8FEEC /* ClockLearn.gif */; };
 		709EAEBA2580DD6000F8FEEC /* GIFSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EAEB92580DD6000F8FEEC /* GIFSwift.swift */; };
 		70F28466258119C100D68BDA /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F28465258119C000D68BDA /* UIViewExtension.swift */; };
-		8DAF8ADA896B73EC7A92C2E6 /* Pods_Kids_LearnWithFun_Clock_Kids_LearnWithFun_ClockUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D35B040C549E1CF89929F8F /* Pods_Kids_LearnWithFun_Clock_Kids_LearnWithFun_ClockUITests.framework */; };
-		E96F67B6882BDB1483525905 /* Pods_Kids_LearnWithFun_Clock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9F32AD81AD67B9EE7932B1 /* Pods_Kids_LearnWithFun_Clock.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,12 +67,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C9F32AD81AD67B9EE7932B1 /* Pods_Kids_LearnWithFun_Clock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kids_LearnWithFun_Clock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B0F6B3994E40B4673537E05 /* Pods_Kids_LearnWithFun_ClockTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kids_LearnWithFun_ClockTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		31D42748BBD779A08B1F1E42 /* Pods-Kids-LearnWithFun-Clock-Kids-LearnWithFun-ClockUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kids-LearnWithFun-Clock-Kids-LearnWithFun-ClockUITests.release.xcconfig"; path = "Target Support Files/Pods-Kids-LearnWithFun-Clock-Kids-LearnWithFun-ClockUITests/Pods-Kids-LearnWithFun-Clock-Kids-LearnWithFun-ClockUITests.release.xcconfig"; sourceTree = "<group>"; };
-		4D6434ACBB28F9F132E5D1BB /* Pods-Kids-LearnWithFun-ClockTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kids-LearnWithFun-ClockTests.release.xcconfig"; path = "Target Support Files/Pods-Kids-LearnWithFun-ClockTests/Pods-Kids-LearnWithFun-ClockTests.release.xcconfig"; sourceTree = "<group>"; };
-		4F66FCDC36E6E1CF69AA0580 /* Pods-Kids-LearnWithFun-Clock-Kids-LearnWithFun-ClockUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kids-LearnWithFun-Clock-Kids-LearnWithFun-ClockUITests.debug.xcconfig"; path = "Target Support Files/Pods-Kids-LearnWithFun-Clock-Kids-LearnWithFun-ClockUITests/Pods-Kids-LearnWithFun-Clock-Kids-LearnWithFun-ClockUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		5700B21018E21C85161A7B84 /* Pods-Kids-LearnWithFun-Clock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kids-LearnWithFun-Clock.debug.xcconfig"; path = "Target Support Files/Pods-Kids-LearnWithFun-Clock/Pods-Kids-LearnWithFun-Clock.debug.xcconfig"; sourceTree = "<group>"; };
+		4F08829A25986B9E00E99167 /* PlayWithClockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayWithClockController.swift; sourceTree = "<group>"; };
+		4F128EB32597115E00B5575C /* SetTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimeViewController.swift; sourceTree = "<group>"; };
+		4F1ABE182595F35100256AB8 /* starFalling.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = starFalling.gif; sourceTree = "<group>"; };
+		4F1ABE1D2595F71800256AB8 /* GreenCracker.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = GreenCracker.gif; sourceTree = "<group>"; };
+		4F1E7D6B259CC70000A8A39B /* SetClockFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetClockFace.swift; sourceTree = "<group>"; };
+		4F1E7D70259CC7C300A8A39B /* SetClocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetClocket.swift; sourceTree = "<group>"; };
+		4F5F382A2594D02200992FE3 /* Cracker.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Cracker.gif; sourceTree = "<group>"; };
+		4F5F383D2594E87200992FE3 /* fireworks03.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fireworks03.gif; sourceTree = "<group>"; };
 		700E2E59258A12100042EC2D /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		700E2E5C258A86790042EC2D /* WrongSelection.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WrongSelection.mp3; sourceTree = "<group>"; };
 		700E2E5E258A88580042EC2D /* WellDone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WellDone.mp3; sourceTree = "<group>"; };
@@ -106,9 +113,6 @@
 		709EAEB72580DBA000F8FEEC /* ClockLearn.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ClockLearn.gif; sourceTree = "<group>"; };
 		709EAEB92580DD6000F8FEEC /* GIFSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFSwift.swift; sourceTree = "<group>"; };
 		70F28465258119C000D68BDA /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		8D35B040C549E1CF89929F8F /* Pods_Kids_LearnWithFun_Clock_Kids_LearnWithFun_ClockUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kids_LearnWithFun_Clock_Kids_LearnWithFun_ClockUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3C9F9C44142943219081806 /* Pods-Kids-LearnWithFun-Clock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kids-LearnWithFun-Clock.release.xcconfig"; path = "Target Support Files/Pods-Kids-LearnWithFun-Clock/Pods-Kids-LearnWithFun-Clock.release.xcconfig"; sourceTree = "<group>"; };
-		C8CA48AA6D682934E722E7B8 /* Pods-Kids-LearnWithFun-ClockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kids-LearnWithFun-ClockTests.debug.xcconfig"; path = "Target Support Files/Pods-Kids-LearnWithFun-ClockTests/Pods-Kids-LearnWithFun-ClockTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +120,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E96F67B6882BDB1483525905 /* Pods_Kids_LearnWithFun_Clock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +127,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33F0EE27ADD5DFB2A2135078 /* Pods_Kids_LearnWithFun_ClockTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,34 +134,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DAF8ADA896B73EC7A92C2E6 /* Pods_Kids_LearnWithFun_Clock_Kids_LearnWithFun_ClockUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		252CA16CE5D3820ED5767850 /* Pods */ = {
+		4F5F38292594D00700992FE3 /* Gif_Images */ = {
 			isa = PBXGroup;
 			children = (
-				5700B21018E21C85161A7B84 /* Pods-Kids-LearnWithFun-Clock.debug.xcconfig */,
-				C3C9F9C44142943219081806 /* Pods-Kids-LearnWithFun-Clock.release.xcconfig */,
-				4F66FCDC36E6E1CF69AA0580 /* Pods-Kids-LearnWithFun-Clock-Kids-LearnWithFun-ClockUITests.debug.xcconfig */,
-				31D42748BBD779A08B1F1E42 /* Pods-Kids-LearnWithFun-Clock-Kids-LearnWithFun-ClockUITests.release.xcconfig */,
-				C8CA48AA6D682934E722E7B8 /* Pods-Kids-LearnWithFun-ClockTests.debug.xcconfig */,
-				4D6434ACBB28F9F132E5D1BB /* Pods-Kids-LearnWithFun-ClockTests.release.xcconfig */,
+				4F5F383D2594E87200992FE3 /* fireworks03.gif */,
+				4F1ABE182595F35100256AB8 /* starFalling.gif */,
+				4F1ABE1D2595F71800256AB8 /* GreenCracker.gif */,
+				4F5F382A2594D02200992FE3 /* Cracker.gif */,
 			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		353B2436F70251D51DCDA182 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0C9F32AD81AD67B9EE7932B1 /* Pods_Kids_LearnWithFun_Clock.framework */,
-				8D35B040C549E1CF89929F8F /* Pods_Kids_LearnWithFun_Clock_Kids_LearnWithFun_ClockUITests.framework */,
-				2B0F6B3994E40B4673537E05 /* Pods_Kids_LearnWithFun_ClockTests.framework */,
-			);
-			name = Frameworks;
+			path = Gif_Images;
 			sourceTree = "<group>";
 		};
 		700E2E5B258A86590042EC2D /* Sound */ = {
@@ -192,8 +181,6 @@
 				709EAE932580A93C00F8FEEC /* Kids-LearnWithFun-ClockTests */,
 				709EAE9E2580A93C00F8FEEC /* Kids-LearnWithFun-ClockUITests */,
 				709EAE7B2580A93600F8FEEC /* Products */,
-				252CA16CE5D3820ED5767850 /* Pods */,
-				353B2436F70251D51DCDA182 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -210,6 +197,7 @@
 		709EAE7C2580A93700F8FEEC /* Kids-LearnWithFun-Clock */ = {
 			isa = PBXGroup;
 			children = (
+				4F5F38292594D00700992FE3 /* Gif_Images */,
 				700E2E5B258A86590042EC2D /* Sound */,
 				7023D4C825834E1100B752D4 /* CustomView */,
 				7023D4C02581FDC200B752D4 /* LocalizableEnglish.strings */,
@@ -229,6 +217,8 @@
 				7023D4CD2583583800B752D4 /* AppConstants.swift */,
 				701675F82588EE52004F19BA /* ShowClockViewController.swift */,
 				701675F92588EE52004F19BA /* ShowClockViewController.xib */,
+				4F128EB32597115E00B5575C /* SetTimeViewController.swift */,
+				4F08829A25986B9E00E99167 /* PlayWithClockController.swift */,
 			);
 			path = "Kids-LearnWithFun-Clock";
 			sourceTree = "<group>";
@@ -259,6 +249,8 @@
 				709EAEB02580AFE800F8FEEC /* ClockFace.swift */,
 				709EAEAF2580AFE800F8FEEC /* ClockHand.swift */,
 				709EAEB42580CA6C00F8FEEC /* CommanCode.swift */,
+				4F1E7D6B259CC70000A8A39B /* SetClockFace.swift */,
+				4F1E7D70259CC7C300A8A39B /* SetClocket.swift */,
 			);
 			path = "Third Party";
 			sourceTree = "<group>";
@@ -287,11 +279,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 709EAEA42580A93C00F8FEEC /* Build configuration list for PBXNativeTarget "Kids-LearnWithFun-Clock" */;
 			buildPhases = (
-				D1FC87DD2843C1F7B4E55A9B /* [CP] Check Pods Manifest.lock */,
 				709EAE762580A93600F8FEEC /* Sources */,
 				709EAE772580A93600F8FEEC /* Frameworks */,
 				709EAE782580A93600F8FEEC /* Resources */,
-				5035756604B168618B6F9034 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -306,7 +296,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 709EAEA72580A93C00F8FEEC /* Build configuration list for PBXNativeTarget "Kids-LearnWithFun-ClockTests" */;
 			buildPhases = (
-				C9698AD021451C2467353DE1 /* [CP] Check Pods Manifest.lock */,
 				709EAE8C2580A93C00F8FEEC /* Sources */,
 				709EAE8D2580A93C00F8FEEC /* Frameworks */,
 				709EAE8E2580A93C00F8FEEC /* Resources */,
@@ -325,11 +314,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 709EAEAA2580A93C00F8FEEC /* Build configuration list for PBXNativeTarget "Kids-LearnWithFun-ClockUITests" */;
 			buildPhases = (
-				7EC0020DD44840CD535E86BF /* [CP] Check Pods Manifest.lock */,
 				709EAE972580A93C00F8FEEC /* Sources */,
 				709EAE982580A93C00F8FEEC /* Frameworks */,
 				709EAE992580A93C00F8FEEC /* Resources */,
-				BBE456DBBF05392AAF494311 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -389,7 +376,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F1ABE192595F35100256AB8 /* starFalling.gif in Resources */,
+				4F5F382B2594D02200992FE3 /* Cracker.gif in Resources */,
 				70111073258BB27D00159541 /* Wrong_word.mp3 in Resources */,
+				4F5F383E2594E87200992FE3 /* fireworks03.gif in Resources */,
 				709EAEB82580DBA000F8FEEC /* ClockLearn.gif in Resources */,
 				709EAE8A2580A93C00F8FEEC /* LaunchScreen.storyboard in Resources */,
 				700E2E61258A8B290042EC2D /* Wrong1.mp3 in Resources */,
@@ -400,6 +390,7 @@
 				7023D4CC2583523000B752D4 /* GuessTimeCardView.xib in Resources */,
 				701675F42588C542004F19BA /* PictureCardView.xib in Resources */,
 				709EAE852580A93700F8FEEC /* Main.storyboard in Resources */,
+				4F1ABE1E2595F71800256AB8 /* GreenCracker.gif in Resources */,
 				7023D4C12581FDC200B752D4 /* LocalizableEnglish.strings in Resources */,
 				700E2E5F258A88580042EC2D /* WellDone.mp3 in Resources */,
 				700E2E5D258A86790042EC2D /* WrongSelection.mp3 in Resources */,
@@ -422,121 +413,21 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		5035756604B168618B6F9034 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Kids-LearnWithFun-Clock/Pods-Kids-LearnWithFun-Clock-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Kids-LearnWithFun-Clock/Pods-Kids-LearnWithFun-Clock-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kids-LearnWithFun-Clock/Pods-Kids-LearnWithFun-Clock-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7EC0020DD44840CD535E86BF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Kids-LearnWithFun-Clock-Kids-LearnWithFun-ClockUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BBE456DBBF05392AAF494311 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Kids-LearnWithFun-Clock-Kids-LearnWithFun-ClockUITests/Pods-Kids-LearnWithFun-Clock-Kids-LearnWithFun-ClockUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Kids-LearnWithFun-Clock-Kids-LearnWithFun-ClockUITests/Pods-Kids-LearnWithFun-Clock-Kids-LearnWithFun-ClockUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kids-LearnWithFun-Clock-Kids-LearnWithFun-ClockUITests/Pods-Kids-LearnWithFun-Clock-Kids-LearnWithFun-ClockUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C9698AD021451C2467353DE1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Kids-LearnWithFun-ClockTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D1FC87DD2843C1F7B4E55A9B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Kids-LearnWithFun-Clock-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		709EAE762580A93600F8FEEC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F1E7D71259CC7C300A8A39B /* SetClocket.swift in Sources */,
 				701675F52588C542004F19BA /* PictureCardView.swift in Sources */,
 				709EAE822580A93700F8FEEC /* ViewController.swift in Sources */,
 				701675FA2588EE52004F19BA /* ShowClockViewController.swift in Sources */,
 				709EAEB32580AFE900F8FEEC /* ClockFace.swift in Sources */,
 				709EAEB12580AFE800F8FEEC /* Clocket.swift in Sources */,
 				7023D4CB2583523000B752D4 /* GuessTimeCardView.swift in Sources */,
+				4F08829B25986B9E00E99167 /* PlayWithClockController.swift in Sources */,
 				7023D4C625834D0000B752D4 /* GuessTimeViewController.swift in Sources */,
+				4F1E7D6C259CC70000A8A39B /* SetClockFace.swift in Sources */,
 				709EAEB22580AFE900F8FEEC /* ClockHand.swift in Sources */,
 				709EAEBA2580DD6000F8FEEC /* GIFSwift.swift in Sources */,
 				700E2E5A258A12100042EC2D /* UIButtonExtension.swift in Sources */,
@@ -545,6 +436,7 @@
 				70F28466258119C100D68BDA /* UIViewExtension.swift in Sources */,
 				701675F72588C611004F19BA /* PictureViewController.swift in Sources */,
 				709EAE802580A93700F8FEEC /* SceneDelegate.swift in Sources */,
+				4F128EB42597115E00B5575C /* SetTimeViewController.swift in Sources */,
 				709EAEB52580CA6C00F8FEEC /* CommanCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -716,7 +608,6 @@
 		};
 		709EAEA52580A93C00F8FEEC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5700B21018E21C85161A7B84 /* Pods-Kids-LearnWithFun-Clock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -735,7 +626,6 @@
 		};
 		709EAEA62580A93C00F8FEEC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C3C9F9C44142943219081806 /* Pods-Kids-LearnWithFun-Clock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -754,7 +644,6 @@
 		};
 		709EAEA82580A93C00F8FEEC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C8CA48AA6D682934E722E7B8 /* Pods-Kids-LearnWithFun-ClockTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -777,7 +666,6 @@
 		};
 		709EAEA92580A93C00F8FEEC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D6434ACBB28F9F132E5D1BB /* Pods-Kids-LearnWithFun-ClockTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -800,7 +688,6 @@
 		};
 		709EAEAB2580A93C00F8FEEC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F66FCDC36E6E1CF69AA0580 /* Pods-Kids-LearnWithFun-Clock-Kids-LearnWithFun-ClockUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -821,7 +708,6 @@
 		};
 		709EAEAC2580A93C00F8FEEC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 31D42748BBD779A08B1F1E42 /* Pods-Kids-LearnWithFun-Clock-Kids-LearnWithFun-ClockUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

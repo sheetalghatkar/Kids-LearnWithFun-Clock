@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FLAnimatedImage
+//import FLAnimatedImage
 import AVFoundation
 
 extension UILabel {
@@ -21,8 +21,7 @@ extension UILabel {
     }
 }
 
-class PictureViewController: UIViewController {
-//    @IBOutlet var picCardView: PictureCardView!
+class PictureViewController: UIViewController, PictureCardViewProtocol {
     var pictureCardWidth = UIScreen.main.bounds.width * 0.9
     var pictureCardHeight : CGFloat = 0.0
     var startYCard : CGFloat = 0.0
@@ -42,6 +41,7 @@ class PictureViewController: UIViewController {
     var previousRotation : CGFloat =  0.0 //To increment percent of alpha for cross and check button on discovery card
    // @IBOutlet weak var lblPictureName: UILabel!
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    @IBOutlet var gifImageview : UIImageView!
     var birdImageArray: [UIImage] = [
         UIImage(named: "Pigeon.png")!,
         UIImage(named: "Owl.png")!,
@@ -82,12 +82,10 @@ class PictureViewController: UIViewController {
             self.layoutCards()
         //})
         if appDelegate.IS_Sound_ON {
-            btnSound.setBackgroundImage(CommanCode.SOUND_OFF_IMG, for: .normal)
-        } else {
             btnSound.setBackgroundImage(CommanCode.SOUND_ON_IMG, for: .normal)
+        } else {
+            btnSound.setBackgroundImage(CommanCode.SOUND_OFF_IMG, for: .normal)
         }
-
-
     }
     
     func getYMarginForCard() -> CGFloat {
@@ -113,22 +111,44 @@ class PictureViewController: UIViewController {
     }
 
     func layoutCards() {
-        
-        var arrayArryAllIndexCount = Array(0...CommanCode.guessTimeArray.count)
-        var arrayModifiyIndexCount = arrayArryAllIndexCount
-
+        let arrayArryAllIndexCount = Array(0 ..< CommanCode.guessTimeArray.count)
         for iCount in 0 ..< CommanCode.guessTimeArray.count {//Done
-//            arrayModifiyIndexCount.remove(at: iCount)
             var selectedArrayOfIndexs = [iCount]
-           // for _ in arr
-            
-            var max = arrayModifiyIndexCount.count
-            var random = Int.random(in: 0 ..< max)
-            
-         //   selectedArrayOfIndexs.append(<#T##newElement: Int##Int#>)
-            print("Get Random:",random)
+            repeat {
+                let max = arrayArryAllIndexCount.count
+                let random = Int.random(in: 0 ..< max)
+                if !selectedArrayOfIndexs.contains(random) {
+                    selectedArrayOfIndexs.append(random)
+                    print("#####Random",random)
+                }
+            } while selectedArrayOfIndexs.count < 4
+            print("___________________________________________")
             let card = PictureCardView(frame: CGRect(x: 0, y: 0, width: self.pictureCardWidth, height : self.pictureCardHeight))
             card.clocketView.setLocalTime(hour: CommanCode.guessTimeArray[iCount][0], minute: CommanCode.guessTimeArray[iCount][1], second: 1)
+            card.successIndex = CommanCode.guessTimeArray[iCount][2]
+            card.delegatePictureCardProtocol = self
+            if CommanCode.guessTimeArray[iCount][2] == 0 {
+                card.btnOption1.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][1]) + " Minute ", for: .normal)
+                card.btnOption2.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][1]) + " Minute ", for: .normal)
+                card.btnOption3.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][1]) + " Minute ", for: .normal)
+                card.btnOption4.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][1]) + " Minute ", for: .normal)
+            } else if CommanCode.guessTimeArray[iCount][2] == 1 {
+                card.btnOption2.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][1]) + " Minute ", for: .normal)
+                card.btnOption1.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][1]) + " Minute ", for: .normal)
+                card.btnOption3.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][1]) + " Minute ", for: .normal)
+                card.btnOption4.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][1]) + " Minute ", for: .normal)
+            } else if CommanCode.guessTimeArray[iCount][2] == 2 {
+                card.btnOption3.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][1]) + " Minute ", for: .normal)
+                card.btnOption1.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][1]) + " Minute ", for: .normal)
+                card.btnOption2.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][1]) + " Minute ", for: .normal)
+                card.btnOption4.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][1]) + " Minute ", for: .normal)
+            } else if CommanCode.guessTimeArray[iCount][2] == 3 {
+                card.btnOption4.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][1]) + " Minute ", for: .normal)
+                card.btnOption1.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][1]) + " Minute ", for: .normal)
+                card.btnOption2.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][1]) + " Minute ", for: .normal)
+                card.btnOption3.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][1]) + " Minute ", for: .normal)
+            }
+
             card.layer.shadowColor = UIColor(red:32/255, green:32/255, blue:32/255, alpha:1.00).cgColor
             card.layer.shadowOffset = CGSize(width: 2, height: 5)
             card.layer.shadowOpacity = 0.8
@@ -142,10 +162,15 @@ class PictureViewController: UIViewController {
         let firstCard = cards[0]
         self.picViewcontainer.addSubview(firstCard)
         firstCard.layer.zPosition = CGFloat(cards.count)
-        firstCard.center.x = self.picViewcontainer.center.x
+        firstCard.center.x = CommanCode.SCREEN_WIDTH / 2
         firstCard.center.y = GetScreenSize.screenSize.height / 2
             //self.picViewcontainer.frame.height / 2  + getYMarginForCard()
         firstCard.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handleCardPan)))
+        
+        firstCard.layer.borderColor = CommanCode.Current_Card_Border_COLOR.cgColor
+        firstCard.layer.cornerRadius = 30
+        firstCard.layer.borderWidth = 2.0
+
         originalXVal = cards[0].center.x
         originalYVal = cards[0].center.y
 
@@ -160,13 +185,14 @@ class PictureViewController: UIViewController {
             // let alpha = cardAttributes[i].alpha
             card.transform = CGAffineTransform(scaleX: downscale, y: downscale)
             card.alpha = 1
+            card.layer.borderColor = CommanCode.Current_Card_Border_COLOR.cgColor
             
             // position each card so there's a set space (cardInteritemSpacing) between each card, to give it a fanned out look
-            card.center.x = self.picViewcontainer.center.x
+            card.center.x = CommanCode.SCREEN_WIDTH / 2
             card.frame.origin.y = cards[0].frame.origin.y - (CGFloat(i) * cardInteritemSpacing)
             // workaround: scale causes heights to skew so compensate for it with some tweaking
             if i == 2 {
-                card.frame.origin.y += 1.5
+                card.frame.origin.y += 1.5   
             }
             self.picViewcontainer.addSubview(card)
         }
@@ -298,7 +324,7 @@ class PictureViewController: UIViewController {
                                       /*  if self.cards.count == 1 {
                                             self.lblPictureName.text = ""
                                         } else {
-                                            self.lblPictureName.text = self.birdNameArray[self.birdNameArray.count - self.cards.count+1]
+                                            self.lblPictureName.text =  self.birdNameArray[self.birdNameArray.count - self.cards.count+1]
                                         }*/
 
 //                                        if tag! == (self.birdImageArray.count - 1) {
@@ -312,7 +338,11 @@ class PictureViewController: UIViewController {
                                     print("Nothing happens")
                                     UIView.animate(withDuration: 0.2) {
                                         self.cards[0].transform = .identity
-                                        self.cards[0].center = CGPoint(x: self.picViewcontainer.frame.width / 2, y: (self.picViewcontainer.frame.height / 2) + self.getYMarginForCard())
+//                                        self.cards[0].center = CGPoint(x: self.picViewcontainer.frame.width / 2, y: (self.picViewcontainer.frame.height / 2) + self.cardInteritemSpacing*4) //self.getYMarginForCard())
+                                        
+                                        self.cards[0].center.x = self.picViewcontainer.center.x
+                                        self.cards[0].center.y = GetScreenSize.screenSize.height / 2
+
                                     }
                                 }
                 //--------------------------------------------------------------------
@@ -360,7 +390,7 @@ class PictureViewController: UIViewController {
         }
     
     func showNextCard() {
-        let animationDuration: TimeInterval = 0.2
+        let animationDuration: TimeInterval = 0.6
         // 1. animate each card to move forward one by one
         for i in 1...2 {
             print("********2001***********")
@@ -379,6 +409,9 @@ class PictureViewController: UIViewController {
                     card.center = self.picViewcontainer.center
                     card.center.y = GetScreenSize.screenSize.height / 2
                         //self.picViewcontainer.frame.height/2 + self.getYMarginForCard()
+                    card.layer.borderColor = CommanCode.Current_Card_Border_COLOR.cgColor
+                    card.layer.cornerRadius = 30
+                    card.layer.borderWidth = 2.0
                 } else {
                   //  print("********2004***********",card.lblName.text)
                     card.center.x = self.picViewcontainer.center.x
@@ -440,6 +473,20 @@ class PictureViewController: UIViewController {
             btnSound.setBackgroundImage(CommanCode.SOUND_ON_IMG, for: .normal)
         }
         appDelegate.IS_Sound_ON = !appDelegate.IS_Sound_ON
+    }
+    
+    
+    // MARK: - Protocol Method Implementation
+
+    func addGestureToCard() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+            self.cards[0].alpha = 0
+        }
+        UIView.transition(with: self.cards[0], duration: 2, options: .transitionCurlUp, animations: nil, completion: { (_) in
+            self.cards[0].alpha = 0
+            self.showNextCard()
+            self.hideFrontCard()
+        })
     }
 
 }
