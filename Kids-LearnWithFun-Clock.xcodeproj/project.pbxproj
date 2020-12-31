@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4F08829B25986B9E00E99167 /* PlayWithClockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F08829A25986B9E00E99167 /* PlayWithClockController.swift */; };
+		4F0EC402259D9B76008AC986 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0EC401259D9B76008AC986 /* LearnViewController.swift */; };
 		4F128EB42597115E00B5575C /* SetTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F128EB32597115E00B5575C /* SetTimeViewController.swift */; };
 		4F1ABE192595F35100256AB8 /* starFalling.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F1ABE182595F35100256AB8 /* starFalling.gif */; };
 		4F1ABE1E2595F71800256AB8 /* GreenCracker.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F1ABE1D2595F71800256AB8 /* GreenCracker.gif */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		4F08829A25986B9E00E99167 /* PlayWithClockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayWithClockController.swift; sourceTree = "<group>"; };
+		4F0EC401259D9B76008AC986 /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
 		4F128EB32597115E00B5575C /* SetTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimeViewController.swift; sourceTree = "<group>"; };
 		4F1ABE182595F35100256AB8 /* starFalling.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = starFalling.gif; sourceTree = "<group>"; };
 		4F1ABE1D2595F71800256AB8 /* GreenCracker.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = GreenCracker.gif; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				701675F92588EE52004F19BA /* ShowClockViewController.xib */,
 				4F128EB32597115E00B5575C /* SetTimeViewController.swift */,
 				4F08829A25986B9E00E99167 /* PlayWithClockController.swift */,
+				4F0EC401259D9B76008AC986 /* LearnViewController.swift */,
 			);
 			path = "Kids-LearnWithFun-Clock";
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				709EAEBA2580DD6000F8FEEC /* GIFSwift.swift in Sources */,
 				700E2E5A258A12100042EC2D /* UIButtonExtension.swift in Sources */,
 				7023D4CE2583583800B752D4 /* AppConstants.swift in Sources */,
+				4F0EC402259D9B76008AC986 /* LearnViewController.swift in Sources */,
 				709EAE7E2580A93700F8FEEC /* AppDelegate.swift in Sources */,
 				70F28466258119C100D68BDA /* UIViewExtension.swift in Sources */,
 				701675F72588C611004F19BA /* PictureViewController.swift in Sources */,

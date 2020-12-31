@@ -73,8 +73,12 @@ class ViewController: UIViewController {
     }
     //IBAction Learn Time
     @IBAction func funcLearnTime(_ sender: UIButton) {
-        let clockLearnVC = ShowClockViewController(nibName: "ShowClockViewController", bundle: nil)
-          self.navigationController?.pushViewController(clockLearnVC, animated: true)
+//        let clockLearnVC = ShowClockViewController(nibName: "LearnViewController", bundle: nil)
+//        self.navigationController?.pushViewController(clockLearnVC, animated: true)
+        
+        
+        let clockLearnVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LearnViewController") as! LearnViewController
+        self.navigationController?.pushViewController(clockLearnVC, animated: true)
    }
     //IBAction Guess Time
     @IBAction func funcGuessTime(_ sender: UIButton) {

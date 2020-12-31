@@ -496,6 +496,82 @@
             </objects>
             <point key="canvasLocation" x="-461" y="603"/>
         </scene>
+        <!--Learn View Controller-->
+        <scene sceneID="6ec-zw-zEg">
+            <objects>
+                <viewController storyboardIdentifier="LearnViewController" id="lJi-Gk-gJM" customClass="LearnViewController" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yab-A6-7dw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="ktg-IO-oES">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Imv-dG-PVY" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                <rect key="frame" x="31" y="139" width="352" height="352"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="round" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u74-J7-glk">
+                                <rect key="frame" x="5" y="49" width="80" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="bmU-dt-03O"/>
+                                    <constraint firstAttribute="height" constant="80" id="bxh-so-Az9"/>
+                                </constraints>
+                                <state key="normal" image="setTimeHomeIcon"/>
+                                <connections>
+                                    <action selector="funcBackToHome:" destination="lJi-Gk-gJM" eventType="touchUpInside" id="fep-UC-sHJ"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4XK-Gw-xsw" customClass="Clocket" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                <rect key="frame" x="31" y="139" width="352" height="352"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4XK-Gw-xsw" secondAttribute="height" multiplier="1:1" id="vhZ-FX-fsl"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CenterClockImg1" translatesAutoresizingMaskIntoConstraints="NO" id="rcn-0t-C1I">
+                                <rect key="frame" x="184.5" y="292.5" width="45" height="45"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="9uF-U9-9te"/>
+                                    <constraint firstAttribute="width" constant="45" id="frM-Jr-NVx"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="P3e-NA-Z9q"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Imv-dG-PVY" firstAttribute="centerX" secondItem="4XK-Gw-xsw" secondAttribute="centerX" id="1a6-Xq-cBb"/>
+                            <constraint firstItem="4XK-Gw-xsw" firstAttribute="top" secondItem="u74-J7-glk" secondAttribute="bottom" constant="10" id="1nJ-tG-byr"/>
+                            <constraint firstItem="4XK-Gw-xsw" firstAttribute="centerX" secondItem="yab-A6-7dw" secondAttribute="centerX" id="1wV-ol-Iku"/>
+                            <constraint firstItem="4XK-Gw-xsw" firstAttribute="width" secondItem="yab-A6-7dw" secondAttribute="width" multiplier="0.85" id="9EM-Rx-qtQ"/>
+                            <constraint firstItem="ktg-IO-oES" firstAttribute="trailing" secondItem="P3e-NA-Z9q" secondAttribute="trailing" id="Ft7-xt-Rxo"/>
+                            <constraint firstItem="Imv-dG-PVY" firstAttribute="width" secondItem="4XK-Gw-xsw" secondAttribute="width" id="Icq-gY-7Cb"/>
+                            <constraint firstItem="u74-J7-glk" firstAttribute="top" secondItem="P3e-NA-Z9q" secondAttribute="top" constant="5" id="LBf-cS-sT4"/>
+                            <constraint firstItem="ktg-IO-oES" firstAttribute="top" secondItem="yab-A6-7dw" secondAttribute="top" id="LLX-zf-gOD"/>
+                            <constraint firstItem="Imv-dG-PVY" firstAttribute="centerY" secondItem="4XK-Gw-xsw" secondAttribute="centerY" id="RWP-pH-TXc"/>
+                            <constraint firstItem="rcn-0t-C1I" firstAttribute="centerX" secondItem="Imv-dG-PVY" secondAttribute="centerX" id="Wa8-W9-YC0"/>
+                            <constraint firstAttribute="bottom" secondItem="ktg-IO-oES" secondAttribute="bottom" id="ajg-IR-twU"/>
+                            <constraint firstItem="u74-J7-glk" firstAttribute="leading" secondItem="P3e-NA-Z9q" secondAttribute="leading" constant="5" id="m32-0c-EqT"/>
+                            <constraint firstItem="rcn-0t-C1I" firstAttribute="centerY" secondItem="Imv-dG-PVY" secondAttribute="centerY" id="tom-TJ-f8n"/>
+                            <constraint firstItem="ktg-IO-oES" firstAttribute="leading" secondItem="P3e-NA-Z9q" secondAttribute="leading" id="whC-TA-74U"/>
+                            <constraint firstItem="Imv-dG-PVY" firstAttribute="height" secondItem="4XK-Gw-xsw" secondAttribute="height" id="zAv-M8-67u"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="viewBgClocket" destination="Imv-dG-PVY" id="8aL-ic-hL3"/>
+                        <outlet property="viewClocket" destination="4XK-Gw-xsw" id="VKJ-1z-TTs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nbS-sQ-k3F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="745" y="-640"/>
+        </scene>
     </scenes>
     <resources>
         <image name="CenterClockImg1" width="201" height="196"/>

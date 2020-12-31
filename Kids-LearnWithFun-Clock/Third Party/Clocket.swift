@@ -49,7 +49,7 @@ open class Clocket: UIView, UIGestureRecognizerDelegate {
     open var timer = Timer()
     open var refreshInterval: TimeInterval = 1.0
     
-    private var clockFace = UIImageView()
+    open var clockFace = UIImageView()
     private var secondHandCircle = UIImageView()
     weak open var clockDelegate: ClocketDelegate?
     

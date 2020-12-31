@@ -73,6 +73,11 @@ class CommanCode {
     static var SCREEN_HEIGHT = UIScreen.main.bounds.height
     static var CLOCKET_WIDTH_PERCENT = CGFloat(0.85)
     
+    
+    //Learn clock theme
+    static let CLOCK_ORANGE_BG_Color = UIColor(red: (255/255), green: (69/255), blue: (0/255), alpha: 1.0)
+    static let CLOCK_PISTA_Color = UIColor(red: (76/255), green: (223/255), blue: (148/255), alpha: 1.0)
+
 }
 extension UIDevice {
     var hasNotch: Bool

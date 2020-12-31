@@ -9,10 +9,10 @@
 import UIKit
 
 
-class ClockFace: UIImageView {
+open class ClockFace: UIImageView {
     
-    private var staticClockFaceImage: UIImage?
-    private var diameter = CommanCode.SCREEN_WIDTH * CommanCode.CLOCKET_WIDTH_PERCENT              // CGFloat { return max(frame.width, frame.height) }
+     var staticClockFaceImage: UIImage?
+     var diameter = CommanCode.SCREEN_WIDTH * CommanCode.CLOCKET_WIDTH_PERCENT              // CGFloat { return max(frame.width, frame.height) }
     
     var lineWidthCoefficient = CGFloat(100.0)
     
@@ -20,8 +20,8 @@ class ClockFace: UIImageView {
         return diameter / lineWidthCoefficient
     }()
     
-    var lineColor = CommanCode.CLOCK_TICK_Color.cgColor
-    var clockFaceSolidColor = UIColor.clear.cgColor
+    open var lineColor = CommanCode.CLOCK_TICK_Color.cgColor
+    open var clockFaceSolidColor = UIColor.clear.cgColor
     
         //UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0).cgColor
     
@@ -34,12 +34,12 @@ class ClockFace: UIImageView {
     var quarterMarkLength = CGFloat(5.0)
     var quarterMarkWidth = CGFloat(3.0)
     
-    var enableDigits = true
+    open var enableDigits = true
     var digitFontName = "HelveticaNeue"
     var digitFontCoefficient = CGFloat(10.0)
     var digitFont: UIFont { return UIFont(name: digitFontName, size: diameter/digitFontCoefficient)! }
     var digitOffset: CGFloat { return (quarterMarkLength * lineWidth)/2 + 1.0 }
-    var digitColor = CommanCode.Clock_Dial_COLOR
+    open var digitColor = CommanCode.Clock_Dial_COLOR
         //CommanCode.ORANGE_Color
     
         
@@ -60,7 +60,7 @@ class ClockFace: UIImageView {
     }
     
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
