@@ -99,8 +99,8 @@ class ViewController: UIViewController {
     }
     //IBAction Match Time
     @IBAction func funcPlayWithClock(_ sender: UIButton) {
-        let playClockVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlayWithClockController") as! PlayWithClockController
-        self.navigationController?.pushViewController(playClockVC, animated: true)
+        /*let playClockVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlayWithClockController") as! PlayWithClockController
+        self.navigationController?.pushViewController(playClockVC, animated: true)*/
     }
 
     //IBAction Match Time
