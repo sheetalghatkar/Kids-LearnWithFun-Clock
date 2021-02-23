@@ -37,7 +37,7 @@ class SetClockFace: UIImageView {
     var digitColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0) /* #7c7c7c */
     
     var enableLogo = true
-    var logoText = "Clocket"
+    var logoText = "Learn Clock"
     var logoColor = UIColor(red: 70/255, green: 70/255, blue: 70/255, alpha: 1.0) /* #7c7c7c */
     var logoFontName = "HelveticaNeue-bold"
     var logoFontCoefficient = CGFloat(20.0)

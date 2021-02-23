@@ -10,10 +10,41 @@
 		4F08829B25986B9E00E99167 /* PlayWithClockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F08829A25986B9E00E99167 /* PlayWithClockController.swift */; };
 		4F0EC402259D9B76008AC986 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0EC401259D9B76008AC986 /* LearnViewController.swift */; };
 		4F128EB42597115E00B5575C /* SetTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F128EB32597115E00B5575C /* SetTimeViewController.swift */; };
+		4F1698AB25E26D0B0049452D /* CustomLiceneModelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1698A925E26D0B0049452D /* CustomLiceneModelController.xib */; };
+		4F1698AC25E26D0B0049452D /* CustomLiceneModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1698AA25E26D0B0049452D /* CustomLiceneModelController.swift */; };
+		4F1698B625E26D140049452D /* PaymentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1698B025E26D140049452D /* PaymentDetailViewController.swift */; };
+		4F1698B725E26D140049452D /* PaymentCostController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1698B125E26D140049452D /* PaymentCostController.xib */; };
+		4F1698B825E26D140049452D /* SubscriptionDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1698B225E26D140049452D /* SubscriptionDetailsController.swift */; };
+		4F1698B925E26D140049452D /* SubscriptionDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1698B325E26D140049452D /* SubscriptionDetailsController.xib */; };
+		4F1698BA25E26D140049452D /* PaymentDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1698B425E26D140049452D /* PaymentDetailViewController.xib */; };
+		4F1698BB25E26D140049452D /* PaymentCostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1698B525E26D140049452D /* PaymentCostController.swift */; };
 		4F1ABE192595F35100256AB8 /* starFalling.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F1ABE182595F35100256AB8 /* starFalling.gif */; };
 		4F1ABE1E2595F71800256AB8 /* GreenCracker.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F1ABE1D2595F71800256AB8 /* GreenCracker.gif */; };
 		4F1E7D6C259CC70000A8A39B /* SetClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E7D6B259CC70000A8A39B /* SetClockFace.swift */; };
 		4F1E7D71259CC7C300A8A39B /* SetClocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E7D70259CC7C300A8A39B /* SetClocket.swift */; };
+		4F43E64B25E153EA0018B3E0 /* FloatyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E64525E153EA0018B3E0 /* FloatyWindow.swift */; };
+		4F43E64C25E153EA0018B3E0 /* FloatyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E64625E153EA0018B3E0 /* FloatyManager.swift */; };
+		4F43E64D25E153EA0018B3E0 /* FloatyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E64725E153EA0018B3E0 /* FloatyItem.swift */; };
+		4F43E64E25E153EA0018B3E0 /* FloatyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E64825E153EA0018B3E0 /* FloatyViewController.swift */; };
+		4F43E64F25E153EA0018B3E0 /* Floaty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E64925E153EA0018B3E0 /* Floaty.swift */; };
+		4F43E65025E153EA0018B3E0 /* FloatyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E64A25E153EA0018B3E0 /* FloatyDelegate.swift */; };
+		4F43E66525E159F30018B3E0 /* SKProduct+LocalizedPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E65625E159F30018B3E0 /* SKProduct+LocalizedPrice.swift */; };
+		4F43E66625E159F30018B3E0 /* InAppProductQueryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E65725E159F30018B3E0 /* InAppProductQueryRequest.swift */; };
+		4F43E66725E159F30018B3E0 /* InAppReceiptRefreshRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E65825E159F30018B3E0 /* InAppReceiptRefreshRequest.swift */; };
+		4F43E66825E159F30018B3E0 /* SwiftyStoreKit+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E65925E159F30018B3E0 /* SwiftyStoreKit+Types.swift */; };
+		4F43E66925E159F30018B3E0 /* InAppReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E65A25E159F30018B3E0 /* InAppReceipt.swift */; };
+		4F43E66A25E159F30018B3E0 /* SwiftyStoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E65B25E159F30018B3E0 /* SwiftyStoreKit.swift */; };
+		4F43E66B25E159F30018B3E0 /* ProductsInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E65C25E159F30018B3E0 /* ProductsInfoController.swift */; };
+		4F43E66C25E159F30018B3E0 /* CompleteTransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E65D25E159F30018B3E0 /* CompleteTransactionsController.swift */; };
+		4F43E66D25E159F30018B3E0 /* PaymentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E65E25E159F30018B3E0 /* PaymentsController.swift */; };
+		4F43E66E25E159F30018B3E0 /* OS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E65F25E159F30018B3E0 /* OS.swift */; };
+		4F43E66F25E159F30018B3E0 /* RestorePurchasesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E66025E159F30018B3E0 /* RestorePurchasesController.swift */; };
+		4F43E67025E159F30018B3E0 /* PaymentQueueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E66125E159F30018B3E0 /* PaymentQueueController.swift */; };
+		4F43E67125E159F30018B3E0 /* InAppReceiptVerificator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E66225E159F30018B3E0 /* InAppReceiptVerificator.swift */; };
+		4F43E67225E159F30018B3E0 /* SKProductDiscount+LocalizedPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E66325E159F30018B3E0 /* SKProductDiscount+LocalizedPrice.swift */; };
+		4F43E67325E159F30018B3E0 /* AppleReceiptValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E66425E159F30018B3E0 /* AppleReceiptValidator.swift */; };
+		4F43E67F25E163810018B3E0 /* BackgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F43E67E25E163810018B3E0 /* BackgroundMusic.mp3 */; };
+		4F43E69625E165130018B3E0 /* ClockBgMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F43E69525E165130018B3E0 /* ClockBgMusic.mp3 */; };
 		4F5F382B2594D02200992FE3 /* Cracker.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F5F382A2594D02200992FE3 /* Cracker.gif */; };
 		4F5F383E2594E87200992FE3 /* fireworks03.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F5F383D2594E87200992FE3 /* fireworks03.gif */; };
 		700E2E5A258A12100042EC2D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E2E59258A12100042EC2D /* UIButtonExtension.swift */; };
@@ -71,10 +102,42 @@
 		4F08829A25986B9E00E99167 /* PlayWithClockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayWithClockController.swift; sourceTree = "<group>"; };
 		4F0EC401259D9B76008AC986 /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
 		4F128EB32597115E00B5575C /* SetTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimeViewController.swift; sourceTree = "<group>"; };
+		4F1698A925E26D0B0049452D /* CustomLiceneModelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomLiceneModelController.xib; sourceTree = "<group>"; };
+		4F1698AA25E26D0B0049452D /* CustomLiceneModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLiceneModelController.swift; sourceTree = "<group>"; };
+		4F1698B025E26D140049452D /* PaymentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentDetailViewController.swift; sourceTree = "<group>"; };
+		4F1698B125E26D140049452D /* PaymentCostController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentCostController.xib; sourceTree = "<group>"; };
+		4F1698B225E26D140049452D /* SubscriptionDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionDetailsController.swift; sourceTree = "<group>"; };
+		4F1698B325E26D140049452D /* SubscriptionDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscriptionDetailsController.xib; sourceTree = "<group>"; };
+		4F1698B425E26D140049452D /* PaymentDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentDetailViewController.xib; sourceTree = "<group>"; };
+		4F1698B525E26D140049452D /* PaymentCostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentCostController.swift; sourceTree = "<group>"; };
 		4F1ABE182595F35100256AB8 /* starFalling.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = starFalling.gif; sourceTree = "<group>"; };
 		4F1ABE1D2595F71800256AB8 /* GreenCracker.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = GreenCracker.gif; sourceTree = "<group>"; };
 		4F1E7D6B259CC70000A8A39B /* SetClockFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetClockFace.swift; sourceTree = "<group>"; };
 		4F1E7D70259CC7C300A8A39B /* SetClocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetClocket.swift; sourceTree = "<group>"; };
+		4F43E64525E153EA0018B3E0 /* FloatyWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatyWindow.swift; sourceTree = "<group>"; };
+		4F43E64625E153EA0018B3E0 /* FloatyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatyManager.swift; sourceTree = "<group>"; };
+		4F43E64725E153EA0018B3E0 /* FloatyItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatyItem.swift; sourceTree = "<group>"; };
+		4F43E64825E153EA0018B3E0 /* FloatyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatyViewController.swift; sourceTree = "<group>"; };
+		4F43E64925E153EA0018B3E0 /* Floaty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Floaty.swift; sourceTree = "<group>"; };
+		4F43E64A25E153EA0018B3E0 /* FloatyDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatyDelegate.swift; sourceTree = "<group>"; };
+		4F43E65625E159F30018B3E0 /* SKProduct+LocalizedPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKProduct+LocalizedPrice.swift"; sourceTree = "<group>"; };
+		4F43E65725E159F30018B3E0 /* InAppProductQueryRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppProductQueryRequest.swift; sourceTree = "<group>"; };
+		4F43E65825E159F30018B3E0 /* InAppReceiptRefreshRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppReceiptRefreshRequest.swift; sourceTree = "<group>"; };
+		4F43E65925E159F30018B3E0 /* SwiftyStoreKit+Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftyStoreKit+Types.swift"; sourceTree = "<group>"; };
+		4F43E65A25E159F30018B3E0 /* InAppReceipt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppReceipt.swift; sourceTree = "<group>"; };
+		4F43E65B25E159F30018B3E0 /* SwiftyStoreKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyStoreKit.swift; sourceTree = "<group>"; };
+		4F43E65C25E159F30018B3E0 /* ProductsInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsInfoController.swift; sourceTree = "<group>"; };
+		4F43E65D25E159F30018B3E0 /* CompleteTransactionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteTransactionsController.swift; sourceTree = "<group>"; };
+		4F43E65E25E159F30018B3E0 /* PaymentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsController.swift; sourceTree = "<group>"; };
+		4F43E65F25E159F30018B3E0 /* OS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OS.swift; sourceTree = "<group>"; };
+		4F43E66025E159F30018B3E0 /* RestorePurchasesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestorePurchasesController.swift; sourceTree = "<group>"; };
+		4F43E66125E159F30018B3E0 /* PaymentQueueController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentQueueController.swift; sourceTree = "<group>"; };
+		4F43E66225E159F30018B3E0 /* InAppReceiptVerificator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppReceiptVerificator.swift; sourceTree = "<group>"; };
+		4F43E66325E159F30018B3E0 /* SKProductDiscount+LocalizedPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKProductDiscount+LocalizedPrice.swift"; sourceTree = "<group>"; };
+		4F43E66425E159F30018B3E0 /* AppleReceiptValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleReceiptValidator.swift; sourceTree = "<group>"; };
+		4F43E67E25E163810018B3E0 /* BackgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BackgroundMusic.mp3; sourceTree = "<group>"; };
+		4F43E68B25E164210018B3E0 /* NewRecording.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NewRecording.m4a; sourceTree = "<group>"; };
+		4F43E69525E165130018B3E0 /* ClockBgMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ClockBgMusic.mp3; sourceTree = "<group>"; };
 		4F5F382A2594D02200992FE3 /* Cracker.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Cracker.gif; sourceTree = "<group>"; };
 		4F5F383D2594E87200992FE3 /* fireworks03.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fireworks03.gif; sourceTree = "<group>"; };
 		700E2E59258A12100042EC2D /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
@@ -94,7 +157,7 @@
 		7023D4C92583523000B752D4 /* GuessTimeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTimeCardView.swift; sourceTree = "<group>"; };
 		7023D4CA2583523000B752D4 /* GuessTimeCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuessTimeCardView.xib; sourceTree = "<group>"; };
 		7023D4CD2583583800B752D4 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
-		709EAE7A2580A93600F8FEEC /* Kids-LearnWithFun-Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kids-LearnWithFun-Clock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		709EAE7A2580A93600F8FEEC /* Learn Clock - Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learn Clock - Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		709EAE7D2580A93700F8FEEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		709EAE7F2580A93700F8FEEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		709EAE812580A93700F8FEEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +205,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F1698A825E26D030049452D /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				4F1698AA25E26D0B0049452D /* CustomLiceneModelController.swift */,
+				4F1698A925E26D0B0049452D /* CustomLiceneModelController.xib */,
+				4F1698B525E26D140049452D /* PaymentCostController.swift */,
+				4F1698B125E26D140049452D /* PaymentCostController.xib */,
+				4F1698B025E26D140049452D /* PaymentDetailViewController.swift */,
+				4F1698B425E26D140049452D /* PaymentDetailViewController.xib */,
+				4F1698B225E26D140049452D /* SubscriptionDetailsController.swift */,
+				4F1698B325E26D140049452D /* SubscriptionDetailsController.xib */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		4F43E64425E153EA0018B3E0 /* Floaty */ = {
+			isa = PBXGroup;
+			children = (
+				4F43E64525E153EA0018B3E0 /* FloatyWindow.swift */,
+				4F43E64625E153EA0018B3E0 /* FloatyManager.swift */,
+				4F43E64725E153EA0018B3E0 /* FloatyItem.swift */,
+				4F43E64825E153EA0018B3E0 /* FloatyViewController.swift */,
+				4F43E64925E153EA0018B3E0 /* Floaty.swift */,
+				4F43E64A25E153EA0018B3E0 /* FloatyDelegate.swift */,
+			);
+			path = Floaty;
+			sourceTree = "<group>";
+		};
+		4F43E65525E159F30018B3E0 /* SwiftyStoreKit */ = {
+			isa = PBXGroup;
+			children = (
+				4F43E65625E159F30018B3E0 /* SKProduct+LocalizedPrice.swift */,
+				4F43E65725E159F30018B3E0 /* InAppProductQueryRequest.swift */,
+				4F43E65825E159F30018B3E0 /* InAppReceiptRefreshRequest.swift */,
+				4F43E65925E159F30018B3E0 /* SwiftyStoreKit+Types.swift */,
+				4F43E65A25E159F30018B3E0 /* InAppReceipt.swift */,
+				4F43E65B25E159F30018B3E0 /* SwiftyStoreKit.swift */,
+				4F43E65C25E159F30018B3E0 /* ProductsInfoController.swift */,
+				4F43E65D25E159F30018B3E0 /* CompleteTransactionsController.swift */,
+				4F43E65E25E159F30018B3E0 /* PaymentsController.swift */,
+				4F43E65F25E159F30018B3E0 /* OS.swift */,
+				4F43E66025E159F30018B3E0 /* RestorePurchasesController.swift */,
+				4F43E66125E159F30018B3E0 /* PaymentQueueController.swift */,
+				4F43E66225E159F30018B3E0 /* InAppReceiptVerificator.swift */,
+				4F43E66325E159F30018B3E0 /* SKProductDiscount+LocalizedPrice.swift */,
+				4F43E66425E159F30018B3E0 /* AppleReceiptValidator.swift */,
+			);
+			path = SwiftyStoreKit;
+			sourceTree = "<group>";
+		};
 		4F5F38292594D00700992FE3 /* Gif_Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +270,10 @@
 			isa = PBXGroup;
 			children = (
 				70111072258BB27C00159541 /* Wrong_word.mp3 */,
+				4F43E69525E165130018B3E0 /* ClockBgMusic.mp3 */,
+				4F43E67E25E163810018B3E0 /* BackgroundMusic.mp3 */,
 				70111074258BCA8500159541 /* Wrong_Option_Clip.mp3 */,
+				4F43E68B25E164210018B3E0 /* NewRecording.m4a */,
 				700E2E60258A8B290042EC2D /* Wrong1.mp3 */,
 				700E2E5E258A88580042EC2D /* WellDone.mp3 */,
 				700E2E5C258A86790042EC2D /* WrongSelection.mp3 */,
@@ -189,7 +305,7 @@
 		709EAE7B2580A93600F8FEEC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				709EAE7A2580A93600F8FEEC /* Kids-LearnWithFun-Clock.app */,
+				709EAE7A2580A93600F8FEEC /* Learn Clock - Time.app */,
 				709EAE902580A93C00F8FEEC /* Kids-LearnWithFun-ClockTests.xctest */,
 				709EAE9B2580A93C00F8FEEC /* Kids-LearnWithFun-ClockUITests.xctest */,
 			);
@@ -199,6 +315,7 @@
 		709EAE7C2580A93700F8FEEC /* Kids-LearnWithFun-Clock */ = {
 			isa = PBXGroup;
 			children = (
+				4F1698A825E26D030049452D /* Payment */,
 				4F5F38292594D00700992FE3 /* Gif_Images */,
 				700E2E5B258A86590042EC2D /* Sound */,
 				7023D4C825834E1100B752D4 /* CustomView */,
@@ -247,6 +364,8 @@
 		709EAEAD2580AF3300F8FEEC /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
+				4F43E65525E159F30018B3E0 /* SwiftyStoreKit */,
+				4F43E64425E153EA0018B3E0 /* Floaty */,
 				709EAEB92580DD6000F8FEEC /* GIFSwift.swift */,
 				709EAEAE2580AFE700F8FEEC /* Clocket.swift */,
 				709EAEB02580AFE800F8FEEC /* ClockFace.swift */,
@@ -278,9 +397,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		709EAE792580A93600F8FEEC /* Kids-LearnWithFun-Clock */ = {
+		709EAE792580A93600F8FEEC /* Learn Clock - Time */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 709EAEA42580A93C00F8FEEC /* Build configuration list for PBXNativeTarget "Kids-LearnWithFun-Clock" */;
+			buildConfigurationList = 709EAEA42580A93C00F8FEEC /* Build configuration list for PBXNativeTarget "Learn Clock - Time" */;
 			buildPhases = (
 				709EAE762580A93600F8FEEC /* Sources */,
 				709EAE772580A93600F8FEEC /* Frameworks */,
@@ -290,9 +409,9 @@
 			);
 			dependencies = (
 			);
-			name = "Kids-LearnWithFun-Clock";
+			name = "Learn Clock - Time";
 			productName = "Kids-LearnWithFun-Clock";
-			productReference = 709EAE7A2580A93600F8FEEC /* Kids-LearnWithFun-Clock.app */;
+			productReference = 709EAE7A2580A93600F8FEEC /* Learn Clock - Time.app */;
 			productType = "com.apple.product-type.application";
 		};
 		709EAE8F2580A93C00F8FEEC /* Kids-LearnWithFun-ClockTests */ = {
@@ -367,7 +486,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				709EAE792580A93600F8FEEC /* Kids-LearnWithFun-Clock */,
+				709EAE792580A93600F8FEEC /* Learn Clock - Time */,
 				709EAE8F2580A93C00F8FEEC /* Kids-LearnWithFun-ClockTests */,
 				709EAE9A2580A93C00F8FEEC /* Kids-LearnWithFun-ClockUITests */,
 			);
@@ -381,15 +500,21 @@
 			files = (
 				4F1ABE192595F35100256AB8 /* starFalling.gif in Resources */,
 				4F5F382B2594D02200992FE3 /* Cracker.gif in Resources */,
+				4F43E67F25E163810018B3E0 /* BackgroundMusic.mp3 in Resources */,
 				70111073258BB27D00159541 /* Wrong_word.mp3 in Resources */,
+				4F1698B925E26D140049452D /* SubscriptionDetailsController.xib in Resources */,
 				4F5F383E2594E87200992FE3 /* fireworks03.gif in Resources */,
 				709EAEB82580DBA000F8FEEC /* ClockLearn.gif in Resources */,
+				4F1698AB25E26D0B0049452D /* CustomLiceneModelController.xib in Resources */,
 				709EAE8A2580A93C00F8FEEC /* LaunchScreen.storyboard in Resources */,
 				700E2E61258A8B290042EC2D /* Wrong1.mp3 in Resources */,
+				4F1698B725E26D140049452D /* PaymentCostController.xib in Resources */,
 				709EAE872580A93C00F8FEEC /* Assets.xcassets in Resources */,
 				70111075258BCA8600159541 /* Wrong_Option_Clip.mp3 in Resources */,
 				7023D4C725834D0000B752D4 /* GuessTimeViewController.xib in Resources */,
 				701675FB2588EE52004F19BA /* ShowClockViewController.xib in Resources */,
+				4F43E69625E165130018B3E0 /* ClockBgMusic.mp3 in Resources */,
+				4F1698BA25E26D140049452D /* PaymentDetailViewController.xib in Resources */,
 				7023D4CC2583523000B752D4 /* GuessTimeCardView.xib in Resources */,
 				701675F42588C542004F19BA /* PictureCardView.xib in Resources */,
 				709EAE852580A93700F8FEEC /* Main.storyboard in Resources */,
@@ -421,26 +546,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F43E64B25E153EA0018B3E0 /* FloatyWindow.swift in Sources */,
 				4F1E7D71259CC7C300A8A39B /* SetClocket.swift in Sources */,
 				701675F52588C542004F19BA /* PictureCardView.swift in Sources */,
 				709EAE822580A93700F8FEEC /* ViewController.swift in Sources */,
+				4F43E66D25E159F30018B3E0 /* PaymentsController.swift in Sources */,
+				4F43E66C25E159F30018B3E0 /* CompleteTransactionsController.swift in Sources */,
 				701675FA2588EE52004F19BA /* ShowClockViewController.swift in Sources */,
+				4F43E66A25E159F30018B3E0 /* SwiftyStoreKit.swift in Sources */,
+				4F43E66F25E159F30018B3E0 /* RestorePurchasesController.swift in Sources */,
+				4F43E65025E153EA0018B3E0 /* FloatyDelegate.swift in Sources */,
 				709EAEB32580AFE900F8FEEC /* ClockFace.swift in Sources */,
 				709EAEB12580AFE800F8FEEC /* Clocket.swift in Sources */,
 				7023D4CB2583523000B752D4 /* GuessTimeCardView.swift in Sources */,
 				4F08829B25986B9E00E99167 /* PlayWithClockController.swift in Sources */,
+				4F43E64C25E153EA0018B3E0 /* FloatyManager.swift in Sources */,
+				4F1698BB25E26D140049452D /* PaymentCostController.swift in Sources */,
 				7023D4C625834D0000B752D4 /* GuessTimeViewController.swift in Sources */,
 				4F1E7D6C259CC70000A8A39B /* SetClockFace.swift in Sources */,
 				709EAEB22580AFE900F8FEEC /* ClockHand.swift in Sources */,
+				4F43E67125E159F30018B3E0 /* InAppReceiptVerificator.swift in Sources */,
 				709EAEBA2580DD6000F8FEEC /* GIFSwift.swift in Sources */,
+				4F43E67325E159F30018B3E0 /* AppleReceiptValidator.swift in Sources */,
 				700E2E5A258A12100042EC2D /* UIButtonExtension.swift in Sources */,
 				7023D4CE2583583800B752D4 /* AppConstants.swift in Sources */,
+				4F43E66925E159F30018B3E0 /* InAppReceipt.swift in Sources */,
+				4F43E66525E159F30018B3E0 /* SKProduct+LocalizedPrice.swift in Sources */,
+				4F43E64F25E153EA0018B3E0 /* Floaty.swift in Sources */,
+				4F43E66B25E159F30018B3E0 /* ProductsInfoController.swift in Sources */,
 				4F0EC402259D9B76008AC986 /* LearnViewController.swift in Sources */,
+				4F43E64D25E153EA0018B3E0 /* FloatyItem.swift in Sources */,
 				709EAE7E2580A93700F8FEEC /* AppDelegate.swift in Sources */,
+				4F43E66825E159F30018B3E0 /* SwiftyStoreKit+Types.swift in Sources */,
 				70F28466258119C100D68BDA /* UIViewExtension.swift in Sources */,
+				4F1698B625E26D140049452D /* PaymentDetailViewController.swift in Sources */,
 				701675F72588C611004F19BA /* PictureViewController.swift in Sources */,
 				709EAE802580A93700F8FEEC /* SceneDelegate.swift in Sources */,
+				4F43E67025E159F30018B3E0 /* PaymentQueueController.swift in Sources */,
 				4F128EB42597115E00B5575C /* SetTimeViewController.swift in Sources */,
+				4F43E66625E159F30018B3E0 /* InAppProductQueryRequest.swift in Sources */,
+				4F43E64E25E153EA0018B3E0 /* FloatyViewController.swift in Sources */,
+				4F43E66E25E159F30018B3E0 /* OS.swift in Sources */,
+				4F1698AC25E26D0B0049452D /* CustomLiceneModelController.swift in Sources */,
+				4F1698B825E26D140049452D /* SubscriptionDetailsController.swift in Sources */,
+				4F43E67225E159F30018B3E0 /* SKProductDiscount+LocalizedPrice.swift in Sources */,
+				4F43E66725E159F30018B3E0 /* InAppReceiptRefreshRequest.swift in Sources */,
 				709EAEB52580CA6C00F8FEEC /* CommanCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,12 +616,12 @@
 /* Begin PBXTargetDependency section */
 		709EAE922580A93C00F8FEEC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 709EAE792580A93600F8FEEC /* Kids-LearnWithFun-Clock */;
+			target = 709EAE792580A93600F8FEEC /* Learn Clock - Time */;
 			targetProxy = 709EAE912580A93C00F8FEEC /* PBXContainerItemProxy */;
 		};
 		709EAE9D2580A93C00F8FEEC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 709EAE792580A93600F8FEEC /* Kids-LearnWithFun-Clock */;
+			target = 709EAE792580A93600F8FEEC /* Learn Clock - Time */;
 			targetProxy = 709EAE9C2580A93C00F8FEEC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -614,15 +764,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = M9C32R6P4U;
 				INFOPLIST_FILE = "Kids-LearnWithFun-Clock/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sheetal.Kids-LearnWithFun-Clock";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiapps360.LearnClockTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "LearnClockTime Development Profile";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -632,15 +784,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = M9C32R6P4U;
 				INFOPLIST_FILE = "Kids-LearnWithFun-Clock/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sheetal.Kids-LearnWithFun-Clock";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiapps360.LearnClockTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "LearnClockTime Development Profile";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -742,7 +896,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		709EAEA42580A93C00F8FEEC /* Build configuration list for PBXNativeTarget "Kids-LearnWithFun-Clock" */ = {
+		709EAEA42580A93C00F8FEEC /* Build configuration list for PBXNativeTarget "Learn Clock - Time" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				709EAEA52580A93C00F8FEEC /* Debug */,

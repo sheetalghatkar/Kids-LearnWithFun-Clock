@@ -6,7 +6,10 @@
 //  Copyright © 2020 sheetal shinde. All rights reserved.
 //
 
+import Foundation
 import UIKit
+import SystemConfiguration
+
 
 class CommanCode {
     static let APP_BACKGROUND_COLOR = UIColor(red: (237/255), green: (74/255), blue: (66/255), alpha: 1.0) //Red Dark
@@ -26,7 +29,8 @@ class CommanCode {
     static let Correct_Option_COLOR = UIColor(red: (127/255), green: (255/255), blue: (0/255), alpha: 1.0)  //Green
     static let Correct_Option_Border_COLOR = UIColor(red: (50/255), green: (205/255), blue: (50/255), alpha: 1.0)  //Green dark
     //------------------------------------------------------------------------
-    static let Current_Card_Border_COLOR = UIColor(red: (238/255), green: (139/255), blue: (204/255), alpha: 1.0)  //Pink dark
+    static let Current_Card_Border_COLOR = UIColor.white
+        //UIColor(red: (238/255), green: (139/255), blue: (204/255), alpha: 1.0)  //Pink dark
     
 //    static let Clock_Digit_Color = UIColor(red: (239/255), green: (134/255), blue: (208/255), alpha: 1.0)  //Pink
     static let Clock_Digit_Color = UIColor(red: (180/255), green: (158/255), blue: (243/255), alpha: 1.0)  //Blue
@@ -60,8 +64,8 @@ class CommanCode {
 
     
     
-    static var SOUND_ON_IMG = UIImage(named: "Sound-On.png")
-    static var SOUND_OFF_IMG = UIImage(named: "Sound-Off.png")
+   // static var imgSoundOn = UIImage(named: "Sound-On.png")
+  //  static var imgSoundOff = UIImage(named: "Sound-Off.png")
     
     static var HOUR_HAND_IMG = UIImage(named: "HourHandShadow.png")
     static var MINUTE_HAND_IMG = UIImage(named: "MinuteHandShadow.png")
@@ -77,6 +81,49 @@ class CommanCode {
     //Learn clock theme
     static let CLOCK_ORANGE_BG_Color = UIColor(red: (255/255), green: (69/255), blue: (0/255), alpha: 1.0)
     static let CLOCK_PISTA_Color = UIColor(red: (76/255), green: (223/255), blue: (148/255), alpha: 1.0)
+    
+    static var imgCancelSubscription = UIImage(named: "PaymentDetail.png")!
+    static var imgCancelSubscription1 = UIImage(named: "PaymentDetail-1.png")!
+    static var imgSoundOn = UIImage(named: "Sound-On_home.png")!
+    static var imgSoundOff = UIImage(named: "Sound-Off_home.png")!
+    static var imageRadioCheck = UIImage(named: "radio_check.png")
+    static var imageRadioUncheck = UIImage(named: "radio_uncheck.png")
+
+
+    //------------------------------------------------------------------------
+    //Related to review and rating
+    static let app_AppStoreLink = URL(string: "https://apps.apple.com/app/id1553584897")
+
+    
+    //Colors
+    static var settingBgColor = UIColor(red: (255/255), green: (110/255), blue: (199/255), alpha: 1.0)
+    static var paymentModeBgColor = UIColor(red: (239/255), green: (133/255), blue: (205/255), alpha: 1.0)
+    static var paymentBtnTextColor = UIColor(red: (235/255), green: (28/255), blue: (136/255), alpha: 1.0)
+
+    //Related to Ads Production
+ /*   static var Banner_AdUnitId = "ca-app-pub-7546454767986772/2971046998"
+    static var Interstitial_AdUnitId = "ca-app-pub-7546454767986772/7578066918"
+    static var Ad_App_ID = "ca-app-pub-7546454767986772~6951380954"*/
+    
+    
+    
+    //Related to Ads Sandbox/Test
+     static var Banner_AdUnitId = "ca-app-pub-3940256099942544/2934735716"
+     static var Interstitial_AdUnitId = "ca-app-pub-3940256099942544/4411468910"
+     static var Ad_App_ID = "ca-app-pub-3940256099942544~1458002511"
+    
+    //Related to InAppPurchase
+    static var environment = AppleReceiptValidator.VerifyReceiptURLType.sandbox
+    static var secretKey = "b080c7b91bbe48c4aed2b29eb89c9f7c"
+    
+    static var productId_Year_Auto_Recurring = "com.mobiapps360.LearnHouseObjects.YearlyAutoRecurring"
+    static var productId_Year_Non_Recurring = "com.mobiapps360.LearnHouseObjects.YearlyNonRecurring"
+    static var productId_Month_Auto_Recurring = "com.mobiapps360.LearnHouseObjects.MonthlyAutoRecurring"
+    static var productId_Month_Non_Recurring = "com.mobiapps360.LearnHouseObjects.MonthlyNonRecurring"
+
+    
+    static var timerForAds = 15.0
+
 
 }
 extension UIDevice {
@@ -91,5 +138,40 @@ extension UIDevice {
             // Fallback on earlier versions
             return false
         }
+    }
+}
+public class Reachability {
+
+    class func isConnectedToNetwork() -> Bool {
+
+        var zeroAddress = sockaddr_in(sin_len: 0, sin_family: 0, sin_port: 0, sin_addr: in_addr(s_addr: 0), sin_zero: (0, 0, 0, 0, 0, 0, 0, 0))
+        zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
+        zeroAddress.sin_family = sa_family_t(AF_INET)
+
+        let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
+            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
+                SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
+            }
+        }
+
+        var flags: SCNetworkReachabilityFlags = SCNetworkReachabilityFlags(rawValue: 0)
+        if SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) == false {
+            return false
+        }
+
+        /* Only Working for WIFI
+        let isReachable = flags == .reachable
+        let needsConnection = flags == .connectionRequired
+
+        return isReachable && !needsConnection
+        */
+
+        // Working for Cellular and WIFI
+        let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
+        let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
+        let ret = (isReachable && !needsConnection)
+
+        return ret
+
     }
 }

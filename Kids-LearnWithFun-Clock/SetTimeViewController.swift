@@ -10,6 +10,8 @@ import UIKit
 
 class SetTimeViewController: UIViewController {
     @IBOutlet weak var viewClocket : Clocket!
+    
+    @IBOutlet weak var imgView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,10 @@ class SetTimeViewController: UIViewController {
 //        viewClocket.clockFace.tintColor = UIColor.green
         
   //      \\\ = CommanCode.ORANGE_Color
+        
+        let loaderGif1 = UIImage.gifImageWithName("Lady_Teaching")
+        imgView.image = loaderGif1
+
     }
     
     @IBAction func funcBackToHome(_ sender: UIButton) {

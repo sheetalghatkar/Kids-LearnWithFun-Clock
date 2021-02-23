@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PictureCardView" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PictureCardView" customModule="Learn_Clock___Time" customModuleProvider="target">
             <connections>
                 <outlet property="bgPictureCardView" destination="OeI-rd-qy3" id="x5l-H0-9aZ"/>
                 <outlet property="btnOption1" destination="oHl-6v-PyU" id="33T-BU-UXx"/>
@@ -26,10 +26,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YellowBtnBg" translatesAutoresizingMaskIntoConstraints="NO" id="OeI-rd-qy3">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pink_Bg" translatesAutoresizingMaskIntoConstraints="NO" id="OeI-rd-qy3">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTc-Pu-dhR" customClass="SetClocket" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTc-Pu-dhR" customClass="SetClocket" customModule="Learn_Clock___Time" customModuleProvider="target">
                     <rect key="frame" x="93" y="69" width="228" height="227.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
@@ -39,20 +39,20 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="laO-Vy-yMV" userLabel="optionView">
                     <rect key="frame" x="10" y="692" width="394" height="160"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHl-6v-PyU" customClass="ButtonCardOptionExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHl-6v-PyU" customClass="ButtonCardOptionExt" customModule="Learn_Clock___Time" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="14.5" width="191" height="55"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="55" id="4jq-ei-2td"/>
                             </constraints>
-                            <state key="normal" backgroundImage="yellowBubbleBg"/>
+                            <state key="normal" backgroundImage="white_bubble"/>
                             <connections>
                                 <action selector="funcBtnOption1:" destination="-1" eventType="touchUpInside" id="csj-18-NKZ"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2f-4X-6fi" customClass="ButtonCardOptionExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2f-4X-6fi" customClass="ButtonCardOptionExt" customModule="Learn_Clock___Time" customModuleProvider="target">
                             <rect key="frame" x="203" y="14.5" width="191" height="55"/>
-                            <state key="normal" title="Button" backgroundImage="yellowBubbleBg"/>
+                            <state key="normal" title="Button" backgroundImage="white_bubble"/>
                             <connections>
                                 <action selector="funcBtnOption2:" destination="-1" eventType="touchUpInside" id="eVj-Dl-I80"/>
                             </connections>
@@ -71,16 +71,16 @@
                                 <constraint firstAttribute="height" constant="1" id="G9j-1T-1Kr"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sj-Ew-gBu" customClass="ButtonCardOptionExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sj-Ew-gBu" customClass="ButtonCardOptionExt" customModule="Learn_Clock___Time" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="90.5" width="191" height="55"/>
-                            <state key="normal" title="Button" backgroundImage="yellowBubbleBg"/>
+                            <state key="normal" title="Button" backgroundImage="white_bubble"/>
                             <connections>
                                 <action selector="funcBtnOption3:" destination="-1" eventType="touchUpInside" id="PJB-nd-rjf"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8XR-pZ-gsV" customClass="ButtonCardOptionExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8XR-pZ-gsV" customClass="ButtonCardOptionExt" customModule="Learn_Clock___Time" customModuleProvider="target">
                             <rect key="frame" x="203" y="90.5" width="191" height="55"/>
-                            <state key="normal" title="Button" backgroundImage="yellowBubbleBg"/>
+                            <state key="normal" title="Button" backgroundImage="white_bubble"/>
                             <connections>
                                 <action selector="funcBtnOption4:" destination="-1" eventType="touchUpInside" id="vHG-t3-WJN"/>
                             </connections>
@@ -131,8 +131,8 @@
         </view>
     </objects>
     <resources>
-        <image name="YellowBtnBg" width="161" height="56"/>
-        <image name="yellowBubbleBg" width="107" height="60"/>
+        <image name="Pink_Bg" width="118" height="84"/>
+        <image name="white_bubble" width="1476" height="372"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

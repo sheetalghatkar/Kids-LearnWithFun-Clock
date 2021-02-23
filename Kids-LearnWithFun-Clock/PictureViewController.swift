@@ -60,6 +60,9 @@ class PictureViewController: UIViewController, PictureCardViewProtocol {
     @IBOutlet weak var picViewcontainer: UIView!
     @IBOutlet weak var btnSound: UIButton!
     var player = AVAudioPlayer()
+    @IBOutlet weak var btnNoAds: UIButton!
+    var paymentDetailVC : PaymentDetailViewController?
+    let defaults = UserDefaults.standard
 
 
     override func viewDidLoad() {
@@ -82,11 +85,30 @@ class PictureViewController: UIViewController, PictureCardViewProtocol {
             self.layoutCards()
         //})
         if appDelegate.IS_Sound_ON {
-            btnSound.setBackgroundImage(CommanCode.SOUND_ON_IMG, for: .normal)
+            btnSound.setBackgroundImage(CommanCode.imgSoundOn, for: .normal)
         } else {
-            btnSound.setBackgroundImage(CommanCode.SOUND_OFF_IMG, for: .normal)
+            btnSound.setBackgroundImage(CommanCode.imgSoundOff, for: .normal)
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if defaults.bool(forKey:"IsPrimeUser") {
+            if let _ = btnNoAds {
+                self.btnNoAds.isHidden = true
+            }
+        //                if bannerView != nil {
+        //                    bannerView.removeFromSuperview()
+        //                }
+
+        } else {
+            if let _ = btnNoAds {
+                self.btnNoAds.isHidden = false
+            }
+        }
+
+    }
+
+
     
     func getYMarginForCard() -> CGFloat {
         return 0.0
@@ -467,10 +489,10 @@ class PictureViewController: UIViewController, PictureCardViewProtocol {
     
     @IBAction func funcSound_ON_OFF(_ sender: Any) {
         if appDelegate.IS_Sound_ON {
-            btnSound.setBackgroundImage(CommanCode.SOUND_OFF_IMG, for: .normal)
+            btnSound.setBackgroundImage(CommanCode.imgSoundOff, for: .normal)
             player.stop()
         } else {
-            btnSound.setBackgroundImage(CommanCode.SOUND_ON_IMG, for: .normal)
+            btnSound.setBackgroundImage(CommanCode.imgSoundOn, for: .normal)
         }
         appDelegate.IS_Sound_ON = !appDelegate.IS_Sound_ON
     }
@@ -487,6 +509,35 @@ class PictureViewController: UIViewController, PictureCardViewProtocol {
             self.showNextCard()
             self.hideFrontCard()
         })
+    }
+
+}
+extension PictureViewController : PayementForParentProtocol {
+    @IBAction func funcNoAds(_ sender: Any) {
+        showPaymentScreen()
+    }
+    
+    //Delegate method implementation
+    func showPaymentCostScreen() {
+        paymentDetailVC?.view.removeFromSuperview()
+        let PaymentCostVC = PaymentCostController(nibName: "PaymentCostController", bundle: nil)
+        self.navigationController?.pushViewController(PaymentCostVC, animated: true)
+    }
+    func showSubscriptionDetailScreen() {
+        
+    }
+    func showPaymentScreen(){
+        paymentDetailVC = PaymentDetailViewController(nibName: "PaymentDetailViewController", bundle: nil)
+        paymentDetailVC?.view.frame = self.view.bounds
+        paymentDetailVC?.delegatePayementForParent = self
+        self.view.addSubview(paymentDetailVC?.view ?? UIView())
+    }
+    
+    func appstoreRateAndReview() {
+    }
+    
+    func shareApp() {
+        
     }
 
 }

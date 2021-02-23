@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Learn_Clock___Time" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,6 +21,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcP-4t-3YZ">
+                                <rect key="frame" x="288" y="51" width="45" height="35"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="PaymentDetail"/>
+                                <connections>
+                                    <action selector="funcCancelSubscription:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dxl-6H-38o"/>
+                                </connections>
+                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y3J-AZ-MaW">
                                 <rect key="frame" x="10" y="44" width="359.5" height="359.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -31,7 +39,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhg-U5-g1u" userLabel="tileContainerView">
                                 <rect key="frame" x="25" y="383.5" width="364" height="458.5"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Foj-tp-Iqp" userLabel="LearnView" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Foj-tp-Iqp" userLabel="LearnView" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
                                         <rect key="frame" x="57" y="98.5" width="250" height="50"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4cp-bD-NI7">
@@ -42,7 +50,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kit-mc-1WV" customClass="ButtonHomeMenuExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kit-mc-1WV" customClass="ButtonHomeMenuExt" customModule="Learn_Clock___Time" customModuleProvider="target">
                                                 <rect key="frame" x="110" y="10" width="30" height="30"/>
                                                 <connections>
                                                     <action selector="funcLearnTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4e8-u0-YvE"/>
@@ -68,7 +76,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNv-Hf-JLZ" userLabel="GuessView" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNv-Hf-JLZ" userLabel="GuessView" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
                                         <rect key="frame" x="57" y="168.5" width="250" height="50"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OHO-zf-SiX" userLabel="llll">
@@ -80,7 +88,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhy-O6-GYA" customClass="ButtonHomeMenuExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhy-O6-GYA" customClass="ButtonHomeMenuExt" customModule="Learn_Clock___Time" customModuleProvider="target">
                                                 <rect key="frame" x="110" y="10" width="30" height="30"/>
                                                 <connections>
                                                     <action selector="funcGuessTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pad-vP-Z3K"/>
@@ -112,7 +120,7 @@
                                             <constraint firstAttribute="width" constant="100" id="l8J-uj-z2Q"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BDg-YG-NIM" userLabel="setView" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BDg-YG-NIM" userLabel="setView" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
                                         <rect key="frame" x="57" y="239.5" width="250" height="50"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qOy-vm-QIb">
@@ -124,7 +132,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ir2-Pc-cVk" customClass="ButtonHomeMenuExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ir2-Pc-cVk" customClass="ButtonHomeMenuExt" customModule="Learn_Clock___Time" customModuleProvider="target">
                                                 <rect key="frame" x="110" y="10" width="30" height="30"/>
                                                 <connections>
                                                     <action selector="funcSetTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ePp-4V-z1a"/>
@@ -148,7 +156,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isShowShadow" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D95-74-XdG" userLabel="playWithClockView" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D95-74-XdG" userLabel="playWithClockView" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
                                         <rect key="frame" x="57" y="309.5" width="250" height="50"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WI2-Ao-8aO">
@@ -161,7 +169,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoX-3g-FuO" customClass="ButtonHomeMenuExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoX-3g-FuO" customClass="ButtonHomeMenuExt" customModule="Learn_Clock___Time" customModuleProvider="target">
                                                 <rect key="frame" x="110" y="10" width="30" height="30"/>
                                                 <connections>
                                                     <action selector="funcPlayWithClock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XaF-gB-A6x"/>
@@ -185,7 +193,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isShowShadow" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9az-o4-B0b" userLabel="testView" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9az-o4-B0b" userLabel="testView" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
                                         <rect key="frame" x="57" y="379.5" width="250" height="50"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b9E-xy-taa">
@@ -197,7 +205,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7YO-fa-yUr" customClass="ButtonHomeMenuExt" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7YO-fa-yUr" customClass="ButtonHomeMenuExt" customModule="Learn_Clock___Time" customModuleProvider="target">
                                                 <rect key="frame" x="110" y="10" width="30" height="30"/>
                                                 <connections>
                                                     <action selector="funcTestTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Pu-76-UK3"/>
@@ -219,7 +227,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isShowShadow" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="33M-Mh-cHk" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="33M-Mh-cHk" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
                                         <rect key="frame" x="292" y="369.5" width="40" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxi-hj-Oy5">
@@ -265,36 +273,111 @@
                                     <constraint firstItem="Foj-tp-Iqp" firstAttribute="height" secondItem="cNv-Hf-JLZ" secondAttribute="height" id="rjO-m1-nyI"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sa2-qI-ku6">
+                                <rect key="frame" x="358" y="50" width="41" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Sa2-qI-ku6" secondAttribute="height" multiplier="1:1" id="G9Q-Mk-Iho"/>
+                                    <constraint firstAttribute="width" constant="41" id="jvf-rD-pRH"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Sound-On_home"/>
+                                <connections>
+                                    <action selector="funcSound_ON_OFF:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tNe-i2-xIB"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58m-xF-IBZ">
+                                <rect key="frame" x="290" y="49" width="43" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="58m-xF-IBZ" secondAttribute="height" multiplier="1:1" id="2Kz-pd-gSJ"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="No-Ads"/>
+                                <connections>
+                                    <action selector="funcNoAds:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Oi-zt-vFu"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ckv-WU-lD0" userLabel="transperentView">
+                                <rect key="frame" x="0.0" y="0.0" width="230" height="630"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="XEg-ub-Jxn"/>
+                                    <constraint firstAttribute="height" constant="630" id="hRT-5i-Riv"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BDC-7g-OOn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJW-Yx-i7e" customClass="Floaty" customModule="Learn_Clock___Time" customModuleProvider="target">
+                                <rect key="frame" x="15" y="49.5" width="42" height="42"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="21y-gn-Ggk"/>
+                                    <constraint firstAttribute="width" secondItem="qJW-Yx-i7e" secondAttribute="height" id="Djp-KK-T3Z"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcx-vx-3IJ">
+                                <rect key="frame" x="15" y="49.5" width="42" height="42"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pcx-vx-3IJ" secondAttribute="height" id="3pv-Gv-LUS"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Setting"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="HcP-4t-3YZ" firstAttribute="width" secondItem="HcP-4t-3YZ" secondAttribute="height" constant="10" id="5HM-uV-mKz"/>
+                            <constraint firstItem="Ckv-WU-lD0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6KF-Mr-Stn"/>
                             <constraint firstItem="y3J-AZ-MaW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7Ce-DQ-YFp"/>
+                            <constraint firstItem="58m-xF-IBZ" firstAttribute="width" secondItem="Sa2-qI-ku6" secondAttribute="width" constant="2" id="9Db-3e-MbS"/>
+                            <constraint firstAttribute="trailing" secondItem="Sa2-qI-ku6" secondAttribute="trailing" constant="15" id="CRS-8T-aSI"/>
                             <constraint firstItem="yhg-U5-g1u" firstAttribute="top" secondItem="y3J-AZ-MaW" secondAttribute="bottom" constant="-20" id="CfM-y2-yEb"/>
+                            <constraint firstItem="pcx-vx-3IJ" firstAttribute="centerY" secondItem="Sa2-qI-ku6" secondAttribute="centerY" id="Dgf-cM-gEn"/>
+                            <constraint firstItem="qJW-Yx-i7e" firstAttribute="centerX" secondItem="pcx-vx-3IJ" secondAttribute="centerX" id="Kqs-IG-0ov"/>
+                            <constraint firstItem="Ckv-WU-lD0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Nol-Xi-5Bd"/>
+                            <constraint firstItem="Sa2-qI-ku6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="50" id="Ntc-Qo-26S"/>
                             <constraint firstItem="LEz-Sj-Ag5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QPk-a8-rxI"/>
+                            <constraint firstItem="pcx-vx-3IJ" firstAttribute="width" secondItem="pcx-vx-3IJ" secondAttribute="height" id="Qgf-Vh-ckZ"/>
                             <constraint firstItem="LEz-Sj-Ag5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Rmr-T7-HUx"/>
+                            <constraint firstItem="HcP-4t-3YZ" firstAttribute="trailing" secondItem="58m-xF-IBZ" secondAttribute="trailing" id="TUl-Dq-cam"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yhg-U5-g1u" secondAttribute="bottom" constant="20" id="Tv3-VZ-PR1"/>
+                            <constraint firstItem="pcx-vx-3IJ" firstAttribute="width" secondItem="Sa2-qI-ku6" secondAttribute="width" constant="1" id="YQE-aL-xWZ"/>
+                            <constraint firstItem="58m-xF-IBZ" firstAttribute="centerY" secondItem="Sa2-qI-ku6" secondAttribute="centerY" id="bw8-ln-B62"/>
+                            <constraint firstItem="pcx-vx-3IJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="cJk-Gn-c31"/>
+                            <constraint firstItem="Sa2-qI-ku6" firstAttribute="leading" secondItem="58m-xF-IBZ" secondAttribute="trailing" constant="25" id="ftb-qe-R9y"/>
                             <constraint firstItem="yhg-U5-g1u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="g7B-fZ-fU4"/>
+                            <constraint firstItem="qJW-Yx-i7e" firstAttribute="centerY" secondItem="pcx-vx-3IJ" secondAttribute="centerY" id="j3q-os-rqd"/>
                             <constraint firstItem="y3J-AZ-MaW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="j5r-Iq-z8b"/>
                             <constraint firstItem="LEz-Sj-Ag5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kFT-de-xpd"/>
                             <constraint firstAttribute="bottom" secondItem="LEz-Sj-Ag5" secondAttribute="bottom" id="ot7-qx-Oj5"/>
                             <constraint firstItem="y3J-AZ-MaW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" constant="1" id="po7-fM-GWG"/>
+                            <constraint firstItem="HcP-4t-3YZ" firstAttribute="centerY" secondItem="Sa2-qI-ku6" secondAttribute="centerY" constant="-2" id="qvG-bp-CrS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yhg-U5-g1u" secondAttribute="trailing" constant="25" id="rcI-VW-OZf"/>
+                            <constraint firstItem="HcP-4t-3YZ" firstAttribute="width" secondItem="Sa2-qI-ku6" secondAttribute="width" constant="4" id="sCc-30-2NL"/>
+                            <constraint firstItem="58m-xF-IBZ" firstAttribute="width" secondItem="58m-xF-IBZ" secondAttribute="height" multiplier="1:1" id="zvF-fq-flN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LGr-t3-phw"/>
                     <connections>
+                        <outlet property="btnCancelSubscription" destination="HcP-4t-3YZ" id="q9Y-UN-Fqg"/>
                         <outlet property="btnGuessClock" destination="Rhy-O6-GYA" id="oXA-6l-ttK"/>
                         <outlet property="btnLearnClock" destination="Kit-mc-1WV" id="Bad-Az-EoJ"/>
+                        <outlet property="btnNoAds" destination="58m-xF-IBZ" id="fv4-yE-bM4"/>
                         <outlet property="btnPlayWithClock" destination="aoX-3g-FuO" id="1f5-6E-ftd"/>
                         <outlet property="btnSetClock" destination="ir2-Pc-cVk" id="qQq-SW-ket"/>
+                        <outlet property="btnSetting" destination="pcx-vx-3IJ" id="p3F-xt-9sb"/>
+                        <outlet property="btnSound" destination="Sa2-qI-ku6" id="PyF-8w-Cq8"/>
                         <outlet property="btnTestClock" destination="7YO-fa-yUr" id="61o-h9-P4f"/>
+                        <outlet property="floaty" destination="qJW-Yx-i7e" id="Q7N-nC-vzx"/>
                         <outlet property="imgViewGif" destination="y3J-AZ-MaW" id="Wul-by-wbe"/>
                         <outlet property="viewGuessClock" destination="cNv-Hf-JLZ" id="A0L-hF-W5F"/>
                         <outlet property="viewLearnClock" destination="Foj-tp-Iqp" id="HvP-fX-hDl"/>
+                        <outlet property="viewParentSetting" destination="BDC-7g-OOn" id="kSA-L9-P1R"/>
                         <outlet property="viewPlayWithClock" destination="D95-74-XdG" id="Vz9-R3-2ZA"/>
                         <outlet property="viewSetClock" destination="BDg-YG-NIM" id="ygi-Fr-tie"/>
                         <outlet property="viewTestClock" destination="9az-o4-B0b" id="b8j-jH-6XQ"/>
+                        <outlet property="viewtransperent" destination="Ckv-WU-lD0" id="064-Jc-ehb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -322,7 +405,7 @@
         <!--Picture View Controller-->
         <scene sceneID="vWT-Zs-SqO">
             <objects>
-                <viewController storyboardIdentifier="PictureViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g7z-YB-fXP" customClass="PictureViewController" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PictureViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g7z-YB-fXP" customClass="PictureViewController" customModule="Learn_Clock___Time" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7eQ-Sy-AVf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -331,74 +414,72 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgCropScreen" translatesAutoresizingMaskIntoConstraints="NO" id="2G3-K6-JdQ">
-                                <rect key="frame" x="249" y="-41" width="250" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="2G3-K6-JdQ" secondAttribute="height" multiplier="1:1" id="Tyf-Fi-WIj"/>
-                                    <constraint firstAttribute="height" constant="250" id="hsr-YL-xJR"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ujg-Ek-may">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ujg-Ek-may">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="745"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ujg-Ek-may" secondAttribute="height" multiplier="1:1.8" id="5MN-FD-HcK"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8L-fe-b12">
-                                <rect key="frame" x="15" y="59" width="50" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQT-XD-quS">
+                                <rect key="frame" x="358" y="50" width="41" height="41"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="0Lq-P4-nhR"/>
-                                    <constraint firstAttribute="height" constant="50" id="Whg-PU-hpD"/>
+                                    <constraint firstAttribute="width" secondItem="wQT-XD-quS" secondAttribute="height" multiplier="1:1" id="8Kw-8W-86l"/>
+                                    <constraint firstAttribute="width" constant="41" id="vqc-23-yoq"/>
                                 </constraints>
-                                <state key="normal" image="HomeIcon"/>
+                                <state key="normal" backgroundImage="Sound-On_home"/>
                                 <connections>
-                                    <action selector="funcBackToHome:" destination="g7z-YB-fXP" eventType="touchUpInside" id="CgG-iq-vS8"/>
+                                    <action selector="funcSound_ON_OFF:" destination="g7z-YB-fXP" eventType="touchUpInside" id="dUT-97-509"/>
+                                    <action selector="funcSound_ON_OFF:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ht4-45-vsU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBr-zE-kzi">
-                                <rect key="frame" x="349" y="59" width="50" height="50"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Zk-87-KUN">
+                                <rect key="frame" x="290" y="49" width="43" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3Zk-87-KUN" secondAttribute="height" multiplier="1:1" id="Put-gO-z1L"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="No-Ads"/>
+                                <connections>
+                                    <action selector="funcNoAds:" destination="g7z-YB-fXP" eventType="touchUpInside" id="O4w-RQ-gQ2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9R4-Zj-Vo9" userLabel="homeButton">
+                                <rect key="frame" x="-5" y="38" width="65" height="65"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="OVJ-n1-Ryw"/>
-                                    <constraint firstAttribute="height" constant="50" id="b8e-hN-1pf"/>
+                                    <constraint firstAttribute="width" secondItem="9R4-Zj-Vo9" secondAttribute="height" multiplier="1:1" id="i3S-mG-DdX"/>
+                                    <constraint firstAttribute="width" constant="65" id="vUi-dy-VzT"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                                <state key="normal" backgroundImage="setTimeHomeIcon"/>
                                 <connections>
-                                    <action selector="funcSound_ON_OFF:" destination="g7z-YB-fXP" eventType="touchUpInside" id="WDa-if-iqC"/>
+                                    <action selector="funcBackToHome:" destination="g7z-YB-fXP" eventType="touchUpInside" id="QVq-PM-BoG"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QLr-4l-5Fb"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="wQT-XD-quS" firstAttribute="top" secondItem="7eQ-Sy-AVf" secondAttribute="top" constant="50" id="6nx-Eq-bSQ"/>
                             <constraint firstItem="ujg-Ek-may" firstAttribute="width" secondItem="7eQ-Sy-AVf" secondAttribute="width" multiplier="1:1" id="BH9-uP-q4k"/>
-                            <constraint firstItem="QLr-4l-5Fb" firstAttribute="trailing" secondItem="iBr-zE-kzi" secondAttribute="trailing" constant="15" id="IJw-Ze-HPM"/>
+                            <constraint firstItem="wQT-XD-quS" firstAttribute="leading" secondItem="3Zk-87-KUN" secondAttribute="trailing" constant="25" id="F0i-mw-JV5"/>
+                            <constraint firstItem="ujg-Ek-may" firstAttribute="top" secondItem="7eQ-Sy-AVf" secondAttribute="top" id="GQ7-zl-0DK"/>
+                            <constraint firstItem="3Zk-87-KUN" firstAttribute="width" secondItem="wQT-XD-quS" secondAttribute="width" constant="2" id="GU0-HI-NHT"/>
+                            <constraint firstItem="9R4-Zj-Vo9" firstAttribute="centerY" secondItem="wQT-XD-quS" secondAttribute="centerY" id="Hyn-Gs-JwV"/>
                             <constraint firstItem="alT-WC-Iu3" firstAttribute="leading" secondItem="QLr-4l-5Fb" secondAttribute="leading" id="NCh-r9-2LY"/>
-                            <constraint firstItem="iBr-zE-kzi" firstAttribute="centerY" secondItem="M8L-fe-b12" secondAttribute="centerY" id="TlX-Yv-lrP"/>
-                            <constraint firstItem="M8L-fe-b12" firstAttribute="top" secondItem="QLr-4l-5Fb" secondAttribute="top" constant="15" id="VQj-g3-jpW"/>
                             <constraint firstItem="ujg-Ek-may" firstAttribute="centerX" secondItem="7eQ-Sy-AVf" secondAttribute="centerX" id="XZx-yY-EkP"/>
-                            <constraint firstItem="2G3-K6-JdQ" firstAttribute="centerY" secondItem="iBr-zE-kzi" secondAttribute="centerY" id="a69-Do-cqx"/>
                             <constraint firstItem="QLr-4l-5Fb" firstAttribute="trailing" secondItem="alT-WC-Iu3" secondAttribute="trailing" id="aS2-PV-2xx"/>
-                            <constraint firstItem="M8L-fe-b12" firstAttribute="leading" secondItem="QLr-4l-5Fb" secondAttribute="leading" constant="15" id="dL1-cT-2eE"/>
                             <constraint firstItem="alT-WC-Iu3" firstAttribute="top" secondItem="7eQ-Sy-AVf" secondAttribute="top" id="hBB-dT-KKq"/>
-                            <constraint firstItem="2G3-K6-JdQ" firstAttribute="centerX" secondItem="iBr-zE-kzi" secondAttribute="centerX" id="j1g-5U-sP6"/>
+                            <constraint firstItem="9R4-Zj-Vo9" firstAttribute="leading" secondItem="7eQ-Sy-AVf" secondAttribute="leading" constant="-5" id="iWj-ct-Jte"/>
+                            <constraint firstItem="3Zk-87-KUN" firstAttribute="centerY" secondItem="wQT-XD-quS" secondAttribute="centerY" id="skc-hY-biV"/>
                             <constraint firstAttribute="bottom" secondItem="alT-WC-Iu3" secondAttribute="bottom" id="vyW-wG-i9q"/>
+                            <constraint firstAttribute="trailing" secondItem="wQT-XD-quS" secondAttribute="trailing" constant="15" id="z8K-ez-qZn"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="bgScreen" destination="alT-WC-Iu3" id="QiP-Dh-ogP"/>
-                        <outlet property="btnSound" destination="iBr-zE-kzi" id="yMw-9Q-JPJ"/>
+                        <outlet property="btnNoAds" destination="3Zk-87-KUN" id="6Q0-Rg-MQF"/>
+                        <outlet property="btnSound" destination="wQT-XD-quS" id="8QY-1Y-rxj"/>
                         <outlet property="picViewcontainer" destination="ujg-Ek-may" id="an9-Go-Krt"/>
                     </connections>
                 </viewController>
@@ -409,7 +490,7 @@
         <!--Set Time View Controller-->
         <scene sceneID="A2v-Ik-hMc">
             <objects>
-                <viewController storyboardIdentifier="SetTimeViewController" id="irR-tW-XvX" customClass="SetTimeViewController" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetTimeViewController" id="irR-tW-XvX" customClass="SetTimeViewController" customModule="Learn_Clock___Time" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LYF-zq-5bK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -418,7 +499,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dt0-4r-aaf" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dt0-4r-aaf" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
                                 <rect key="frame" x="31" y="139" width="352" height="352"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -437,7 +518,7 @@
                                     <action selector="funcBackToHome:" destination="irR-tW-XvX" eventType="touchUpInside" id="cRA-TH-cEF"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9y6-ha-cev" customClass="Clocket" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9y6-ha-cev" customClass="Clocket" customModule="Learn_Clock___Time" customModuleProvider="target">
                                 <rect key="frame" x="31" y="139" width="352" height="352"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -452,6 +533,9 @@
                                     <constraint firstAttribute="height" constant="45" id="sfF-bg-LMz"/>
                                 </constraints>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0HD-Ro-UiX">
+                                <rect key="frame" x="0.0" y="491" width="414" height="405"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xO5-XE-fkb"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -465,15 +549,20 @@
                             <constraint firstAttribute="bottom" secondItem="TjK-sd-jeF" secondAttribute="bottom" id="Cnz-ZM-54I"/>
                             <constraint firstItem="Dt0-4r-aaf" firstAttribute="centerX" secondItem="9y6-ha-cev" secondAttribute="centerX" id="EId-Dl-gCY"/>
                             <constraint firstItem="9y6-ha-cev" firstAttribute="centerX" secondItem="LYF-zq-5bK" secondAttribute="centerX" id="NYg-cU-TS7"/>
+                            <constraint firstAttribute="bottom" secondItem="0HD-Ro-UiX" secondAttribute="bottom" id="NdQ-UC-tGV"/>
+                            <constraint firstItem="0HD-Ro-UiX" firstAttribute="leading" secondItem="LYF-zq-5bK" secondAttribute="leading" id="T4I-sg-fpN"/>
                             <constraint firstItem="9YI-Gi-lMD" firstAttribute="top" secondItem="xO5-XE-fkb" secondAttribute="top" constant="5" id="Thv-Uv-5pL"/>
                             <constraint firstItem="Dt0-4r-aaf" firstAttribute="height" secondItem="9y6-ha-cev" secondAttribute="height" id="Uwd-b4-ytY"/>
                             <constraint firstItem="9y6-ha-cev" firstAttribute="width" secondItem="LYF-zq-5bK" secondAttribute="width" multiplier="0.85" id="VVD-PU-GfA"/>
                             <constraint firstItem="Dt0-4r-aaf" firstAttribute="centerY" secondItem="9y6-ha-cev" secondAttribute="centerY" id="Zlx-2W-b0w"/>
                             <constraint firstItem="wcy-LM-qp5" firstAttribute="centerX" secondItem="Dt0-4r-aaf" secondAttribute="centerX" id="ddr-Oy-tkn"/>
+                            <constraint firstAttribute="trailing" secondItem="0HD-Ro-UiX" secondAttribute="trailing" id="qIz-OB-U7x"/>
+                            <constraint firstItem="0HD-Ro-UiX" firstAttribute="top" secondItem="9y6-ha-cev" secondAttribute="bottom" id="zWg-If-zJN"/>
                             <constraint firstItem="TjK-sd-jeF" firstAttribute="top" secondItem="LYF-zq-5bK" secondAttribute="top" id="zzL-gq-hxl"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imgView" destination="0HD-Ro-UiX" id="11e-xL-a24"/>
                         <outlet property="viewClocket" destination="9y6-ha-cev" id="e1i-Wc-hDf"/>
                     </connections>
                 </viewController>
@@ -484,7 +573,7 @@
         <!--Play With Clock Controller-->
         <scene sceneID="rge-rl-tLt">
             <objects>
-                <viewController storyboardIdentifier="PlayWithClockController" id="mfM-ef-9u9" customClass="PlayWithClockController" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayWithClockController" id="mfM-ef-9u9" customClass="PlayWithClockController" customModule="Learn_Clock___Time" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LId-zX-22f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -499,7 +588,7 @@
         <!--Learn View Controller-->
         <scene sceneID="6ec-zw-zEg">
             <objects>
-                <viewController storyboardIdentifier="LearnViewController" id="lJi-Gk-gJM" customClass="LearnViewController" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LearnViewController" id="lJi-Gk-gJM" customClass="LearnViewController" customModule="Learn_Clock___Time" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yab-A6-7dw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -508,7 +597,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Imv-dG-PVY" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Imv-dG-PVY" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
                                 <rect key="frame" x="31" y="139" width="352" height="352"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -527,7 +616,7 @@
                                     <action selector="funcBackToHome:" destination="lJi-Gk-gJM" eventType="touchUpInside" id="fep-UC-sHJ"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4XK-Gw-xsw" customClass="Clocket" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4XK-Gw-xsw" customClass="Clocket" customModule="Learn_Clock___Time" customModuleProvider="target">
                                 <rect key="frame" x="31" y="139" width="352" height="352"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -576,9 +665,11 @@
     <resources>
         <image name="CenterClockImg1" width="201" height="196"/>
         <image name="HomeBgImage" width="640" height="960"/>
-        <image name="HomeIcon" width="188" height="188"/>
-        <image name="Lock" width="75" height="75"/>
-        <image name="bgCropScreen" width="100" height="110"/>
+        <image name="Lock" width="150" height="150"/>
+        <image name="No-Ads" width="613" height="613"/>
+        <image name="PaymentDetail" width="564" height="442"/>
+        <image name="Setting" width="2295" height="2295"/>
+        <image name="Sound-On_home" width="113" height="113"/>
         <image name="setTimeHomeIcon" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

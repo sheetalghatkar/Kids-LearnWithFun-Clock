@@ -61,7 +61,7 @@ protocol PictureCardViewProtocol : class {
             addSubview(pictureCardView)
             bgPictureCardView.layer.cornerRadius = 30
             bgPictureCardView.layer.borderWidth = 1
-            bgPictureCardView.layer.borderColor = CommanCode.Card_BUTTON_BORDER_COLOR.cgColor
+            bgPictureCardView.layer.borderColor = CommanCode.Current_Card_Border_COLOR.cgColor
            // setupOptions()
         }
         
