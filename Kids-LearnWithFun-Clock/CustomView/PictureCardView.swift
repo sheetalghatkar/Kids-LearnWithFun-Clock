@@ -20,6 +20,8 @@ protocol PictureCardViewProtocol : class {
     @IBOutlet weak var bgPictureCardView: UIImageView!
     @IBOutlet var clocketView : SetClocket!
     weak var delegatePictureCardProtocol : PictureCardViewProtocol?
+    @IBOutlet weak var parentClockView: UIView!
+
 
     @IBOutlet weak var btnOption1 : ButtonCardOptionExt!
     @IBOutlet weak var btnOption2 : UIButton!
@@ -63,6 +65,18 @@ protocol PictureCardViewProtocol : class {
             bgPictureCardView.layer.borderWidth = 1
             bgPictureCardView.layer.borderColor = CommanCode.Current_Card_Border_COLOR.cgColor
            // setupOptions()
+            parentClockView.layer.cornerRadius = (UIScreen.main.bounds.width * 0.50)/2
+            
+            btnOption1.layer.borderColor = CommanCode.Clock_Dial_COLOR.cgColor
+            btnOption2.layer.borderColor = CommanCode.Clock_Dial_COLOR.cgColor
+            btnOption3.layer.borderColor = CommanCode.Clock_Dial_COLOR.cgColor
+            btnOption4.layer.borderColor = CommanCode.Clock_Dial_COLOR.cgColor
+            
+//            btnOption1.layer.borderWidth = 2.0
+//            btnOption2.layer.borderWidth = 2.0
+//            btnOption3.layer.borderWidth = 2.0
+//            btnOption4.layer.borderWidth = 2.0
+
         }
         
         func loadViewFromNib() -> UIView {

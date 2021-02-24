@@ -124,7 +124,7 @@ class CommanCode {
     
     static var timerForAds = 15.0
 
-
+    static var animateCard = 0.1
 }
 extension UIDevice {
     var hasNotch: Bool

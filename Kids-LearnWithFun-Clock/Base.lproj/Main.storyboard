@@ -444,11 +444,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9R4-Zj-Vo9" userLabel="homeButton">
-                                <rect key="frame" x="-5" y="38" width="65" height="65"/>
+                                <rect key="frame" x="0.0" y="35.5" width="70" height="70"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9R4-Zj-Vo9" secondAttribute="height" multiplier="1:1" id="i3S-mG-DdX"/>
-                                    <constraint firstAttribute="width" constant="65" id="vUi-dy-VzT"/>
+                                    <constraint firstAttribute="width" constant="70" id="vUi-dy-VzT"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="setTimeHomeIcon"/>
                                 <connections>
@@ -469,7 +469,7 @@
                             <constraint firstItem="ujg-Ek-may" firstAttribute="centerX" secondItem="7eQ-Sy-AVf" secondAttribute="centerX" id="XZx-yY-EkP"/>
                             <constraint firstItem="QLr-4l-5Fb" firstAttribute="trailing" secondItem="alT-WC-Iu3" secondAttribute="trailing" id="aS2-PV-2xx"/>
                             <constraint firstItem="alT-WC-Iu3" firstAttribute="top" secondItem="7eQ-Sy-AVf" secondAttribute="top" id="hBB-dT-KKq"/>
-                            <constraint firstItem="9R4-Zj-Vo9" firstAttribute="leading" secondItem="7eQ-Sy-AVf" secondAttribute="leading" constant="-5" id="iWj-ct-Jte"/>
+                            <constraint firstItem="9R4-Zj-Vo9" firstAttribute="leading" secondItem="7eQ-Sy-AVf" secondAttribute="leading" id="iWj-ct-Jte"/>
                             <constraint firstItem="3Zk-87-KUN" firstAttribute="centerY" secondItem="wQT-XD-quS" secondAttribute="centerY" id="skc-hY-biV"/>
                             <constraint firstAttribute="bottom" secondItem="alT-WC-Iu3" secondAttribute="bottom" id="vyW-wG-i9q"/>
                             <constraint firstAttribute="trailing" secondItem="wQT-XD-quS" secondAttribute="trailing" constant="15" id="z8K-ez-qZn"/>
@@ -500,33 +500,54 @@
                                 <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dt0-4r-aaf" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
-                                <rect key="frame" x="31" y="139" width="352" height="352"/>
+                                <rect key="frame" x="31" y="124" width="352" height="352"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="round" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9YI-Gi-lMD">
-                                <rect key="frame" x="5" y="49" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3E-XZ-JXy">
+                                <rect key="frame" x="358" y="58.5" width="41" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="41" id="1gm-q7-rLt"/>
+                                    <constraint firstAttribute="width" secondItem="h3E-XZ-JXy" secondAttribute="height" multiplier="1:1" id="nSb-04-LUQ"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Sound-On_home"/>
+                                <connections>
+                                    <action selector="funcSound_ON_OFF:" destination="irR-tW-XvX" eventType="touchUpInside" id="GSr-Xc-dfC"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDe-QJ-y06">
+                                <rect key="frame" x="290" y="57.5" width="43" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="WDe-QJ-y06" secondAttribute="height" multiplier="1:1" id="Kxc-ZG-dGc"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="No-Ads"/>
+                                <connections>
+                                    <action selector="funcNoAds:" destination="irR-tW-XvX" eventType="touchUpInside" id="3Rw-LW-tyI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9YI-Gi-lMD" userLabel="homeButton">
+                                <rect key="frame" x="5" y="44" width="70" height="70"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="Ykm-X9-TwG"/>
-                                    <constraint firstAttribute="width" constant="80" id="rEI-6w-oBq"/>
+                                    <constraint firstAttribute="width" constant="70" id="rEI-6w-oBq"/>
+                                    <constraint firstAttribute="width" secondItem="9YI-Gi-lMD" secondAttribute="height" multiplier="1:1" id="uap-zV-z7B"/>
                                 </constraints>
                                 <state key="normal" image="setTimeHomeIcon"/>
                                 <connections>
-                                    <action selector="funcBackToHome:" destination="irR-tW-XvX" eventType="touchUpInside" id="cRA-TH-cEF"/>
+                                    <action selector="funcBackToHome:" destination="irR-tW-XvX" eventType="touchUpInside" id="Izj-pu-pn4"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9y6-ha-cev" customClass="Clocket" customModule="Learn_Clock___Time" customModuleProvider="target">
-                                <rect key="frame" x="31" y="139" width="352" height="352"/>
+                                <rect key="frame" x="31" y="124" width="352" height="352"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9y6-ha-cev" secondAttribute="height" multiplier="1:1" id="m1u-b2-zan"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CenterClockImg1" translatesAutoresizingMaskIntoConstraints="NO" id="wcy-LM-qp5">
-                                <rect key="frame" x="184.5" y="292.5" width="45" height="45"/>
+                                <rect key="frame" x="184.5" y="277.5" width="45" height="45"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="jNn-71-3fE"/>
@@ -534,34 +555,42 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0HD-Ro-UiX">
-                                <rect key="frame" x="0.0" y="491" width="414" height="405"/>
+                                <rect key="frame" x="0.0" y="476" width="414" height="420"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xO5-XE-fkb"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Dt0-4r-aaf" firstAttribute="width" secondItem="9y6-ha-cev" secondAttribute="width" id="10T-uT-fj2"/>
+                            <constraint firstAttribute="trailing" secondItem="h3E-XZ-JXy" secondAttribute="trailing" constant="15" id="1hi-xM-dtS"/>
                             <constraint firstItem="wcy-LM-qp5" firstAttribute="centerY" secondItem="Dt0-4r-aaf" secondAttribute="centerY" id="1t0-0D-stM"/>
                             <constraint firstItem="TjK-sd-jeF" firstAttribute="trailing" secondItem="xO5-XE-fkb" secondAttribute="trailing" id="2Yv-U6-DZ4"/>
                             <constraint firstItem="TjK-sd-jeF" firstAttribute="leading" secondItem="xO5-XE-fkb" secondAttribute="leading" id="2zl-1k-zqO"/>
+                            <constraint firstItem="h3E-XZ-JXy" firstAttribute="width" secondItem="h3E-XZ-JXy" secondAttribute="height" multiplier="1:1" id="5BU-hA-9Qw"/>
                             <constraint firstItem="9YI-Gi-lMD" firstAttribute="leading" secondItem="xO5-XE-fkb" secondAttribute="leading" constant="5" id="7Vo-rF-qbp"/>
                             <constraint firstItem="9y6-ha-cev" firstAttribute="top" secondItem="9YI-Gi-lMD" secondAttribute="bottom" constant="10" id="AEk-go-a2Y"/>
                             <constraint firstAttribute="bottom" secondItem="TjK-sd-jeF" secondAttribute="bottom" id="Cnz-ZM-54I"/>
                             <constraint firstItem="Dt0-4r-aaf" firstAttribute="centerX" secondItem="9y6-ha-cev" secondAttribute="centerX" id="EId-Dl-gCY"/>
+                            <constraint firstItem="WDe-QJ-y06" firstAttribute="width" secondItem="h3E-XZ-JXy" secondAttribute="width" constant="2" id="Frw-1P-eeS"/>
+                            <constraint firstItem="WDe-QJ-y06" firstAttribute="centerY" secondItem="h3E-XZ-JXy" secondAttribute="centerY" id="K6r-xu-xqF"/>
                             <constraint firstItem="9y6-ha-cev" firstAttribute="centerX" secondItem="LYF-zq-5bK" secondAttribute="centerX" id="NYg-cU-TS7"/>
                             <constraint firstAttribute="bottom" secondItem="0HD-Ro-UiX" secondAttribute="bottom" id="NdQ-UC-tGV"/>
                             <constraint firstItem="0HD-Ro-UiX" firstAttribute="leading" secondItem="LYF-zq-5bK" secondAttribute="leading" id="T4I-sg-fpN"/>
-                            <constraint firstItem="9YI-Gi-lMD" firstAttribute="top" secondItem="xO5-XE-fkb" secondAttribute="top" constant="5" id="Thv-Uv-5pL"/>
+                            <constraint firstItem="9YI-Gi-lMD" firstAttribute="top" secondItem="xO5-XE-fkb" secondAttribute="top" id="Thv-Uv-5pL"/>
                             <constraint firstItem="Dt0-4r-aaf" firstAttribute="height" secondItem="9y6-ha-cev" secondAttribute="height" id="Uwd-b4-ytY"/>
                             <constraint firstItem="9y6-ha-cev" firstAttribute="width" secondItem="LYF-zq-5bK" secondAttribute="width" multiplier="0.85" id="VVD-PU-GfA"/>
                             <constraint firstItem="Dt0-4r-aaf" firstAttribute="centerY" secondItem="9y6-ha-cev" secondAttribute="centerY" id="Zlx-2W-b0w"/>
                             <constraint firstItem="wcy-LM-qp5" firstAttribute="centerX" secondItem="Dt0-4r-aaf" secondAttribute="centerX" id="ddr-Oy-tkn"/>
+                            <constraint firstItem="h3E-XZ-JXy" firstAttribute="centerY" secondItem="9YI-Gi-lMD" secondAttribute="centerY" id="e6c-bt-IdJ"/>
+                            <constraint firstItem="h3E-XZ-JXy" firstAttribute="leading" secondItem="WDe-QJ-y06" secondAttribute="trailing" constant="25" id="feM-wI-MqI"/>
                             <constraint firstAttribute="trailing" secondItem="0HD-Ro-UiX" secondAttribute="trailing" id="qIz-OB-U7x"/>
                             <constraint firstItem="0HD-Ro-UiX" firstAttribute="top" secondItem="9y6-ha-cev" secondAttribute="bottom" id="zWg-If-zJN"/>
                             <constraint firstItem="TjK-sd-jeF" firstAttribute="top" secondItem="LYF-zq-5bK" secondAttribute="top" id="zzL-gq-hxl"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnNoAds" destination="WDe-QJ-y06" id="jhd-ed-cAU"/>
+                        <outlet property="btnSound" destination="h3E-XZ-JXy" id="ByS-QV-82y"/>
                         <outlet property="imgView" destination="0HD-Ro-UiX" id="11e-xL-a24"/>
                         <outlet property="viewClocket" destination="9y6-ha-cev" id="e1i-Wc-hDf"/>
                     </connections>

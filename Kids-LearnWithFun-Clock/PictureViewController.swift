@@ -412,7 +412,7 @@ class PictureViewController: UIViewController, PictureCardViewProtocol {
         }
     
     func showNextCard() {
-        let animationDuration: TimeInterval = 0.6
+        let animationDuration: TimeInterval = 0.3
         // 1. animate each card to move forward one by one
         for i in 1...2 {
             print("********2001***********")

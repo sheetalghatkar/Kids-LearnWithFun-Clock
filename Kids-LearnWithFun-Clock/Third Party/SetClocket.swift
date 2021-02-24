@@ -125,6 +125,7 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
     
     private func setupClockFace() {
         clockFace = SetClockFace(frame: frame)
+        secondHand.isHidden = true
         addSubview(clockFace)
         addSubview(hourHand)
         addSubview(minuteHand)
@@ -155,6 +156,14 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
         secondHand.centerYAnchor.constraint(equalTo: clockFace.centerYAnchor).isActive = true
         secondHand.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor).isActive = true
         secondHand.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
+        
+        
+        clockFace.layer.masksToBounds = false
+        clockFace.layer.cornerRadius = 8; // if you like rounded corners
+        clockFace.layer.shadowOffset = CGSize(width: 5, height: 5)
+        clockFace.layer.shadowRadius = 5;
+        clockFace.layer.shadowOpacity = 0.5;
+
     }
     
     

@@ -18,6 +18,7 @@
                 <outlet property="btnOption4" destination="8XR-pZ-gsV" id="47S-Db-h8j"/>
                 <outlet property="buttonView" destination="laO-Vy-yMV" id="8TT-yt-VYq"/>
                 <outlet property="clocketView" destination="UTc-Pu-dhR" id="lHT-MP-kKq"/>
+                <outlet property="parentClockView" destination="dgl-md-tBd" id="P3d-Sn-Rfj"/>
                 <outlet property="pictureCardView" destination="i5M-Pr-FkT" id="ZD6-EU-0Bh"/>
             </connections>
         </placeholder>
@@ -29,6 +30,13 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pink_Bg" translatesAutoresizingMaskIntoConstraints="NO" id="OeI-rd-qy3">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dgl-md-tBd" userLabel="ContainerView_Clock">
+                    <rect key="frame" x="93" y="69" width="228" height="227.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="dgl-md-tBd" secondAttribute="height" multiplier="1:1" id="Q97-bT-XPQ"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTc-Pu-dhR" customClass="SetClocket" customModule="Learn_Clock___Time" customModuleProvider="target">
                     <rect key="frame" x="93" y="69" width="228" height="227.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -117,13 +125,16 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="OeI-rd-qy3" secondAttribute="bottom" id="04d-Dw-KT2"/>
+                <constraint firstItem="dgl-md-tBd" firstAttribute="centerX" secondItem="UTc-Pu-dhR" secondAttribute="centerX" id="0jT-cB-hXp"/>
                 <constraint firstItem="OeI-rd-qy3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Dgn-Mk-7YU"/>
                 <constraint firstItem="UTc-Pu-dhR" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.55" id="Eo5-QK-u7D"/>
+                <constraint firstItem="dgl-md-tBd" firstAttribute="centerY" secondItem="UTc-Pu-dhR" secondAttribute="centerY" id="Pvi-My-2f1"/>
                 <constraint firstItem="UTc-Pu-dhR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="U3i-VR-ezz"/>
                 <constraint firstItem="laO-Vy-yMV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="UHA-Nm-Dhr"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="laO-Vy-yMV" secondAttribute="bottom" constant="10" id="W39-y8-75b"/>
                 <constraint firstAttribute="trailing" secondItem="OeI-rd-qy3" secondAttribute="trailing" id="Y2n-tH-Xqe"/>
                 <constraint firstItem="OeI-rd-qy3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="c4g-uI-oip"/>
+                <constraint firstItem="dgl-md-tBd" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.55" id="f9c-np-Srs"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="laO-Vy-yMV" secondAttribute="trailing" constant="10" id="pVG-VC-bcx"/>
                 <constraint firstItem="UTc-Pu-dhR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="vdj-V1-fQc"/>
             </constraints>

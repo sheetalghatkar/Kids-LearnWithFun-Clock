@@ -320,7 +320,7 @@ class GuessTimeViewController: UIViewController {
                     //------------------------------------------------------------
                                   if (cards[0].center.y < originalYVal - 100.0)||((cards[0].center.x) > (originalXVal + 100.0))||(cards[0].center.x < originalXVal - 100.0) {
                                     print("Left")
-                                    UIView.animate(withDuration: 0.2) {
+                                    UIView.animate(withDuration: CommanCode.animateCard) {
                                         self.cards[0].center = CGPoint(x: self.centerOfParentContainer.x + self.point.x + 200, y: self.centerOfParentContainer.y + self.point.y + 75)
                                         self.cards[0].alpha = 0
                                         self.showNextCard()
@@ -341,7 +341,7 @@ class GuessTimeViewController: UIViewController {
                                     }
                                 } else {
                                     print("Nothing happens")
-                                    UIView.animate(withDuration: 0.2) {
+                                    UIView.animate(withDuration: CommanCode.animateCard) {
                                         self.cards[0].transform = .identity
                                         self.cards[0].center = CGPoint(x: self.cardViewcontainer.frame.width / 2, y: (self.cardViewcontainer.frame.height / 2) + self.getYMarginForCard())
                                     }
@@ -367,7 +367,7 @@ class GuessTimeViewController: UIViewController {
                         print("Inside  hideFrontCard if")
                         cardRemoveTimer!.invalidate()
                         self?.cardIsHiding = true
-                        UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseIn], animations: {
+                        UIView.animate(withDuration: CommanCode.animateCard, delay: 0, options: [.curveEaseIn], animations: {
                             self?.cards[0].alpha = 0.0
                             print("Inside  hideFrontCard view 1")
                         }, completion: { (_) in
@@ -379,7 +379,7 @@ class GuessTimeViewController: UIViewController {
             } else {
                 // fallback for earlier versions
                 print("fallback for earlier versions")
-                UIView.animate(withDuration: 0.2, delay: 1.5, options: [.curveEaseIn], animations: {
+                UIView.animate(withDuration: CommanCode.animateCard, delay: 1.5, options: [.curveEaseIn], animations: {
                     print("Inside  hideFrontCard view 0")
                     self.cards[0].alpha = 0.0
                 }, completion: { (_) in
@@ -391,7 +391,7 @@ class GuessTimeViewController: UIViewController {
         }
     
     func showNextCard() {
-        let animationDuration: TimeInterval = 0.2
+        let animationDuration: TimeInterval = 0
         // 1. animate each card to move forward one by one
         for i in 1...2 {
             print("********2001***********")
@@ -402,7 +402,7 @@ class GuessTimeViewController: UIViewController {
             let card = cards[i]
             let newDownscale = cardAttributes[i - 1].downscale
             //let newAlpha = cardAttributes[i - 1].alpha
-            UIView.animate(withDuration: animationDuration, delay: (TimeInterval(i - 1) * (animationDuration / 2)), usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: [], animations: {
+            UIView.animate(withDuration: animationDuration, delay: (1 * (animationDuration / 1)), usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [], animations: {
                 card.transform = CGAffineTransform(scaleX: newDownscale, y: newDownscale)
                 card.alpha = 1
                 if i == 1 {
@@ -443,12 +443,12 @@ class GuessTimeViewController: UIViewController {
         newCard?.frame.origin.y = cards[1].frame.origin.y - (3 * cardInteritemSpacing)
         self.cardViewcontainer.addSubview(newCard!)
         // animate to end state of new card
-        UIView.animate(withDuration: animationDuration, delay: (3 * (animationDuration / 2)), usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: [], animations: {
-            self.newCard?.transform = CGAffineTransform(scaleX: downscale, y: downscale)
+        UIView.animate(withDuration: animationDuration, delay: (1 * (animationDuration / 1)), usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [], animations: {
+           /* self.newCard?.transform = CGAffineTransform(scaleX: downscale, y: downscale)
             self.newCard?.alpha = 1
             self.newCard?.center.x = self.cardViewcontainer.center.x
             self.newCard?.center.y = self.cardViewcontainer.frame.height/2 + self.getYMarginForCard()
-            self.newCard?.frame.origin.y = self.cards[1].frame.origin.y - (2 * self.cardInteritemSpacing) + 1.5
+            self.newCard?.frame.origin.y = self.cards[1].frame.origin.y - (2 * self.cardInteritemSpacing) + 1.5*/
         }, completion: { (_) in
             
         })

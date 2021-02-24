@@ -18,8 +18,13 @@ class SetClockFace: UIImageView {
         return diameter / lineWidthCoefficient
     }()
     
-    var lineColor = UIColor.black.cgColor
-    var clockFaceSolidColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0).cgColor
+  /*  var lineColor = UIColor.black.cgColor
+    var clockFaceSolidColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0).cgColor*/
+    
+    
+    open var lineColor = CommanCode.CLOCK_TICK_Color.cgColor
+    open var clockFaceSolidColor = UIColor.clear.cgColor
+
     
     var markOffset = CGFloat(2.0)
     var minuteMarkLength = CGFloat(3.0)
@@ -34,11 +39,14 @@ class SetClockFace: UIImageView {
     var digitFontCoefficient = CGFloat(10.0)
     var digitFont: UIFont { return UIFont(name: digitFontName, size: diameter/digitFontCoefficient)! }
     var digitOffset: CGFloat { return (quarterMarkLength * lineWidth)/2 + 1.0 }
-    var digitColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0) /* #7c7c7c */
+   // var digitColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0) /* #7c7c7c */
+    open var digitColor = CommanCode.Clock_Dial_COLOR
+
     
     var enableLogo = true
     var logoText = "Learn Clock"
-    var logoColor = UIColor(red: 70/255, green: 70/255, blue: 70/255, alpha: 1.0) /* #7c7c7c */
+    var logoColor = CommanCode.CLOCK_TICK_Color
+//    var logoColor = UIColor(red: 70/255, green: 70/255, blue: 70/255, alpha: 1.0) /* #7c7c7c */
     var logoFontName = "HelveticaNeue-bold"
     var logoFontCoefficient = CGFloat(20.0)
     var logoFont: UIFont { return UIFont(name: logoFontName, size: diameter/logoFontCoefficient)! }
@@ -90,9 +98,10 @@ class SetClockFace: UIImageView {
         return renderer.image { (ctx) in
             let rectangle = CGRect(x: lineWidth/2.0, y: lineWidth/2.0, width: diameter-lineWidth, height: diameter-lineWidth)
             ctx.cgContext.setFillColor(clockFaceSolidColor)
-            ctx.cgContext.setStrokeColor(lineColor)
+            ctx.cgContext.setStrokeColor(CommanCode.Clock_Dial_COLOR.cgColor)
             ctx.cgContext.setLineWidth(lineWidth)
             ctx.cgContext.addEllipse(in: rectangle)
+            ctx.cgContext.setShadow(offset: .zero, blur: 5, color: CommanCode.CLock_didgit_Shadow.cgColor)
             ctx.cgContext.drawPath(using: .fillStroke)
         }
     }
