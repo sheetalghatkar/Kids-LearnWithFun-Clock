@@ -28,8 +28,8 @@ class SetTimeViewController: UIViewController {
         
   //      \\\ = CommanCode.ORANGE_Color
         
-        let loaderGif1 = UIImage.gifImageWithName("Lady_Teaching")
-        imgView.image = loaderGif1
+//        let loaderGif1 = UIImage.gifImageWithName("Lady_Teaching")
+//        imgView.image = loaderGif1
     }
     override func viewWillAppear(_ animated: Bool) {
         if defaults.bool(forKey:"IsPrimeUser") {
