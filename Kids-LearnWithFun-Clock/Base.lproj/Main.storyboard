@@ -444,11 +444,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9R4-Zj-Vo9" userLabel="homeButton">
-                                <rect key="frame" x="0.0" y="35.5" width="70" height="70"/>
+                                <rect key="frame" x="0.0" y="38" width="65" height="65"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9R4-Zj-Vo9" secondAttribute="height" multiplier="1:1" id="i3S-mG-DdX"/>
-                                    <constraint firstAttribute="width" constant="70" id="vUi-dy-VzT"/>
+                                    <constraint firstAttribute="width" constant="65" id="vUi-dy-VzT"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="setTimeHomeIcon"/>
                                 <connections>
@@ -546,6 +546,13 @@
                                     <constraint firstAttribute="width" secondItem="9y6-ha-cev" secondAttribute="height" multiplier="1:1" id="m1u-b2-zan"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPq-q8-bsa" userLabel="verticalView">
+                                <rect key="frame" x="206" y="124" width="2" height="352"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="2" id="CjE-FQ-zUr"/>
+                                </constraints>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CenterClockImg1" translatesAutoresizingMaskIntoConstraints="NO" id="wcy-LM-qp5">
                                 <rect key="frame" x="184.5" y="277.5" width="45" height="45"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -571,10 +578,12 @@
                             <constraint firstItem="9y6-ha-cev" firstAttribute="top" secondItem="9YI-Gi-lMD" secondAttribute="bottom" constant="10" id="AEk-go-a2Y"/>
                             <constraint firstAttribute="bottom" secondItem="TjK-sd-jeF" secondAttribute="bottom" id="Cnz-ZM-54I"/>
                             <constraint firstItem="Dt0-4r-aaf" firstAttribute="centerX" secondItem="9y6-ha-cev" secondAttribute="centerX" id="EId-Dl-gCY"/>
+                            <constraint firstItem="vPq-q8-bsa" firstAttribute="centerX" secondItem="9y6-ha-cev" secondAttribute="centerX" id="EZW-2C-dcd"/>
                             <constraint firstItem="WDe-QJ-y06" firstAttribute="width" secondItem="h3E-XZ-JXy" secondAttribute="width" constant="2" id="Frw-1P-eeS"/>
                             <constraint firstItem="WDe-QJ-y06" firstAttribute="centerY" secondItem="h3E-XZ-JXy" secondAttribute="centerY" id="K6r-xu-xqF"/>
                             <constraint firstItem="9y6-ha-cev" firstAttribute="centerX" secondItem="LYF-zq-5bK" secondAttribute="centerX" id="NYg-cU-TS7"/>
                             <constraint firstAttribute="bottom" secondItem="0HD-Ro-UiX" secondAttribute="bottom" id="NdQ-UC-tGV"/>
+                            <constraint firstItem="vPq-q8-bsa" firstAttribute="height" secondItem="9y6-ha-cev" secondAttribute="height" id="NpF-Pt-hCM"/>
                             <constraint firstItem="0HD-Ro-UiX" firstAttribute="leading" secondItem="LYF-zq-5bK" secondAttribute="leading" id="T4I-sg-fpN"/>
                             <constraint firstItem="9YI-Gi-lMD" firstAttribute="top" secondItem="xO5-XE-fkb" secondAttribute="top" id="Thv-Uv-5pL"/>
                             <constraint firstItem="Dt0-4r-aaf" firstAttribute="height" secondItem="9y6-ha-cev" secondAttribute="height" id="Uwd-b4-ytY"/>
@@ -584,6 +593,7 @@
                             <constraint firstItem="h3E-XZ-JXy" firstAttribute="centerY" secondItem="9YI-Gi-lMD" secondAttribute="centerY" id="e6c-bt-IdJ"/>
                             <constraint firstItem="h3E-XZ-JXy" firstAttribute="leading" secondItem="WDe-QJ-y06" secondAttribute="trailing" constant="25" id="feM-wI-MqI"/>
                             <constraint firstAttribute="trailing" secondItem="0HD-Ro-UiX" secondAttribute="trailing" id="qIz-OB-U7x"/>
+                            <constraint firstItem="vPq-q8-bsa" firstAttribute="centerY" secondItem="9y6-ha-cev" secondAttribute="centerY" id="wKH-eC-KK5"/>
                             <constraint firstItem="0HD-Ro-UiX" firstAttribute="top" secondItem="9y6-ha-cev" secondAttribute="bottom" id="zWg-If-zJN"/>
                             <constraint firstItem="TjK-sd-jeF" firstAttribute="top" secondItem="LYF-zq-5bK" secondAttribute="top" id="zzL-gq-hxl"/>
                         </constraints>
@@ -702,6 +712,9 @@
         <image name="setTimeHomeIcon" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

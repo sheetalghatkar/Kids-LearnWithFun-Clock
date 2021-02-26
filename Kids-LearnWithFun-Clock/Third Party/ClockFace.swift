@@ -126,7 +126,7 @@ open class ClockFace: UIImageView {
                 ctx.cgContext.setLineWidth(minuteMarkWidth * lineWidth)
                 
                 if mark % 15 == 0 {
-                    print("Line width:",quarterMarkWidth * lineWidth)
+//                    print("Line width:",quarterMarkWidth * lineWidth)
                     ctx.cgContext.setLineWidth(quarterMarkWidth * lineWidth)
                     endPoint = CGPoint(x: startPoint.x - quarterMarkLength * lineWidth, y: 0)
                 } else if mark % 5 == 0 {

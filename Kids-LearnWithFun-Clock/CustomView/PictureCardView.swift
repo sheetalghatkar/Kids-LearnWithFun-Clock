@@ -76,7 +76,6 @@ protocol PictureCardViewProtocol : class {
 //            btnOption2.layer.borderWidth = 2.0
 //            btnOption3.layer.borderWidth = 2.0
 //            btnOption4.layer.borderWidth = 2.0
-
         }
         
         func loadViewFromNib() -> UIView {
