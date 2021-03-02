@@ -125,12 +125,12 @@ open class Clocket: UIView, UIGestureRecognizerDelegate {
 //        centerImageView.center.y = ((self.clockFace.frame.size.height)/2)
 //        centerImageView.image = CommanCode.CLOCK_CENTER_IMG
         
-        viewMinuteHand.frame.size = CGSize(width: (CommanCode.SCREEN_WIDTH * CommanCode.CLOCKET_WIDTH_PERCENT), height: 52.0)
+        viewMinuteHand.frame.size = CGSize(width: (CommanCode.SCREEN_WIDTH * CommanCode.CLOCKET_WIDTH_PERCENT), height: 20)
         viewMinuteHand.backgroundColor = UIColor.clear
         viewMinuteHand.center.x = ((CommanCode.SCREEN_WIDTH * CommanCode.CLOCKET_WIDTH_PERCENT)/2)
         viewMinuteHand.center.y = ((CommanCode.SCREEN_WIDTH * CommanCode.CLOCKET_WIDTH_PERCENT)/2)
         viewMinuteHand.isUserInteractionEnabled = true
-        viewMinuteHand.backgroundColor = UIColor.yellow
+        viewMinuteHand.backgroundColor = UIColor.clear
         self.addSubview(viewMinuteHand)
 
         minuteHandFirstSubview.isUserInteractionEnabled = true
@@ -146,6 +146,7 @@ open class Clocket: UIView, UIGestureRecognizerDelegate {
         viewMinuteHand.addSubview(minuteHandSecondSubview)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.minuteHandFirstSubClicked(sender:)))
+        tap.cancelsTouchesInView = false
         minuteHandFirstSubview.addGestureRecognizer(tap)
 
         
@@ -242,14 +243,14 @@ open class Clocket: UIView, UIGestureRecognizerDelegate {
         if isMinuteHandTouch {
             viewMinuteHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
 //            let newMinuteValue = Int(0.5 + handRadianAngle * 30 / (Double.pi/2)) % 60
-            let newMinuteValue = Int(handRadianAngle * 6 / (Double.pi/2)) % 60
+           /* let newMinuteValue = Int(handRadianAngle * 6 / (Double.pi/2)) % 60
 
             if newMinuteValue == 0 && localTime.minute == 59 {
                 localTime.hour = ((localTime.hour ?? 1) + 1) % 12
             } else if newMinuteValue == 59 && localTime.minute == 0 {
                 localTime.hour = ((localTime.hour ?? 1) - 1) % 12
             }
-            localTime.minute = newMinuteValue
+            localTime.minute = newMinuteValue*/
             
 //            print("Minute value", localTime.minute)
 
