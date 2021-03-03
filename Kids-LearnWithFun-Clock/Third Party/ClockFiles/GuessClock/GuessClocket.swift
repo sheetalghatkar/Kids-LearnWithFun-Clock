@@ -1,5 +1,5 @@
 //
-//  SetClocket.swift
+//  GuessClocket.swift
 //  Kids-LearnWithFun-Clock
 //
 //  Created by Sheetal Ghatkar on 30/12/20.
@@ -7,8 +7,8 @@
 //
 
 //
-//  Clocket.swift
-//  Clocket
+//  SetClocket.swift
+//  SetClocket
 //
 //  Created by Andrey Filonov on 08/11/2018.
 //  Copyright © 2018 Andrey Filonov. All rights reserved.
@@ -16,7 +16,7 @@
 import UIKit
 
 
-open class SetClocket: UIView, UIGestureRecognizerDelegate {
+open class GuessClocket: UIView, UIGestureRecognizerDelegate {
     
     private let translateToRadian = Double.pi/180.0
     
@@ -59,12 +59,12 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
     open var refreshInterval: TimeInterval = 1.0
     
     private var clockFace = UIImageView()
-    private var hourHand = ClockHand()
-    private var minuteHand = ClockHand()
-    private var secondHand = ClockHand()
+    private var hourHand = GuessClockHand()
+    private var minuteHand = GuessClockHand()
+    private var secondHand = GuessClockHand()
     private var secondHandCircle = UIImageView()
     
-    weak open var setClockDelegate: SetClocketDelegate?
+    weak open var setClockDelegate: GuessClocketDelegate?
     
     
     public override init(frame: CGRect) {
@@ -96,7 +96,7 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
                                                      color: hourHandColor,
                                                      shadowIsOn: handShadow,
                                                      initValue: Double((localTime.hour ?? 1) * 30))
-        hourHand = ClockHand(parameters: hourHandParameters)
+        hourHand = GuessClockHand(parameters: hourHandParameters)
         
         let minuteHandParameters = ClockHandParameters(frame: frame,
                                                        length: minuteHandLength,
@@ -105,7 +105,7 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
                                                        color: minuteHandColor,
                                                        shadowIsOn: handShadow,
                                                        initValue: Double((localTime.minute ?? 1) * 6))
-        minuteHand = ClockHand(parameters: minuteHandParameters)
+        minuteHand = GuessClockHand(parameters: minuteHandParameters)
         
         let secondHandParameters = ClockHandParameters(frame: frame,
                                                        length: secondHandLength,
@@ -114,7 +114,7 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
                                                        color: secondHandColor,
                                                        shadowIsOn: handShadow,
                                                        initValue: Double(localTime.second * 6))
-        secondHand = ClockHand(parameters: secondHandParameters)
+        secondHand = GuessClockHand(parameters: secondHandParameters)
         
         secondHandCircle = SecondHandCircle(radius: diameter/2,
                                             circleDiameter: secondHandCircleDiameter,
@@ -124,7 +124,7 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
     
     
     private func setupClockFace() {
-        clockFace = SetClockFace(frame: frame)
+        clockFace = GuessClockFace(frame: frame)
         secondHand.isHidden = true
         addSubview(clockFace)
         addSubview(hourHand)
@@ -316,7 +316,7 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
 }
 
 
-public protocol SetClocketDelegate: AnyObject {
+public protocol GuessClocketDelegate: AnyObject {
     
     func timeIsSetManually()
     

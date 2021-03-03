@@ -1,5 +1,5 @@
 //
-//  PictureViewController.swift
+//  GuessViewController.swift
 //  Sharp Kido
 //
 //  Created by sheetal shinde on 13/06/20.
@@ -21,7 +21,7 @@ extension UILabel {
     }
 }
 
-class PictureViewController: UIViewController, PictureCardViewProtocol {
+class GuessViewController: UIViewController, PictureCardViewProtocol {
     var pictureCardWidth = UIScreen.main.bounds.width * 0.9
     var pictureCardHeight : CGFloat = 0.0
     var startYCard : CGFloat = 0.0
@@ -512,7 +512,7 @@ class PictureViewController: UIViewController, PictureCardViewProtocol {
     }
 
 }
-extension PictureViewController : PayementForParentProtocol {
+extension GuessViewController : PayementForParentProtocol {
     @IBAction func funcNoAds(_ sender: Any) {
         showPaymentScreen()
     }
@@ -540,4 +540,9 @@ extension PictureViewController : PayementForParentProtocol {
         
     }
 
+}
+extension Array {
+    func indexExists(_ index: Int) -> Bool {
+        return self.indices.contains(index)
+    }
 }

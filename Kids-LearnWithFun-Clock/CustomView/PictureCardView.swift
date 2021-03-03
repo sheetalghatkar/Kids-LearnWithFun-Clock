@@ -18,7 +18,7 @@ protocol PictureCardViewProtocol : class {
     @IBOutlet weak var pictureCardView: UIView!
     @IBOutlet weak var buttonView: UIView!
     @IBOutlet weak var bgPictureCardView: UIImageView!
-    @IBOutlet var clocketView : SetClocket!
+    @IBOutlet var clocketView : GuessClocket!
     weak var delegatePictureCardProtocol : PictureCardViewProtocol?
     @IBOutlet weak var parentClockView: UIView!
 

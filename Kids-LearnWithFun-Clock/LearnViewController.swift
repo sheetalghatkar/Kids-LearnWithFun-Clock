@@ -9,7 +9,7 @@
 import UIKit
 
 class LearnViewController: UIViewController {
-    @IBOutlet weak var viewClocket : Clocket!
+    @IBOutlet weak var viewClocket : SetClocket!
     @IBOutlet weak var viewBgClocket : UIView!
 
     override func viewDidLoad() {

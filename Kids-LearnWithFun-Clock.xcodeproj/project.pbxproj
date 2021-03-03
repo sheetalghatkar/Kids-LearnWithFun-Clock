@@ -20,8 +20,8 @@
 		4F1698BB25E26D140049452D /* PaymentCostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1698B525E26D140049452D /* PaymentCostController.swift */; };
 		4F1ABE192595F35100256AB8 /* starFalling.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F1ABE182595F35100256AB8 /* starFalling.gif */; };
 		4F1ABE1E2595F71800256AB8 /* GreenCracker.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F1ABE1D2595F71800256AB8 /* GreenCracker.gif */; };
-		4F1E7D6C259CC70000A8A39B /* SetClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E7D6B259CC70000A8A39B /* SetClockFace.swift */; };
-		4F1E7D71259CC7C300A8A39B /* SetClocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E7D70259CC7C300A8A39B /* SetClocket.swift */; };
+		4F1E7D6C259CC70000A8A39B /* GuessClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E7D6B259CC70000A8A39B /* GuessClockFace.swift */; };
+		4F1E7D71259CC7C300A8A39B /* GuessClocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E7D70259CC7C300A8A39B /* GuessClocket.swift */; };
 		4F43E64B25E153EA0018B3E0 /* FloatyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E64525E153EA0018B3E0 /* FloatyWindow.swift */; };
 		4F43E64C25E153EA0018B3E0 /* FloatyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E64625E153EA0018B3E0 /* FloatyManager.swift */; };
 		4F43E64D25E153EA0018B3E0 /* FloatyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E64725E153EA0018B3E0 /* FloatyItem.swift */; };
@@ -45,8 +45,12 @@
 		4F43E67325E159F30018B3E0 /* AppleReceiptValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E66425E159F30018B3E0 /* AppleReceiptValidator.swift */; };
 		4F43E67F25E163810018B3E0 /* BackgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F43E67E25E163810018B3E0 /* BackgroundMusic.mp3 */; };
 		4F43E69625E165130018B3E0 /* ClockBgMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F43E69525E165130018B3E0 /* ClockBgMusic.mp3 */; };
+		4F479B3225EF916D00899201 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F479B3125EF916D00899201 /* UILabelExtension.swift */; };
 		4F5F382B2594D02200992FE3 /* Cracker.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F5F382A2594D02200992FE3 /* Cracker.gif */; };
 		4F5F383E2594E87200992FE3 /* fireworks03.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F5F383D2594E87200992FE3 /* fireworks03.gif */; };
+		4F5FCBAF25EE4AB200331771 /* 3-Hour.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FCBAE25EE4AB200331771 /* 3-Hour.mp3 */; };
+		4F5FCBB525EE4AC200331771 /* 15-Minutes.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FCBB425EE4AC200331771 /* 15-Minutes.mp3 */; };
+		4F5FCBBD25EE72C300331771 /* Set.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FCBBC25EE72C300331771 /* Set.mp3 */; };
 		700E2E5A258A12100042EC2D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E2E59258A12100042EC2D /* UIButtonExtension.swift */; };
 		700E2E5D258A86790042EC2D /* WrongSelection.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 700E2E5C258A86790042EC2D /* WrongSelection.mp3 */; };
 		700E2E5F258A88580042EC2D /* WellDone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 700E2E5E258A88580042EC2D /* WellDone.mp3 */; };
@@ -55,12 +59,10 @@
 		70111075258BCA8600159541 /* Wrong_Option_Clip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 70111074258BCA8500159541 /* Wrong_Option_Clip.mp3 */; };
 		701675F42588C542004F19BA /* PictureCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 701675F22588C542004F19BA /* PictureCardView.xib */; };
 		701675F52588C542004F19BA /* PictureCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701675F32588C542004F19BA /* PictureCardView.swift */; };
-		701675F72588C611004F19BA /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701675F62588C611004F19BA /* PictureViewController.swift */; };
+		701675F72588C611004F19BA /* GuessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701675F62588C611004F19BA /* GuessViewController.swift */; };
 		701675FA2588EE52004F19BA /* ShowClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701675F82588EE52004F19BA /* ShowClockViewController.swift */; };
 		701675FB2588EE52004F19BA /* ShowClockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 701675F92588EE52004F19BA /* ShowClockViewController.xib */; };
 		7023D4C12581FDC200B752D4 /* LocalizableEnglish.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7023D4C02581FDC200B752D4 /* LocalizableEnglish.strings */; };
-		7023D4C625834D0000B752D4 /* GuessTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7023D4C425834D0000B752D4 /* GuessTimeViewController.swift */; };
-		7023D4C725834D0000B752D4 /* GuessTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7023D4C525834D0000B752D4 /* GuessTimeViewController.xib */; };
 		7023D4CB2583523000B752D4 /* GuessTimeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7023D4C92583523000B752D4 /* GuessTimeCardView.swift */; };
 		7023D4CC2583523000B752D4 /* GuessTimeCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7023D4CA2583523000B752D4 /* GuessTimeCardView.xib */; };
 		7023D4CE2583583800B752D4 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7023D4CD2583583800B752D4 /* AppConstants.swift */; };
@@ -72,9 +74,9 @@
 		709EAE8A2580A93C00F8FEEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 709EAE882580A93C00F8FEEC /* LaunchScreen.storyboard */; };
 		709EAE952580A93C00F8FEEC /* Kids_LearnWithFun_ClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EAE942580A93C00F8FEEC /* Kids_LearnWithFun_ClockTests.swift */; };
 		709EAEA02580A93C00F8FEEC /* Kids_LearnWithFun_ClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EAE9F2580A93C00F8FEEC /* Kids_LearnWithFun_ClockUITests.swift */; };
-		709EAEB12580AFE800F8FEEC /* Clocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EAEAE2580AFE700F8FEEC /* Clocket.swift */; };
-		709EAEB22580AFE900F8FEEC /* ClockHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EAEAF2580AFE800F8FEEC /* ClockHand.swift */; };
-		709EAEB32580AFE900F8FEEC /* ClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EAEB02580AFE800F8FEEC /* ClockFace.swift */; };
+		709EAEB12580AFE800F8FEEC /* SetClocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EAEAE2580AFE700F8FEEC /* SetClocket.swift */; };
+		709EAEB22580AFE900F8FEEC /* GuessClockHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EAEAF2580AFE800F8FEEC /* GuessClockHand.swift */; };
+		709EAEB32580AFE900F8FEEC /* SetClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EAEB02580AFE800F8FEEC /* SetClockFace.swift */; };
 		709EAEB52580CA6C00F8FEEC /* CommanCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EAEB42580CA6C00F8FEEC /* CommanCode.swift */; };
 		709EAEB82580DBA000F8FEEC /* ClockLearn.gif in Resources */ = {isa = PBXBuildFile; fileRef = 709EAEB72580DBA000F8FEEC /* ClockLearn.gif */; };
 		709EAEBA2580DD6000F8FEEC /* GIFSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EAEB92580DD6000F8FEEC /* GIFSwift.swift */; };
@@ -112,8 +114,8 @@
 		4F1698B525E26D140049452D /* PaymentCostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentCostController.swift; sourceTree = "<group>"; };
 		4F1ABE182595F35100256AB8 /* starFalling.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = starFalling.gif; sourceTree = "<group>"; };
 		4F1ABE1D2595F71800256AB8 /* GreenCracker.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = GreenCracker.gif; sourceTree = "<group>"; };
-		4F1E7D6B259CC70000A8A39B /* SetClockFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetClockFace.swift; sourceTree = "<group>"; };
-		4F1E7D70259CC7C300A8A39B /* SetClocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetClocket.swift; sourceTree = "<group>"; };
+		4F1E7D6B259CC70000A8A39B /* GuessClockFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessClockFace.swift; sourceTree = "<group>"; };
+		4F1E7D70259CC7C300A8A39B /* GuessClocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessClocket.swift; sourceTree = "<group>"; };
 		4F43E64525E153EA0018B3E0 /* FloatyWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatyWindow.swift; sourceTree = "<group>"; };
 		4F43E64625E153EA0018B3E0 /* FloatyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatyManager.swift; sourceTree = "<group>"; };
 		4F43E64725E153EA0018B3E0 /* FloatyItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatyItem.swift; sourceTree = "<group>"; };
@@ -138,8 +140,12 @@
 		4F43E67E25E163810018B3E0 /* BackgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BackgroundMusic.mp3; sourceTree = "<group>"; };
 		4F43E68B25E164210018B3E0 /* NewRecording.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NewRecording.m4a; sourceTree = "<group>"; };
 		4F43E69525E165130018B3E0 /* ClockBgMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ClockBgMusic.mp3; sourceTree = "<group>"; };
+		4F479B3125EF916D00899201 /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		4F5F382A2594D02200992FE3 /* Cracker.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Cracker.gif; sourceTree = "<group>"; };
 		4F5F383D2594E87200992FE3 /* fireworks03.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fireworks03.gif; sourceTree = "<group>"; };
+		4F5FCBAE25EE4AB200331771 /* 3-Hour.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "3-Hour.mp3"; sourceTree = "<group>"; };
+		4F5FCBB425EE4AC200331771 /* 15-Minutes.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "15-Minutes.mp3"; sourceTree = "<group>"; };
+		4F5FCBBC25EE72C300331771 /* Set.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Set.mp3; sourceTree = "<group>"; };
 		700E2E59258A12100042EC2D /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		700E2E5C258A86790042EC2D /* WrongSelection.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WrongSelection.mp3; sourceTree = "<group>"; };
 		700E2E5E258A88580042EC2D /* WellDone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WellDone.mp3; sourceTree = "<group>"; };
@@ -148,12 +154,10 @@
 		70111074258BCA8500159541 /* Wrong_Option_Clip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Wrong_Option_Clip.mp3; sourceTree = "<group>"; };
 		701675F22588C542004F19BA /* PictureCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictureCardView.xib; sourceTree = "<group>"; };
 		701675F32588C542004F19BA /* PictureCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureCardView.swift; sourceTree = "<group>"; };
-		701675F62588C611004F19BA /* PictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
+		701675F62588C611004F19BA /* GuessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessViewController.swift; sourceTree = "<group>"; };
 		701675F82588EE52004F19BA /* ShowClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowClockViewController.swift; sourceTree = "<group>"; };
 		701675F92588EE52004F19BA /* ShowClockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowClockViewController.xib; sourceTree = "<group>"; };
 		7023D4C02581FDC200B752D4 /* LocalizableEnglish.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = LocalizableEnglish.strings; sourceTree = "<group>"; };
-		7023D4C425834D0000B752D4 /* GuessTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTimeViewController.swift; sourceTree = "<group>"; };
-		7023D4C525834D0000B752D4 /* GuessTimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuessTimeViewController.xib; sourceTree = "<group>"; };
 		7023D4C92583523000B752D4 /* GuessTimeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTimeCardView.swift; sourceTree = "<group>"; };
 		7023D4CA2583523000B752D4 /* GuessTimeCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuessTimeCardView.xib; sourceTree = "<group>"; };
 		7023D4CD2583583800B752D4 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -171,9 +175,9 @@
 		709EAE9B2580A93C00F8FEEC /* Kids-LearnWithFun-ClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kids-LearnWithFun-ClockUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		709EAE9F2580A93C00F8FEEC /* Kids_LearnWithFun_ClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kids_LearnWithFun_ClockUITests.swift; sourceTree = "<group>"; };
 		709EAEA12580A93C00F8FEEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		709EAEAE2580AFE700F8FEEC /* Clocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clocket.swift; sourceTree = "<group>"; };
-		709EAEAF2580AFE800F8FEEC /* ClockHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockHand.swift; sourceTree = "<group>"; };
-		709EAEB02580AFE800F8FEEC /* ClockFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockFace.swift; sourceTree = "<group>"; };
+		709EAEAE2580AFE700F8FEEC /* SetClocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetClocket.swift; sourceTree = "<group>"; };
+		709EAEAF2580AFE800F8FEEC /* GuessClockHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessClockHand.swift; sourceTree = "<group>"; };
+		709EAEB02580AFE800F8FEEC /* SetClockFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetClockFace.swift; sourceTree = "<group>"; };
 		709EAEB42580CA6C00F8FEEC /* CommanCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommanCode.swift; sourceTree = "<group>"; };
 		709EAEB72580DBA000F8FEEC /* ClockLearn.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ClockLearn.gif; sourceTree = "<group>"; };
 		709EAEB92580DD6000F8FEEC /* GIFSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFSwift.swift; sourceTree = "<group>"; };
@@ -218,6 +222,34 @@
 				4F1698B325E26D140049452D /* SubscriptionDetailsController.xib */,
 			);
 			path = Payment;
+			sourceTree = "<group>";
+		};
+		4F428F7A25EE1C2400EED0E3 /* ClockFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4F428F7B25EE1C3100EED0E3 /* GuessClock */,
+				4F428F7F25EE1C5F00EED0E3 /* SetClock */,
+			);
+			path = ClockFiles;
+			sourceTree = "<group>";
+		};
+		4F428F7B25EE1C3100EED0E3 /* GuessClock */ = {
+			isa = PBXGroup;
+			children = (
+				709EAEAF2580AFE800F8FEEC /* GuessClockHand.swift */,
+				4F1E7D6B259CC70000A8A39B /* GuessClockFace.swift */,
+				4F1E7D70259CC7C300A8A39B /* GuessClocket.swift */,
+			);
+			path = GuessClock;
+			sourceTree = "<group>";
+		};
+		4F428F7F25EE1C5F00EED0E3 /* SetClock */ = {
+			isa = PBXGroup;
+			children = (
+				709EAEAE2580AFE700F8FEEC /* SetClocket.swift */,
+				709EAEB02580AFE800F8FEEC /* SetClockFace.swift */,
+			);
+			path = SetClock;
 			sourceTree = "<group>";
 		};
 		4F43E64425E153EA0018B3E0 /* Floaty */ = {
@@ -266,13 +298,32 @@
 			path = Gif_Images;
 			sourceTree = "<group>";
 		};
+		4F5FCBAA25EE482300331771 /* HourSound */ = {
+			isa = PBXGroup;
+			children = (
+				4F5FCBAE25EE4AB200331771 /* 3-Hour.mp3 */,
+			);
+			path = HourSound;
+			sourceTree = "<group>";
+		};
+		4F5FCBB325EE4AB700331771 /* MinuteSound */ = {
+			isa = PBXGroup;
+			children = (
+				4F5FCBB425EE4AC200331771 /* 15-Minutes.mp3 */,
+			);
+			path = MinuteSound;
+			sourceTree = "<group>";
+		};
 		700E2E5B258A86590042EC2D /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				4F5FCBB325EE4AB700331771 /* MinuteSound */,
+				4F5FCBAA25EE482300331771 /* HourSound */,
 				70111072258BB27C00159541 /* Wrong_word.mp3 */,
 				4F43E69525E165130018B3E0 /* ClockBgMusic.mp3 */,
 				4F43E67E25E163810018B3E0 /* BackgroundMusic.mp3 */,
 				70111074258BCA8500159541 /* Wrong_Option_Clip.mp3 */,
+				4F5FCBBC25EE72C300331771 /* Set.mp3 */,
 				4F43E68B25E164210018B3E0 /* NewRecording.m4a */,
 				700E2E60258A8B290042EC2D /* Wrong1.mp3 */,
 				700E2E5E258A88580042EC2D /* WellDone.mp3 */,
@@ -325,14 +376,12 @@
 				709EAEAD2580AF3300F8FEEC /* Third Party */,
 				709EAE7D2580A93700F8FEEC /* AppDelegate.swift */,
 				709EAE7F2580A93700F8FEEC /* SceneDelegate.swift */,
-				701675F62588C611004F19BA /* PictureViewController.swift */,
+				701675F62588C611004F19BA /* GuessViewController.swift */,
 				709EAE812580A93700F8FEEC /* ViewController.swift */,
 				709EAE832580A93700F8FEEC /* Main.storyboard */,
 				709EAE862580A93C00F8FEEC /* Assets.xcassets */,
 				709EAE882580A93C00F8FEEC /* LaunchScreen.storyboard */,
 				709EAE8B2580A93C00F8FEEC /* Info.plist */,
-				7023D4C425834D0000B752D4 /* GuessTimeViewController.swift */,
-				7023D4C525834D0000B752D4 /* GuessTimeViewController.xib */,
 				7023D4CD2583583800B752D4 /* AppConstants.swift */,
 				701675F82588EE52004F19BA /* ShowClockViewController.swift */,
 				701675F92588EE52004F19BA /* ShowClockViewController.xib */,
@@ -364,15 +413,11 @@
 		709EAEAD2580AF3300F8FEEC /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
+				4F428F7A25EE1C2400EED0E3 /* ClockFiles */,
 				4F43E65525E159F30018B3E0 /* SwiftyStoreKit */,
 				4F43E64425E153EA0018B3E0 /* Floaty */,
 				709EAEB92580DD6000F8FEEC /* GIFSwift.swift */,
-				709EAEAE2580AFE700F8FEEC /* Clocket.swift */,
-				709EAEB02580AFE800F8FEEC /* ClockFace.swift */,
-				709EAEAF2580AFE800F8FEEC /* ClockHand.swift */,
 				709EAEB42580CA6C00F8FEEC /* CommanCode.swift */,
-				4F1E7D6B259CC70000A8A39B /* SetClockFace.swift */,
-				4F1E7D70259CC7C300A8A39B /* SetClocket.swift */,
 			);
 			path = "Third Party";
 			sourceTree = "<group>";
@@ -388,6 +433,7 @@
 		709EAEBB258102AE00F8FEEC /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				4F479B3125EF916D00899201 /* UILabelExtension.swift */,
 				70F28465258119C000D68BDA /* UIViewExtension.swift */,
 				700E2E59258A12100042EC2D /* UIButtonExtension.swift */,
 			);
@@ -505,13 +551,14 @@
 				4F1698B925E26D140049452D /* SubscriptionDetailsController.xib in Resources */,
 				4F5F383E2594E87200992FE3 /* fireworks03.gif in Resources */,
 				709EAEB82580DBA000F8FEEC /* ClockLearn.gif in Resources */,
+				4F5FCBBD25EE72C300331771 /* Set.mp3 in Resources */,
 				4F1698AB25E26D0B0049452D /* CustomLiceneModelController.xib in Resources */,
 				709EAE8A2580A93C00F8FEEC /* LaunchScreen.storyboard in Resources */,
 				700E2E61258A8B290042EC2D /* Wrong1.mp3 in Resources */,
 				4F1698B725E26D140049452D /* PaymentCostController.xib in Resources */,
+				4F5FCBB525EE4AC200331771 /* 15-Minutes.mp3 in Resources */,
 				709EAE872580A93C00F8FEEC /* Assets.xcassets in Resources */,
 				70111075258BCA8600159541 /* Wrong_Option_Clip.mp3 in Resources */,
-				7023D4C725834D0000B752D4 /* GuessTimeViewController.xib in Resources */,
 				701675FB2588EE52004F19BA /* ShowClockViewController.xib in Resources */,
 				4F43E69625E165130018B3E0 /* ClockBgMusic.mp3 in Resources */,
 				4F1698BA25E26D140049452D /* PaymentDetailViewController.xib in Resources */,
@@ -521,6 +568,7 @@
 				4F1ABE1E2595F71800256AB8 /* GreenCracker.gif in Resources */,
 				7023D4C12581FDC200B752D4 /* LocalizableEnglish.strings in Resources */,
 				700E2E5F258A88580042EC2D /* WellDone.mp3 in Resources */,
+				4F5FCBAF25EE4AB200331771 /* 3-Hour.mp3 in Resources */,
 				700E2E5D258A86790042EC2D /* WrongSelection.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,7 +595,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F43E64B25E153EA0018B3E0 /* FloatyWindow.swift in Sources */,
-				4F1E7D71259CC7C300A8A39B /* SetClocket.swift in Sources */,
+				4F1E7D71259CC7C300A8A39B /* GuessClocket.swift in Sources */,
 				701675F52588C542004F19BA /* PictureCardView.swift in Sources */,
 				709EAE822580A93700F8FEEC /* ViewController.swift in Sources */,
 				4F43E66D25E159F30018B3E0 /* PaymentsController.swift in Sources */,
@@ -556,15 +604,14 @@
 				4F43E66A25E159F30018B3E0 /* SwiftyStoreKit.swift in Sources */,
 				4F43E66F25E159F30018B3E0 /* RestorePurchasesController.swift in Sources */,
 				4F43E65025E153EA0018B3E0 /* FloatyDelegate.swift in Sources */,
-				709EAEB32580AFE900F8FEEC /* ClockFace.swift in Sources */,
-				709EAEB12580AFE800F8FEEC /* Clocket.swift in Sources */,
+				709EAEB32580AFE900F8FEEC /* SetClockFace.swift in Sources */,
+				709EAEB12580AFE800F8FEEC /* SetClocket.swift in Sources */,
 				7023D4CB2583523000B752D4 /* GuessTimeCardView.swift in Sources */,
 				4F08829B25986B9E00E99167 /* PlayWithClockController.swift in Sources */,
 				4F43E64C25E153EA0018B3E0 /* FloatyManager.swift in Sources */,
 				4F1698BB25E26D140049452D /* PaymentCostController.swift in Sources */,
-				7023D4C625834D0000B752D4 /* GuessTimeViewController.swift in Sources */,
-				4F1E7D6C259CC70000A8A39B /* SetClockFace.swift in Sources */,
-				709EAEB22580AFE900F8FEEC /* ClockHand.swift in Sources */,
+				4F1E7D6C259CC70000A8A39B /* GuessClockFace.swift in Sources */,
+				709EAEB22580AFE900F8FEEC /* GuessClockHand.swift in Sources */,
 				4F43E67125E159F30018B3E0 /* InAppReceiptVerificator.swift in Sources */,
 				709EAEBA2580DD6000F8FEEC /* GIFSwift.swift in Sources */,
 				4F43E67325E159F30018B3E0 /* AppleReceiptValidator.swift in Sources */,
@@ -573,6 +620,7 @@
 				4F43E66925E159F30018B3E0 /* InAppReceipt.swift in Sources */,
 				4F43E66525E159F30018B3E0 /* SKProduct+LocalizedPrice.swift in Sources */,
 				4F43E64F25E153EA0018B3E0 /* Floaty.swift in Sources */,
+				4F479B3225EF916D00899201 /* UILabelExtension.swift in Sources */,
 				4F43E66B25E159F30018B3E0 /* ProductsInfoController.swift in Sources */,
 				4F0EC402259D9B76008AC986 /* LearnViewController.swift in Sources */,
 				4F43E64D25E153EA0018B3E0 /* FloatyItem.swift in Sources */,
@@ -580,7 +628,7 @@
 				4F43E66825E159F30018B3E0 /* SwiftyStoreKit+Types.swift in Sources */,
 				70F28466258119C100D68BDA /* UIViewExtension.swift in Sources */,
 				4F1698B625E26D140049452D /* PaymentDetailViewController.swift in Sources */,
-				701675F72588C611004F19BA /* PictureViewController.swift in Sources */,
+				701675F72588C611004F19BA /* GuessViewController.swift in Sources */,
 				709EAE802580A93700F8FEEC /* SceneDelegate.swift in Sources */,
 				4F43E67025E159F30018B3E0 /* PaymentQueueController.swift in Sources */,
 				4F128EB42597115E00B5575C /* SetTimeViewController.swift in Sources */,

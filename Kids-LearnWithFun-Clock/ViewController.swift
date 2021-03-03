@@ -279,10 +279,10 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(guessVC, animated: true)*/
         
         
-       /* let pictureVC = PictureViewController(nibName: "PictureViewController", bundle: nil)
+       /* let pictureVC = GuessViewController(nibName: "GuessViewController", bundle: nil)
         self.navigationController?.pushViewController(pictureVC, animated: true)*/
-        let pictureVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PictureViewController") as! PictureViewController
-//        let setPictureVC = StoryboardsConstants.PicSoundViewStoryboard.getViewControllerInstance(identifier: "PictureViewController") as! PictureViewController
+        let pictureVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GuessViewController") as! GuessViewController
+//        let setPictureVC = StoryboardsConstants.PicSoundViewStoryboard.getViewControllerInstance(identifier: "GuessViewController") as! GuessViewController
         self.navigationController?.pushViewController(pictureVC, animated: true)
     }
     //IBAction Set Time

@@ -1,6 +1,6 @@
 //
-//  Clocket.swift
-//  Clocket
+//  SetClocket.swift
+//  SetClocket
 //
 //  Created by Andrey Filonov on 08/11/2018.
 //  Copyright © 2018 Andrey Filonov. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 
 
-open class Clocket: UIView, UIGestureRecognizerDelegate {
+open class SetClocket: UIView, UIGestureRecognizerDelegate {
     
     private let translateToRadian = Double.pi/180.0
     open var secondHandLength: CGFloat = 0.9
@@ -38,6 +38,10 @@ open class Clocket: UIView, UIGestureRecognizerDelegate {
     var viewMinuteHand  = UIView()
     var minuteHandFirstSubview = UIView()
     var minuteHandSecondSubview = UIImageView()
+    
+    var setManualHourAngle = CommanCode.hourAngleArray[10]
+    var setManualMinuteAngle = CommanCode.minuteAngleArray[10]
+
 
     public struct LocalTime {
         var hour: Int?
@@ -51,7 +55,7 @@ open class Clocket: UIView, UIGestureRecognizerDelegate {
     
     open var clockFace = UIImageView()
     private var secondHandCircle = UIImageView()
-    weak open var clockDelegate: ClocketDelegate?
+    weak open var clockDelegate: SetClocketDelegate?
     
     
     public override init(frame: CGRect) {
@@ -68,13 +72,13 @@ open class Clocket: UIView, UIGestureRecognizerDelegate {
     
     private func setup() {
         translatesAutoresizingMaskIntoConstraints = false
-
+//        setupHands()
         setupClockFace()
         setupGestures()
     }
     
     private func setupClockFace() {
-        clockFace = ClockFace(frame: frame)
+        clockFace = SetClockFace(frame: frame)
      /*   if UIDevice.current.hasNotch */
         addSubview(clockFace)
 //      clockFace.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor).isActive = true
@@ -223,10 +227,10 @@ open class Clocket: UIView, UIGestureRecognizerDelegate {
 
                   
                   
-                let xyz =  atan2((Float(tapLocation.x - center.x)),
+                let getLocationDiff =  atan2((Float(tapLocation.x - center.x)),
                                      (Float(tapLocation.y - center.y)))
             
-            print("#####atan2",String(format:"%.02f", xyz))
+            print("#####atan2",String(format:"%.02f", getLocationDiff))
 
 
 //            print("@@@@@@@@handRadianAngle",handRadianAngle)
@@ -241,6 +245,7 @@ open class Clocket: UIView, UIGestureRecognizerDelegate {
         //tap or pan on the outer area of the clockface to set the minute hand
 //        if distanceToCenter / max(10.0, viewSize/2) > hourHandLength * 1.1 {
         if isMinuteHandTouch {
+            setManualMinuteAngle = Double(getLocationDiff)
             viewMinuteHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
 //            let newMinuteValue = Int(0.5 + handRadianAngle * 30 / (Double.pi/2)) % 60
            /* let newMinuteValue = Int(handRadianAngle * 6 / (Double.pi/2)) % 60
@@ -258,6 +263,7 @@ open class Clocket: UIView, UIGestureRecognizerDelegate {
         }
         
         else if isHourHandTouch {
+            setManualHourAngle = Double(getLocationDiff)
             viewHourHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
 
       /*  //} else if distanceToCenter / (viewSize/2) < hourHandLength {
@@ -391,7 +397,7 @@ extension UIView {
 }
 
 
-public protocol ClocketDelegate: AnyObject {
+public protocol SetClocketDelegate: AnyObject {
     
     func timeIsSetManually()
     

@@ -1,6 +1,6 @@
 //
-//  ClockHand.swift
-//  Clocket
+//  GuessClockHand.swift
+//  SetClocket
 //
 //  Created by Andrey Filonov on 11/11/2018.
 //  Copyright © 2018 Andrey Filonov. All rights reserved.
@@ -19,7 +19,7 @@ struct ClockHandParameters {
 }
 
 
-class ClockHand: UIImageView {
+class GuessClockHand: UIImageView {
     
     convenience init(parameters: ClockHandParameters) {
         let radius = min(parameters.frame.width, parameters.frame.height)

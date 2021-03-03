@@ -402,10 +402,10 @@
             </objects>
             <point key="canvasLocation" x="190" y="-216"/>
         </scene>
-        <!--Picture View Controller-->
+        <!--Guess View Controller-->
         <scene sceneID="vWT-Zs-SqO">
             <objects>
-                <viewController storyboardIdentifier="PictureViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g7z-YB-fXP" customClass="PictureViewController" customModule="Learn_Clock___Time" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GuessViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g7z-YB-fXP" customClass="GuessViewController" customModule="Learn_Clock___Time" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7eQ-Sy-AVf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -539,7 +539,7 @@
                                     <action selector="funcBackToHome:" destination="irR-tW-XvX" eventType="touchUpInside" id="Izj-pu-pn4"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9y6-ha-cev" customClass="Clocket" customModule="Learn_Clock___Time" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9y6-ha-cev" customClass="SetClocket" customModule="Learn_Clock___Time" customModuleProvider="target">
                                 <rect key="frame" x="31" y="124" width="352" height="352"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -561,9 +561,83 @@
                                     <constraint firstAttribute="height" constant="45" id="sfF-bg-LMz"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0HD-Ro-UiX">
-                                <rect key="frame" x="0.0" y="476" width="414" height="420"/>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pb4-ti-TFD" customClass="UILabelExtension" customModule="Learn_Clock___Time" customModuleProvider="target">
+                                <rect key="frame" x="53.5" y="496.5" width="82" height="38.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isShowShadow" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2K-hS-tJf" customClass="UILabelExtension" customModule="Learn_Clock___Time" customModuleProvider="target">
+                                <rect key="frame" x="145.5" y="498" width="60.5" height="35.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isShowShadow" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8BN-6O-5U7" userLabel="seperatorView">
+                                <rect key="frame" x="206.5" y="501" width="1" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="982-Fr-805"/>
+                                    <constraint firstAttribute="width" constant="1" id="hVi-uM-wv1"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uL-hT-DEE" customClass="UILabelExtension" customModule="Learn_Clock___Time" customModuleProvider="target">
+                                <rect key="frame" x="218" y="496.5" width="82" height="38.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isShowShadow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ho5-RA-hRh">
+                                <rect key="frame" x="47" y="573.5" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="YsF-sA-heu"/>
+                                    <constraint firstAttribute="width" secondItem="Ho5-RA-hRh" secondAttribute="height" multiplier="1:1" id="mTn-uh-Tdb"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="backQuestion"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5I-8r-8jh" customClass="UILabelExtension" customModule="Learn_Clock___Time" customModuleProvider="target">
+                                <rect key="frame" x="310" y="498" width="60.5" height="35.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isShowShadow" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvZ-qu-11L" customClass="ButtonCardOptionExt" customModule="Learn_Clock___Time" customModuleProvider="target">
+                                <rect key="frame" x="157" y="576" width="100" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="EJs-pa-hmk"/>
+                                    <constraint firstAttribute="height" constant="55" id="lAi-db-bIs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
+                                <state key="normal" title="Done" backgroundImage="white_bubble">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="funcDoneClicked:" destination="irR-tW-XvX" eventType="touchUpInside" id="jjP-2k-lCX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3k-Op-oBD">
+                                <rect key="frame" x="307" y="573.5" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="l3k-Op-oBD" secondAttribute="height" multiplier="1:1" id="Gy6-zy-0WU"/>
+                                    <constraint firstAttribute="width" constant="60" id="vTd-cu-hvH"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="nextQuestion"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xO5-XE-fkb"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -573,41 +647,57 @@
                             <constraint firstItem="wcy-LM-qp5" firstAttribute="centerY" secondItem="Dt0-4r-aaf" secondAttribute="centerY" id="1t0-0D-stM"/>
                             <constraint firstItem="TjK-sd-jeF" firstAttribute="trailing" secondItem="xO5-XE-fkb" secondAttribute="trailing" id="2Yv-U6-DZ4"/>
                             <constraint firstItem="TjK-sd-jeF" firstAttribute="leading" secondItem="xO5-XE-fkb" secondAttribute="leading" id="2zl-1k-zqO"/>
+                            <constraint firstItem="6uL-hT-DEE" firstAttribute="centerY" secondItem="8BN-6O-5U7" secondAttribute="centerY" id="3WR-Yj-c9i"/>
+                            <constraint firstItem="D2K-hS-tJf" firstAttribute="leading" secondItem="Pb4-ti-TFD" secondAttribute="trailing" constant="10" id="3Z4-7G-oYX"/>
                             <constraint firstItem="h3E-XZ-JXy" firstAttribute="width" secondItem="h3E-XZ-JXy" secondAttribute="height" multiplier="1:1" id="5BU-hA-9Qw"/>
+                            <constraint firstItem="KvZ-qu-11L" firstAttribute="leading" secondItem="Ho5-RA-hRh" secondAttribute="trailing" constant="50" id="5g7-ex-gkO"/>
                             <constraint firstItem="9YI-Gi-lMD" firstAttribute="leading" secondItem="xO5-XE-fkb" secondAttribute="leading" constant="5" id="7Vo-rF-qbp"/>
+                            <constraint firstItem="8BN-6O-5U7" firstAttribute="centerX" secondItem="LYF-zq-5bK" secondAttribute="centerX" id="8dh-W6-M86"/>
                             <constraint firstItem="9y6-ha-cev" firstAttribute="top" secondItem="9YI-Gi-lMD" secondAttribute="bottom" constant="10" id="AEk-go-a2Y"/>
+                            <constraint firstItem="b5I-8r-8jh" firstAttribute="leading" secondItem="6uL-hT-DEE" secondAttribute="trailing" constant="10" id="AYY-tM-egE"/>
                             <constraint firstAttribute="bottom" secondItem="TjK-sd-jeF" secondAttribute="bottom" id="Cnz-ZM-54I"/>
                             <constraint firstItem="Dt0-4r-aaf" firstAttribute="centerX" secondItem="9y6-ha-cev" secondAttribute="centerX" id="EId-Dl-gCY"/>
                             <constraint firstItem="vPq-q8-bsa" firstAttribute="centerX" secondItem="9y6-ha-cev" secondAttribute="centerX" id="EZW-2C-dcd"/>
                             <constraint firstItem="WDe-QJ-y06" firstAttribute="width" secondItem="h3E-XZ-JXy" secondAttribute="width" constant="2" id="Frw-1P-eeS"/>
+                            <constraint firstItem="6uL-hT-DEE" firstAttribute="leading" secondItem="vPq-q8-bsa" secondAttribute="trailing" constant="10" id="JL4-1I-ToZ"/>
                             <constraint firstItem="WDe-QJ-y06" firstAttribute="centerY" secondItem="h3E-XZ-JXy" secondAttribute="centerY" id="K6r-xu-xqF"/>
+                            <constraint firstItem="l3k-Op-oBD" firstAttribute="centerY" secondItem="KvZ-qu-11L" secondAttribute="centerY" id="MVQ-5Q-ZDQ"/>
                             <constraint firstItem="9y6-ha-cev" firstAttribute="centerX" secondItem="LYF-zq-5bK" secondAttribute="centerX" id="NYg-cU-TS7"/>
-                            <constraint firstAttribute="bottom" secondItem="0HD-Ro-UiX" secondAttribute="bottom" id="NdQ-UC-tGV"/>
                             <constraint firstItem="vPq-q8-bsa" firstAttribute="height" secondItem="9y6-ha-cev" secondAttribute="height" id="NpF-Pt-hCM"/>
-                            <constraint firstItem="0HD-Ro-UiX" firstAttribute="leading" secondItem="LYF-zq-5bK" secondAttribute="leading" id="T4I-sg-fpN"/>
                             <constraint firstItem="9YI-Gi-lMD" firstAttribute="top" secondItem="xO5-XE-fkb" secondAttribute="top" id="Thv-Uv-5pL"/>
                             <constraint firstItem="Dt0-4r-aaf" firstAttribute="height" secondItem="9y6-ha-cev" secondAttribute="height" id="Uwd-b4-ytY"/>
                             <constraint firstItem="9y6-ha-cev" firstAttribute="width" secondItem="LYF-zq-5bK" secondAttribute="width" multiplier="0.85" id="VVD-PU-GfA"/>
+                            <constraint firstItem="l3k-Op-oBD" firstAttribute="leading" secondItem="KvZ-qu-11L" secondAttribute="trailing" constant="50" id="WZq-yg-KwU"/>
+                            <constraint firstItem="D2K-hS-tJf" firstAttribute="centerY" secondItem="8BN-6O-5U7" secondAttribute="centerY" id="XiQ-cA-9Jn"/>
                             <constraint firstItem="Dt0-4r-aaf" firstAttribute="centerY" secondItem="9y6-ha-cev" secondAttribute="centerY" id="Zlx-2W-b0w"/>
+                            <constraint firstItem="8BN-6O-5U7" firstAttribute="top" secondItem="9y6-ha-cev" secondAttribute="bottom" constant="25" id="dCI-cq-nia"/>
                             <constraint firstItem="wcy-LM-qp5" firstAttribute="centerX" secondItem="Dt0-4r-aaf" secondAttribute="centerX" id="ddr-Oy-tkn"/>
                             <constraint firstItem="h3E-XZ-JXy" firstAttribute="centerY" secondItem="9YI-Gi-lMD" secondAttribute="centerY" id="e6c-bt-IdJ"/>
                             <constraint firstItem="h3E-XZ-JXy" firstAttribute="leading" secondItem="WDe-QJ-y06" secondAttribute="trailing" constant="25" id="feM-wI-MqI"/>
-                            <constraint firstAttribute="trailing" secondItem="0HD-Ro-UiX" secondAttribute="trailing" id="qIz-OB-U7x"/>
+                            <constraint firstItem="KvZ-qu-11L" firstAttribute="top" secondItem="Dt0-4r-aaf" secondAttribute="bottom" constant="100" id="h7a-72-sIB"/>
+                            <constraint firstItem="Ho5-RA-hRh" firstAttribute="centerY" secondItem="KvZ-qu-11L" secondAttribute="centerY" id="j4o-wW-mPJ"/>
+                            <constraint firstItem="Pb4-ti-TFD" firstAttribute="centerY" secondItem="D2K-hS-tJf" secondAttribute="centerY" id="jGc-LS-1Yn"/>
+                            <constraint firstItem="KvZ-qu-11L" firstAttribute="centerX" secondItem="LYF-zq-5bK" secondAttribute="centerX" id="nNt-vC-DzY"/>
+                            <constraint firstItem="vPq-q8-bsa" firstAttribute="leading" secondItem="D2K-hS-tJf" secondAttribute="trailing" id="s0a-5v-MrT"/>
                             <constraint firstItem="vPq-q8-bsa" firstAttribute="centerY" secondItem="9y6-ha-cev" secondAttribute="centerY" id="wKH-eC-KK5"/>
-                            <constraint firstItem="0HD-Ro-UiX" firstAttribute="top" secondItem="9y6-ha-cev" secondAttribute="bottom" id="zWg-If-zJN"/>
+                            <constraint firstItem="b5I-8r-8jh" firstAttribute="centerY" secondItem="8BN-6O-5U7" secondAttribute="centerY" id="yyg-cl-ezn"/>
                             <constraint firstItem="TjK-sd-jeF" firstAttribute="top" secondItem="LYF-zq-5bK" secondAttribute="top" id="zzL-gq-hxl"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnDone" destination="KvZ-qu-11L" id="6hp-Mx-W73"/>
                         <outlet property="btnNoAds" destination="WDe-QJ-y06" id="jhd-ed-cAU"/>
                         <outlet property="btnSound" destination="h3E-XZ-JXy" id="ByS-QV-82y"/>
-                        <outlet property="imgView" destination="0HD-Ro-UiX" id="11e-xL-a24"/>
+                        <outlet property="lblHour" destination="D2K-hS-tJf" id="JrV-dC-BM2"/>
+                        <outlet property="lblHourTime" destination="Pb4-ti-TFD" id="nIL-jb-i1K"/>
+                        <outlet property="lblMinute" destination="b5I-8r-8jh" id="DPO-l4-Ysi"/>
+                        <outlet property="lblMinuteTime" destination="6uL-hT-DEE" id="m3X-OV-Up0"/>
                         <outlet property="viewClocket" destination="9y6-ha-cev" id="e1i-Wc-hDf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agk-vr-Zij" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="745" y="-640"/>
+            <point key="canvasLocation" x="744.92753623188412" y="-640.17857142857144"/>
         </scene>
         <!--Play With Clock Controller-->
         <scene sceneID="rge-rl-tLt">
@@ -655,7 +745,7 @@
                                     <action selector="funcBackToHome:" destination="lJi-Gk-gJM" eventType="touchUpInside" id="fep-UC-sHJ"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4XK-Gw-xsw" customClass="Clocket" customModule="Learn_Clock___Time" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4XK-Gw-xsw" customClass="SetClocket" customModule="Learn_Clock___Time" customModuleProvider="target">
                                 <rect key="frame" x="31" y="139" width="352" height="352"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -701,6 +791,20 @@
             <point key="canvasLocation" x="745" y="-640"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="6uL-hT-DEE">
+            <size key="intrinsicContentSize" width="82" height="38.5"/>
+        </designable>
+        <designable name="D2K-hS-tJf">
+            <size key="intrinsicContentSize" width="60.5" height="35.5"/>
+        </designable>
+        <designable name="Pb4-ti-TFD">
+            <size key="intrinsicContentSize" width="82" height="38.5"/>
+        </designable>
+        <designable name="b5I-8r-8jh">
+            <size key="intrinsicContentSize" width="60.5" height="35.5"/>
+        </designable>
+    </designables>
     <resources>
         <image name="CenterClockImg1" width="201" height="196"/>
         <image name="HomeBgImage" width="640" height="960"/>
@@ -709,7 +813,13 @@
         <image name="PaymentDetail" width="564" height="442"/>
         <image name="Setting" width="2295" height="2295"/>
         <image name="Sound-On_home" width="113" height="113"/>
+        <image name="backQuestion" width="512" height="512"/>
+        <image name="nextQuestion" width="512" height="512"/>
         <image name="setTimeHomeIcon" width="512" height="512"/>
+        <image name="white_bubble" width="1476" height="372"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
