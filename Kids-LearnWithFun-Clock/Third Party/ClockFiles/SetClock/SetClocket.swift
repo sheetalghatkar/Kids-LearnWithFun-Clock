@@ -38,9 +38,14 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
     var viewMinuteHand  = UIView()
     var minuteHandFirstSubview = UIView()
     var minuteHandSecondSubview = UIImageView()
-    
+//-------------
+    //Code for set hands
     var setManualHourAngle = CommanCode.hourAngleArray[10]
     var setManualMinuteAngle = CommanCode.minuteAngleArray[10]
+    var hourRangeIndex = 10
+//-------------
+    var mainGestureRecognizer = UITapGestureRecognizer()
+     var subGestureRecognizer =  UITapGestureRecognizer()
 
 
     public struct LocalTime {
@@ -129,7 +134,7 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
 //        centerImageView.center.y = ((self.clockFace.frame.size.height)/2)
 //        centerImageView.image = CommanCode.CLOCK_CENTER_IMG
         
-        viewMinuteHand.frame.size = CGSize(width: (CommanCode.SCREEN_WIDTH * CommanCode.CLOCKET_WIDTH_PERCENT), height: 20)
+        viewMinuteHand.frame.size = CGSize(width: (CommanCode.SCREEN_WIDTH * CommanCode.CLOCKET_WIDTH_PERCENT), height: 15)
         viewMinuteHand.backgroundColor = UIColor.clear
         viewMinuteHand.center.x = ((CommanCode.SCREEN_WIDTH * CommanCode.CLOCKET_WIDTH_PERCENT)/2)
         viewMinuteHand.center.y = ((CommanCode.SCREEN_WIDTH * CommanCode.CLOCKET_WIDTH_PERCENT)/2)
@@ -149,18 +154,17 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
         minuteHandSecondSubview.backgroundColor = UIColor.clear
         viewMinuteHand.addSubview(minuteHandSecondSubview)
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.minuteHandFirstSubClicked(sender:)))
+       /* let tap = UITapGestureRecognizer(target: self, action: #selector(self.minuteHandFirstSubClicked(sender:)))
         tap.cancelsTouchesInView = false
-        minuteHandFirstSubview.addGestureRecognizer(tap)
-
+        minuteHandFirstSubview.addGestureRecognizer(tap)*/
         
 //        self.addSubview(centerImageView)
         viewMinuteHand.alpha = 0.7
     }
-    @objc func minuteHandFirstSubClicked(sender:UITapGestureRecognizer) {
+   /* @objc func minuteHandFirstSubClicked(sender:UITapGestureRecognizer) {
         print("Inside minuteHandFirstSubClicked")
 //        self.viewHourHand.bringSubviewToFront(viewMinuteHand)
-    }
+    }*/
 
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch:UITouch = touches.first!
@@ -245,6 +249,9 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
         //tap or pan on the outer area of the clockface to set the minute hand
 //        if distanceToCenter / max(10.0, viewSize/2) > hourHandLength * 1.1 {
         if isMinuteHandTouch {
+         //   setHourHandPosition()
+           // print("@@@------isMinuteHandTouch---------", Double(getLocationDiff))
+
             setManualMinuteAngle = Double(getLocationDiff)
             viewMinuteHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
 //            let newMinuteValue = Int(0.5 + handRadianAngle * 30 / (Double.pi/2)) % 60
@@ -263,6 +270,7 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
         }
         
         else if isHourHandTouch {
+           // print("@@@------isHourHandTouch---------", Double(getLocationDiff))
             setManualHourAngle = Double(getLocationDiff)
             viewHourHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
 
@@ -278,7 +286,25 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
         }
     }
 
-    
+    func setHourHandPosition() {
+        var startNumber = (CommanCode.hourAngleRangeArray[hourRangeIndex])[0]
+        var endNumber = (CommanCode.hourAngleRangeArray[hourRangeIndex])[1]
+        var numberRange = startNumber...endNumber
+        if numberRange  ~= setManualHourAngle {
+            print("######--- 10 O'clock")
+        } else {
+            print("######--- 10 O'clock")
+        }
+        for iCount in 0..<CommanCode.minuteCalculationArray.count {
+            let minValue = CommanCode.minuteCalculationArray[iCount]
+            let startNumber = minValue[0]
+            let endNumber = minValue[1]
+            let numberRange = startNumber...endNumber
+            if numberRange  ~= setManualMinuteAngle {
+                
+            }
+        }
+    }
     
     private func setupGestures() {
         let panRecognizer = UIPanGestureRecognizer(target: self, action:#selector(handlePan(recognizer:)))
@@ -374,6 +400,11 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
         case .ended:
             viewHourHand.alpha = 0.7
             viewMinuteHand.alpha = 0.7
+            
+            if isHourHandTouch {
+                print("heyyyyyyyyyy")
+                funcResetHourHandToMagicNumber()
+            }
             isHourHandTouch = false
             isMinuteHandTouch = false
             clockDelegate?.timeIsSetManually()
@@ -404,4 +435,61 @@ public protocol SetClocketDelegate: AnyObject {
     func clockStopped()
     
     func countDownExpired()
+}
+
+
+extension SetClocket {
+  /*   var hourAngleArray: [Double] = [3.12,2.60,2.07,1.56,1.05,0.55,-0.02,-0.56,-1.04,-1.60,-2.10,-2.60]
+    //------------------------------------------------------------------------
+    var hourAngleRangeArray: [[Double]] = [[3.12,2.60],[2.60,2.07],[2.07,1.56],[1.56,1.05],[1.05,0.55],[0.55,-0.02],[-0.02,-0.56],[-0.56,-1.04],[-1.04,-1.60],[-1.60,-2.10],[-2.10,-2.60],[-2.60,-3.12]]
+    //------------------------------------------------------------------------
+    var hourCalculationArray = [[3.12,2.99,2.86,2.73,2.60],[2.60,2.46,2.33,2.20,2.07], [2.07,1.94,1.81,1.68,1.56],[1.56,1.43,1.30,1.17,1.05],[1.05,0.92,0.80, 0.67,0.55], [0.55,0.40,0.26,0.12,-0.02],[-0.02,-0.15,-0.29,-0.42,-0.56], [-0.56,-0.68,-0.80,-0.92,-1.04], [-1.04,-1.18,-1.32,-1.46,-1.60],[-1.60,-1.72,-1.85,-1.97,-2.10],[-2.10,-2.22,-2.35,-2.47,-2.60], [-2.60,-2.73,-2.86,-2.99,-3.12]]*/
+    
+    func funcResetHourHandToMagicNumber() {
+        var gethourAngleRange = 0
+        if setManualHourAngle < 0.0 {
+            for iCount in 5..<CommanCode.hourAngleRangeArray.count {
+                let hourValue = CommanCode.hourAngleRangeArray[iCount]
+                let startNumber = hourValue[1]
+                let endNumber = hourValue[0]
+                let numberRange = startNumber...endNumber
+                if numberRange  ~= setManualHourAngle {
+                    gethourAngleRange = iCount
+                }
+            }
+        } else {
+            for iCount in 0..<6 {
+                let hourValue = CommanCode.hourAngleRangeArray[iCount]
+                let startNumber = hourValue[1]
+                let endNumber = hourValue[0]
+                let numberRange = startNumber...endNumber
+                if numberRange  ~= setManualHourAngle {
+                    gethourAngleRange = iCount
+                }
+            }
+        }
+        
+        let hourrangeVal = CommanCode.hourCalculationArray[gethourAngleRange]
+        if setManualHourAngle > hourrangeVal[2] {
+            setManualHourAngle = CommanCode.hourAngleArray[gethourAngleRange]
+            let handRadianAngle = Double(Float.pi/2 - Float(setManualHourAngle))
+            viewHourHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
+
+        } else {
+            if gethourAngleRange == 11 {
+                setManualHourAngle = CommanCode.hourAngleArray[0]
+                let handRadianAngle = Double(Float.pi/2 - Float(setManualHourAngle))
+                viewHourHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
+            } else {
+                setManualHourAngle = CommanCode.hourAngleArray[gethourAngleRange+1]
+                let handRadianAngle = Double(Float.pi/2 - Float(setManualHourAngle))
+                viewHourHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
+            }
+        }
+        
+        
+        
+        
+        
+    }
 }
