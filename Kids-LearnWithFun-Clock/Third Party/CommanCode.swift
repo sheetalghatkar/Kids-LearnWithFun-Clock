@@ -134,7 +134,7 @@ class CommanCode {
      static var Ad_App_ID = "ca-app-pub-3940256099942544~1458002511"*/
     
     //Related to InAppPurchase
-    static var environment = AppleReceiptValidator.VerifyReceiptURLType.sandbox
+    static var environment = AppleReceiptValidator.VerifyReceiptURLType.production
     static var secretKey = "45a93632e6974dff854368d031b747eb"
     
     static var productId_Year_Auto_Recurring = "com.mobiapps360.LearnClockTime.YearlyAutoRenewable"
