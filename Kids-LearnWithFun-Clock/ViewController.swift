@@ -124,14 +124,14 @@ class ViewController: UIViewController {
         self.floaty.floatingActionButtonDelegate = self
         self.floaty.addItem(icon: rateUsImg, handler: { [self]_ in
             self.floaty.close()
-          /*  self.paymentDetailVC = PaymentDetailViewController(nibName: "PaymentDetailViewController", bundle: nil)
+            self.paymentDetailVC = PaymentDetailViewController(nibName: "PaymentDetailViewController", bundle: nil)
             self.paymentDetailVC?.showHomeScreenRateReview = true
-            self.showPaymentScreen()*/
+            self.showPaymentScreen()
         })
         self.floaty.addItem(icon: shareAppImg, handler: {_ in
-            /*self.paymentDetailVC = PaymentDetailViewController(nibName: "PaymentDetailViewController", bundle: nil)
+            self.paymentDetailVC = PaymentDetailViewController(nibName: "PaymentDetailViewController", bundle: nil)
             self.paymentDetailVC?.showHomeScreenShareApp = true
-            self.showPaymentScreen()*/
+            self.showPaymentScreen()
             self.floaty.close()
         })
 //        self.floaty.addItem(icon: contactUsImg, handler: { [self]_ in
@@ -191,7 +191,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func funcCancelSubscription(_ sender: Any) {
-       if btnCancelSubscription.currentImage!.pngData() == (CommanCode.imgCancelSubscription).pngData() {
+      /* if btnCancelSubscription.currentImage!.pngData() == (CommanCode.imgCancelSubscription).pngData() {
             btnCancelSubscription.setImage(CommanCode.imgCancelSubscription1, for: .normal)
         } else {
             btnCancelSubscription.setImage(CommanCode.imgCancelSubscription, for: .normal)
@@ -199,11 +199,11 @@ class ViewController: UIViewController {
 
         if fromShareApp {
             fromShareApp = false
-        } else {
-          /*  paymentDetailVC = PaymentDetailViewController(nibName: "PaymentDetailViewController", bundle: nil)
+        } else {*/
+            paymentDetailVC = PaymentDetailViewController(nibName: "PaymentDetailViewController", bundle: nil)
             paymentDetailVC?.showSubscriptionScreen = true
-            showPaymentScreen()*/
-        }
+            showPaymentScreen()
+       // }
     }
 
 
@@ -254,14 +254,23 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func funcSound_ON_OFF(_ sender: Any) {
-        if defaults.bool(forKey:"PauseHomeSound") {
-            defaults.set(false, forKey: "PauseHomeSound")
-            btnSound.setBackgroundImage(CommanCode.imgSoundOn, for: .normal)
-            player.play()
+        if fromShareApp {
+            fromShareApp = false
+            if defaults.bool(forKey:"PauseHomeSound") {
+                btnSound.setBackgroundImage(CommanCode.imgSoundOff1, for: .normal)
+            } else {
+                btnSound.setBackgroundImage(CommanCode.imgSoundOn1, for: .normal)
+            }
         } else {
-            defaults.set(true, forKey: "PauseHomeSound")
-            btnSound.setBackgroundImage(CommanCode.imgSoundOff, for: .normal)
-            player.stop()
+            if defaults.bool(forKey:"PauseHomeSound") {
+                defaults.set(false, forKey: "PauseHomeSound")
+                btnSound.setBackgroundImage(CommanCode.imgSoundOn, for: .normal)
+                player.play()
+            } else {
+                defaults.set(true, forKey: "PauseHomeSound")
+                btnSound.setBackgroundImage(CommanCode.imgSoundOff, for: .normal)
+                player.stop()
+            }
         }
     }
     //IBAction Learn Time
@@ -364,7 +373,7 @@ extension ViewController : PayementForParentProtocol {
         activityViewController.completionWithItemsHandler = { (activity, success, items, error) in
              print(success ? "SUCCESS!" : "FAILURE")
             self.fromShareApp = true
-            self.btnCancelSubscription.sendActions(for: .touchUpInside)
+            self.btnSound.sendActions(for: .touchUpInside)
         }
         self.present(activityViewController, animated: true, completion: nil)
     }

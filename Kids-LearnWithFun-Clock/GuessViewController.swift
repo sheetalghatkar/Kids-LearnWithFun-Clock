@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import FLAnimatedImage
+import GoogleMobileAds
 import AVFoundation
 
 extension UILabel {
@@ -60,13 +60,49 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
     @IBOutlet weak var picViewcontainer: UIView!
     @IBOutlet weak var btnSound: UIButton!
     var player = AVAudioPlayer()
+    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var btnNoAds: UIButton!
+    @IBOutlet weak var imgViewLoader: UIImageView!
+    @IBOutlet weak var viewTransperent: UIView!
+    @IBOutlet weak var trailingTitlelable: NSLayoutConstraint!
     var paymentDetailVC : PaymentDetailViewController?
     let defaults = UserDefaults.standard
+    var interstitial: GADInterstitial?
+    var bannerView: GADBannerView!
 
+    var timer: Timer?
+    var clickCount = 0
+    var checkCurrentindex = 0
+    var fromHomeClick = false
+    var currentindex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblTitle.text = "Guess Time"
+        lblTitle.textColor = CommanCode.paymentBtnTextColor
+        
+        lblTitle.layer.shadowColor = UIColor.white.cgColor
+        lblTitle.layer.shadowRadius = 1.0
+        lblTitle.layer.shadowOpacity = 1.0
+        lblTitle.layer.shadowOffset = CGSize(width: 4, height: 4)
+        lblTitle.layer.masksToBounds = false
+        
+        
+        let loaderGif = UIImage.gifImageWithName("Loading")
+        imgViewLoader.image = loaderGif
+        imgViewLoader.backgroundColor = UIColor.white
+        imgViewLoader.layer.borderWidth = 1
+        imgViewLoader.layer.borderColor = CommanCode.paymentBtnTextColor.cgColor
+
+        
+        
+        
+        
+       /* print("!!!!minuteAngleArray",CommanCode.minuteAngleArray.count)
+        print("!!!!minuteCalculationArray",CommanCode.minuteCalculationArray.count)
+        print("!!!!hourAngleArray",CommanCode.hourAngleArray.count)
+        print("!!!!hourCalculationArray",CommanCode.hourCalculationArray.count)*/
+
         // Do any additional setup after loading the view.
 //        self.pictureCardWidth = UIScreen.main.bounds.width * 0.8
 
@@ -89,26 +125,79 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
         } else {
             btnSound.setBackgroundImage(CommanCode.imgSoundOff, for: .normal)
         }
+        if !defaults.bool(forKey:"IsPrimeUser") {
+            self.trailingTitlelable.constant = 85
+        } else {
+            self.trailingTitlelable.constant = 10
+        }
+
+        if !(defaults.bool(forKey:"IsPrimeUser")) {
+            bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+            addBannerViewToView(bannerView)
+            bannerView.adUnitID = CommanCode.Banner_AdUnitId
+            bannerView.rootViewController = self
+            bannerView.delegate = self
+            if Reachability.isConnectedToNetwork() {
+                DispatchQueue.main.async {
+                    self.bannerView.load(GADRequest())
+                }
+            } else {
+                let alert = UIAlertController(title: "", message: "No Internet Connection.", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
+                    if self.timer == nil {
+                        self.timer = Timer.scheduledTimer(timeInterval: CommanCode.timerForAds, target: self, selector: #selector(self.alarmToLoadBannerAds), userInfo: nil, repeats: true)
+                    }
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        stopTimer()
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         if defaults.bool(forKey:"IsPrimeUser") {
             if let _ = btnNoAds {
                 self.btnNoAds.isHidden = true
+                if bannerView != nil {
+                    bannerView.removeFromSuperview()
+                }
             }
-        //                if bannerView != nil {
-        //                    bannerView.removeFromSuperview()
-        //                }
-
+            if let _ = trailingTitlelable {
+                self.trailingTitlelable.constant = 10
+            }
         } else {
             if let _ = btnNoAds {
                 self.btnNoAds.isHidden = false
             }
+            if let _ = trailingTitlelable {
+                self.trailingTitlelable.constant = 85
+            }
         }
-
     }
-
-
+    override func viewDidAppear(_ animated: Bool) {
+        if !defaults.bool(forKey:"IsPrimeUser") {
+            if bannerView != nil {
+                if timer == nil {
+                    if Reachability.isConnectedToNetwork() {
+                        DispatchQueue.main.async {
+                            self.bannerView.load(GADRequest())
+                        }
+                    } else {
+                        let alert = UIAlertController(title: "", message: "No Internet Connection.", preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
+                            if self.timer == nil {
+                                self.timer = Timer.scheduledTimer(timeInterval: CommanCode.timerForAds, target: self, selector: #selector(self.alarmToLoadBannerAds), userInfo: nil, repeats: true)
+                            }
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }
+            }
+        }
+    }
     
     func getYMarginForCard() -> CGFloat {
         return 0.0
@@ -412,6 +501,14 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
         }
     
     func showNextCard() {
+        if !(defaults.bool(forKey:"IsPrimeUser")) {
+            clickCount = clickCount + 1
+            print("!!!!!!!!!!!!clickCount",clickCount)
+            if clickCount >= 10 {
+                clickCount = 0
+                callInterstitialOn10Tap()
+            }
+        }
         let animationDuration: TimeInterval = 0.3
         // 1. animate each card to move forward one by one
         for i in 1...2 {
@@ -482,8 +579,36 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
     }
     
     @IBAction func funcBackToHome(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
-    }
+        stopTimer()
+         fromHomeClick = true
+         if defaults.bool(forKey:"IsPrimeUser") {
+             navigationController?.popViewController(animated: true)
+         } else {
+             self.viewTransperent.isHidden = false
+             self.imgViewLoader.isHidden = false
+             if Reachability.isConnectedToNetwork() {
+                 DispatchQueue.main.async {
+                     self.interstitial = self.createAndLoadInterstitial()
+                 }
+                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                     if !self.viewTransperent.isHidden {
+                         self.viewTransperent.isHidden = true
+                         self.imgViewLoader.isHidden = true
+                         self.navigationController?.popViewController(animated: true)
+                     }
+                 }
+             } else {
+                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+                     self.funcHideLoader()
+                     let alert = UIAlertController(title: "", message: "No Internet Connection.", preferredStyle: UIAlertController.Style.alert)
+                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
+                         self.navigationController?.popViewController(animated: true)
+                     }))
+                     self.present(alert, animated: true, completion: nil)
+                 })
+             }
+         }
+     }
     
     // MARK: - User defined Functions
     
@@ -512,6 +637,181 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
     }
 
 }
+
+extension GuessViewController {
+    @objc func alarmToLoadBannerAds(){
+        print("Inside alarmToLoadBannerAds")
+        if Reachability.isConnectedToNetwork() {
+            if bannerView != nil {
+                print("Inside Load bannerView")
+                DispatchQueue.main.async {
+                    self.bannerView.load(GADRequest())
+                }
+            }
+        }
+    }
+    func callInterstitialOn10Tap(){
+        self.viewTransperent.isHidden = false
+        self.imgViewLoader.isHidden = false
+        if Reachability.isConnectedToNetwork() {
+            DispatchQueue.main.async {
+                self.interstitial = self.createAndLoadInterstitial()
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                if !self.viewTransperent.isHidden {
+                    self.viewTransperent.isHidden = true
+                    self.imgViewLoader.isHidden = true
+                }
+            }
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+                self.funcHideLoader()
+                let alert = UIAlertController(title: "", message: "No Internet Connection.", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
+                }))
+                self.present(alert, animated: true, completion: nil)
+            })
+        }
+    }
+    private func createAndLoadInterstitial() -> GADInterstitial? {
+        interstitial = GADInterstitial(adUnitID: CommanCode.Interstitial_AdUnitId)
+
+        guard let interstitial = interstitial else {
+            return nil
+        }
+
+        let request = GADRequest()
+        // Remove the following line before you upload the app
+        interstitial.load(request)
+        interstitial.delegate = self
+
+        return interstitial
+    }
+
+    func stopTimer() {
+        print("Inside stopTimer")
+        if timer != nil {
+            timer?.invalidate()
+            timer = nil
+        }
+    }
+}
+
+
+extension GuessViewController: GADBannerViewDelegate {
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+      bannerView.translatesAutoresizingMaskIntoConstraints = false
+      view.addSubview(bannerView)
+        if #available(iOS 11.0, *) {
+          // In iOS 11, we need to constrain the view to the safe area.
+          positionBannerViewFullWidthAtBottomOfSafeArea(bannerView)
+        }
+        else {
+          // In lower iOS versions, safe area is not available so we use
+          // bottom layout guide and view edges.
+          positionBannerViewFullWidthAtBottomOfView(bannerView)
+        }
+     }
+
+    func positionBannerViewFullWidthAtBottomOfSafeArea(_ bannerView: UIView) {
+      // Position the banner. Stick it to the bottom of the Safe Area.
+      // Make it constrained to the edges of the safe area.
+      let guide = view.safeAreaLayoutGuide
+      NSLayoutConstraint.activate([
+        guide.leftAnchor.constraint(equalTo: bannerView.leftAnchor),
+        guide.rightAnchor.constraint(equalTo: bannerView.rightAnchor),
+        guide.bottomAnchor.constraint(equalTo: bannerView.bottomAnchor)
+      ])
+    }
+
+    func positionBannerViewFullWidthAtBottomOfView(_ bannerView: UIView) {
+      view.addConstraint(NSLayoutConstraint(item: bannerView,
+                                            attribute: .leading,
+                                            relatedBy: .equal,
+                                            toItem: view,
+                                            attribute: .leading,
+                                            multiplier: 1,
+                                            constant: 0))
+      view.addConstraint(NSLayoutConstraint(item: bannerView,
+                                            attribute: .trailing,
+                                            relatedBy: .equal,
+                                            toItem: view,
+                                            attribute: .trailing,
+                                            multiplier: 1,
+                                            constant: 0))
+      view.addConstraint(NSLayoutConstraint(item: bannerView,
+                                            attribute: .bottom,
+                                            relatedBy: .equal,
+                                            toItem: bottomLayoutGuide,
+                                            attribute: .top,
+                                            multiplier: 1,
+                                            constant: 0))
+    }
+
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+      print("adViewDidReceiveAd")
+        if let visibleViewCtrl = UIApplication.shared.keyWindow?.visibleViewController {
+            if(visibleViewCtrl.isKind(of: GuessViewController.self)){
+                if timer == nil {
+                    print("adViewDidReceiveAd Success")
+                    timer = Timer.scheduledTimer(timeInterval: CommanCode.timerForAds, target: self, selector: #selector(self.alarmToLoadBannerAds), userInfo: nil, repeats: true)
+                }
+            }
+        }
+    }
+    /// Tells the delegate an ad request failed.
+    func adView(_ bannerView: GADBannerView,
+        didFailToReceiveAdWithError error: GADRequestError) {
+      print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+
+    /// Tells the delegate that a full-screen view will be presented in response
+    /// to the user clicking on an ad.
+    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+      print("adViewWillPresentScreen")
+    }
+
+    /// Tells the delegate that the full-screen view will be dismissed.
+    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+      print("adViewWillDismissScreen")
+    }
+
+    /// Tells the delegate that the full-screen view has been dismissed.
+    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+      print("adViewDidDismissScreen")
+    }
+
+    /// Tells the delegate that a user click will open another app (such as
+    /// the App Store), backgrounding the current app.
+    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
+      print("adViewWillLeaveApplication")
+    }
+}
+extension GuessViewController: GADInterstitialDelegate {
+    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+        print("Interstitial loaded successfully")
+        funcHideLoader()
+        ad.present(fromRootViewController: self)
+        if fromHomeClick {
+            navigationController?.popViewController(animated: true)
+        }
+    }
+
+    func interstitialDidFail(toPresentScreen ad: GADInterstitial) {
+        funcHideLoader()
+        print("Fail to receive interstitial")
+        if fromHomeClick {
+            navigationController?.popViewController(animated: true)
+        }
+    }
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        funcHideLoader()
+        if fromHomeClick {
+            navigationController?.popViewController(animated: true)
+        }
+        print("dismiss interstitial")
+    }
+}
 extension GuessViewController : PayementForParentProtocol {
     @IBAction func funcNoAds(_ sender: Any) {
         showPaymentScreen()
@@ -539,10 +839,8 @@ extension GuessViewController : PayementForParentProtocol {
     func shareApp() {
         
     }
-
-}
-extension Array {
-    func indexExists(_ index: Int) -> Bool {
-        return self.indices.contains(index)
+    func funcHideLoader() {
+        self.viewTransperent.isHidden = true
+        self.imgViewLoader.isHidden = true
     }
 }

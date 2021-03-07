@@ -66,7 +66,7 @@ class PaymentCostController: UIViewController ,SKProductsRequestDelegate, SKPaym
         super.viewDidLoad()
         SKPaymentQueue.default().add(self)
         lblAlredyPurchased.text = "Already Purchased?"
-        lblCostTitle.text = "Unlock Premium Features"
+        lblCostTitle.text = "Remove Ads"
         btnRestore.setTitle("Restore", for: .normal)
 
         /*var textBuyOneTime = NSMutableAttributedString(string:"One-time Payment" + "    " + "$15")

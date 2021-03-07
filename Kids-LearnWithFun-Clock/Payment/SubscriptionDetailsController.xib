@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubscriptionDetailsController" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubscriptionDetailsController" customModule="Learn_Clock___Time" customModuleProvider="target">
             <connections>
                 <outlet property="btnCancelSubscription" destination="hZa-MS-hHk" id="n7M-IK-90l"/>
                 <outlet property="heightPaymentDetail" destination="Ccl-0A-yoD" id="EGj-7C-84N"/>
@@ -32,30 +32,30 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kF-IY-gQv" userLabel="lblTitle">
-                    <rect key="frame" x="75" y="64" width="324" height="38.5"/>
+                    <rect key="frame" x="70" y="64" width="329" height="38.5"/>
                     <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="27"/>
                     <color key="textColor" red="1" green="0.4549019608" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgC-wH-EKY">
-                    <rect key="frame" x="15" y="58.5" width="50" height="50"/>
+                    <rect key="frame" x="0.0" y="53.5" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="RgC-wH-EKY" secondAttribute="height" multiplier="1:1" id="Myv-5q-x2I"/>
-                        <constraint firstAttribute="width" constant="50" id="l6f-68-AlM"/>
+                        <constraint firstAttribute="width" constant="60" id="l6f-68-AlM"/>
                     </constraints>
-                    <state key="normal" image="setTimeHomeIcon"/>
+                    <state key="normal" backgroundImage="setTimeHomeIcon"/>
                     <connections>
                         <action selector="funcHomeBtnClick:" destination="-1" eventType="touchUpInside" id="pkP-ob-0LE"/>
                     </connections>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomBg" translatesAutoresizingMaskIntoConstraints="NO" id="BbQ-Ti-m0t">
+                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomBg" translatesAutoresizingMaskIntoConstraints="NO" id="BbQ-Ti-m0t">
                     <rect key="frame" x="0.0" y="666" width="414" height="230"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="230" id="Ctf-aH-kDQ"/>
                     </constraints>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAd-Uc-mdQ" userLabel="paymentDetailView" customClass="UIViewExtend" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAd-Uc-mdQ" userLabel="paymentDetailView" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
                     <rect key="frame" x="41.5" y="137.5" width="331" height="175"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3qe-LH-FOb" userLabel="yearlyView">
@@ -79,7 +79,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZa-MS-hHk" userLabel="btnYearRecurringBuy" customClass="RoundButton" customModule="Kids_LearnWithFun_Clock" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZa-MS-hHk" userLabel="btnYearRecurringBuy" customClass="RoundButton" customModule="Learn_Clock___Time" customModuleProvider="target">
                                     <rect key="frame" x="50.5" y="109" width="230" height="42"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -162,7 +162,7 @@
                 <constraint firstItem="3qe-LH-FOb" firstAttribute="centerX" secondItem="qES-un-VEa" secondAttribute="centerX" id="7nv-qf-KCa"/>
                 <constraint firstItem="IAd-Uc-mdQ" firstAttribute="top" secondItem="2kF-IY-gQv" secondAttribute="bottom" constant="35" id="GeT-yv-chD"/>
                 <constraint firstItem="xFh-C7-7Xb" firstAttribute="top" secondItem="Nby-87-0iV" secondAttribute="top" id="JkJ-Jb-LVZ"/>
-                <constraint firstItem="RgC-wH-EKY" firstAttribute="leading" secondItem="qES-un-VEa" secondAttribute="leading" constant="15" id="MeA-gb-lsH"/>
+                <constraint firstItem="RgC-wH-EKY" firstAttribute="leading" secondItem="qES-un-VEa" secondAttribute="leading" id="MeA-gb-lsH"/>
                 <constraint firstAttribute="bottom" secondItem="xFh-C7-7Xb" secondAttribute="bottom" id="PoT-4g-JXh"/>
                 <constraint firstItem="IAd-Uc-mdQ" firstAttribute="width" secondItem="Nby-87-0iV" secondAttribute="width" multiplier="0.8" id="SAa-uI-trv"/>
                 <constraint firstAttribute="trailing" secondItem="BbQ-Ti-m0t" secondAttribute="trailing" id="ThD-BK-Y1L"/>

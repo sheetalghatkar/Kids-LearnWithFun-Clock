@@ -67,5 +67,21 @@
           <string>cstr6suwn9.skadnetwork</string>
         </dict>
       </array>
+      <key>GADApplicationIdentifier</key>
+      <string>ca-app-pub-7546454767986772~3783357791</string>
+      <key>NSAppTransportSecurity</key>
+      <dict>
+          <key>NSAllowsArbitraryLoads</key>
+          <true/>
+      </dict>
+      <key>SKAdNetworkItems</key>
+      <array>
+          <dict>
+              <key>SKAdNetworkIdentifier</key>
+              <string>cstr6suwn9.skadnetwork</string>
+          </dict>
+      </array>
+      <key>ITSAppUsesNonExemptEncryption</key>
+      <false/>
 </dict>
 </plist>

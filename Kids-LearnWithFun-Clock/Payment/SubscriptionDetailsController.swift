@@ -55,8 +55,12 @@ class SubscriptionDetailsController: UIViewController {
         btnCancelSubscription.setTitle("Manage Subscription", for: .normal)
         btnCancelSubscription.setTitleColor(CommanCode.paymentBtnTextColor, for: .normal)
         lblTitle.textColor = CommanCode.paymentBtnTextColor
+        lblTitle.layer.shadowColor = UIColor.white.cgColor
+        lblTitle.layer.shadowRadius = 1.0
+        lblTitle.layer.shadowOpacity = 1.0
+        lblTitle.layer.shadowOffset = CGSize(width: 4, height: 4)
+        lblTitle.layer.masksToBounds = false
 
-        
         //Label
                 
         self.viewSubscriptionBg.layer.shadowColor = UIColor.white.cgColor

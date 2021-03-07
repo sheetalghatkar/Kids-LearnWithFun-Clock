@@ -61,7 +61,8 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
     open var clockFace = UIImageView()
     private var secondHandCircle = UIImageView()
     weak open var clockDelegate: SetClocketDelegate?
-    
+    var setHourHandIndex = 10
+
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -202,7 +203,7 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
     @objc private func handleTap(recognizer: UIPanGestureRecognizer){
       //  print("##########################################")
         if isMinuteHandTouch || isHourHandTouch {
-          print("Inside handleTap")
+         // print("Inside handleTap")
         if !manualTimeSetAllowed {return}
         let tapLocation = recognizer.location(in: self)
         guard let view = recognizer.view else { return }
@@ -231,10 +232,18 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
 
                   
                   
-                let getLocationDiff =  atan2((Float(tapLocation.x - center.x)),
+                var getLocationDiff =  atan2((Float(tapLocation.x - center.x)),
                                      (Float(tapLocation.y - center.y)))
             
-            print("#####atan2",String(format:"%.02f", getLocationDiff))
+            let divisor = pow(10.0, Double(2.0))
+            getLocationDiff = Float(round(Double(getLocationDiff) * divisor) / divisor)
+
+            print("#####atan2", getLocationDiff)
+            
+
+            
+            
+            
 
 
 //            print("@@@@@@@@handRadianAngle",handRadianAngle)
@@ -253,6 +262,9 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
            // print("@@@------isMinuteHandTouch---------", Double(getLocationDiff))
 
             setManualMinuteAngle = Double(getLocationDiff)
+            print("setManualHourAngle --",getLocationDiff)
+
+          //  funcResetHourAsPerMinuteHand()
             viewMinuteHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
 //            let newMinuteValue = Int(0.5 + handRadianAngle * 30 / (Double.pi/2)) % 60
            /* let newMinuteValue = Int(handRadianAngle * 6 / (Double.pi/2)) % 60
@@ -272,8 +284,8 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
         else if isHourHandTouch {
            // print("@@@------isHourHandTouch---------", Double(getLocationDiff))
             setManualHourAngle = Double(getLocationDiff)
+            print("setManualHourAngle --",setManualHourAngle)
             viewHourHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
-
       /*  //} else if distanceToCenter / (viewSize/2) < hourHandLength {
             localTime.hour = Int(handRadianAngle * 6 / Double.pi)
             let hourDegree = Double(localTime.hour ?? 1) * 30.0 + Double(localTime.minute ?? 1) * 0.5
@@ -287,7 +299,7 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
     }
 
     func setHourHandPosition() {
-        var startNumber = (CommanCode.hourAngleRangeArray[hourRangeIndex])[0]
+     /*   var startNumber = (CommanCode.hourAngleRangeArray[hourRangeIndex])[0]
         var endNumber = (CommanCode.hourAngleRangeArray[hourRangeIndex])[1]
         var numberRange = startNumber...endNumber
         if numberRange  ~= setManualHourAngle {
@@ -303,7 +315,7 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
             if numberRange  ~= setManualMinuteAngle {
                 
             }
-        }
+        }*/
     }
     
     private func setupGestures() {
@@ -405,6 +417,10 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
                 print("heyyyyyyyyyy")
                 funcResetHourHandToMagicNumber()
             }
+            if isMinuteHandTouch {
+                funcResetMinuteHandToMagicNumber()
+            }
+            
             isHourHandTouch = false
             isMinuteHandTouch = false
             clockDelegate?.timeIsSetManually()
@@ -446,7 +462,7 @@ extension SetClocket {
     var hourCalculationArray = [[3.12,2.99,2.86,2.73,2.60],[2.60,2.46,2.33,2.20,2.07], [2.07,1.94,1.81,1.68,1.56],[1.56,1.43,1.30,1.17,1.05],[1.05,0.92,0.80, 0.67,0.55], [0.55,0.40,0.26,0.12,-0.02],[-0.02,-0.15,-0.29,-0.42,-0.56], [-0.56,-0.68,-0.80,-0.92,-1.04], [-1.04,-1.18,-1.32,-1.46,-1.60],[-1.60,-1.72,-1.85,-1.97,-2.10],[-2.10,-2.22,-2.35,-2.47,-2.60], [-2.60,-2.73,-2.86,-2.99,-3.12]]*/
     
     func funcResetHourHandToMagicNumber() {
-        var gethourAngleRange = 0
+        var gethourAngleRangeIndex = 0
         if setManualHourAngle < 0.0 {
             for iCount in 5..<CommanCode.hourAngleRangeArray.count {
                 let hourValue = CommanCode.hourAngleRangeArray[iCount]
@@ -454,7 +470,7 @@ extension SetClocket {
                 let endNumber = hourValue[0]
                 let numberRange = startNumber...endNumber
                 if numberRange  ~= setManualHourAngle {
-                    gethourAngleRange = iCount
+                    gethourAngleRangeIndex = iCount
                 }
             }
         } else {
@@ -464,26 +480,104 @@ extension SetClocket {
                 let endNumber = hourValue[0]
                 let numberRange = startNumber...endNumber
                 if numberRange  ~= setManualHourAngle {
-                    gethourAngleRange = iCount
+                    gethourAngleRangeIndex = iCount
+                }
+            }
+        }
+        let hourrangeVal = CommanCode.hourCalculationArray[gethourAngleRangeIndex]
+        if setManualHourAngle > hourrangeVal[2] {
+            setManualHourAngle = CommanCode.hourAngleArray[gethourAngleRangeIndex]
+        } else {
+            if gethourAngleRangeIndex == 11 {
+                gethourAngleRangeIndex = 0
+                setManualHourAngle = CommanCode.hourAngleArray[gethourAngleRangeIndex]
+            } else {
+                gethourAngleRangeIndex = gethourAngleRangeIndex + 1
+                setManualHourAngle = CommanCode.hourAngleArray[gethourAngleRangeIndex]
+            }
+        }
+        setHourHandIndex =  gethourAngleRangeIndex
+        print("setManualHourAngle --",setManualHourAngle)
+        let handRadianAngle = Double(Float.pi/2 - Float(setManualHourAngle))
+        viewHourHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
+    }
+    func funcResetMinuteHandToMagicNumber() {
+        var getMinuteAngleRangeIndex = 0
+        if setManualMinuteAngle < 0.0 {
+            for iCount in 31..<CommanCode.minuteCalculationArray.count {
+                let minunteValue = CommanCode.minuteCalculationArray[iCount]
+                let startNumber = minunteValue[2]
+                let endNumber = minunteValue[0]
+                let numberRange = startNumber...endNumber
+                if numberRange  ~= setManualMinuteAngle {
+                    getMinuteAngleRangeIndex = iCount
+                }
+            }
+        } else {
+            for iCount in 0..<31 {
+                let minunteValue = CommanCode.minuteCalculationArray[iCount]
+                let startNumber = minunteValue[2]
+                let endNumber = minunteValue[0]
+                let numberRange = startNumber...endNumber
+                if numberRange  ~= setManualMinuteAngle {
+                    getMinuteAngleRangeIndex = iCount
                 }
             }
         }
         
-        let hourrangeVal = CommanCode.hourCalculationArray[gethourAngleRange]
-        if setManualHourAngle > hourrangeVal[2] {
-            setManualHourAngle = CommanCode.hourAngleArray[gethourAngleRange]
-            let handRadianAngle = Double(Float.pi/2 - Float(setManualHourAngle))
-            viewHourHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
-
-        } else {
-            if gethourAngleRange == 11 {
-                setManualHourAngle = CommanCode.hourAngleArray[0]
-                let handRadianAngle = Double(Float.pi/2 - Float(setManualHourAngle))
-                viewHourHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
+        let minAngleVal = CommanCode.minuteCalculationArray[getMinuteAngleRangeIndex]
+        if  setManualMinuteAngle <  minAngleVal[1] {
+            if getMinuteAngleRangeIndex == 59 {
+                getMinuteAngleRangeIndex = 0
             } else {
-                setManualHourAngle = CommanCode.hourAngleArray[gethourAngleRange+1]
-                let handRadianAngle = Double(Float.pi/2 - Float(setManualHourAngle))
-                viewHourHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
+                getMinuteAngleRangeIndex = getMinuteAngleRangeIndex + 1
+            }
+        }
+        
+        setManualMinuteAngle = CommanCode.minuteAngleArray[getMinuteAngleRangeIndex]
+        print("Func_setManualMinuteAngle --",setManualMinuteAngle)
+        let handRadianAngle = Double(Float.pi/2 - Float(setManualMinuteAngle))
+        viewMinuteHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
+    }
+    
+    
+    
+    
+    
+    func funcResetHourAsPerMinuteHand() {
+        var getHourIndex = 0
+        
+        let hourValue1 = CommanCode.hourAngleRangeArray[setHourHandIndex]
+        let startNumber1 = hourValue1[1]
+        let endNumber1 = hourValue1[0]
+        let numberRange1 = startNumber1...endNumber1
+        if numberRange1  ~= setManualHourAngle {
+            getHourIndex = setHourHandIndex
+        } else {
+            if (CommanCode.hourAngleArray).contains(setManualHourAngle) {
+                getHourIndex = (CommanCode.hourAngleArray).firstIndex(of: setManualHourAngle) ?? 0
+            } else {
+                if setManualHourAngle < 0.0 {
+                    for iCount in 5..<CommanCode.hourAngleRangeArray.count {
+                        let hourValue = CommanCode.hourAngleRangeArray[iCount]
+                        let startNumber = hourValue[1]
+                        let endNumber = hourValue[0]
+                        let numberRange = startNumber...endNumber
+                        if numberRange  ~= setManualHourAngle {
+                            getHourIndex = iCount
+                        }
+                    }
+                } else {
+                    for iCount in 0..<6 {
+                        let hourValue = CommanCode.hourAngleRangeArray[iCount]
+                        let startNumber = hourValue[1]
+                        let endNumber = hourValue[0]
+                        let numberRange = startNumber...endNumber
+                        if numberRange  ~= setManualHourAngle {
+                            getHourIndex = iCount
+                        }
+                    }
+                }
             }
         }
         
@@ -491,5 +585,34 @@ extension SetClocket {
         
         
         
+        
+        let setNewHrVal = CommanCode.hourAngleArray[getHourIndex]
+        setManualHourAngle = setNewHrVal
+        
+       // var getDiff = hourAngleDiffArray[getHourIndex]
+        
+        
+        
+       /* var indexQuarterMin = 0
+        for iCount in 0..<CommanCode.minuteQuarterDiffArray.count {
+            let hourValue = CommanCode.minuteQuarterDiffArray[iCount]
+            let startNumber = hourValue[1]
+            let endNumber = hourValue[0]
+            let numberRange = startNumber...endNumber
+            if numberRange  ~= setManualMinuteAngle {
+                indexQuarterMin = iCount
+            }
+        }
+        
+        var getDiff = CommanCode.hourAngleDiffArray[getHourIndex]
+        getDiff = (getDiff / 3) * (Double(indexQuarterMin)+1)
+        setManualHourAngle = setManualHourAngle + getDiff*/
+        
+//        print("Func_setManualHourAngle --",setManualHourAngle)
+
+        let handRadianAngle = Double(Float.pi/2 - Float(setManualHourAngle))
+        viewHourHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
     }
 }
+//print("----------###Index###---------",getHourIndex)
+//print("###setNewHrVal###",setNewHrVal)

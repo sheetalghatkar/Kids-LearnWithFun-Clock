@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,17 @@
 		4F1ABE1E2595F71800256AB8 /* GreenCracker.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F1ABE1D2595F71800256AB8 /* GreenCracker.gif */; };
 		4F1E7D6C259CC70000A8A39B /* GuessClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E7D6B259CC70000A8A39B /* GuessClockFace.swift */; };
 		4F1E7D71259CC7C300A8A39B /* GuessClocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E7D70259CC7C300A8A39B /* GuessClocket.swift */; };
+		4F394C3425F4D42800F2403E /* Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F394C2725F4D42600F2403E /* Loading.gif */; };
+		4F394C3525F4D42800F2403E /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F394C2925F4D42800F2403E /* nanopb.xcframework */; };
+		4F394C3625F4D42800F2403E /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F394C2A25F4D42800F2403E /* GoogleAppMeasurement.framework */; };
+		4F394C3725F4D42800F2403E /* Promises-LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4F394C2C25F4D42800F2403E /* Promises-LICENSE */; };
+		4F394C3825F4D42800F2403E /* NanoPB-LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4F394C2D25F4D42800F2403E /* NanoPB-LICENSE */; };
+		4F394C3925F4D42800F2403E /* OpenMeasurement-LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4F394C2E25F4D42800F2403E /* OpenMeasurement-LICENSE */; };
+		4F394C3A25F4D42800F2403E /* GoogleUtilities-LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4F394C2F25F4D42800F2403E /* GoogleUtilities-LICENSE */; };
+		4F394C3B25F4D42800F2403E /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F394C3025F4D42800F2403E /* PromisesObjC.xcframework */; };
+		4F394C3C25F4D42800F2403E /* UserMessagingPlatform.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F394C3125F4D42800F2403E /* UserMessagingPlatform.xcframework */; };
+		4F394C3D25F4D42800F2403E /* GoogleMobileAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F394C3225F4D42800F2403E /* GoogleMobileAds.xcframework */; };
+		4F394C3E25F4D42800F2403E /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F394C3325F4D42800F2403E /* GoogleUtilities.xcframework */; };
 		4F43E64B25E153EA0018B3E0 /* FloatyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E64525E153EA0018B3E0 /* FloatyWindow.swift */; };
 		4F43E64C25E153EA0018B3E0 /* FloatyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E64625E153EA0018B3E0 /* FloatyManager.swift */; };
 		4F43E64D25E153EA0018B3E0 /* FloatyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43E64725E153EA0018B3E0 /* FloatyItem.swift */; };
@@ -116,6 +127,17 @@
 		4F1ABE1D2595F71800256AB8 /* GreenCracker.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = GreenCracker.gif; sourceTree = "<group>"; };
 		4F1E7D6B259CC70000A8A39B /* GuessClockFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessClockFace.swift; sourceTree = "<group>"; };
 		4F1E7D70259CC7C300A8A39B /* GuessClocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessClocket.swift; sourceTree = "<group>"; };
+		4F394C2725F4D42600F2403E /* Loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Loading.gif; sourceTree = "<group>"; };
+		4F394C2925F4D42800F2403E /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = nanopb.xcframework; sourceTree = "<group>"; };
+		4F394C2A25F4D42800F2403E /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAppMeasurement.framework; sourceTree = "<group>"; };
+		4F394C2C25F4D42800F2403E /* Promises-LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Promises-LICENSE"; sourceTree = "<group>"; };
+		4F394C2D25F4D42800F2403E /* NanoPB-LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "NanoPB-LICENSE"; sourceTree = "<group>"; };
+		4F394C2E25F4D42800F2403E /* OpenMeasurement-LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "OpenMeasurement-LICENSE"; sourceTree = "<group>"; };
+		4F394C2F25F4D42800F2403E /* GoogleUtilities-LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GoogleUtilities-LICENSE"; sourceTree = "<group>"; };
+		4F394C3025F4D42800F2403E /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PromisesObjC.xcframework; sourceTree = "<group>"; };
+		4F394C3125F4D42800F2403E /* UserMessagingPlatform.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = UserMessagingPlatform.xcframework; sourceTree = "<group>"; };
+		4F394C3225F4D42800F2403E /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleMobileAds.xcframework; sourceTree = "<group>"; };
+		4F394C3325F4D42800F2403E /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleUtilities.xcframework; sourceTree = "<group>"; };
 		4F43E64525E153EA0018B3E0 /* FloatyWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatyWindow.swift; sourceTree = "<group>"; };
 		4F43E64625E153EA0018B3E0 /* FloatyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatyManager.swift; sourceTree = "<group>"; };
 		4F43E64725E153EA0018B3E0 /* FloatyItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatyItem.swift; sourceTree = "<group>"; };
@@ -189,6 +211,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F394C3B25F4D42800F2403E /* PromisesObjC.xcframework in Frameworks */,
+				4F394C3D25F4D42800F2403E /* GoogleMobileAds.xcframework in Frameworks */,
+				4F394C3625F4D42800F2403E /* GoogleAppMeasurement.framework in Frameworks */,
+				4F394C3C25F4D42800F2403E /* UserMessagingPlatform.xcframework in Frameworks */,
+				4F394C3525F4D42800F2403E /* nanopb.xcframework in Frameworks */,
+				4F394C3E25F4D42800F2403E /* GoogleUtilities.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +250,31 @@
 				4F1698B325E26D140049452D /* SubscriptionDetailsController.xib */,
 			);
 			path = Payment;
+			sourceTree = "<group>";
+		};
+		4F394C2825F4D42800F2403E /* GoogleMobileAdsSdkiOS-7.69.0 */ = {
+			isa = PBXGroup;
+			children = (
+				4F394C2925F4D42800F2403E /* nanopb.xcframework */,
+				4F394C2A25F4D42800F2403E /* GoogleAppMeasurement.framework */,
+				4F394C2B25F4D42800F2403E /* Licenses */,
+				4F394C3025F4D42800F2403E /* PromisesObjC.xcframework */,
+				4F394C3125F4D42800F2403E /* UserMessagingPlatform.xcframework */,
+				4F394C3225F4D42800F2403E /* GoogleMobileAds.xcframework */,
+				4F394C3325F4D42800F2403E /* GoogleUtilities.xcframework */,
+			);
+			path = "GoogleMobileAdsSdkiOS-7.69.0";
+			sourceTree = "<group>";
+		};
+		4F394C2B25F4D42800F2403E /* Licenses */ = {
+			isa = PBXGroup;
+			children = (
+				4F394C2C25F4D42800F2403E /* Promises-LICENSE */,
+				4F394C2D25F4D42800F2403E /* NanoPB-LICENSE */,
+				4F394C2E25F4D42800F2403E /* OpenMeasurement-LICENSE */,
+				4F394C2F25F4D42800F2403E /* GoogleUtilities-LICENSE */,
+			);
+			path = Licenses;
 			sourceTree = "<group>";
 		};
 		4F428F7A25EE1C2400EED0E3 /* ClockFiles */ = {
@@ -413,6 +466,8 @@
 		709EAEAD2580AF3300F8FEEC /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
+				4F394C2825F4D42800F2403E /* GoogleMobileAdsSdkiOS-7.69.0 */,
+				4F394C2725F4D42600F2403E /* Loading.gif */,
 				4F428F7A25EE1C2400EED0E3 /* ClockFiles */,
 				4F43E65525E159F30018B3E0 /* SwiftyStoreKit */,
 				4F43E64425E153EA0018B3E0 /* Floaty */,
@@ -546,10 +601,13 @@
 			files = (
 				4F1ABE192595F35100256AB8 /* starFalling.gif in Resources */,
 				4F5F382B2594D02200992FE3 /* Cracker.gif in Resources */,
+				4F394C3825F4D42800F2403E /* NanoPB-LICENSE in Resources */,
 				4F43E67F25E163810018B3E0 /* BackgroundMusic.mp3 in Resources */,
 				70111073258BB27D00159541 /* Wrong_word.mp3 in Resources */,
+				4F394C3925F4D42800F2403E /* OpenMeasurement-LICENSE in Resources */,
 				4F1698B925E26D140049452D /* SubscriptionDetailsController.xib in Resources */,
 				4F5F383E2594E87200992FE3 /* fireworks03.gif in Resources */,
+				4F394C3725F4D42800F2403E /* Promises-LICENSE in Resources */,
 				709EAEB82580DBA000F8FEEC /* ClockLearn.gif in Resources */,
 				4F5FCBBD25EE72C300331771 /* Set.mp3 in Resources */,
 				4F1698AB25E26D0B0049452D /* CustomLiceneModelController.xib in Resources */,
@@ -565,11 +623,13 @@
 				7023D4CC2583523000B752D4 /* GuessTimeCardView.xib in Resources */,
 				701675F42588C542004F19BA /* PictureCardView.xib in Resources */,
 				709EAE852580A93700F8FEEC /* Main.storyboard in Resources */,
+				4F394C3A25F4D42800F2403E /* GoogleUtilities-LICENSE in Resources */,
 				4F1ABE1E2595F71800256AB8 /* GreenCracker.gif in Resources */,
 				7023D4C12581FDC200B752D4 /* LocalizableEnglish.strings in Resources */,
 				700E2E5F258A88580042EC2D /* WellDone.mp3 in Resources */,
 				4F5FCBAF25EE4AB200331771 /* 3-Hour.mp3 in Resources */,
 				700E2E5D258A86790042EC2D /* WrongSelection.mp3 in Resources */,
+				4F394C3425F4D42800F2403E /* Loading.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -815,11 +875,16 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = M9C32R6P4U;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Kids-LearnWithFun-Clock/Third\\ Party/GoogleMobileAdsSdkiOS-7.69.0",
+				);
 				INFOPLIST_FILE = "Kids-LearnWithFun-Clock/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiapps360.LearnClockTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "LearnClockTime Development Profile";
@@ -835,11 +900,16 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = M9C32R6P4U;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Kids-LearnWithFun-Clock/Third\\ Party/GoogleMobileAdsSdkiOS-7.69.0",
+				);
 				INFOPLIST_FILE = "Kids-LearnWithFun-Clock/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiapps360.LearnClockTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "LearnClockTime Development Profile";

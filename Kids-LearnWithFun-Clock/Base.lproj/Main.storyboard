@@ -39,7 +39,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhg-U5-g1u" userLabel="tileContainerView">
                                 <rect key="frame" x="25" y="383.5" width="364" height="458.5"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Foj-tp-Iqp" userLabel="LearnView" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Foj-tp-Iqp" userLabel="LearnView" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
                                         <rect key="frame" x="57" y="98.5" width="250" height="50"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4cp-bD-NI7">
@@ -120,7 +120,7 @@
                                             <constraint firstAttribute="width" constant="100" id="l8J-uj-z2Q"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BDg-YG-NIM" userLabel="setView" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BDg-YG-NIM" userLabel="setView" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
                                         <rect key="frame" x="57" y="239.5" width="250" height="50"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qOy-vm-QIb">
@@ -156,7 +156,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isShowShadow" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D95-74-XdG" userLabel="playWithClockView" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D95-74-XdG" userLabel="playWithClockView" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
                                         <rect key="frame" x="57" y="309.5" width="250" height="50"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WI2-Ao-8aO">
@@ -193,7 +193,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isShowShadow" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9az-o4-B0b" userLabel="testView" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9az-o4-B0b" userLabel="testView" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
                                         <rect key="frame" x="57" y="379.5" width="250" height="50"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b9E-xy-taa">
@@ -227,7 +227,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isShowShadow" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="33M-Mh-cHk" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="33M-Mh-cHk" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
                                         <rect key="frame" x="292" y="369.5" width="40" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxi-hj-Oy5">
@@ -421,28 +421,6 @@
                                     <constraint firstAttribute="width" secondItem="ujg-Ek-may" secondAttribute="height" multiplier="1:1.8" id="5MN-FD-HcK"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQT-XD-quS">
-                                <rect key="frame" x="358" y="50" width="41" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="wQT-XD-quS" secondAttribute="height" multiplier="1:1" id="8Kw-8W-86l"/>
-                                    <constraint firstAttribute="width" constant="41" id="vqc-23-yoq"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="Sound-On_home"/>
-                                <connections>
-                                    <action selector="funcSound_ON_OFF:" destination="g7z-YB-fXP" eventType="touchUpInside" id="dUT-97-509"/>
-                                    <action selector="funcSound_ON_OFF:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ht4-45-vsU"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Zk-87-KUN">
-                                <rect key="frame" x="290" y="49" width="43" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="3Zk-87-KUN" secondAttribute="height" multiplier="1:1" id="Put-gO-z1L"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="No-Ads"/>
-                                <connections>
-                                    <action selector="funcNoAds:" destination="g7z-YB-fXP" eventType="touchUpInside" id="O4w-RQ-gQ2"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9R4-Zj-Vo9" userLabel="homeButton">
                                 <rect key="frame" x="0.0" y="38" width="65" height="65"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -455,21 +433,80 @@
                                     <action selector="funcBackToHome:" destination="g7z-YB-fXP" eventType="touchUpInside" id="QVq-PM-BoG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvL-6x-JFX" customClass="UILabelExtension" customModule="Learn_Clock___Time" customModuleProvider="target">
+                                <rect key="frame" x="75" y="48" width="273" height="45.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isShowShadow" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Zk-87-KUN">
+                                <rect key="frame" x="290" y="49" width="43" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3Zk-87-KUN" secondAttribute="height" multiplier="1:1" id="Put-gO-z1L"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="No-Ads"/>
+                                <connections>
+                                    <action selector="funcNoAds:" destination="g7z-YB-fXP" eventType="touchUpInside" id="O4w-RQ-gQ2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQT-XD-quS">
+                                <rect key="frame" x="358" y="50" width="41" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wQT-XD-quS" secondAttribute="height" multiplier="1:1" id="8Kw-8W-86l"/>
+                                    <constraint firstAttribute="width" constant="41" id="vqc-23-yoq"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Sound-On_home"/>
+                                <connections>
+                                    <action selector="funcSound_ON_OFF:" destination="g7z-YB-fXP" eventType="touchUpInside" id="dUT-97-509"/>
+                                    <action selector="funcSound_ON_OFF:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ht4-45-vsU"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uop-HU-kPw" userLabel="transperentView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ad8-Ds-xfi">
+                                <rect key="frame" x="167" y="408" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.16078431369999999" green="0.69411764710000001" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ad8-Ds-xfi" secondAttribute="height" id="HI5-bR-1wn"/>
+                                    <constraint firstAttribute="width" constant="80" id="bHP-8x-ypB"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QLr-4l-5Fb"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Uop-HU-kPw" secondAttribute="bottom" id="0Se-NQ-frk"/>
+                            <constraint firstItem="Uop-HU-kPw" firstAttribute="leading" secondItem="QLr-4l-5Fb" secondAttribute="leading" id="3AM-lO-3Ks"/>
+                            <constraint firstItem="Ad8-Ds-xfi" firstAttribute="centerY" secondItem="7eQ-Sy-AVf" secondAttribute="centerY" id="5r8-7c-KP3"/>
                             <constraint firstItem="wQT-XD-quS" firstAttribute="top" secondItem="7eQ-Sy-AVf" secondAttribute="top" constant="50" id="6nx-Eq-bSQ"/>
                             <constraint firstItem="ujg-Ek-may" firstAttribute="width" secondItem="7eQ-Sy-AVf" secondAttribute="width" multiplier="1:1" id="BH9-uP-q4k"/>
                             <constraint firstItem="wQT-XD-quS" firstAttribute="leading" secondItem="3Zk-87-KUN" secondAttribute="trailing" constant="25" id="F0i-mw-JV5"/>
                             <constraint firstItem="ujg-Ek-may" firstAttribute="top" secondItem="7eQ-Sy-AVf" secondAttribute="top" id="GQ7-zl-0DK"/>
                             <constraint firstItem="3Zk-87-KUN" firstAttribute="width" secondItem="wQT-XD-quS" secondAttribute="width" constant="2" id="GU0-HI-NHT"/>
                             <constraint firstItem="9R4-Zj-Vo9" firstAttribute="centerY" secondItem="wQT-XD-quS" secondAttribute="centerY" id="Hyn-Gs-JwV"/>
+                            <constraint firstItem="Ad8-Ds-xfi" firstAttribute="width" secondItem="Ad8-Ds-xfi" secondAttribute="height" id="LIs-UJ-fIO"/>
                             <constraint firstItem="alT-WC-Iu3" firstAttribute="leading" secondItem="QLr-4l-5Fb" secondAttribute="leading" id="NCh-r9-2LY"/>
                             <constraint firstItem="ujg-Ek-may" firstAttribute="centerX" secondItem="7eQ-Sy-AVf" secondAttribute="centerX" id="XZx-yY-EkP"/>
                             <constraint firstItem="QLr-4l-5Fb" firstAttribute="trailing" secondItem="alT-WC-Iu3" secondAttribute="trailing" id="aS2-PV-2xx"/>
+                            <constraint firstItem="Uop-HU-kPw" firstAttribute="trailing" secondItem="QLr-4l-5Fb" secondAttribute="trailing" id="cbp-G6-DJh"/>
+                            <constraint firstItem="wQT-XD-quS" firstAttribute="leading" secondItem="kvL-6x-JFX" secondAttribute="trailing" constant="10" id="ghJ-wb-nFH"/>
                             <constraint firstItem="alT-WC-Iu3" firstAttribute="top" secondItem="7eQ-Sy-AVf" secondAttribute="top" id="hBB-dT-KKq"/>
+                            <constraint firstItem="kvL-6x-JFX" firstAttribute="centerY" secondItem="9R4-Zj-Vo9" secondAttribute="centerY" id="iJF-A7-hdg"/>
                             <constraint firstItem="9R4-Zj-Vo9" firstAttribute="leading" secondItem="7eQ-Sy-AVf" secondAttribute="leading" id="iWj-ct-Jte"/>
+                            <constraint firstItem="Uop-HU-kPw" firstAttribute="top" secondItem="7eQ-Sy-AVf" secondAttribute="top" id="l5W-fy-sv0"/>
+                            <constraint firstItem="Ad8-Ds-xfi" firstAttribute="centerX" secondItem="7eQ-Sy-AVf" secondAttribute="centerX" id="mLz-bW-prl"/>
+                            <constraint firstItem="kvL-6x-JFX" firstAttribute="leading" secondItem="9R4-Zj-Vo9" secondAttribute="trailing" constant="10" id="mfU-Xa-3Do"/>
                             <constraint firstItem="3Zk-87-KUN" firstAttribute="centerY" secondItem="wQT-XD-quS" secondAttribute="centerY" id="skc-hY-biV"/>
                             <constraint firstAttribute="bottom" secondItem="alT-WC-Iu3" secondAttribute="bottom" id="vyW-wG-i9q"/>
                             <constraint firstAttribute="trailing" secondItem="wQT-XD-quS" secondAttribute="trailing" constant="15" id="z8K-ez-qZn"/>
@@ -480,7 +517,11 @@
                         <outlet property="bgScreen" destination="alT-WC-Iu3" id="QiP-Dh-ogP"/>
                         <outlet property="btnNoAds" destination="3Zk-87-KUN" id="6Q0-Rg-MQF"/>
                         <outlet property="btnSound" destination="wQT-XD-quS" id="8QY-1Y-rxj"/>
+                        <outlet property="imgViewLoader" destination="Ad8-Ds-xfi" id="Lcg-GP-2Ta"/>
+                        <outlet property="lblTitle" destination="kvL-6x-JFX" id="Eqb-cu-xs9"/>
                         <outlet property="picViewcontainer" destination="ujg-Ek-may" id="an9-Go-Krt"/>
+                        <outlet property="trailingTitlelable" destination="ghJ-wb-nFH" id="KAi-Hx-8ij"/>
+                        <outlet property="viewTransperent" destination="Uop-HU-kPw" id="3VX-1C-5tQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZGX-vX-iwV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -803,6 +844,9 @@
         </designable>
         <designable name="b5I-8r-8jh">
             <size key="intrinsicContentSize" width="60.5" height="35.5"/>
+        </designable>
+        <designable name="kvL-6x-JFX">
+            <size key="intrinsicContentSize" width="81" height="45.5"/>
         </designable>
     </designables>
     <resources>
