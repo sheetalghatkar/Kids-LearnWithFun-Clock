@@ -96,8 +96,6 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
 
         
         
-        
-        
        /* print("!!!!minuteAngleArray",CommanCode.minuteAngleArray.count)
         print("!!!!minuteCalculationArray",CommanCode.minuteCalculationArray.count)
         print("!!!!hourAngleArray",CommanCode.hourAngleArray.count)

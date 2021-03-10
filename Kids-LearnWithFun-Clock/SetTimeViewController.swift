@@ -46,7 +46,7 @@ class SetTimeViewController: UIViewController {
         var handRadianAngle = ((Float.pi/2) - Float(getHourAngle))
         viewClocket.viewHourHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
 
-        let getMinuteAngle = CommanCode.minuteAngleArray[10]
+        let getMinuteAngle = CommanCode.minuteAngleArray[0]
         handRadianAngle = ((Float.pi/2) - Float(getMinuteAngle))
         viewClocket.viewMinuteHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
         //----------------------------------------------------------------------------------------
