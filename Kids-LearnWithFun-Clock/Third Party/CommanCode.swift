@@ -229,3 +229,131 @@ extension UIWindow {
         }
     }
 }
+/*
+ func funcResetHourAsPerMinuteHand() {
+     print("-------------------------------------------setHourHandIndex",setHourHandIndex)
+     var getHourIndex = 0
+     let hourValue1 = CommanCode.hourCalculationArray[setHourHandIndex]
+     let startNumber1 = hourValue1[4]
+     let endNumber1 = hourValue1[0]
+     let numberRange1 = startNumber1...endNumber1
+     if numberRange1  ~= setManualHourAngle {
+         getHourIndex = setHourHandIndex
+             print("!!!!---------------1-Hour",getHourIndex,setManualHourAngle)
+     } else {
+         if (CommanCode.hourAngleArray).contains(setManualHourAngle) {
+             getHourIndex = (CommanCode.hourAngleArray).firstIndex(of: setManualHourAngle) ?? 0
+             print("!!!!---------------2-Hour",getHourIndex,setManualHourAngle)
+
+         } else {
+             if setManualHourAngle < 0.0 {
+                 for iCount in 5..<CommanCode.hourCalculationArray.count {
+                     let hourValue = CommanCode.hourCalculationArray[iCount]
+                     let startNumber = hourValue[4]
+                     let endNumber = hourValue[0]
+                     let numberRange = startNumber...endNumber
+                     if numberRange  ~= setManualHourAngle {
+                         getHourIndex = iCount
+                     }
+                 }
+                 print("!!!!--------------3-Hour",getHourIndex,setManualHourAngle)
+             } else {
+                 for iCount in 0..<6 {
+                     let hourValue = CommanCode.hourCalculationArray[iCount]
+                     let startNumber = hourValue[4]
+                     let endNumber = hourValue[0]
+                     let numberRange = startNumber...endNumber
+                     if numberRange  ~= setManualHourAngle {
+                         getHourIndex = iCount
+                     }
+                 }
+                 print("!!!!--------------4-Hour",getHourIndex,setManualHourAngle)
+
+             }
+         }
+     }
+     let setNewHrVal = CommanCode.hourAngleArray[getHourIndex]
+    //-------------------------------------------------------------------------------
+     //Minute caluclation part
+     let divisor = pow(10.0, Double(2.0))
+     setManualMinuteAngle = Double(round(Double(setManualMinuteAngle) * divisor) / divisor)
+         print("-------------Minute_Get_Val",setManualMinuteAngle)
+     var getMinuteAngleRangeIndex = 0
+     if setManualMinuteAngle < 0.0 {
+         for iCount in 30..<CommanCode.minuteCalculationArray.count {
+             let minunteValue = CommanCode.minuteCalculationArray[iCount]
+             let startNumber = minunteValue[2]
+             let endNumber = minunteValue[0]
+             let numberRange = startNumber...endNumber
+             if numberRange  ~= setManualMinuteAngle {
+                 getMinuteAngleRangeIndex = iCount
+             }
+         }
+         print("!!!!--------------5-Mint",getMinuteAngleRangeIndex,setManualMinuteAngle)
+
+     } else {
+         for iCount in 0..<30 {
+             let minunteValue = CommanCode.minuteCalculationArray[iCount]
+             let startNumber = minunteValue[2]
+             let endNumber = minunteValue[0]
+             let numberRange = startNumber...endNumber
+             if numberRange  ~= setManualMinuteAngle {
+                 getMinuteAngleRangeIndex = iCount
+             }
+         }
+         print("!!!!--------------6-Mint",getMinuteAngleRangeIndex,setManualMinuteAngle)
+     }
+     
+     let minAngleVal = CommanCode.minuteCalculationArray[getMinuteAngleRangeIndex]
+     if  setManualMinuteAngle <  minAngleVal[1] {
+         if getMinuteAngleRangeIndex == 59 {
+             getMinuteAngleRangeIndex = 0
+         } else {
+             getMinuteAngleRangeIndex = getMinuteAngleRangeIndex + 1
+         }
+         print("!!!!--------------7-Mint",getMinuteAngleRangeIndex,setManualMinuteAngle)
+     }
+     
+
+     var getDiff = CommanCode.hourAngleDiffArray[getHourIndex]
+     getDiff = (getDiff * Double(getMinuteAngleRangeIndex))/60.0
+     let diviso1 = pow(10.0, Double(2.0))
+     getDiff = Double(round(Double(getDiff) * diviso1) / diviso1)
+
+     if getDiff == 0.00 || getDiff == 0.00 {
+         print("@@@@@@@@@getDiff is zero@@@")
+
+         if !idChageHourVal {
+             print("getDiff  zer0idChageHourVal")
+             idChageHourVal = true
+             if getHourIndex == 11 {
+                 print("getDiff is zero$$$$$$$---11")
+                 getHourIndex = 0
+                 setManualHourAngle = CommanCode.hourAngleArray[getHourIndex]
+             } else {
+                 getHourIndex = getHourIndex+1
+                 setManualHourAngle = CommanCode.hourAngleArray[getHourIndex]
+                 print("getDiff is zero$$$$$---else", setManualHourAngle, getHourIndex)
+             }
+         }
+     } else {
+         idChageHourVal = false
+         if setNewHrVal > 0.0 {
+             print("==========Plus=============")
+             setManualHourAngle = setNewHrVal-getDiff
+         } else {
+             print("==========Minus=============")
+             setManualHourAngle = setNewHrVal+getDiff
+         }
+     }
+     print("================setNewHrVal", setNewHrVal, getHourIndex)
+     print("====================getDiff", getDiff)
+
+     setManualHourAngle = Double(round(Double(setManualHourAngle) * divisor) / divisor)
+     print("Final Hour Set @@@@@@@@@@@@", setManualHourAngle)
+
+
+     let handRadianAngle = Double(Float.pi/2 - Float(setManualHourAngle))
+     viewHourHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
+ }
+ */
