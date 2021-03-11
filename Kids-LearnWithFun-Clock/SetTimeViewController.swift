@@ -72,6 +72,11 @@ class SetTimeViewController: UIViewController {
         lblMinuteTime.textColor = UIColor.white
         lblHourTime.font = fontTime
         lblMinuteTime.font = fontTime
+        
+        lblHour.text = "Hour"
+        lblHourTime.text = String((CommanCode.hourMinutequestLevel_1_Array[0])[0])
+        lblMinute.text = "Minute"
+        lblMinuteTime.text = String((CommanCode.hourMinutequestLevel_1_Array[0])[1])
 
 //        for getQuestionTime in CommanCode.hourMinutequestLevel_1_Array {
 //            //----------------------------------------------------------------------------------------

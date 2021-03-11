@@ -602,63 +602,55 @@
                                     <constraint firstAttribute="height" constant="45" id="sfF-bg-LMz"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pb4-ti-TFD" customClass="UILabelExtension" customModule="Learn_Clock___Time" customModuleProvider="target">
-                                <rect key="frame" x="53.5" y="496.5" width="82" height="38.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pink_bg_1" translatesAutoresizingMaskIntoConstraints="NO" id="ptt-58-Ly5">
+                                <rect key="frame" x="57" y="513.5" width="350" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="hCv-f5-9SM"/>
+                                    <constraint firstAttribute="width" constant="350" id="iLz-68-G54"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pb4-ti-TFD">
+                                <rect key="frame" x="53.5" y="516.5" width="82" height="38.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isShowShadow" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2K-hS-tJf" customClass="UILabelExtension" customModule="Learn_Clock___Time" customModuleProvider="target">
-                                <rect key="frame" x="145.5" y="498" width="60.5" height="35.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2K-hS-tJf">
+                                <rect key="frame" x="145.5" y="518" width="60.5" height="35.5"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isShowShadow" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                             </label>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8BN-6O-5U7" userLabel="seperatorView">
-                                <rect key="frame" x="206.5" y="501" width="1" height="30"/>
+                                <rect key="frame" x="206.5" y="521" width="1" height="30"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="982-Fr-805"/>
                                     <constraint firstAttribute="width" constant="1" id="hVi-uM-wv1"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uL-hT-DEE" customClass="UILabelExtension" customModule="Learn_Clock___Time" customModuleProvider="target">
-                                <rect key="frame" x="218" y="496.5" width="82" height="38.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uL-hT-DEE">
+                                <rect key="frame" x="218" y="516.5" width="82" height="38.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isShowShadow" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ho5-RA-hRh">
-                                <rect key="frame" x="47" y="573.5" width="60" height="60"/>
+                                <rect key="frame" x="47" y="591" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="YsF-sA-heu"/>
                                     <constraint firstAttribute="width" secondItem="Ho5-RA-hRh" secondAttribute="height" multiplier="1:1" id="mTn-uh-Tdb"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="backQuestion"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5I-8r-8jh" customClass="UILabelExtension" customModule="Learn_Clock___Time" customModuleProvider="target">
-                                <rect key="frame" x="310" y="498" width="60.5" height="35.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5I-8r-8jh">
+                                <rect key="frame" x="310" y="518" width="60.5" height="35.5"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isShowShadow" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvZ-qu-11L" customClass="ButtonCardOptionExt" customModule="Learn_Clock___Time" customModuleProvider="target">
-                                <rect key="frame" x="157" y="576" width="100" height="55"/>
+                                <rect key="frame" x="157" y="593.5" width="100" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="EJs-pa-hmk"/>
                                     <constraint firstAttribute="height" constant="55" id="lAi-db-bIs"/>
@@ -672,7 +664,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3k-Op-oBD">
-                                <rect key="frame" x="307" y="573.5" width="60" height="60"/>
+                                <rect key="frame" x="307" y="591" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="l3k-Op-oBD" secondAttribute="height" multiplier="1:1" id="Gy6-zy-0WU"/>
                                     <constraint firstAttribute="width" constant="60" id="vTd-cu-hvH"/>
@@ -700,22 +692,24 @@
                             <constraint firstItem="Dt0-4r-aaf" firstAttribute="centerX" secondItem="9y6-ha-cev" secondAttribute="centerX" id="EId-Dl-gCY"/>
                             <constraint firstItem="vPq-q8-bsa" firstAttribute="centerX" secondItem="9y6-ha-cev" secondAttribute="centerX" id="EZW-2C-dcd"/>
                             <constraint firstItem="WDe-QJ-y06" firstAttribute="width" secondItem="h3E-XZ-JXy" secondAttribute="width" constant="2" id="Frw-1P-eeS"/>
+                            <constraint firstItem="ptt-58-Ly5" firstAttribute="centerY" secondItem="Pb4-ti-TFD" secondAttribute="centerY" constant="5" id="I16-Yi-R13"/>
                             <constraint firstItem="6uL-hT-DEE" firstAttribute="leading" secondItem="vPq-q8-bsa" secondAttribute="trailing" constant="10" id="JL4-1I-ToZ"/>
                             <constraint firstItem="WDe-QJ-y06" firstAttribute="centerY" secondItem="h3E-XZ-JXy" secondAttribute="centerY" id="K6r-xu-xqF"/>
+                            <constraint firstItem="ptt-58-Ly5" firstAttribute="centerX" secondItem="LYF-zq-5bK" secondAttribute="centerX" constant="25" id="KIk-os-n4i"/>
                             <constraint firstItem="l3k-Op-oBD" firstAttribute="centerY" secondItem="KvZ-qu-11L" secondAttribute="centerY" id="MVQ-5Q-ZDQ"/>
                             <constraint firstItem="9y6-ha-cev" firstAttribute="centerX" secondItem="LYF-zq-5bK" secondAttribute="centerX" id="NYg-cU-TS7"/>
                             <constraint firstItem="vPq-q8-bsa" firstAttribute="height" secondItem="9y6-ha-cev" secondAttribute="height" id="NpF-Pt-hCM"/>
                             <constraint firstItem="9YI-Gi-lMD" firstAttribute="top" secondItem="xO5-XE-fkb" secondAttribute="top" id="Thv-Uv-5pL"/>
                             <constraint firstItem="Dt0-4r-aaf" firstAttribute="height" secondItem="9y6-ha-cev" secondAttribute="height" id="Uwd-b4-ytY"/>
                             <constraint firstItem="9y6-ha-cev" firstAttribute="width" secondItem="LYF-zq-5bK" secondAttribute="width" multiplier="0.85" id="VVD-PU-GfA"/>
+                            <constraint firstItem="KvZ-qu-11L" firstAttribute="top" secondItem="ptt-58-Ly5" secondAttribute="bottom" constant="25" id="W3w-0I-2id"/>
                             <constraint firstItem="l3k-Op-oBD" firstAttribute="leading" secondItem="KvZ-qu-11L" secondAttribute="trailing" constant="50" id="WZq-yg-KwU"/>
                             <constraint firstItem="D2K-hS-tJf" firstAttribute="centerY" secondItem="8BN-6O-5U7" secondAttribute="centerY" id="XiQ-cA-9Jn"/>
                             <constraint firstItem="Dt0-4r-aaf" firstAttribute="centerY" secondItem="9y6-ha-cev" secondAttribute="centerY" id="Zlx-2W-b0w"/>
-                            <constraint firstItem="8BN-6O-5U7" firstAttribute="top" secondItem="9y6-ha-cev" secondAttribute="bottom" constant="25" id="dCI-cq-nia"/>
+                            <constraint firstItem="8BN-6O-5U7" firstAttribute="top" secondItem="9y6-ha-cev" secondAttribute="bottom" constant="45" id="dCI-cq-nia"/>
                             <constraint firstItem="wcy-LM-qp5" firstAttribute="centerX" secondItem="Dt0-4r-aaf" secondAttribute="centerX" id="ddr-Oy-tkn"/>
                             <constraint firstItem="h3E-XZ-JXy" firstAttribute="centerY" secondItem="9YI-Gi-lMD" secondAttribute="centerY" id="e6c-bt-IdJ"/>
                             <constraint firstItem="h3E-XZ-JXy" firstAttribute="leading" secondItem="WDe-QJ-y06" secondAttribute="trailing" constant="25" id="feM-wI-MqI"/>
-                            <constraint firstItem="KvZ-qu-11L" firstAttribute="top" secondItem="Dt0-4r-aaf" secondAttribute="bottom" constant="100" id="h7a-72-sIB"/>
                             <constraint firstItem="Ho5-RA-hRh" firstAttribute="centerY" secondItem="KvZ-qu-11L" secondAttribute="centerY" id="j4o-wW-mPJ"/>
                             <constraint firstItem="Pb4-ti-TFD" firstAttribute="centerY" secondItem="D2K-hS-tJf" secondAttribute="centerY" id="jGc-LS-1Yn"/>
                             <constraint firstItem="KvZ-qu-11L" firstAttribute="centerX" secondItem="LYF-zq-5bK" secondAttribute="centerX" id="nNt-vC-DzY"/>
@@ -833,18 +827,6 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="6uL-hT-DEE">
-            <size key="intrinsicContentSize" width="82" height="38.5"/>
-        </designable>
-        <designable name="D2K-hS-tJf">
-            <size key="intrinsicContentSize" width="60.5" height="35.5"/>
-        </designable>
-        <designable name="Pb4-ti-TFD">
-            <size key="intrinsicContentSize" width="82" height="38.5"/>
-        </designable>
-        <designable name="b5I-8r-8jh">
-            <size key="intrinsicContentSize" width="60.5" height="35.5"/>
-        </designable>
         <designable name="kvL-6x-JFX">
             <size key="intrinsicContentSize" width="81" height="45.5"/>
         </designable>
@@ -859,6 +841,7 @@
         <image name="Sound-On_home" width="113" height="113"/>
         <image name="backQuestion" width="512" height="512"/>
         <image name="nextQuestion" width="512" height="512"/>
+        <image name="pink_bg_1" width="940" height="265"/>
         <image name="setTimeHomeIcon" width="512" height="512"/>
         <image name="white_bubble" width="1476" height="372"/>
         <systemColor name="labelColor">

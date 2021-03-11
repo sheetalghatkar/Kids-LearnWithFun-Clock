@@ -49,6 +49,7 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
     var subGestureRecognizer =  UITapGestureRecognizer()
     var idChageHourVal = false
     var isHourComplete = true // to work reverse minute hand
+    var isMinuteShouldbeNegative = false  // If minute hadn is treversing from
     public struct LocalTime {
         var hour: Int?
         var minute: Int?
@@ -594,6 +595,7 @@ extension SetClocket {
             print("-------------Minute_Get_Val",setManualMinuteAngle)
         var getMinuteAngleRangeIndex = 0
         if setManualMinuteAngle < 0.0 {
+            isMinuteShouldbeNegative = false
             for iCount in 30..<CommanCode.minuteCalculationArray.count {
                 let minunteValue = CommanCode.minuteCalculationArray[iCount]
                 let startNumber = minunteValue[2]
@@ -606,6 +608,16 @@ extension SetClocket {
             print("!!!!--------------5-Mint",getMinuteAngleRangeIndex,setManualMinuteAngle)
 
         } else {
+          /*  if isMinuteShouldbeNegative{
+                if getHourIndex == 11 {
+                    getHourIndex = 0
+                    print("inside 11 isMinuteShouldbeNegative------------",getHourIndex)
+                } else {
+                    getHourIndex = getHourIndex+1
+                    print("inside isMinuteShouldbeNegative------------",getHourIndex)
+                }
+                setNewHrVal = CommanCode.hourAngleArray[getHourIndex]
+            }*/
             for iCount in 0..<30 {
                 let minunteValue = CommanCode.minuteCalculationArray[iCount]
                 let startNumber = minunteValue[2]
@@ -634,11 +646,25 @@ extension SetClocket {
         let diviso1 = pow(10.0, Double(2.0))
         getDiff = Double(round(Double(getDiff) * diviso1) / diviso1)
 
-        if getDiff == 0.00 || getDiff == 0.00 {
+        if getDiff == 0.00 || getDiff == -0.00  {
+            
+            if isMinuteShouldbeNegative {
+                print("@@@@@@@@@--Inside isMinuteShouldbeNegative--@@@")
+                isMinuteShouldbeNegative = false
+                setManualHourAngle = setNewHrVal
+                setManualHourAngle = Double(round(Double(setManualHourAngle) * divisor) / divisor)
+                setHourHandIndex = getHourIndex
+                let handRadianAngle = Double(Float.pi/2 - Float(setManualHourAngle))
+                viewHourHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
+            }
+
+            
+            
             isHourComplete = true
             print("@@@@@@@@@getDiff is zero@@@")
 
             if !idChageHourVal {
+                isMinuteShouldbeNegative = false
                 idChageHourVal = true
                 if isPreviousValueNegative {
                     print("getDiff  zer0idChageHourVal")
@@ -656,14 +682,15 @@ extension SetClocket {
                     let handRadianAngle = Double(Float.pi/2 - Float(setManualHourAngle))
                     viewHourHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
                 } else {
+                    isMinuteShouldbeNegative = true
                     if getHourIndex == 0 {
-                        print("getDiff is zero$$$$$$$---11")
-                        getHourIndex = 11
+                        print("Reverse getDiff is zero$$$$$$$---11")
+                       // getHourIndex = 11
                         setManualHourAngle = CommanCode.hourAngleArray[getHourIndex]
                     } else {
-                        getHourIndex = getHourIndex-1
+                        //getHourIndex = getHourIndex-1
                         setManualHourAngle = CommanCode.hourAngleArray[getHourIndex]
-                        print("getDiff is zero$$$$$---else", setManualHourAngle, getHourIndex)
+                        print("Reverse getDiff is zero$$$$$---else", setManualHourAngle, getHourIndex)
                     }
                     setManualHourAngle = Double(round(Double(setManualHourAngle) * divisor) / divisor)
                     setHourHandIndex = getHourIndex
@@ -672,6 +699,7 @@ extension SetClocket {
                 }
             }
         } else {
+            isMinuteShouldbeNegative = false
             if setManualMinuteAngle < 0.0 {
                 isPreviousValueNegative = true
             } else {
