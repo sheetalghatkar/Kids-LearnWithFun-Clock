@@ -18,7 +18,7 @@ class ButtonCardOptionExt: UIButton {
         self.layer.cornerRadius = 15
         self.layer.borderWidth = 1
         self.layer.borderColor = CommanCode.Card_BUTTON_BORDER_COLOR.cgColor
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
        // self.clipsToBounds = false
         self.layer.masksToBounds = true
 

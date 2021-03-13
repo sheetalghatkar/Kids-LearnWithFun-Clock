@@ -146,6 +146,10 @@ class CommanCode {
     static var timerForAds = 15.0
 
     static var animateCard = 0.1
+    
+    //Messages
+    
+    static var comingSoonText = "Coming Soon..."
 }
 extension UIDevice {
     var hasNotch: Bool

@@ -30,7 +30,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y3J-AZ-MaW">
-                                <rect key="frame" x="10" y="44" width="359.5" height="359.5"/>
+                                <rect key="frame" x="12.5" y="44" width="359" height="359.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="y3J-AZ-MaW" secondAttribute="height" multiplier="1:1" id="6jc-ap-QTz"/>
@@ -348,7 +348,7 @@
                             <constraint firstItem="Sa2-qI-ku6" firstAttribute="leading" secondItem="58m-xF-IBZ" secondAttribute="trailing" constant="25" id="ftb-qe-R9y"/>
                             <constraint firstItem="yhg-U5-g1u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="g7B-fZ-fU4"/>
                             <constraint firstItem="qJW-Yx-i7e" firstAttribute="centerY" secondItem="pcx-vx-3IJ" secondAttribute="centerY" id="j3q-os-rqd"/>
-                            <constraint firstItem="y3J-AZ-MaW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="j5r-Iq-z8b"/>
+                            <constraint firstItem="y3J-AZ-MaW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-15" id="kDR-Jz-zUI"/>
                             <constraint firstItem="LEz-Sj-Ag5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kFT-de-xpd"/>
                             <constraint firstAttribute="bottom" secondItem="LEz-Sj-Ag5" secondAttribute="bottom" id="ot7-qx-Oj5"/>
                             <constraint firstItem="y3J-AZ-MaW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" constant="1" id="po7-fM-GWG"/>

@@ -279,8 +279,14 @@ class ViewController: UIViewController {
 //        self.navigationController?.pushViewController(clockLearnVC, animated: true)
         
         
-        let clockLearnVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LearnViewController") as! LearnViewController
-        self.navigationController?.pushViewController(clockLearnVC, animated: true)
+     /*   let clockLearnVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LearnViewController") as! LearnViewController
+        self.navigationController?.pushViewController(clockLearnVC, animated: true)*/
+        
+        let alert = UIAlertController(title: "", message: CommanCode.comingSoonText, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
+        }))
+        self.present(alert, animated: true, completion: nil)
+
    }
     //IBAction Guess Time
     @IBAction func funcGuessTime(_ sender: UIButton) {
@@ -296,17 +302,32 @@ class ViewController: UIViewController {
     }
     //IBAction Set Time
     @IBAction func funcSetTime(_ sender: UIButton) {
-        let timeViewC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SetTimeViewController") as! SetTimeViewController
-        self.navigationController?.pushViewController(timeViewC, animated: true)
+        /*let timeViewC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SetTimeViewController") as! SetTimeViewController
+        self.navigationController?.pushViewController(timeViewC, animated: true)*/
+        
+        let alert = UIAlertController(title: "", message: CommanCode.comingSoonText, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
+        }))
+        self.present(alert, animated: true, completion: nil)
+
     }
     //IBAction Match Time
     @IBAction func funcPlayWithClock(_ sender: UIButton) {
+        let alert = UIAlertController(title: "", message: CommanCode.comingSoonText, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
+        }))
+        self.present(alert, animated: true, completion: nil)
+
         /*let playClockVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlayWithClockController") as! PlayWithClockController
         self.navigationController?.pushViewController(playClockVC, animated: true)*/
     }
 
     //IBAction Match Time
     @IBAction func funcTestTime(_ sender: UIButton) {
+        let alert = UIAlertController(title: "", message: CommanCode.comingSoonText, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

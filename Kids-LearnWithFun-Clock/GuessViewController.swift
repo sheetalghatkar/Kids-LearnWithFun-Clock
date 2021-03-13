@@ -95,7 +95,8 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
         imgViewLoader.layer.borderColor = CommanCode.paymentBtnTextColor.cgColor
 
         
-        
+      //  print("!!!!minuteCalculationArray",CommanCode.minuteCalculationArray.count)
+
        /* print("!!!!minuteAngleArray",CommanCode.minuteAngleArray.count)
         print("!!!!minuteCalculationArray",CommanCode.minuteCalculationArray.count)
         print("!!!!hourAngleArray",CommanCode.hourAngleArray.count)
@@ -116,7 +117,7 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
 //        self.bgScreen.image  = jeremyGif
         
         //DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
-            self.layoutCards()
+//            self.layoutCards()
         //})
         if appDelegate.IS_Sound_ON {
             btnSound.setBackgroundImage(CommanCode.imgSoundOn, for: .normal)
@@ -156,6 +157,7 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        self.layoutCards()
         if defaults.bool(forKey:"IsPrimeUser") {
             if let _ = btnNoAds {
                 self.btnNoAds.isHidden = true
@@ -228,34 +230,113 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
                 let random = Int.random(in: 0 ..< max)
                 if !selectedArrayOfIndexs.contains(random) {
                     selectedArrayOfIndexs.append(random)
-                    print("#####Random",random)
+                    //print("#####Random",random)
                 }
             } while selectedArrayOfIndexs.count < 4
-            print("___________________________________________")
+            //print("___________________________________________")
             let card = PictureCardView(frame: CGRect(x: 0, y: 0, width: self.pictureCardWidth, height : self.pictureCardHeight))
             card.clocketView.setLocalTime(hour: CommanCode.guessTimeArray[iCount][0], minute: CommanCode.guessTimeArray[iCount][1], second: 1)
             card.successIndex = CommanCode.guessTimeArray[iCount][2]
             card.delegatePictureCardProtocol = self
             if CommanCode.guessTimeArray[iCount][2] == 0 {
-                card.btnOption1.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][1]) + " Minute ", for: .normal)
-                card.btnOption2.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][1]) + " Minute ", for: .normal)
-                card.btnOption3.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][1]) + " Minute ", for: .normal)
-                card.btnOption4.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][1]) + " Minute ", for: .normal)
+                
+                if (CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][1]) == 0 {
+                    card.btnOption1.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][0]) + " O'Clock ", for: .normal)
+                } else {
+                card.btnOption1.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][0]) + " O'Clock " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][1]) + " Minute ", for: .normal)
+                }
+                if (CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][1]) == 0 {
+                    card.btnOption2.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][0]) + " O'Clock ", for: .normal)
+                } else {
+                    card.btnOption2.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][0]) + " O'Clock " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][1]) + " Minute ", for: .normal)
+                }
+                if (CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][1]) == 0 {
+                    card.btnOption3.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][0]) + " O'Clock ", for: .normal)
+                } else {
+
+                card.btnOption3.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][0]) + " O'Clock " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][1]) + " Minute ", for: .normal)
+                }
+                
+                if (CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][1]) == 0 {
+                    card.btnOption4.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][0]) + " O'Clock ", for: .normal)
+                } else {
+
+                card.btnOption4.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][0]) + " O'Clock " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][1]) + " Minute ", for: .normal)
+                }
             } else if CommanCode.guessTimeArray[iCount][2] == 1 {
-                card.btnOption2.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][1]) + " Minute ", for: .normal)
-                card.btnOption1.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][1]) + " Minute ", for: .normal)
-                card.btnOption3.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][1]) + " Minute ", for: .normal)
-                card.btnOption4.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][1]) + " Minute ", for: .normal)
+                if (CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][1]) == 0 {
+                    card.btnOption2.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][0]) + " O'Clock ", for: .normal)
+                } else {
+
+                card.btnOption2.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][0]) + " O'Clock " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][1]) + " Minute ", for: .normal)
+                }
+                if (CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][1]) == 0 {
+                    card.btnOption1.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][0]) + " O'Clock ", for: .normal)
+                } else {
+                    card.btnOption1.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][0]) + " O'Clock " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][1]) + " Minute ", for: .normal)
+                }
+                if (CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][1]) == 0 {
+                    card.btnOption3.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][0]) + " O'Clock ", for: .normal)
+                } else {
+
+                card.btnOption3.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][0]) + " O'Clock " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][1]) + " Minute ", for: .normal)
+                }
+                if (CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][1]) == 0 {
+                    card.btnOption4.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][0]) + " O'Clock ", for: .normal)
+                } else {
+                    card.btnOption4.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][0]) + " O'Clock " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][1]) + " Minute ", for: .normal)
+                }
             } else if CommanCode.guessTimeArray[iCount][2] == 2 {
-                card.btnOption3.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][1]) + " Minute ", for: .normal)
-                card.btnOption1.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][1]) + " Minute ", for: .normal)
-                card.btnOption2.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][1]) + " Minute ", for: .normal)
-                card.btnOption4.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][1]) + " Minute ", for: .normal)
+                if (CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][1]) == 0 {
+                    card.btnOption3.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][0]) + " O'Clock ", for: .normal)
+                } else {
+
+                card.btnOption3.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][0]) + " O'Clock " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][1]) + " Minute ", for: .normal)
+                }
+                if (CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][1]) == 0 {
+                    card.btnOption1.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][0]) + " O'Clock ", for: .normal)
+                } else {
+
+
+                card.btnOption1.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][0]) + " O'Clock " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][1]) + " Minute ", for: .normal)
+                }
+                if (CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][1]) == 0 {
+                    card.btnOption2.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][0]) + " O'Clock ", for: .normal)
+                } else {
+
+                card.btnOption2.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][0]) + " O'Clock " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][1]) + " Minute ", for: .normal)
+                }
+                if (CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][1]) == 0 {
+                    card.btnOption4.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][0]) + " O'Clock ", for: .normal)
+                } else {
+
+                card.btnOption4.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][0]) + " O'Clock " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][1]) + " Minute ", for: .normal)
+                }
             } else if CommanCode.guessTimeArray[iCount][2] == 3 {
-                card.btnOption4.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][1]) + " Minute ", for: .normal)
-                card.btnOption1.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][1]) + " Minute ", for: .normal)
-                card.btnOption2.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][1]) + " Minute ", for: .normal)
-                card.btnOption3.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][0]) + " Hour " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][1]) + " Minute ", for: .normal)
+                if (CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][1]) == 0 {
+                    card.btnOption4.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][0]) + " O'Clock ", for: .normal)
+                } else {
+
+                card.btnOption4.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][0]) + " O'Clock " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[0]][1]) + " Minute ", for: .normal)
+                }
+                if (CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][1]) == 0 {
+                    card.btnOption1.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][0]) + " O'Clock ", for: .normal)
+                } else {
+
+                card.btnOption1.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][0]) + " O'Clock " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[1]][1]) + " Minute ", for: .normal)
+                }
+                if (CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][1]) == 0 {
+                    card.btnOption2.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][0]) + " O'Clock ", for: .normal)
+                } else {
+
+                card.btnOption2.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][0]) + " O'Clock " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[2]][1]) + " Minute ", for: .normal)
+                }
+                if (CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][1]) == 0 {
+                    card.btnOption3.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][0]) + " O'Clock ", for: .normal)
+                } else {
+
+                card.btnOption3.setTitle(String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][0]) + " O'Clock " + String(CommanCode.guessTimeArray[selectedArrayOfIndexs[3]][1]) + " Minute ", for: .normal)
+                }
             }
 
             card.layer.shadowColor = UIColor(red:32/255, green:32/255, blue:32/255, alpha:1.00).cgColor
@@ -266,7 +347,7 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
             self.cards.append(card)
         }
 
-        print("Inside layoutCards**********", self.picViewcontainer.frame.height / 2)
+       // print("Inside layoutCards**********", self.picViewcontainer.frame.height / 2)
         // frontmost card (first card of the deck)
         let firstCard = cards[0]
         self.picViewcontainer.addSubview(firstCard)
@@ -310,7 +391,7 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
     }
     
     func removeOldFrontCard() {
-        print("Inside  removeOldFrontCard")
+       // print("Inside  removeOldFrontCard")
         if cards.indexExists(0) {
             cards[0].removeFromSuperview()
             cards.remove(at: 0)
@@ -324,7 +405,7 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
     
         @objc func handleCardPan(sender: UIPanGestureRecognizer) {
             var tag = sender.view?.tag
-            print("handleCardPan########", tag)
+           // print("handleCardPan########", tag)
 
             // if we're in the process of hiding a card, don't let the user interace with the cards yet
             if cardIsHiding { return }
@@ -347,7 +428,7 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
                 let panLocationInCard = sender.location(in: cards[0])
                 switch sender.state {
                 case .began:
-                    print("Inside began")
+                   // print("Inside began")
                     rotation = 0.0
                     previousRotation = 0.0
                 case .changed:
@@ -419,11 +500,11 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
                     if cards.count > 0 {
                       //  print("------ended----",cards[0])
                     } else {
-                        print("------ended-fail-------")
+                       // print("------ended-fail-------")
                     }
                     //------------------------------------------------------------
                                   if (cards[0].center.y < originalYVal - 100.0)||((cards[0].center.x) > (originalXVal + 100.0))||(cards[0].center.x < originalXVal - 100.0) {
-                                    print("Left")
+                                   // print("Left")
                                     UIView.animate(withDuration: 0.2) {
                                         self.cards[0].center = CGPoint(x: self.centerOfParentContainer.x + self.point.x + 200, y: self.centerOfParentContainer.y + self.point.y + 75)
                                         self.cards[0].alpha = 0
@@ -444,7 +525,7 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
 //                                        self.lblPictureName.blink()
                                     }
                                 } else {
-                                    print("Nothing happens")
+                                    //print("Nothing happens")
                                     UIView.animate(withDuration: 0.2) {
                                         self.cards[0].transform = .identity
 //                                        self.cards[0].center = CGPoint(x: self.picViewcontainer.frame.width / 2, y: (self.picViewcontainer.frame.height / 2) + self.cardInteritemSpacing*4) //self.getYMarginForCard())
@@ -461,37 +542,37 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
             }
         }
     func hideFrontCard() {
-            print("Inside  hideFrontCard")
+           // print("Inside  hideFrontCard")
             if #available(iOS 10.0, *) {
                 var cardRemoveTimer: Timer? = nil
                 cardRemoveTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self] (_) in
                   //  print("Inside  cardRemoveTimer")
                     guard self != nil else {
-                        print("Inside  hideFrontCard nil")
+                      //  print("Inside  hideFrontCard nil")
                         return }
                    // print("Inside  self  delegate", self)
 
     //                if (!(self!.view.bounds.contains(self!.cards[0].center))) || AppManager.shared.isDetailCardProcessed {
-                        print("Inside  hideFrontCard if")
+                       // print("Inside  hideFrontCard if")
                         cardRemoveTimer!.invalidate()
                         self?.cardIsHiding = true
                         UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseIn], animations: {
                             self?.cards[0].alpha = 0.0
-                            print("Inside  hideFrontCard view 1")
+                           // print("Inside  hideFrontCard view 1")
                         }, completion: { (_) in
-                            print("Inside  hideFrontCard view 2")
+                           // print("Inside  hideFrontCard view 2")
                             self?.removeOldFrontCard()
                             self?.cardIsHiding = false
                         })
                 })
             } else {
                 // fallback for earlier versions
-                print("fallback for earlier versions")
+               // print("fallback for earlier versions")
                 UIView.animate(withDuration: 0.2, delay: 1.5, options: [.curveEaseIn], animations: {
-                    print("Inside  hideFrontCard view 0")
+                   // print("Inside  hideFrontCard view 0")
                     self.cards[0].alpha = 0.0
                 }, completion: { (_) in
-                    print("Inside  hideFrontCard view 5")
+                   // print("Inside  hideFrontCard view 5")
 
                     self.removeOldFrontCard()
                 })
@@ -501,7 +582,7 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
     func showNextCard() {
         if !(defaults.bool(forKey:"IsPrimeUser")) {
             clickCount = clickCount + 1
-            print("!!!!!!!!!!!!clickCount",clickCount)
+           // print("!!!!!!!!!!!!clickCount",clickCount)
             if clickCount >= 10 {
                 clickCount = 0
                 callInterstitialOn10Tap()
@@ -510,9 +591,9 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
         let animationDuration: TimeInterval = 0.3
         // 1. animate each card to move forward one by one
         for i in 1...2 {
-            print("********2001***********")
+          //  print("********2001***********")
             if i > (cards.count - 1) {
-                print("********2002*********** Count",i)
+              //  print("********2002*********** Count",i)
                 continue
             }
             let card = cards[i]
@@ -574,39 +655,43 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
         })
         // first card needs to be in the front for proper interactivity
         self.picViewcontainer.bringSubviewToFront(self.cards[1])
+        picViewcontainer.isUserInteractionEnabled = true
     }
     
-    @IBAction func funcBackToHome(_ sender: UIButton) {
-        stopTimer()
-         fromHomeClick = true
-         if defaults.bool(forKey:"IsPrimeUser") {
-             navigationController?.popViewController(animated: true)
-         } else {
-             self.viewTransperent.isHidden = false
-             self.imgViewLoader.isHidden = false
-             if Reachability.isConnectedToNetwork() {
-                 DispatchQueue.main.async {
-                     self.interstitial = self.createAndLoadInterstitial()
-                 }
-                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-                     if !self.viewTransperent.isHidden {
-                         self.viewTransperent.isHidden = true
-                         self.imgViewLoader.isHidden = true
-                         self.navigationController?.popViewController(animated: true)
-                     }
-                 }
-             } else {
-                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
-                     self.funcHideLoader()
-                     let alert = UIAlertController(title: "", message: "No Internet Connection.", preferredStyle: UIAlertController.Style.alert)
-                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
-                         self.navigationController?.popViewController(animated: true)
-                     }))
-                     self.present(alert, animated: true, completion: nil)
-                 })
-             }
-         }
-     }
+   @IBAction func funcBackToHome(_ sender: UIButton) {
+    navigationController?.popViewController(animated: true)
+
+}
+//        stopTimer()
+//         fromHomeClick = true
+//         if defaults.bool(forKey:"IsPrimeUser") {
+//             navigationController?.popViewController(animated: true)
+//         } else {
+//             self.viewTransperent.isHidden = false
+//             self.imgViewLoader.isHidden = false
+//             if Reachability.isConnectedToNetwork() {
+//                 DispatchQueue.main.async {
+//                     self.interstitial = self.createAndLoadInterstitial()
+//                 }
+//                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+//                     if !self.viewTransperent.isHidden {
+//                         self.viewTransperent.isHidden = true
+//                         self.imgViewLoader.isHidden = true
+//                         self.navigationController?.popViewController(animated: true)
+//                     }
+//                 }
+//             } else {
+//                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+//                     self.funcHideLoader()
+//                     let alert = UIAlertController(title: "", message: "No Internet Connection.", preferredStyle: UIAlertController.Style.alert)
+//                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
+//                         self.navigationController?.popViewController(animated: true)
+//                     }))
+//                     self.present(alert, animated: true, completion: nil)
+//                 })
+//             }
+//         }
+//     }
     
     // MARK: - User defined Functions
     
@@ -633,15 +718,18 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
             self.hideFrontCard()
         })
     }
+    func disableContainedCardView() {
+        picViewcontainer.isUserInteractionEnabled = false
+    }
 
 }
 
 extension GuessViewController {
     @objc func alarmToLoadBannerAds(){
-        print("Inside alarmToLoadBannerAds")
+       // print("Inside alarmToLoadBannerAds")
         if Reachability.isConnectedToNetwork() {
             if bannerView != nil {
-                print("Inside Load bannerView")
+             //   print("Inside Load bannerView")
                 DispatchQueue.main.async {
                     self.bannerView.load(GADRequest())
                 }
@@ -687,7 +775,7 @@ extension GuessViewController {
     }
 
     func stopTimer() {
-        print("Inside stopTimer")
+        //print("Inside stopTimer")
         if timer != nil {
             timer?.invalidate()
             timer = nil
@@ -747,11 +835,11 @@ extension GuessViewController: GADBannerViewDelegate {
     }
 
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-      print("adViewDidReceiveAd")
+      //print("adViewDidReceiveAd")
         if let visibleViewCtrl = UIApplication.shared.keyWindow?.visibleViewController {
             if(visibleViewCtrl.isKind(of: GuessViewController.self)){
                 if timer == nil {
-                    print("adViewDidReceiveAd Success")
+                   // print("adViewDidReceiveAd Success")
                     timer = Timer.scheduledTimer(timeInterval: CommanCode.timerForAds, target: self, selector: #selector(self.alarmToLoadBannerAds), userInfo: nil, repeats: true)
                 }
             }
@@ -760,34 +848,34 @@ extension GuessViewController: GADBannerViewDelegate {
     /// Tells the delegate an ad request failed.
     func adView(_ bannerView: GADBannerView,
         didFailToReceiveAdWithError error: GADRequestError) {
-      print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+      //print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
     }
 
     /// Tells the delegate that a full-screen view will be presented in response
     /// to the user clicking on an ad.
     func adViewWillPresentScreen(_ bannerView: GADBannerView) {
-      print("adViewWillPresentScreen")
+     // print("adViewWillPresentScreen")
     }
 
     /// Tells the delegate that the full-screen view will be dismissed.
     func adViewWillDismissScreen(_ bannerView: GADBannerView) {
-      print("adViewWillDismissScreen")
+     // print("adViewWillDismissScreen")
     }
 
     /// Tells the delegate that the full-screen view has been dismissed.
     func adViewDidDismissScreen(_ bannerView: GADBannerView) {
-      print("adViewDidDismissScreen")
+     // print("adViewDidDismissScreen")
     }
 
     /// Tells the delegate that a user click will open another app (such as
     /// the App Store), backgrounding the current app.
     func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
-      print("adViewWillLeaveApplication")
+      //print("adViewWillLeaveApplication")
     }
 }
 extension GuessViewController: GADInterstitialDelegate {
     func interstitialDidReceiveAd(_ ad: GADInterstitial) {
-        print("Interstitial loaded successfully")
+        //print("Interstitial loaded successfully")
         funcHideLoader()
         ad.present(fromRootViewController: self)
         if fromHomeClick {
@@ -797,7 +885,7 @@ extension GuessViewController: GADInterstitialDelegate {
 
     func interstitialDidFail(toPresentScreen ad: GADInterstitial) {
         funcHideLoader()
-        print("Fail to receive interstitial")
+        //print("Fail to receive interstitial")
         if fromHomeClick {
             navigationController?.popViewController(animated: true)
         }
@@ -807,7 +895,7 @@ extension GuessViewController: GADInterstitialDelegate {
         if fromHomeClick {
             navigationController?.popViewController(animated: true)
         }
-        print("dismiss interstitial")
+       // print("dismiss interstitial")
     }
 }
 extension GuessViewController : PayementForParentProtocol {

@@ -12,6 +12,7 @@ import AVFoundation
 
 protocol PictureCardViewProtocol : class {
     func addGestureToCard()
+    func disableContainedCardView()
 }
 
 @IBDesignable class PictureCardView: UIView {
@@ -160,6 +161,8 @@ protocol PictureCardViewProtocol : class {
             if appDelegate.IS_Sound_ON {
                 playSoundOnButtonClick(isTrue: true)
             }
+            
+            self.delegatePictureCardProtocol?.disableContainedCardView()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [self] in
                 self.delegatePictureCardProtocol?.addGestureToCard()
             }
