@@ -12,6 +12,7 @@ import AVFoundation
 class SetTimeViewController: UIViewController {
     @IBOutlet weak var viewClocket : SetClocket!
     @IBOutlet weak var viewExtend: UIView!
+    @IBOutlet weak var viewParent: UIView!
 
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var btnSound: UIButton!
@@ -57,6 +58,7 @@ class SetTimeViewController: UIViewController {
         setsimpleLabel()
         btnDone.layer.borderColor = CommanCode.Clock_Dial_COLOR.cgColor
         lblSimpleTime.textColor = UIColor.white
+        btnBackward.isHidden = true
         
        /* lblHour.textColor = UIColor.white
         lblMinute.textColor = UIColor.white
@@ -195,7 +197,7 @@ class SetTimeViewController: UIViewController {
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
 //            self.viewExtend.alpha = 0
 //        }
-        UIView.transition(with: self.viewExtend, duration: 2, options: .transitionFlipFromTop, animations: nil, completion: { (_) in
+        UIView.transition(with: self.viewParent, duration: 2, options: .transitionFlipFromBottom, animations: nil, completion: { (_) in
            // self.viewExtend.alpha = 1
             self.setInitialTime()
         })
@@ -212,7 +214,14 @@ class SetTimeViewController: UIViewController {
             indexQuestion = getIndex
            // setTimeInQuestion()
             setsimpleLabel()
-            nextQuestion()
+            //  Converted to Swift 5.3 by Swiftify v5.3.22312 - https://swiftify.com/
+            let transition = CATransition()
+            transition.duration = 0.5
+            transition.type = .push
+            transition.subtype = .fromRight
+            transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+            viewParent.layer.add(transition, forKey: nil)
+            playSet()
         } else {
             btnForward.isHidden = true
         }
@@ -229,6 +238,13 @@ class SetTimeViewController: UIViewController {
             indexQuestion = getIndex
             nextQuestion()
             setsimpleLabel()
+            let transition = CATransition()
+            transition.duration = 0.5
+            transition.type = .push
+            transition.subtype = .fromLeft
+            transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+            viewParent.layer.add(transition, forKey: nil)
+            playSet()
         } else {
             btnBackward.isHidden = true
         }
