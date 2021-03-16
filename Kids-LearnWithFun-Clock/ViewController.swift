@@ -302,13 +302,13 @@ class ViewController: UIViewController {
     }
     //IBAction Set Time
     @IBAction func funcSetTime(_ sender: UIButton) {
-        /*let timeViewC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SetTimeViewController") as! SetTimeViewController
-        self.navigationController?.pushViewController(timeViewC, animated: true)*/
+        let timeViewC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SetTimeViewController") as! SetTimeViewController
+        self.navigationController?.pushViewController(timeViewC, animated: true)
         
-        let alert = UIAlertController(title: "", message: CommanCode.comingSoonText, preferredStyle: UIAlertController.Style.alert)
+       /* let alert = UIAlertController(title: "", message: CommanCode.comingSoonText, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
         }))
-        self.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)*/
 
     }
     //IBAction Match Time

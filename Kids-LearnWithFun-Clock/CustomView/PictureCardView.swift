@@ -176,4 +176,3 @@ protocol PictureCardViewProtocol : class {
         }
     }
 }
-

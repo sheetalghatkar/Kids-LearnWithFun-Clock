@@ -659,39 +659,36 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
     }
     
    @IBAction func funcBackToHome(_ sender: UIButton) {
-    navigationController?.popViewController(animated: true)
-
-}
-//        stopTimer()
-//         fromHomeClick = true
-//         if defaults.bool(forKey:"IsPrimeUser") {
-//             navigationController?.popViewController(animated: true)
-//         } else {
-//             self.viewTransperent.isHidden = false
-//             self.imgViewLoader.isHidden = false
-//             if Reachability.isConnectedToNetwork() {
-//                 DispatchQueue.main.async {
-//                     self.interstitial = self.createAndLoadInterstitial()
-//                 }
-//                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-//                     if !self.viewTransperent.isHidden {
-//                         self.viewTransperent.isHidden = true
-//                         self.imgViewLoader.isHidden = true
-//                         self.navigationController?.popViewController(animated: true)
-//                     }
-//                 }
-//             } else {
-//                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
-//                     self.funcHideLoader()
-//                     let alert = UIAlertController(title: "", message: "No Internet Connection.", preferredStyle: UIAlertController.Style.alert)
-//                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
-//                         self.navigationController?.popViewController(animated: true)
-//                     }))
-//                     self.present(alert, animated: true, completion: nil)
-//                 })
-//             }
-//         }
-//     }
+        stopTimer()
+         fromHomeClick = true
+         if defaults.bool(forKey:"IsPrimeUser") {
+             navigationController?.popViewController(animated: true)
+         } else {
+             self.viewTransperent.isHidden = false
+             self.imgViewLoader.isHidden = false
+             if Reachability.isConnectedToNetwork() {
+                 DispatchQueue.main.async {
+                     self.interstitial = self.createAndLoadInterstitial()
+                 }
+                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                     if !self.viewTransperent.isHidden {
+                         self.viewTransperent.isHidden = true
+                         self.imgViewLoader.isHidden = true
+                         self.navigationController?.popViewController(animated: true)
+                     }
+                 }
+             } else {
+                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+                     self.funcHideLoader()
+                     let alert = UIAlertController(title: "", message: "No Internet Connection.", preferredStyle: UIAlertController.Style.alert)
+                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
+                         self.navigationController?.popViewController(animated: true)
+                     }))
+                     self.present(alert, animated: true, completion: nil)
+                 })
+             }
+         }
+     }
     
     // MARK: - User defined Functions
     

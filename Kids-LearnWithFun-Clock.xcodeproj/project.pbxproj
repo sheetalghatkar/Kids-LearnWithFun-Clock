@@ -22,6 +22,18 @@
 		4F1ABE1E2595F71800256AB8 /* GreenCracker.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F1ABE1D2595F71800256AB8 /* GreenCracker.gif */; };
 		4F1E7D6C259CC70000A8A39B /* GuessClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E7D6B259CC70000A8A39B /* GuessClockFace.swift */; };
 		4F1E7D71259CC7C300A8A39B /* GuessClocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E7D70259CC7C300A8A39B /* GuessClocket.swift */; };
+		4F2531BE25FE28A800A8DF1A /* 6_o'clock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F2531B225FE28A700A8DF1A /* 6_o'clock.mp3 */; };
+		4F2531BF25FE28A800A8DF1A /* 9_o'clock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F2531B325FE28A700A8DF1A /* 9_o'clock.mp3 */; };
+		4F2531C025FE28A800A8DF1A /* 1_o'clock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F2531B425FE28A700A8DF1A /* 1_o'clock.mp3 */; };
+		4F2531C125FE28A800A8DF1A /* 3_o'clock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F2531B525FE28A700A8DF1A /* 3_o'clock.mp3 */; };
+		4F2531C225FE28A800A8DF1A /* 10_o'clock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F2531B625FE28A700A8DF1A /* 10_o'clock.mp3 */; };
+		4F2531C325FE28A800A8DF1A /* 2_o'clock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F2531B725FE28A800A8DF1A /* 2_o'clock.mp3 */; };
+		4F2531C425FE28A800A8DF1A /* 7_o'clock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F2531B825FE28A800A8DF1A /* 7_o'clock.mp3 */; };
+		4F2531C525FE28A800A8DF1A /* 5_o'clock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F2531B925FE28A800A8DF1A /* 5_o'clock.mp3 */; };
+		4F2531C625FE28A800A8DF1A /* 12_o'clock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F2531BA25FE28A800A8DF1A /* 12_o'clock.mp3 */; };
+		4F2531C725FE28A800A8DF1A /* 4_o'clock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F2531BB25FE28A800A8DF1A /* 4_o'clock.mp3 */; };
+		4F2531C825FE28A800A8DF1A /* 8_o'clock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F2531BC25FE28A800A8DF1A /* 8_o'clock.mp3 */; };
+		4F2531C925FE28A800A8DF1A /* 11_o'clock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F2531BD25FE28A800A8DF1A /* 11_o'clock.mp3 */; };
 		4F394C3425F4D42800F2403E /* Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F394C2725F4D42600F2403E /* Loading.gif */; };
 		4F394C3525F4D42800F2403E /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F394C2925F4D42800F2403E /* nanopb.xcframework */; };
 		4F394C3625F4D42800F2403E /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F394C2A25F4D42800F2403E /* GoogleAppMeasurement.framework */; };
@@ -118,7 +130,6 @@
 		4F4F791625FB901A00043A41 /* 1_Minutes.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F4F78DB25FB901A00043A41 /* 1_Minutes.mp3 */; };
 		4F5F382B2594D02200992FE3 /* Cracker.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F5F382A2594D02200992FE3 /* Cracker.gif */; };
 		4F5F383E2594E87200992FE3 /* fireworks03.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F5F383D2594E87200992FE3 /* fireworks03.gif */; };
-		4F5FCBAF25EE4AB200331771 /* 3-Hour.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FCBAE25EE4AB200331771 /* 3-Hour.mp3 */; };
 		4FE7FEBA25FB67F200FDA048 /* Set.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FE7FEB925FB67F200FDA048 /* Set.mp3 */; };
 		700E2E5A258A12100042EC2D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E2E59258A12100042EC2D /* UIButtonExtension.swift */; };
 		700E2E5D258A86790042EC2D /* WrongSelection.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 700E2E5C258A86790042EC2D /* WrongSelection.mp3 */; };
@@ -183,6 +194,18 @@
 		4F1ABE1D2595F71800256AB8 /* GreenCracker.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = GreenCracker.gif; sourceTree = "<group>"; };
 		4F1E7D6B259CC70000A8A39B /* GuessClockFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessClockFace.swift; sourceTree = "<group>"; };
 		4F1E7D70259CC7C300A8A39B /* GuessClocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessClocket.swift; sourceTree = "<group>"; };
+		4F2531B225FE28A700A8DF1A /* 6_o'clock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "6_o'clock.mp3"; sourceTree = "<group>"; };
+		4F2531B325FE28A700A8DF1A /* 9_o'clock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "9_o'clock.mp3"; sourceTree = "<group>"; };
+		4F2531B425FE28A700A8DF1A /* 1_o'clock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "1_o'clock.mp3"; sourceTree = "<group>"; };
+		4F2531B525FE28A700A8DF1A /* 3_o'clock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "3_o'clock.mp3"; sourceTree = "<group>"; };
+		4F2531B625FE28A700A8DF1A /* 10_o'clock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "10_o'clock.mp3"; sourceTree = "<group>"; };
+		4F2531B725FE28A800A8DF1A /* 2_o'clock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "2_o'clock.mp3"; sourceTree = "<group>"; };
+		4F2531B825FE28A800A8DF1A /* 7_o'clock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "7_o'clock.mp3"; sourceTree = "<group>"; };
+		4F2531B925FE28A800A8DF1A /* 5_o'clock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "5_o'clock.mp3"; sourceTree = "<group>"; };
+		4F2531BA25FE28A800A8DF1A /* 12_o'clock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "12_o'clock.mp3"; sourceTree = "<group>"; };
+		4F2531BB25FE28A800A8DF1A /* 4_o'clock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "4_o'clock.mp3"; sourceTree = "<group>"; };
+		4F2531BC25FE28A800A8DF1A /* 8_o'clock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "8_o'clock.mp3"; sourceTree = "<group>"; };
+		4F2531BD25FE28A800A8DF1A /* 11_o'clock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "11_o'clock.mp3"; sourceTree = "<group>"; };
 		4F394C2725F4D42600F2403E /* Loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Loading.gif; sourceTree = "<group>"; };
 		4F394C2925F4D42800F2403E /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = nanopb.xcframework; sourceTree = "<group>"; };
 		4F394C2A25F4D42800F2403E /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAppMeasurement.framework; sourceTree = "<group>"; };
@@ -280,7 +303,6 @@
 		4F4F78DB25FB901A00043A41 /* 1_Minutes.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1_Minutes.mp3; sourceTree = "<group>"; };
 		4F5F382A2594D02200992FE3 /* Cracker.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Cracker.gif; sourceTree = "<group>"; };
 		4F5F383D2594E87200992FE3 /* fireworks03.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fireworks03.gif; sourceTree = "<group>"; };
-		4F5FCBAE25EE4AB200331771 /* 3-Hour.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "3-Hour.mp3"; sourceTree = "<group>"; };
 		4FE7FEB925FB67F200FDA048 /* Set.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Set.mp3; sourceTree = "<group>"; };
 		700E2E59258A12100042EC2D /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		700E2E5C258A86790042EC2D /* WrongSelection.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WrongSelection.mp3; sourceTree = "<group>"; };
@@ -466,7 +488,18 @@
 		4F5FCBAA25EE482300331771 /* HourSound */ = {
 			isa = PBXGroup;
 			children = (
-				4F5FCBAE25EE4AB200331771 /* 3-Hour.mp3 */,
+				4F2531B425FE28A700A8DF1A /* 1_o'clock.mp3 */,
+				4F2531B725FE28A800A8DF1A /* 2_o'clock.mp3 */,
+				4F2531B525FE28A700A8DF1A /* 3_o'clock.mp3 */,
+				4F2531BB25FE28A800A8DF1A /* 4_o'clock.mp3 */,
+				4F2531B925FE28A800A8DF1A /* 5_o'clock.mp3 */,
+				4F2531B225FE28A700A8DF1A /* 6_o'clock.mp3 */,
+				4F2531B825FE28A800A8DF1A /* 7_o'clock.mp3 */,
+				4F2531BC25FE28A800A8DF1A /* 8_o'clock.mp3 */,
+				4F2531B325FE28A700A8DF1A /* 9_o'clock.mp3 */,
+				4F2531B625FE28A700A8DF1A /* 10_o'clock.mp3 */,
+				4F2531BD25FE28A800A8DF1A /* 11_o'clock.mp3 */,
+				4F2531BA25FE28A800A8DF1A /* 12_o'clock.mp3 */,
 			);
 			path = HourSound;
 			sourceTree = "<group>";
@@ -778,11 +811,13 @@
 				4FE7FEBA25FB67F200FDA048 /* Set.mp3 in Resources */,
 				4F4F78E825FB901A00043A41 /* 47_Minutes.mp3 in Resources */,
 				4F4F78DE25FB901A00043A41 /* 31_Minutes.mp3 in Resources */,
+				4F2531C725FE28A800A8DF1A /* 4_o'clock.mp3 in Resources */,
 				4F4F78FC25FB901A00043A41 /* 36_Minutes.mp3 in Resources */,
 				4F4F790F25FB901A00043A41 /* 18_Minutes.mp3 in Resources */,
 				4F4F78F825FB901A00043A41 /* 29_Minutes.mp3 in Resources */,
 				70111073258BB27D00159541 /* Wrong_word.mp3 in Resources */,
 				4F394C3925F4D42800F2403E /* OpenMeasurement-LICENSE in Resources */,
+				4F2531C625FE28A800A8DF1A /* 12_o'clock.mp3 in Resources */,
 				4F1698B925E26D140049452D /* SubscriptionDetailsController.xib in Resources */,
 				4F5F383E2594E87200992FE3 /* fireworks03.gif in Resources */,
 				4F4F791325FB901A00043A41 /* 22_Minutes.mp3 in Resources */,
@@ -793,6 +828,7 @@
 				4F4F790D25FB901A00043A41 /* 21_Minutes.mp3 in Resources */,
 				4F4F78F525FB901A00043A41 /* 51_Minutes.mp3 in Resources */,
 				709EAEB82580DBA000F8FEEC /* ClockLearn.gif in Resources */,
+				4F2531C525FE28A800A8DF1A /* 5_o'clock.mp3 in Resources */,
 				4F4F791025FB901A00043A41 /* 57_Minutes.mp3 in Resources */,
 				4F4F790725FB901A00043A41 /* 20_Minutes.mp3 in Resources */,
 				4F4F78E025FB901A00043A41 /* 14_Minutes.mp3 in Resources */,
@@ -800,6 +836,8 @@
 				4F4F78EF25FB901A00043A41 /* 45_Minutes.mp3 in Resources */,
 				709EAE8A2580A93C00F8FEEC /* LaunchScreen.storyboard in Resources */,
 				700E2E61258A8B290042EC2D /* Wrong1.mp3 in Resources */,
+				4F2531C825FE28A800A8DF1A /* 8_o'clock.mp3 in Resources */,
+				4F2531C925FE28A800A8DF1A /* 11_o'clock.mp3 in Resources */,
 				4F4F78E425FB901A00043A41 /* 7_Minutes.mp3 in Resources */,
 				4F4F78F925FB901A00043A41 /* 52_Minutes.mp3 in Resources */,
 				4F4F790825FB901A00043A41 /* 24_Minutes.mp3 in Resources */,
@@ -812,6 +850,8 @@
 				4F4F790525FB901A00043A41 /* 26_Minutes.mp3 in Resources */,
 				4F4F791125FB901A00043A41 /* 43_Minutes.mp3 in Resources */,
 				4F4F78E925FB901A00043A41 /* 8_Minutes.mp3 in Resources */,
+				4F2531BF25FE28A800A8DF1A /* 9_o'clock.mp3 in Resources */,
+				4F2531C225FE28A800A8DF1A /* 10_o'clock.mp3 in Resources */,
 				4F4F78EE25FB901A00043A41 /* 5_Minutes.mp3 in Resources */,
 				4F4F78ED25FB901A00043A41 /* 17_Minutes.mp3 in Resources */,
 				4F4F790B25FB901A00043A41 /* 42_Minutes.mp3 in Resources */,
@@ -827,11 +867,14 @@
 				4F4F78DD25FB901A00043A41 /* 11_Minutes.mp3 in Resources */,
 				4F4F78FE25FB901A00043A41 /* 4_Minutes.mp3 in Resources */,
 				4F4F78FB25FB901A00043A41 /* 38_Minutes.mp3 in Resources */,
+				4F2531C025FE28A800A8DF1A /* 1_o'clock.mp3 in Resources */,
 				4F4F78F125FB901A00043A41 /* 15_Minutes.mp3 in Resources */,
 				4F4F78EB25FB901A00043A41 /* 44_Minutes.mp3 in Resources */,
 				4F4F78DC25FB901A00043A41 /* 2_Minutes.mp3 in Resources */,
 				4F43E69625E165130018B3E0 /* ClockBgMusic.mp3 in Resources */,
+				4F2531C425FE28A800A8DF1A /* 7_o'clock.mp3 in Resources */,
 				4F4F791625FB901A00043A41 /* 1_Minutes.mp3 in Resources */,
+				4F2531C325FE28A800A8DF1A /* 2_o'clock.mp3 in Resources */,
 				4F4F78F425FB901A00043A41 /* 13_Minutes.mp3 in Resources */,
 				4F1698BA25E26D140049452D /* PaymentDetailViewController.xib in Resources */,
 				4F4F790625FB901A00043A41 /* 55_Minutes.mp3 in Resources */,
@@ -842,6 +885,7 @@
 				4F4F78F325FB901A00043A41 /* 30_Minutes.mp3 in Resources */,
 				701675F42588C542004F19BA /* PictureCardView.xib in Resources */,
 				4F4F78FA25FB901A00043A41 /* 39_Minutes.mp3 in Resources */,
+				4F2531C125FE28A800A8DF1A /* 3_o'clock.mp3 in Resources */,
 				4F4F78EC25FB901A00043A41 /* 33_Minutes.mp3 in Resources */,
 				709EAE852580A93700F8FEEC /* Main.storyboard in Resources */,
 				4F4F78FF25FB901A00043A41 /* 27_Minutes.mp3 in Resources */,
@@ -849,9 +893,9 @@
 				4F394C3A25F4D42800F2403E /* GoogleUtilities-LICENSE in Resources */,
 				4F1ABE1E2595F71800256AB8 /* GreenCracker.gif in Resources */,
 				7023D4C12581FDC200B752D4 /* LocalizableEnglish.strings in Resources */,
+				4F2531BE25FE28A800A8DF1A /* 6_o'clock.mp3 in Resources */,
 				4F4F790225FB901A00043A41 /* 12_Minutes.mp3 in Resources */,
 				700E2E5F258A88580042EC2D /* WellDone.mp3 in Resources */,
-				4F5FCBAF25EE4AB200331771 /* 3-Hour.mp3 in Resources */,
 				4F4F78FD25FB901A00043A41 /* 58_Minutes.mp3 in Resources */,
 				700E2E5D258A86790042EC2D /* WrongSelection.mp3 in Resources */,
 				4F394C3425F4D42800F2403E /* Loading.gif in Resources */,
@@ -1096,8 +1140,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = M9C32R6P4U;
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1113,7 +1158,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiapps360.LearnClockTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "LearnClockTime Distribution Profile";
+				PROVISIONING_PROFILE_SPECIFIER = "LearnClockTime Development Profile";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1123,8 +1168,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = M9C32R6P4U;
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1140,7 +1186,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiapps360.LearnClockTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "LearnClockTime Distribution Profile";
+				PROVISIONING_PROFILE_SPECIFIER = "LearnClockTime Development Profile";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -11,15 +11,23 @@ import AVFoundation
 
 class SetTimeViewController: UIViewController {
     @IBOutlet weak var viewClocket : SetClocket!
-    
+    @IBOutlet weak var viewExtend: UIView!
+
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var btnSound: UIButton!
     @IBOutlet weak var btnNoAds: UIButton!
     @IBOutlet weak var btnDone: UIButton!
-    @IBOutlet weak var lblHourTime: UILabel!
-    @IBOutlet weak var lblHour: UILabel!
-    @IBOutlet weak var lblMinuteTime: UILabel!
-    @IBOutlet weak var lblMinute: UILabel!
+    @IBOutlet weak var btnForward: UIButton!
+    @IBOutlet weak var btnBackward: UIButton!
+
+//    @IBOutlet weak var lblHourTime: UILabel!
+//    @IBOutlet weak var lblHour: UILabel!
+//    @IBOutlet weak var lblMinuteTime: UILabel!
+//    @IBOutlet weak var lblMinute: UILabel!
+    @IBOutlet weak var trailingHourLbl: NSLayoutConstraint!
+    @IBOutlet weak var lblSimpleTime: UILabel!
+    @IBOutlet weak var lblComplexTime: UILabel!
+
 
     var paymentDetailVC : PaymentDetailViewController?
     let defaults = UserDefaults.standard
@@ -29,7 +37,11 @@ class SetTimeViewController: UIViewController {
     var fromHour = false
     var iCountQuestionArray = 0
     var levelNumber = 1
-
+    var indexQuestion = 0
+    let fontTime = UIFont(name: "ChalkboardSE-Bold", size: 30)
+    let fontLblTime = UIFont(name: "ChalkboardSE-Regular", size: 25)
+    var clockTitle = " O'Clock "
+    var minuteTitle = " Minutes"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,29 +53,12 @@ class SetTimeViewController: UIViewController {
         }
         //----------------------------------------------------------------------------------------
         //Initial Clock value set
-       // viewClocket.setLocalTime(hour: 10, minute: 10, second: 1)
-        let getHourAngle = CommanCode.hourAngleArray[10]
-        var handRadianAngle = ((Float.pi/2) - Float(getHourAngle))
-        viewClocket.viewHourHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
-
-        let getMinuteAngle = CommanCode.minuteAngleArray[0]
-        handRadianAngle = ((Float.pi/2) - Float(getMinuteAngle))
-        viewClocket.viewMinuteHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
-        //----------------------------------------------------------------------------------------
-        
-        
-        
-        
-        
-        
-        
-        
+        setInitialTime()
+        setsimpleLabel()
         btnDone.layer.borderColor = CommanCode.Clock_Dial_COLOR.cgColor
-        let fontTime = UIFont(name: "ChalkboardSE-Bold", size: 30)
-        let fontLblTime = UIFont(name: "ChalkboardSE-Regular", size: 25)
+        lblSimpleTime.textColor = UIColor.white
         
-        
-        lblHour.textColor = UIColor.white
+       /* lblHour.textColor = UIColor.white
         lblMinute.textColor = UIColor.white
         lblHour.font = fontLblTime
         lblMinute.font = fontLblTime
@@ -73,10 +68,19 @@ class SetTimeViewController: UIViewController {
         lblHourTime.font = fontTime
         lblMinuteTime.font = fontTime
         
-        lblHour.text = "Hour"
+        lblHour.text = "O'Clock"
         lblHourTime.text = String((CommanCode.hourMinutequestLevel_1_Array[0])[0])
         lblMinute.text = "Minute"
         lblMinuteTime.text = String((CommanCode.hourMinutequestLevel_1_Array[0])[1])
+        if (levelNumber == 1) {
+//            lblHour.backgroundColor = UIColor.yellow
+            trailingHourLbl.constant = -85
+            lblMinute.isHidden = true
+            lblMinuteTime.isHidden = true
+        }*/
+
+        
+        
 
 //        for getQuestionTime in CommanCode.hourMinutequestLevel_1_Array {
 //            //----------------------------------------------------------------------------------------
@@ -109,6 +113,56 @@ class SetTimeViewController: UIViewController {
 //        let loaderGif1 = UIImage.gifImageWithName("Lady_Teaching")
 //        imgView.image = loaderGif1
     }
+//    func setTimeInQuestion() {
+//        let getHourAngle = CommanCode.hourAngleArray[CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0]]
+//        var handRadianAngle = ((Float.pi/2) - Float(getHourAngle))
+//        viewClocket.viewHourHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
+//        let getMinuteAngle = CommanCode.minuteAngleArray[CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]]
+//        handRadianAngle = ((Float.pi/2) - Float(getMinuteAngle))
+//        viewClocket.viewMinuteHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
+//    }
+    
+    func setInitialTime() {
+        let getHourAngle = CommanCode.hourAngleArray[10]
+        var handRadianAngle = ((Float.pi/2) - Float(getHourAngle))
+        viewClocket.viewHourHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
+        let getMinuteAngle = CommanCode.minuteAngleArray[10]
+        handRadianAngle = ((Float.pi/2) - Float(getMinuteAngle))
+        viewClocket.viewMinuteHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
+    }
+    
+    func setsimpleLabel() {
+        if (CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]) != 0 {
+            var texViewAttrString: NSMutableAttributedString = NSMutableAttributedString(string: String(CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0])+"\(clockTitle)")
+
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 27, weight: .bold),range: NSRange(location: 0, length:2))
+            
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 20, weight: .regular),range: NSRange(location: 2, length:(clockTitle.count-1)))
+            
+            
+            var texViewAttrString1: NSMutableAttributedString = NSMutableAttributedString(string: String(CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0])+"\(minuteTitle)")
+
+
+            texViewAttrString1.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 27, weight: .bold),range: NSRange(location: 0, length:2))
+            
+            texViewAttrString1.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 20, weight: .regular),range: NSRange(location: 2, length:(minuteTitle.count)-1))
+            
+            var concate = NSMutableAttributedString(attributedString: texViewAttrString)
+            concate.append(texViewAttrString1)
+            lblSimpleTime.attributedText = concate
+        } else {
+            var texViewAttrString: NSMutableAttributedString = NSMutableAttributedString(string: String(CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0])+"\(clockTitle)")
+
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 27, weight: .bold),range: NSRange(location: 0, length:2))
+            
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 20, weight: .regular),range: NSRange(location: 2, length:(clockTitle.count-1)))
+            
+            lblSimpleTime.attributedText = texViewAttrString
+
+        }
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         if defaults.bool(forKey:"IsPrimeUser") {
             if let _ = btnNoAds {
@@ -137,6 +191,50 @@ class SetTimeViewController: UIViewController {
         }
         appDelegate.IS_Sound_ON = !appDelegate.IS_Sound_ON
     }
+    func nextQuestion() {
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+//            self.viewExtend.alpha = 0
+//        }
+        UIView.transition(with: self.viewExtend, duration: 2, options: .transitionFlipFromTop, animations: nil, completion: { (_) in
+           // self.viewExtend.alpha = 1
+            self.setInitialTime()
+        })
+    }
+
+    @IBAction func func_Forward_Clicked(_ sender: UIButton) {
+        var getIndex = indexQuestion + 1
+        if !(getIndex >= (CommanCode.hourMinutequestLevel_1_Array.count)) {
+            if (getIndex == (CommanCode.hourMinutequestLevel_1_Array.count-1)) {
+                btnForward.isHidden = true
+            } else {
+                btnForward.isHidden = false
+            }
+            indexQuestion = getIndex
+           // setTimeInQuestion()
+            setsimpleLabel()
+            nextQuestion()
+        } else {
+            btnForward.isHidden = true
+        }
+        btnBackward.isHidden = false
+    }
+    @IBAction func func_Backward_Clicked(_ sender: UIButton) {
+        var getIndex = indexQuestion - 1
+        if !(getIndex <= 0) {
+            if getIndex == 0 {
+                btnBackward.isHidden = true
+            } else {
+                btnBackward.isHidden = false
+            }
+            indexQuestion = getIndex
+            nextQuestion()
+            setsimpleLabel()
+        } else {
+            btnBackward.isHidden = true
+        }
+        btnForward.isHidden = false
+    }
+
     @IBAction func funcDoneClicked(_ sender: UIButton) {
       /*  var isHourCorrect = false
         var isMinuteCorrect = false
@@ -242,7 +340,8 @@ extension SetTimeViewController : AVAudioPlayerDelegate {
         }
     }
     func playHour() {
-        let path = Bundle.main.path(forResource: "3-Hour", ofType : "mp3")!
+        let setHourClock = (CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0])
+        let path = Bundle.main.path(forResource:String(setHourClock)+"_o'clock", ofType : "mp3")!
         let url = URL(fileURLWithPath : path)
         do {
             player = try AVAudioPlayer(contentsOf: url)
@@ -258,7 +357,7 @@ extension SetTimeViewController : AVAudioPlayerDelegate {
     }
     
     func playMinute() {
-        let path = Bundle.main.path(forResource: "15-Minutes", ofType : "mp3")!
+        let path = Bundle.main.path(forResource: "15_Minutes", ofType : "mp3")!
         let url = URL(fileURLWithPath : path)
         do {
             player = try AVAudioPlayer(contentsOf: url)
@@ -277,7 +376,9 @@ extension SetTimeViewController : AVAudioPlayerDelegate {
             playHour()
         } else if fromHour {
             fromHour = false
-            playMinute()
+            if !(levelNumber == 1) {
+                playMinute()
+            }
         }
     }
 }
