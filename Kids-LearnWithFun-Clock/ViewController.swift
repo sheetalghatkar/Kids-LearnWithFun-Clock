@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import GoogleMobileAds
 
 class ViewController: UIViewController {
     
@@ -30,6 +31,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnSetting: UIButton!
     @IBOutlet weak var btnCancelSubscription: UIButton!
     var paymentDetailVC : PaymentDetailViewController?
+    @IBOutlet weak var topToSoundBtn: NSLayoutConstraint!
 
 
     
@@ -46,6 +48,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var viewtransperent: UIView!
     
     var fromShareApp = false
+    var bannerView: GADBannerView!
+    var timer: Timer?
+
 
     @IBOutlet weak var floaty : Floaty!
         {
@@ -59,6 +64,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setUI()
+        if !(defaults.bool(forKey:"IsPrimeUser")) {
+            bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+            addBannerViewToView(bannerView)
+            bannerView.adUnitID = CommanCode.Banner_AdUnitId
+            bannerView.rootViewController = self
+            bannerView.delegate = self
+            if Reachability.isConnectedToNetwork() {
+                DispatchQueue.main.async {
+                    self.bannerView.load(GADRequest())
+                }
+            } else {
+                self.timer = Timer.scheduledTimer(timeInterval: CommanCode.timerForAds, target: self, selector: #selector(self.alarmToLoadBannerAds), userInfo: nil, repeats: true)
+            }
+        }
+        if !(UIDevice.current.hasNotch) {
+            topToSoundBtn.constant = -5
+        }
+
     }
     override func viewDidAppear(_ animated: Bool) {
         if appDelegate.IS_Sound_ON {
@@ -67,10 +90,28 @@ class ViewController: UIViewController {
             player.stop()
         }
     }
+    func stopTimer() {
+        //print("Inside stopTimer")
+        if timer != nil {
+            timer?.invalidate()
+            timer = nil
+        }
+    }
+    @objc func alarmToLoadBannerAds(){
+//        print("Inside alarmToLoadBannerAds")
+        if Reachability.isConnectedToNetwork() {
+            if bannerView != nil {
+             //   print("Inside Load bannerView")
+                DispatchQueue.main.async {
+                    self.bannerView.load(GADRequest())
+                }
+            }
+        }
+    }
     override func viewWillDisappear(_ animated: Bool) {
         player.stop()
+        stopTimer()
     }
-
     func setUI() {
         self.view.backgroundColor = CommanCode.APP_BACKGROUND_COLOR
         self.imgViewGif.image  = UIImage.gifImageWithName("ClockLearn")
@@ -398,5 +439,93 @@ extension ViewController : PayementForParentProtocol {
         }
         self.present(activityViewController, animated: true, completion: nil)
     }
+}
+extension ViewController: GADBannerViewDelegate {
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+      bannerView.translatesAutoresizingMaskIntoConstraints = false
+      view.addSubview(bannerView)
+        if #available(iOS 11.0, *) {
+          // In iOS 11, we need to constrain the view to the safe area.
+          positionBannerViewFullWidthAtBottomOfSafeArea(bannerView)
+        }
+        else {
+          // In lower iOS versions, safe area is not available so we use
+          // bottom layout guide and view edges.
+          positionBannerViewFullWidthAtBottomOfView(bannerView)
+        }
+     }
 
+    func positionBannerViewFullWidthAtBottomOfSafeArea(_ bannerView: UIView) {
+      // Position the banner. Stick it to the bottom of the Safe Area.
+      // Make it constrained to the edges of the safe area.
+      let guide = view.safeAreaLayoutGuide
+      NSLayoutConstraint.activate([
+        guide.leftAnchor.constraint(equalTo: bannerView.leftAnchor),
+        guide.rightAnchor.constraint(equalTo: bannerView.rightAnchor),
+        guide.bottomAnchor.constraint(equalTo: bannerView.bottomAnchor)
+      ])
+    }
+
+    func positionBannerViewFullWidthAtBottomOfView(_ bannerView: UIView) {
+      view.addConstraint(NSLayoutConstraint(item: bannerView,
+                                            attribute: .leading,
+                                            relatedBy: .equal,
+                                            toItem: view,
+                                            attribute: .leading,
+                                            multiplier: 1,
+                                            constant: 0))
+      view.addConstraint(NSLayoutConstraint(item: bannerView,
+                                            attribute: .trailing,
+                                            relatedBy: .equal,
+                                            toItem: view,
+                                            attribute: .trailing,
+                                            multiplier: 1,
+                                            constant: 0))
+      view.addConstraint(NSLayoutConstraint(item: bannerView,
+                                            attribute: .bottom,
+                                            relatedBy: .equal,
+                                            toItem: bottomLayoutGuide,
+                                            attribute: .top,
+                                            multiplier: 1,
+                                            constant: 0))
+    }
+
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+      print("adViewDidReceiveAd")
+        if let visibleViewCtrl = UIApplication.shared.keyWindow?.visibleViewController {
+            if(visibleViewCtrl.isKind(of: GuessViewController.self)){
+                if timer == nil {
+                   // print("adViewDidReceiveAd Success")
+                    timer = Timer.scheduledTimer(timeInterval: CommanCode.timerForAds, target: self, selector: #selector(self.alarmToLoadBannerAds), userInfo: nil, repeats: true)
+                }
+            }
+        }
+    }
+    /// Tells the delegate an ad request failed.
+    func adView(_ bannerView: GADBannerView,
+        didFailToReceiveAdWithError error: GADRequestError) {
+      //print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+
+    /// Tells the delegate that a full-screen view will be presented in response
+    /// to the user clicking on an ad.
+    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+     // print("adViewWillPresentScreen")
+    }
+
+    /// Tells the delegate that the full-screen view will be dismissed.
+    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+     // print("adViewWillDismissScreen")
+    }
+
+    /// Tells the delegate that the full-screen view has been dismissed.
+    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+     // print("adViewDidDismissScreen")
+    }
+
+    /// Tells the delegate that a user click will open another app (such as
+    /// the App Store), backgrounding the current app.
+    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
+      //print("adViewWillLeaveApplication")
+    }
 }

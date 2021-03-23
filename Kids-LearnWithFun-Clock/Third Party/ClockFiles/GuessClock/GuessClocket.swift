@@ -64,7 +64,7 @@ open class GuessClocket: UIView, UIGestureRecognizerDelegate {
     private var secondHand = GuessClockHand()
     private var secondHandCircle = UIImageView()
     
-    weak open var setClockDelegate: GuessClocketDelegate?
+    weak open var guessClockDelegate: GuessClocketDelegate?
     
     
     public override init(frame: CGRect) {
@@ -251,7 +251,7 @@ open class GuessClocket: UIView, UIGestureRecognizerDelegate {
     
     private func countDownTimerAlert() {
         //implement any alert actions here for the countDown timer expiring
-        setClockDelegate?.countDownExpired()
+        guessClockDelegate?.countDownExpired()
     }
     
     
@@ -262,7 +262,7 @@ open class GuessClocket: UIView, UIGestureRecognizerDelegate {
             handleTap(recognizer: recognizer)
             break
         case .ended:
-            setClockDelegate?.timeIsSetManually()
+            guessClockDelegate?.timeIsSetManually()
         default:
             break
         }
@@ -287,7 +287,7 @@ open class GuessClocket: UIView, UIGestureRecognizerDelegate {
                 secondHand.updateHandAngleSetClock(angle: CGFloat(0.0), duration: 1.0)
             }
             localTime.second = 0
-            setClockDelegate?.timeIsSetManually()
+            guessClockDelegate?.timeIsSetManually()
             return
         }
         let handRadianAngle = Double(Float.pi - atan2f((Float(tapLocation.x - center.x)),
@@ -311,7 +311,7 @@ open class GuessClocket: UIView, UIGestureRecognizerDelegate {
         }
         let hourDegree = Double(localTime.hour ?? 1) * 30.0 + Double(localTime.minute ?? 1) * 0.5
         hourHand.updateHandAngleSetClock(angle: CGFloat(hourDegree * translateToRadian), duration: 0.5)
-        setClockDelegate?.timeIsSetManually()
+        guessClockDelegate?.timeIsSetManually()
     }
 }
 

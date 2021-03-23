@@ -30,6 +30,7 @@
                 <outlet property="lblYearlyPriceRecurring" destination="3gb-zj-0wR" id="SVv-uw-fg8"/>
                 <outlet property="lblYearlyRecurring" destination="GBk-7e-ubJ" id="wMH-I6-6re"/>
                 <outlet property="lblYearlyTitle" destination="Cyy-yr-2NX" id="Sny-FW-uzf"/>
+                <outlet property="topPrivacyPolicy" destination="uSa-cq-VTL" id="9Vz-7I-HrM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewBgYearly" destination="E02-Ny-Yef" id="V5o-jY-0ke"/>
                 <outlet property="viewMonthly" destination="WkC-On-84P" id="laC-5a-Mvq"/>

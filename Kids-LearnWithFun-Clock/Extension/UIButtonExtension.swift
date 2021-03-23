@@ -19,6 +19,10 @@ class ButtonCardOptionExt: UIButton {
         self.layer.borderWidth = 1
         self.layer.borderColor = CommanCode.Card_BUTTON_BORDER_COLOR.cgColor
         self.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        if UIScreen.main.bounds.height < 700 {
+            self.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
+        }
+
        // self.clipsToBounds = false
         self.layer.masksToBounds = true
 

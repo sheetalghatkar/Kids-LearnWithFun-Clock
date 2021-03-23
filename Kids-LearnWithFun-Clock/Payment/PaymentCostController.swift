@@ -15,6 +15,7 @@ class PaymentCostController: UIViewController ,SKProductsRequestDelegate, SKPaym
     @IBOutlet weak var btnRestore: UIButton!
     @IBOutlet weak var lblAlredyPurchased: UILabel!
     @IBOutlet weak var  widthHome: NSLayoutConstraint!
+    @IBOutlet weak var topPrivacyPolicy: NSLayoutConstraint!
 
     //----------------------------------------
     //New
@@ -108,7 +109,7 @@ class PaymentCostController: UIViewController ,SKProductsRequestDelegate, SKPaym
 //        self.viewBgMonthly.layer.borderWidth = 1.5
         
         if !(UIDevice.current.hasNotch) {
-            widthHome.constant = 40
+            widthHome.constant = 55
         }
         viewTrasperentDisabled.isHidden = false
         licenseAgreementVC = CustomLiceneModelController(nibName: "CustomLiceneModelController", bundle: nil)
@@ -131,6 +132,10 @@ class PaymentCostController: UIViewController ,SKProductsRequestDelegate, SKPaym
         lblAlredyPurchased.layer.shadowOpacity = 1.0
         lblAlredyPurchased.layer.shadowOffset = CGSize(width: 4, height: 4)
         lblAlredyPurchased.layer.masksToBounds = false
+        
+        if UIScreen.main.bounds.height < 750 {
+            topPrivacyPolicy.constant = 25
+        }
     }
     
     func removeViewFromApp() {

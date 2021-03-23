@@ -75,24 +75,30 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
     var checkCurrentindex = 0
     var fromHomeClick = false
     var currentindex = 0
+    var fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 30)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         lblTitle.text = "Guess Time"
-        lblTitle.textColor = CommanCode.paymentBtnTextColor
-        
-        lblTitle.layer.shadowColor = UIColor.white.cgColor
+        lblTitle.textColor = UIColor.white   //CommanCode.paymentBtnTextColor
+        lblTitle.layer.shadowColor = UIColor.black.cgColor
         lblTitle.layer.shadowRadius = 1.0
         lblTitle.layer.shadowOpacity = 1.0
-        lblTitle.layer.shadowOffset = CGSize(width: 4, height: 4)
+        lblTitle.layer.shadowOffset = CGSize(width: 2, height: 2)
         lblTitle.layer.masksToBounds = false
         
-        
+        if UIScreen.main.bounds.height < 750 {
+            fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 27)
+        }
+
+        lblTitle.font = fontLblTime
+
         let loaderGif = UIImage.gifImageWithName("Loading")
         imgViewLoader.image = loaderGif
         imgViewLoader.backgroundColor = UIColor.white
         imgViewLoader.layer.borderWidth = 1
-        imgViewLoader.layer.borderColor = CommanCode.paymentBtnTextColor.cgColor
+        imgViewLoader.layer.borderColor =
+            CommanCode.paymentBtnTextColor.cgColor
 
         
       //  print("!!!!minuteCalculationArray",CommanCode.minuteCalculationArray.count)
@@ -125,9 +131,9 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
             btnSound.setBackgroundImage(CommanCode.imgSoundOff, for: .normal)
         }
         if !defaults.bool(forKey:"IsPrimeUser") {
-            self.trailingTitlelable.constant = 85
+            self.trailingTitlelable.constant = 90
         } else {
-            self.trailingTitlelable.constant = 10
+            self.trailingTitlelable.constant = 40
         }
 
         if !(defaults.bool(forKey:"IsPrimeUser")) {
@@ -166,14 +172,14 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
                 }
             }
             if let _ = trailingTitlelable {
-                self.trailingTitlelable.constant = 10
+                self.trailingTitlelable.constant = 40
             }
         } else {
             if let _ = btnNoAds {
                 self.btnNoAds.isHidden = false
             }
             if let _ = trailingTitlelable {
-                self.trailingTitlelable.constant = 85
+                self.trailingTitlelable.constant = 90
             }
         }
     }
@@ -388,6 +394,8 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
         }
         // make sure that the first card in the deck is at the front
         self.picViewcontainer.bringSubviewToFront(cards[0])
+        
+        
     }
     
     func removeOldFrontCard() {

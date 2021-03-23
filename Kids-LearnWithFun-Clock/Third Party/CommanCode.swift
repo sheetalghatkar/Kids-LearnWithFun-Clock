@@ -66,10 +66,15 @@ class CommanCode {
     //------------------------------------------------------------------------
     static var hourAngleDiffArray: [Double] = [0.54,0.53,0.51,0.51,0.50,0.53,-0.54,-0.48,-0.56,-0.50,-0.50,-0.52]
     //------------------------------------------------------------------------
+    
+    //0-10 --- level - 1
+    //11-26 --- level - 2
+    //26-42 --- level - 3
 
     //Questions
-    static var hourMinutequestLevel_1_Array: [[Int]] = [[4,0],[6,0],[9,0],[2,0],[5,0],[11,0],[1,0],[8,0],[5,0],[3,0],[12,0]]
-    static var hourMinutequestLevel_2_Array: [[Int]] = [[3,15],[5,45],[9,5],[11,30],[5,30],[6,45],[7,10],[1,45],[12,30],[2,15],[4,20],[8,40],[3,50],[6,45],[10,10]]
+    static var hourMinutequestLevel_1_Array: [[Int]] = [[4,0],[6,0],[9,0],[2,0],[5,0],[11,0],[1,0],[8,0],[5,0],[3,0],[12,0],
+        [4,15],[5,45],[9,30],[11,45],[6,30],[8,15],[1,45],[12,30],[12,45],[9,15],[5,30],[3,45],[10,15],[2,30],[11,30],[4,20],[12,10],[9,25],[10,40],[2,50],[6,35],[5,5],[7,10],[2,35],[8,55],[4,20],[5,10],[10,35],[11,5],[4,25],[1,40]]
+//    static var hourMinutequestLevel_2_Array: [[Int]] =
 
     
 //    static var guessTimeArray = [[]]
@@ -91,10 +96,16 @@ class CommanCode {
     static var CLOCK_CENTER_IMG = UIImage(named: "CenterClockImg1.png")
     static var CLOCK_BG = UIImage(named: "OffWhite_bg.png")
     
+    static var Done_Gray_IMG = UIImage(named: "white_bubble.png")
+    static var Done_GREEN_IMG = UIImage(named: "Green_Bubble.png")
+    static var Done_RED_IMG = UIImage(named: "Red_Bubble.png")
+
     
+    
+
     static var SCREEN_WIDTH = UIScreen.main.bounds.width
     static var SCREEN_HEIGHT = UIScreen.main.bounds.height
-    static var CLOCKET_WIDTH_PERCENT = CGFloat(0.85)
+    static var CLOCKET_WIDTH_PERCENT = CGFloat(0.80)
     
     
     //Learn clock theme
@@ -143,7 +154,7 @@ class CommanCode {
     static var productId_Month_Non_Recurring = "com.mobiapps360.LearnClockTime.MonthlyNonRecurring"
 
     
-    static var timerForAds = 15.0
+    static var timerForAds = 30.0
 
     static var animateCard = 0.1
     
