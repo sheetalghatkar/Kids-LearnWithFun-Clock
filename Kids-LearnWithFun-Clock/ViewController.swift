@@ -357,13 +357,8 @@ class ViewController: UIViewController {
     }
     //IBAction Match Time
     @IBAction func funcPlayWithClock(_ sender: UIButton) {
-        let alert = UIAlertController(title: "", message: CommanCode.comingSoonText, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
-        }))
-        self.present(alert, animated: true, completion: nil)
-
-        /*let playClockVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlayWithClockController") as! PlayWithClockController
-        self.navigationController?.pushViewController(playClockVC, animated: true)*/
+        let playClockVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlayWithClockController") as! PlayWithClockController
+        self.navigationController?.pushViewController(playClockVC, animated: true)
     }
 
     //IBAction Match Time

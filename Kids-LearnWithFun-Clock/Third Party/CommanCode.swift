@@ -104,7 +104,6 @@ class CommanCode {
     static var Uncheck_Blue = UIImage(named: "radio_uncheck_blue.png")
     static var Check_Queen = UIImage(named: "radio_check_queen.png")
     static var Uncheck_Queen = UIImage(named: "radio_uncheck_queen.png")
-
     
 
     static var SCREEN_WIDTH = UIScreen.main.bounds.width
