@@ -33,7 +33,7 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
     var point = CGPoint(x: 0.0, y: 0.0)
     var newCard : PictureCardView?
     var cards = [PictureCardView]()
-    let cardInteritemSpacing: CGFloat = 20
+    var cardInteritemSpacing: CGFloat = 20
     let cardAttributes: [(downscale: CGFloat, alpha: CGFloat)] = [(1, 1), (0.92, 0.8), (0.84, 0.6), (0.76, 0.4)]
     var cardIsHiding = false
     var divisor : CGFloat = 0
@@ -90,7 +90,9 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
         if UIScreen.main.bounds.height < 750 {
             fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 27)
         }
-
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 32)
+        }
         lblTitle.font = fontLblTime
 
         let loaderGif = UIImage.gifImageWithName("Loading")
@@ -117,6 +119,13 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
 //        if UIScreen.main.bounds.height == 736 {
 //            self.pictureCardWidth = UIScreen.main.bounds.width * 0.83
 //        }
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            if UIScreen.main.bounds.height < 1030 {
+            }
+            pictureCardWidth = UIScreen.main.bounds.width * 0.75
+        }
+
         self.view.backgroundColor = CommanCode.APP_BACKGROUND_COLOR
         self.pictureCardHeight = self.pictureCardWidth + 50.0  //* 1.3
 //        let jeremyGif = UIImage.gifImageWithName("Jungle")
@@ -228,6 +237,13 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
     }
 
     func layoutCards() {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            cardInteritemSpacing = 25
+            if UIScreen.main.bounds.height > 1100 {
+                cardInteritemSpacing = 35
+            }
+
+        }
         let arrayArryAllIndexCount = Array(0 ..< CommanCode.guessTimeArray.count)
         for iCount in 0 ..< CommanCode.guessTimeArray.count {//Done
             var selectedArrayOfIndexs = [iCount]

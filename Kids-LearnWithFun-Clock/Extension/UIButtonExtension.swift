@@ -22,7 +22,15 @@ class ButtonCardOptionExt: UIButton {
         if UIScreen.main.bounds.height < 700 {
             self.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
         }
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            if UIScreen.main.bounds.height > 1100 {
+                self.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
+            } else {
+                self.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+            }
+        }
 
+        
        // self.clipsToBounds = false
         self.layer.masksToBounds = true
 

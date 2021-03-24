@@ -33,6 +33,7 @@ class SetTimeViewController: UIViewController {
     @IBOutlet weak var btnPlayComplexTextSound: UIButton!
     @IBOutlet weak var lblNote1: UILabel!
     @IBOutlet weak var lblNote2: UILabel!
+    @IBOutlet weak var proportionalWidth: NSLayoutConstraint!
 
     var paymentDetailVC : PaymentDetailViewController?
     @IBOutlet weak var imgViewLoader: UIImageView!
@@ -146,7 +147,14 @@ class SetTimeViewController: UIViewController {
         texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "ChalkboardSE-Regular", size: 20)!,range: NSRange(location: 2, length: (strNote.count - 2)))
         lblNote1.attributedText = texViewAttrString
         print("######Device size:",UIScreen.main.bounds.height)
-        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            if UIScreen.main.bounds.height < 1030 {
+                proportionalWidth.constant = proportionalWidth.constant - 100
+            }
+            proportionalWidth.constant = proportionalWidth.constant - 200
+            viewExtend.layer.cornerRadius = proportionalWidth.constant/2 
+        }
+
         
         
         if !(defaults.bool(forKey:"IsPrimeUser")) {

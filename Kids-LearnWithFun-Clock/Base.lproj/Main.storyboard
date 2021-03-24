@@ -437,8 +437,12 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgLblTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Dch-0I-bEn">
                                 <rect key="frame" x="91.5" y="39.5" width="260" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="2HP-n2-rBI"/>
-                                    <constraint firstAttribute="width" constant="260" id="5yX-m0-54Y"/>
+                                    <constraint firstAttribute="height" constant="70" id="2HP-n2-rBI">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="95"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="260" id="5yX-m0-54Y">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="350"/>
+                                    </constraint>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvL-6x-JFX">
@@ -566,14 +570,18 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9y6-ha-cev" customClass="SetClocket" customModule="Learn_Clock___Time" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="331" height="331"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CenterClockImg1" translatesAutoresizingMaskIntoConstraints="NO" id="wcy-LM-qp5">
                                         <rect key="frame" x="143" y="143" width="45" height="45"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="45" id="jNn-71-3fE"/>
-                                            <constraint firstAttribute="height" constant="45" id="sfF-bg-LMz"/>
+                                            <constraint firstAttribute="width" constant="45" id="jNn-71-3fE">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="75"/>
+                                            </constraint>
+                                            <constraint firstAttribute="height" constant="45" id="sfF-bg-LMz">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="75"/>
+                                            </constraint>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -833,6 +841,7 @@
                         <outlet property="lblSimpleTime" destination="Xhd-kb-5Dd" id="2pn-6T-dxy"/>
                         <outlet property="lblTitle" destination="uP0-3n-C0S" id="16p-eM-46D"/>
                         <outlet property="levelTitle" destination="vUO-Db-XZu" id="Tpl-2B-Rgn"/>
+                        <outlet property="proportionalWidth" destination="93y-rN-JEY" id="egV-8n-W44"/>
                         <outlet property="topConstraintDoneBtn" destination="RQO-4L-2Sz" id="dIJ-Tq-fln"/>
                         <outlet property="topImgVwTime1" destination="SQL-x8-gqU" id="wOp-uk-bgP"/>
                         <outlet property="topImgVwTime2" destination="pJf-Up-gTI" id="gkN-FC-1i8"/>
@@ -962,6 +971,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

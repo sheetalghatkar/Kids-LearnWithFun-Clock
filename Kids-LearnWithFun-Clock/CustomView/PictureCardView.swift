@@ -63,10 +63,16 @@ protocol PictureCardViewProtocol : class {
             pictureCardView.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
             addSubview(pictureCardView)
             bgPictureCardView.layer.cornerRadius = 30
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                bgPictureCardView.layer.cornerRadius = 25
+            }
             bgPictureCardView.layer.borderWidth = 1
             bgPictureCardView.layer.borderColor = CommanCode.Current_Card_Border_COLOR.cgColor
            // setupOptions()
             parentClockView.layer.cornerRadius = (UIScreen.main.bounds.width * 0.50)/2
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                parentClockView.layer.cornerRadius = (UIScreen.main.bounds.width * 0.40)/2
+            }
             
             btnOption1.layer.borderColor = CommanCode.Clock_Dial_COLOR.cgColor
             btnOption2.layer.borderColor = CommanCode.Clock_Dial_COLOR.cgColor
