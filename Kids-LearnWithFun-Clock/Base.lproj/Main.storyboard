@@ -700,6 +700,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zv8-zU-sAd" userLabel="btnSimpleRadio">
+                                <rect key="frame" x="30" y="488.5" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="Lf3-S0-2Lu">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="42"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" secondItem="zv8-zU-sAd" secondAttribute="height" multiplier="1:1" id="XfR-jK-GNz"/>
+                                </constraints>
+                                <state key="normal" image="radio_check"/>
+                                <connections>
+                                    <action selector="func_Radio_Simple_Clicked:" destination="irR-tW-XvX" eventType="touchUpInside" id="nCM-jd-5LU"/>
+                                </connections>
+                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pink_bg_1" translatesAutoresizingMaskIntoConstraints="NO" id="ptt-58-Ly5">
                                 <rect key="frame" x="72" y="474.5" width="270" height="50"/>
                                 <constraints>
@@ -728,6 +741,19 @@
                                 <state key="normal" backgroundImage="PlayAgain_red"/>
                                 <connections>
                                     <action selector="func_Play_SimpleText_Clicked:" destination="irR-tW-XvX" eventType="touchUpInside" id="3WK-cN-fm4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTY-HR-0mO" userLabel="btnComplexRadio">
+                                <rect key="frame" x="30" y="548.5" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kTY-HR-0mO" secondAttribute="height" multiplier="1:1" id="6Y7-CZ-2zs"/>
+                                    <constraint firstAttribute="width" constant="22" id="8QG-y9-l9b">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="42"/>
+                                    </constraint>
+                                </constraints>
+                                <state key="normal" image="radio_check"/>
+                                <connections>
+                                    <action selector="func_Radio_Complex_Clicked:" destination="irR-tW-XvX" eventType="touchUpInside" id="8wm-P2-744"/>
                                 </connections>
                             </button>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue_bg_1" translatesAutoresizingMaskIntoConstraints="NO" id="Y8f-5u-0Wl">
@@ -833,6 +859,7 @@
                             <constraint firstItem="Xhd-kb-5Dd" firstAttribute="centerX" secondItem="LYF-zq-5bK" secondAttribute="centerX" constant="-10" id="CIJ-IF-Hlm"/>
                             <constraint firstAttribute="bottom" secondItem="TjK-sd-jeF" secondAttribute="bottom" id="Cnz-ZM-54I"/>
                             <constraint firstItem="Y8f-5u-0Wl" firstAttribute="centerX" secondItem="LYF-zq-5bK" secondAttribute="centerX" id="D87-Ls-FSD"/>
+                            <constraint firstItem="zv8-zU-sAd" firstAttribute="centerY" secondItem="ptt-58-Ly5" secondAttribute="centerY" id="ETj-c2-j8Z"/>
                             <constraint firstItem="WDe-QJ-y06" firstAttribute="width" secondItem="h3E-XZ-JXy" secondAttribute="width" constant="2" id="Frw-1P-eeS"/>
                             <constraint firstItem="wQF-8r-8r4" firstAttribute="centerY" secondItem="LYF-zq-5bK" secondAttribute="centerY" id="Gwb-hy-WE4"/>
                             <constraint firstItem="wQF-8r-8r4" firstAttribute="leading" secondItem="xO5-XE-fkb" secondAttribute="leading" id="Hxq-V3-pFi"/>
@@ -851,7 +878,11 @@
                             <constraint firstItem="9YI-Gi-lMD" firstAttribute="top" secondItem="xO5-XE-fkb" secondAttribute="top" id="Thv-Uv-5pL"/>
                             <constraint firstItem="l3k-Op-oBD" firstAttribute="leading" secondItem="KvZ-qu-11L" secondAttribute="trailing" constant="60" id="WZq-yg-KwU"/>
                             <constraint firstItem="9O0-Ou-PTg" firstAttribute="width" secondItem="NV7-hl-op4" secondAttribute="width" id="Whd-Uv-UnF"/>
+                            <constraint firstItem="ptt-58-Ly5" firstAttribute="leading" secondItem="zv8-zU-sAd" secondAttribute="trailing" constant="20" id="Wi8-9G-hJg">
+                                <variation key="heightClass=regular-widthClass=regular" constant="35"/>
+                            </constraint>
                             <constraint firstItem="uP0-3n-C0S" firstAttribute="centerY" secondItem="9YI-Gi-lMD" secondAttribute="centerY" id="Z1o-Fq-4tk"/>
+                            <constraint firstItem="kTY-HR-0mO" firstAttribute="width" secondItem="kTY-HR-0mO" secondAttribute="height" multiplier="1:1" id="Z2C-uP-12h"/>
                             <constraint firstItem="1YV-9n-aBv" firstAttribute="centerX" secondItem="LYF-zq-5bK" secondAttribute="centerX" id="bUm-Iw-IRX"/>
                             <constraint firstItem="x0t-gy-JfS" firstAttribute="centerY" secondItem="Y8f-5u-0Wl" secondAttribute="centerY" id="cB5-yO-zE1"/>
                             <constraint firstItem="h3E-XZ-JXy" firstAttribute="centerY" secondItem="9YI-Gi-lMD" secondAttribute="centerY" id="e6c-bt-IdJ"/>
@@ -866,7 +897,9 @@
                             <constraint firstItem="Y8f-5u-0Wl" firstAttribute="top" secondItem="ptt-58-Ly5" secondAttribute="bottom" constant="10" id="pJf-Up-gTI"/>
                             <constraint firstItem="NV7-hl-op4" firstAttribute="centerY" secondItem="Xhd-kb-5Dd" secondAttribute="centerY" id="rCs-1p-gA5"/>
                             <constraint firstItem="Y8f-5u-0Wl" firstAttribute="width" secondItem="ptt-58-Ly5" secondAttribute="width" id="rvH-wS-cJA"/>
+                            <constraint firstItem="kTY-HR-0mO" firstAttribute="trailing" secondItem="zv8-zU-sAd" secondAttribute="trailing" id="vYh-Pl-esJ"/>
                             <constraint firstAttribute="bottom" secondItem="wQF-8r-8r4" secondAttribute="bottom" id="vlo-2r-0Bf"/>
+                            <constraint firstItem="kTY-HR-0mO" firstAttribute="centerY" secondItem="Y8f-5u-0Wl" secondAttribute="centerY" id="xIj-LU-uu5"/>
                             <constraint firstItem="ShG-kG-bBt" firstAttribute="centerX" secondItem="uP0-3n-C0S" secondAttribute="centerX" constant="10" id="xqD-ha-Ex6"/>
                             <constraint firstItem="Vkx-zM-U0k" firstAttribute="centerX" secondItem="LYF-zq-5bK" secondAttribute="centerX" id="yB1-n9-Fp6"/>
                             <constraint firstItem="uaC-wc-JTj" firstAttribute="centerX" secondItem="LYF-zq-5bK" secondAttribute="centerX" id="yWe-R9-zXK"/>
@@ -877,11 +910,13 @@
                     </view>
                     <connections>
                         <outlet property="btnBackward" destination="Ho5-RA-hRh" id="ZX1-Iu-lis"/>
+                        <outlet property="btnComplexTextRadio" destination="kTY-HR-0mO" id="Y8C-F2-PFM"/>
                         <outlet property="btnDone" destination="KvZ-qu-11L" id="6hp-Mx-W73"/>
                         <outlet property="btnForward" destination="l3k-Op-oBD" id="VWk-6v-epl"/>
                         <outlet property="btnNoAds" destination="WDe-QJ-y06" id="jhd-ed-cAU"/>
                         <outlet property="btnPlayComplexTextSound" destination="9O0-Ou-PTg" id="8S4-d5-odF"/>
                         <outlet property="btnPlaySimpleTextSound" destination="NV7-hl-op4" id="BPW-of-p61"/>
+                        <outlet property="btnSimpleTextRadio" destination="zv8-zU-sAd" id="L7i-ax-btx"/>
                         <outlet property="btnSound" destination="h3E-XZ-JXy" id="ByS-QV-82y"/>
                         <outlet property="imgViewLoader" destination="1YV-9n-aBv" id="o7D-M2-85S"/>
                         <outlet property="imgVwComplexTime" destination="Y8f-5u-0Wl" id="eo2-uU-O1B"/>
@@ -1014,6 +1049,7 @@
         <image name="blue_bg_1" width="940" height="265"/>
         <image name="nextQuestion" width="512" height="512"/>
         <image name="pink_bg_1" width="940" height="265"/>
+        <image name="radio_check" width="512" height="512"/>
         <image name="setTimeHomeIcon" width="512" height="512"/>
         <image name="white_bubble" width="1476" height="372"/>
         <systemColor name="labelColor">

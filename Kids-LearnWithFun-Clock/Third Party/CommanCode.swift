@@ -100,18 +100,16 @@ class CommanCode {
     static var Done_GREEN_IMG = UIImage(named: "Green_Bubble.png")
     static var Done_RED_IMG = UIImage(named: "Red_Bubble.png")
 
-    
+    static var Check_Blue = UIImage(named: "radio_check_blue.png")
+    static var Uncheck_Blue = UIImage(named: "radio_uncheck_blue.png")
+    static var Check_Queen = UIImage(named: "radio_check_queen.png")
+    static var Uncheck_Queen = UIImage(named: "radio_uncheck_queen.png")
+
     
 
     static var SCREEN_WIDTH = UIScreen.main.bounds.width
     static var SCREEN_HEIGHT = UIScreen.main.bounds.height
-    static var CLOCKET_WIDTH_PERCENT = UIDevice.current.userInterfaceIdiom == .pad ? CGFloat(0.6) : CGFloat(0.8)
-        
-        
-        
-    
-    
-    
+    static var CLOCKET_WIDTH_PERCENT = UIDevice.current.userInterfaceIdiom == .pad ? ((UIScreen.main.bounds.height > 1100) ? CGFloat(0.6) : CGFloat(0.55)) : CGFloat(0.8)
     
     //Learn clock theme
     static let CLOCK_ORANGE_BG_Color = UIColor(red: (255/255), green: (69/255), blue: (0/255), alpha: 1.0)

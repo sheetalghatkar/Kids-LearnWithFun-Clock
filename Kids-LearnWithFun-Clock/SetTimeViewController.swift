@@ -34,6 +34,8 @@ class SetTimeViewController: UIViewController {
     @IBOutlet weak var lblNote1: UILabel!
     @IBOutlet weak var lblNote2: UILabel!
     @IBOutlet weak var widthViewParent: NSLayoutConstraint!
+    @IBOutlet weak var btnSimpleTextRadio: UIButton!
+    @IBOutlet weak var btnComplexTextRadio: UIButton!
 
     var paymentDetailVC : PaymentDetailViewController?
     @IBOutlet weak var imgViewLoader: UIImageView!
@@ -59,6 +61,7 @@ class SetTimeViewController: UIViewController {
     var fromDigit = false
 
     
+    var previousLevel_1 = true // To set sound play preference
     var iCountQuestionArray = 0
     var levelNumber = 1
     var indexQuestion = 0
@@ -66,7 +69,6 @@ class SetTimeViewController: UIViewController {
 //    let fontTime = UIFont.boldSystemFont(ofSize: 30)
 
     var fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 30)
-   // let fontLblNote = UIFont(name: "ChalkboardSE-Regular", size: 20)
 
     var clockTitle = " o'clock "
     var minuteTitle = " minutes"
@@ -82,7 +84,7 @@ class SetTimeViewController: UIViewController {
     var timer: Timer?
     var fromHomeClick = false
     var clickCount = 0
-
+    var setComplexTextRadioPreference = false
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -180,6 +182,9 @@ class SetTimeViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
+        
+        btnSimpleTextRadio.setImage(CommanCode.Check_Queen, for: .normal)
+        btnComplexTextRadio.setImage(CommanCode.Uncheck_Blue, for: .normal)
     }
     func setLevelTitleText() {
         let shadow1 = NSShadow()
@@ -292,12 +297,34 @@ class SetTimeViewController: UIViewController {
     func setInitialTime() {
         setsimpleLabel()
         if indexQuestion >= 11 {
+            if previousLevel_1 {
+                btnComplexTextRadio.isHidden = false
+                btnSimpleTextRadio.isHidden = false
+                fromComplexTextSound = true
+                setComplexTextRadioPreference = true
+                btnSimpleTextRadio.setImage(CommanCode.Uncheck_Queen, for: .normal)
+                btnComplexTextRadio.setImage(CommanCode.Check_Blue, for: .normal)
+            } else {
+                btnComplexTextRadio.isHidden = false
+                btnSimpleTextRadio.isHidden = false
+                if setComplexTextRadioPreference {
+                    fromComplexTextSound = true
+                } else {
+                    fromComplexTextSound = false
+                }
+            }
+            
+            previousLevel_1 = false
+
             levelNumber = 2
             viewClocket.levelNumber = 2
             setComplexTime()
         } else {
             levelNumber = 1
             viewClocket.levelNumber = 1
+            fromComplexTextSound = false
+            btnComplexTextRadio.isHidden = true
+            btnSimpleTextRadio.isHidden = true
         }
         let getHourAngle = CommanCode.hourAngleArray[10]
         viewClocket.setManualHourAngle = getHourAngle
@@ -318,6 +345,9 @@ class SetTimeViewController: UIViewController {
                 self.lblNote1.isHidden = false
                 self.topImgVwTime1.constant = 10
             }
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                self.topConstraintDoneBtn.constant = -60
+            }
         } else {
             self.topConstraintDoneBtn.constant = 25
             if UIScreen.main.bounds.height < 700 {
@@ -336,7 +366,7 @@ class SetTimeViewController: UIViewController {
 //            self.topDoneBtn.constant = 15
         }
         if UIDevice.current.userInterfaceIdiom == .pad {
-            self.topLblNote.constant = 25
+            self.topLblNote.constant = 18
             self.topImgVwTime1.constant = 25
             self.topImgVwTime2.constant = 25
         }
@@ -546,6 +576,17 @@ class SetTimeViewController: UIViewController {
         fromComplexTextSound = true
         playSet()
     }
+    @IBAction func func_Radio_Simple_Clicked(_ sender: UIButton) {
+        setComplexTextRadioPreference = false
+        btnSimpleTextRadio.setImage(CommanCode.Check_Queen, for: .normal)
+        btnComplexTextRadio.setImage(CommanCode.Uncheck_Blue, for: .normal)
+    }
+    @IBAction func func_Radio_Complex_Clicked(_ sender: UIButton) {
+        setComplexTextRadioPreference = true
+        btnSimpleTextRadio.setImage(CommanCode.Uncheck_Queen, for: .normal)
+        btnComplexTextRadio.setImage(CommanCode.Check_Blue, for: .normal)
+    }
+
 
 
     @IBAction func funcDoneClicked(_ sender: UIButton) {

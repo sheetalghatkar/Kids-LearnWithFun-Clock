@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4F08829B25986B9E00E99167 /* PlayWithClockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F08829A25986B9E00E99167 /* PlayWithClockController.swift */; };
 		4F0EC402259D9B76008AC986 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0EC401259D9B76008AC986 /* LearnViewController.swift */; };
-		4F128EB42597115E00B5575C /* SetTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F128EB32597115E00B5575C /* SetTimeViewController.swift */; };
 		4F1698AB25E26D0B0049452D /* CustomLiceneModelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1698A925E26D0B0049452D /* CustomLiceneModelController.xib */; };
 		4F1698AC25E26D0B0049452D /* CustomLiceneModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1698AA25E26D0B0049452D /* CustomLiceneModelController.swift */; };
 		4F1698B625E26D140049452D /* PaymentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1698B025E26D140049452D /* PaymentDetailViewController.swift */; };
@@ -202,6 +201,7 @@
 		4F612EEE2604B7B900B3D9DE /* level3_cup.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F612EED2604B7B900B3D9DE /* level3_cup.gif */; };
 		4F612EF32604BA0400B3D9DE /* Applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F612EF22604BA0400B3D9DE /* Applause.mp3 */; };
 		4F612F002604F1CE00B3D9DE /* nextLevel.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F612EFF2604F1CE00B3D9DE /* nextLevel.gif */; };
+		4F96F27B260B2D16001E8F64 /* SetTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F128EB32597115E00B5575C /* SetTimeViewController.swift */; };
 		4FE7FEBA25FB67F200FDA048 /* Set.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FE7FEB925FB67F200FDA048 /* Set.mp3 */; };
 		700E2E5A258A12100042EC2D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E2E59258A12100042EC2D /* UIButtonExtension.swift */; };
 		700E2E5D258A86790042EC2D /* WrongSelection.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 700E2E5C258A86790042EC2D /* WrongSelection.mp3 */; };
@@ -1260,11 +1260,11 @@
 				709EAE7E2580A93700F8FEEC /* AppDelegate.swift in Sources */,
 				4F43E66825E159F30018B3E0 /* SwiftyStoreKit+Types.swift in Sources */,
 				70F28466258119C100D68BDA /* UIViewExtension.swift in Sources */,
+				4F96F27B260B2D16001E8F64 /* SetTimeViewController.swift in Sources */,
 				4F1698B625E26D140049452D /* PaymentDetailViewController.swift in Sources */,
 				701675F72588C611004F19BA /* GuessViewController.swift in Sources */,
 				709EAE802580A93700F8FEEC /* SceneDelegate.swift in Sources */,
 				4F43E67025E159F30018B3E0 /* PaymentQueueController.swift in Sources */,
-				4F128EB42597115E00B5575C /* SetTimeViewController.swift in Sources */,
 				4F43E66625E159F30018B3E0 /* InAppProductQueryRequest.swift in Sources */,
 				4F43E64E25E153EA0018B3E0 /* FloatyViewController.swift in Sources */,
 				4F43E66E25E159F30018B3E0 /* OS.swift in Sources */,
