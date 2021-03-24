@@ -33,7 +33,7 @@ class SetTimeViewController: UIViewController {
     @IBOutlet weak var btnPlayComplexTextSound: UIButton!
     @IBOutlet weak var lblNote1: UILabel!
     @IBOutlet weak var lblNote2: UILabel!
-    @IBOutlet weak var proportionalWidth: NSLayoutConstraint!
+    @IBOutlet weak var widthViewParent: NSLayoutConstraint!
 
     var paymentDetailVC : PaymentDetailViewController?
     @IBOutlet weak var imgViewLoader: UIImageView!
@@ -96,6 +96,9 @@ class SetTimeViewController: UIViewController {
         if UIScreen.main.bounds.height < 750 {
             fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 27)
         }
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 45)
+        }
 
         lblTitle.font = fontLblTime
         
@@ -141,21 +144,21 @@ class SetTimeViewController: UIViewController {
         }
         let strNote = "# Tap clock hands to move"
         let texViewAttrString: NSMutableAttributedString = NSMutableAttributedString(string:strNote)
-
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 42, weight: .bold),range: NSRange(location: 0, length:2))
+            
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "ChalkboardSE-Regular", size: 30)!,range: NSRange(location: 2, length: (strNote.count - 2)))
+        } else {
         texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 25, weight: .bold),range: NSRange(location: 0, length:2))
         
         texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "ChalkboardSE-Regular", size: 20)!,range: NSRange(location: 2, length: (strNote.count - 2)))
+        }
         lblNote1.attributedText = texViewAttrString
         print("######Device size:",UIScreen.main.bounds.height)
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            if UIScreen.main.bounds.height < 1030 {
-                proportionalWidth.constant = proportionalWidth.constant - 100
-            }
-            proportionalWidth.constant = proportionalWidth.constant - 200
-            viewExtend.layer.cornerRadius = proportionalWidth.constant/2 
-        }
+        widthViewParent.constant = CommanCode.SCREEN_WIDTH * CommanCode.CLOCKET_WIDTH_PERCENT
 
-        
+        viewExtend.layer.cornerRadius = widthViewParent.constant/2
         
         if !(defaults.bool(forKey:"IsPrimeUser")) {
             bannerView = GADBannerView(adSize: kGADAdSizeBanner)
@@ -189,15 +192,21 @@ class SetTimeViewController: UIViewController {
         } else if indexQuestion >= 26 {
             setString = "𒆜ʟɛʋɛʟ 3𒆜"
         }
+        var hashSize = CGFloat(14)
+        var levelTextSize = CGFloat(15)
 
+        if UIDevice.current.userInterfaceIdiom == .pad {
+             hashSize = 34
+             levelTextSize = 35
+        }
         let texViewAttrString: NSMutableAttributedString = NSMutableAttributedString(string:setString)
 
-        texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 14, weight: .regular),range: NSRange(location: 0, length:2))
+        texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: hashSize, weight: .regular),range: NSRange(location: 0, length:2))
         
-        texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 25, weight: .bold),range: NSRange(location: 2, length: 9))
+        texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: levelTextSize, weight: .bold),range: NSRange(location: 2, length: 9))
         texViewAttrString.addAttribute(NSAttributedString.Key.shadow, value: shadow1,range: NSRange(location: 2, length: 7))
 
-        texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 14, weight: .regular),range: NSRange(location: 9, length:2))
+        texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: hashSize, weight: .regular),range: NSRange(location: 9, length:2))
         
         texViewAttrString.addAttribute(NSAttributedString.Key.foregroundColor, value: CommanCode.Clock_Dial_COLOR,range: NSRange(location: 0, length:2))
 
@@ -219,29 +228,34 @@ class SetTimeViewController: UIViewController {
         self.view.addSubview(levelCompleteVC?.view ?? UIView())
     }
     func setComplexTime() {
+        var  ComplextTimefontSize = CGFloat(23)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            ComplextTimefontSize = CGFloat(30)
+        }
+
         var getHr = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0]
         var getMin = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]
         if getMin == 15 {
             let setStrTime = "Quarter Past \(getHr) "
             
             let texViewAttrString: NSMutableAttributedString = NSMutableAttributedString(string: setStrTime)
-            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 23, weight: .bold),range: NSRange(location: 0, length:12))
-            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 23, weight: .medium),range: NSRange(location: 12, length:(setStrTime.count - 12)))
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: ComplextTimefontSize, weight: .bold),range: NSRange(location: 0, length:12))
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: ComplextTimefontSize, weight: .medium),range: NSRange(location: 12, length:(setStrTime.count - 12)))
 
             lblComplexTime.attributedText = texViewAttrString
         } else if getMin == 30 {
             let setStrTime = "Half Past \(getHr) "
             let texViewAttrString: NSMutableAttributedString = NSMutableAttributedString(string: setStrTime)
-            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 23, weight: .bold),range: NSRange(location: 0, length:10))
-            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 23, weight: .medium),range: NSRange(location: 10, length:(setStrTime.count-10)))
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: ComplextTimefontSize, weight: .bold),range: NSRange(location: 0, length:10))
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: ComplextTimefontSize, weight: .medium),range: NSRange(location: 10, length:(setStrTime.count-10)))
 
             lblComplexTime.attributedText = texViewAttrString
         } else if getMin < 30 {
             let setStrTime = "\(getMin) Past \(getHr)"
             let texViewAttrString: NSMutableAttributedString = NSMutableAttributedString(string: setStrTime)
-            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 23, weight: .medium),range: NSRange(location: 0, length:2))
-            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 23, weight: .bold),range: NSRange(location: 2, length:5))
-            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 23, weight: .medium),range: NSRange(location: 7, length:(setStrTime.count - 7)))
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: ComplextTimefontSize, weight: .medium),range: NSRange(location: 0, length:2))
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: ComplextTimefontSize, weight: .bold),range: NSRange(location: 2, length:5))
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: ComplextTimefontSize, weight: .medium),range: NSRange(location: 7, length:(setStrTime.count - 7)))
 
 
             lblComplexTime.attributedText = texViewAttrString
@@ -253,8 +267,8 @@ class SetTimeViewController: UIViewController {
             }
             let setStrTime = "Quarter To \(getHr)"
             let texViewAttrString: NSMutableAttributedString = NSMutableAttributedString(string: setStrTime)
-            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 23, weight: .bold),range: NSRange(location: 0, length:10))
-            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 23, weight: .medium),range: NSRange(location: 10, length:(setStrTime.count-10)))
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: ComplextTimefontSize, weight: .bold),range: NSRange(location: 0, length:10))
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: ComplextTimefontSize, weight: .medium),range: NSRange(location: 10, length:(setStrTime.count-10)))
 
             lblComplexTime.attributedText = texViewAttrString
         } else {
@@ -266,9 +280,9 @@ class SetTimeViewController: UIViewController {
             getMin = (Int(60.0) - getMin)
             let setStrTime = "\(getMin) To \(getHr)"
             let texViewAttrString: NSMutableAttributedString = NSMutableAttributedString(string: setStrTime)
-            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 23, weight: .medium),range: NSRange(location: 0, length:2))
-            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 23, weight: .bold),range: NSRange(location: 2, length:3))
-            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 23, weight: .medium),range: NSRange(location: 5, length:(setStrTime.count - 5)))
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: ComplextTimefontSize, weight: .medium),range: NSRange(location: 0, length:2))
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: ComplextTimefontSize, weight: .bold),range: NSRange(location: 2, length:3))
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: ComplextTimefontSize, weight: .medium),range: NSRange(location: 5, length:(setStrTime.count - 5)))
 
             lblComplexTime.attributedText = texViewAttrString
         }
@@ -305,7 +319,7 @@ class SetTimeViewController: UIViewController {
                 self.topImgVwTime1.constant = 10
             }
         } else {
-            self.topConstraintDoneBtn.constant = 15
+            self.topConstraintDoneBtn.constant = 25
             if UIScreen.main.bounds.height < 700 {
                 self.lblNote1.isHidden = true
                 self.topImgVwTime1.constant = -20
@@ -321,24 +335,37 @@ class SetTimeViewController: UIViewController {
             self.topImgVwTime2.constant = 15
 //            self.topDoneBtn.constant = 15
         }
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            self.topLblNote.constant = 25
+            self.topImgVwTime1.constant = 25
+            self.topImgVwTime2.constant = 25
+        }
         setLevelTitleText()
     }
     
     func setsimpleLabel() {
+        var  simpleTimefontSizeBold = CGFloat(23)
+        var  simpleTimefontSizeRegular = CGFloat(20)
+
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            simpleTimefontSizeBold = CGFloat(30)
+            simpleTimefontSizeRegular = CGFloat(25)
+        }
+
         if (CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]) != 0 {
             let texViewAttrString: NSMutableAttributedString = NSMutableAttributedString(string: String(CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0])+"\(clockTitle)")
 
-            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 23, weight: .bold),range: NSRange(location: 0, length:2))
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: simpleTimefontSizeBold, weight: .bold),range: NSRange(location: 0, length:2))
             
-            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 20, weight: .regular),range: NSRange(location: 2, length:(clockTitle.count-1)))
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: simpleTimefontSizeRegular, weight: .regular),range: NSRange(location: 2, length:(clockTitle.count-1)))
             
             
             let texViewAttrString1: NSMutableAttributedString = NSMutableAttributedString(string: String(CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1])+"\(minuteTitle)")
 
 
-            texViewAttrString1.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 23, weight: .bold),range: NSRange(location: 0, length:2))
+            texViewAttrString1.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: simpleTimefontSizeBold, weight: .bold),range: NSRange(location: 0, length:2))
             
-            texViewAttrString1.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 20, weight: .regular),range: NSRange(location: 2, length:(minuteTitle.count)-1))
+            texViewAttrString1.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: simpleTimefontSizeRegular, weight: .regular),range: NSRange(location: 3, length:(minuteTitle.count)-1))
             
             let concate = NSMutableAttributedString(attributedString: texViewAttrString)
             concate.append(texViewAttrString1)
@@ -346,9 +373,9 @@ class SetTimeViewController: UIViewController {
         } else {
             let texViewAttrString: NSMutableAttributedString = NSMutableAttributedString(string: String(CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0])+"\(clockTitle)")
 
-            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 23, weight: .bold),range: NSRange(location: 0, length:2))
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: simpleTimefontSizeBold, weight: .bold),range: NSRange(location: 0, length:2))
             
-            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 20, weight: .regular),range: NSRange(location: 2, length:(clockTitle.count-1)))
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: simpleTimefontSizeRegular, weight: .regular),range: NSRange(location: 2, length:(clockTitle.count-1)))
             
             lblSimpleTime.attributedText = texViewAttrString
 

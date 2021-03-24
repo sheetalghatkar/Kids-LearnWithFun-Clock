@@ -114,7 +114,7 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
         viewHourHand.addSubview(hourHandFirstSubview)
         
         hourHandSecondSubview.isUserInteractionEnabled = true
-        hourHandSecondSubview = UIImageView(frame: CGRect(x: hourHandFirstSubview.frame.width , y: 0, width: (viewHourHand.frame.width)/2, height: viewHourHand.frame.height))
+        hourHandSecondSubview = UIImageView(frame: CGRect(x: hourHandFirstSubview.frame.width-13 , y: 0, width: (viewHourHand.frame.width)/2, height: viewHourHand.frame.height))
         hourHandSecondSubview.image = CommanCode.HOUR_HAND_IMG
         hourHandSecondSubview.contentMode = .scaleAspectFill
 

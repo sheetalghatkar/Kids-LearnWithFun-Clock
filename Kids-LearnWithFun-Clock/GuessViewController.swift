@@ -91,7 +91,7 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
             fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 27)
         }
         if UIDevice.current.userInterfaceIdiom == .pad {
-            fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 32)
+            fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 45)
         }
         lblTitle.font = fontLblTime
 

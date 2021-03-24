@@ -105,7 +105,12 @@ class CommanCode {
 
     static var SCREEN_WIDTH = UIScreen.main.bounds.width
     static var SCREEN_HEIGHT = UIScreen.main.bounds.height
-    static var CLOCKET_WIDTH_PERCENT = CGFloat(0.80)
+    static var CLOCKET_WIDTH_PERCENT = UIDevice.current.userInterfaceIdiom == .pad ? CGFloat(0.6) : CGFloat(0.8)
+        
+        
+        
+    
+    
     
     
     //Learn clock theme

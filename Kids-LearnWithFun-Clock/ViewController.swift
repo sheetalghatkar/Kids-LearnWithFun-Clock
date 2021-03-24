@@ -113,6 +113,9 @@ class ViewController: UIViewController {
         stopTimer()
     }
     func setUI() {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            btnFontStyle = UIFont.systemFont(ofSize: 40, weight: .bold)
+        }
         self.view.backgroundColor = CommanCode.APP_BACKGROUND_COLOR
         self.imgViewGif.image  = UIImage.gifImageWithName("ClockLearn")
         self.viewLearnClock.backgroundColor = CommanCode.Tile_BACKGROUND_COLOR
