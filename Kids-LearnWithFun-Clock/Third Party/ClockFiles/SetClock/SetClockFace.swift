@@ -75,6 +75,13 @@ open class SetClockFace: UIImageView {
     
     
     func setup() {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            if UIScreen.main.bounds.height < 1030 {
+                diameter = diameter - 100
+            }
+            diameter = diameter - 200
+        }
+
         image = staticClockFaceImage ?? drawClockFace()
         translatesAutoresizingMaskIntoConstraints = false
         
