@@ -202,6 +202,8 @@
 		4F612EF32604BA0400B3D9DE /* Applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F612EF22604BA0400B3D9DE /* Applause.mp3 */; };
 		4F612F002604F1CE00B3D9DE /* nextLevel.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F612EFF2604F1CE00B3D9DE /* nextLevel.gif */; };
 		4F96F27B260B2D16001E8F64 /* SetTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F128EB32597115E00B5575C /* SetTimeViewController.swift */; };
+		4F96F296260B7B19001E8F64 /* PlayClocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96F294260B7B19001E8F64 /* PlayClocket.swift */; };
+		4F96F297260B7B19001E8F64 /* PlayClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96F295260B7B19001E8F64 /* PlayClockFace.swift */; };
 		4FE7FEBA25FB67F200FDA048 /* Set.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FE7FEB925FB67F200FDA048 /* Set.mp3 */; };
 		700E2E5A258A12100042EC2D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E2E59258A12100042EC2D /* UIButtonExtension.swift */; };
 		700E2E5D258A86790042EC2D /* WrongSelection.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 700E2E5C258A86790042EC2D /* WrongSelection.mp3 */; };
@@ -447,6 +449,8 @@
 		4F612EED2604B7B900B3D9DE /* level3_cup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = level3_cup.gif; sourceTree = "<group>"; };
 		4F612EF22604BA0400B3D9DE /* Applause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Applause.mp3; sourceTree = "<group>"; };
 		4F612EFF2604F1CE00B3D9DE /* nextLevel.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = nextLevel.gif; sourceTree = "<group>"; };
+		4F96F294260B7B19001E8F64 /* PlayClocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayClocket.swift; sourceTree = "<group>"; };
+		4F96F295260B7B19001E8F64 /* PlayClockFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayClockFace.swift; sourceTree = "<group>"; };
 		4FA799E22601D70800198008 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		4FE7FEB925FB67F200FDA048 /* Set.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Set.mp3; sourceTree = "<group>"; };
 		700E2E59258A12100042EC2D /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
@@ -625,6 +629,7 @@
 		4F428F7A25EE1C2400EED0E3 /* ClockFiles */ = {
 			isa = PBXGroup;
 			children = (
+				4F96F293260B7ADC001E8F64 /* PlayClock */,
 				4F428F7B25EE1C3100EED0E3 /* GuessClock */,
 				4F428F7F25EE1C5F00EED0E3 /* SetClock */,
 			);
@@ -781,6 +786,15 @@
 				4F4F78AC25FB901800043A41 /* 59_Minutes.mp3 */,
 			);
 			path = MinuteSound;
+			sourceTree = "<group>";
+		};
+		4F96F293260B7ADC001E8F64 /* PlayClock */ = {
+			isa = PBXGroup;
+			children = (
+				4F96F294260B7B19001E8F64 /* PlayClocket.swift */,
+				4F96F295260B7B19001E8F64 /* PlayClockFace.swift */,
+			);
+			path = PlayClock;
 			sourceTree = "<group>";
 		};
 		4FA799E12601D70800198008 /* Frameworks */ = {
@@ -1232,6 +1246,7 @@
 				4F1E7D71259CC7C300A8A39B /* GuessClocket.swift in Sources */,
 				701675F52588C542004F19BA /* PictureCardView.swift in Sources */,
 				709EAE822580A93700F8FEEC /* ViewController.swift in Sources */,
+				4F96F296260B7B19001E8F64 /* PlayClocket.swift in Sources */,
 				4F43E66D25E159F30018B3E0 /* PaymentsController.swift in Sources */,
 				4F43E66C25E159F30018B3E0 /* CompleteTransactionsController.swift in Sources */,
 				701675FA2588EE52004F19BA /* ShowClockViewController.swift in Sources */,
@@ -1274,6 +1289,7 @@
 				4F43E66725E159F30018B3E0 /* InAppReceiptRefreshRequest.swift in Sources */,
 				709EAEB52580CA6C00F8FEEC /* CommanCode.swift in Sources */,
 				4F5086E22603B46700FEBE2E /* LevelSelectionlViewController.swift in Sources */,
+				4F96F297260B7B19001E8F64 /* PlayClockFace.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

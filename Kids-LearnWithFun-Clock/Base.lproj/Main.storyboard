@@ -1047,7 +1047,7 @@
                                             <constraint firstAttribute="width" constant="2" id="ZtB-K2-voG"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IV2-gV-VxB" customClass="SetClocket" customModule="Learn_Clock___Time" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IV2-gV-VxB" customClass="PlayClocket" customModule="Learn_Clock___Time" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>

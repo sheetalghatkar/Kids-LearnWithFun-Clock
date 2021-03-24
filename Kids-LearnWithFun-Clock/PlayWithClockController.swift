@@ -11,7 +11,7 @@ import AVFoundation
 import GoogleMobileAds
 
 class PlayWithClockController: UIViewController {
-    @IBOutlet weak var viewClocket : SetClocket!
+    @IBOutlet weak var viewClocket : PlayClocket!
     @IBOutlet weak var viewExtend: UIView!
     @IBOutlet weak var viewParent: UIView!
 
@@ -109,7 +109,7 @@ class PlayWithClockController: UIViewController {
         lblNote1.layer.masksToBounds = false
         
 
-        viewClocket.setClockDelegate = self
+        viewClocket.playClockDelegate = self
         if appDelegate.IS_Sound_ON {
             btnSound.setBackgroundImage(CommanCode.imgSoundOn, for: .normal)
         } else {
@@ -658,7 +658,7 @@ extension PlayWithClockController : AVAudioPlayerDelegate {
     }
 }
 
-extension PlayWithClockController : SetClocketProtocol {
+extension PlayWithClockController : PlayClocketProtocol {
     func didHandSMove() {
         if viewClocket.isHandsMove == true {
             viewClocket.isHandsMove = false
