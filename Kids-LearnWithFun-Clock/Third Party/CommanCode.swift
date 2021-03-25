@@ -39,12 +39,20 @@ class CommanCode {
     
     static let Clock_Dial_COLOR = UIColor(red: (30/255), green: (144/255), blue: (255/255), alpha: 1.0)  // Yellow
     
-    
+    static let Clock_WHITE_Dial_COLOR = UIColor.white
+
     static let CLock_didgit_Shadow = UIColor(red: (135/255), green: (206/255), blue: (250/255), alpha: 1.0)
     static let RED_Color = UIColor(red: (255/255), green: (52/255), blue: (52 / 255), alpha: 1.0)
     
     static let ORANGE_Color = UIColor(red: (239/255), green: (140/255), blue: (207/255), alpha: 1.0)
     static let CLOCK_TICK_Color = UIColor(red: (255/255), green: (20/255), blue: (147/255), alpha: 1.0)
+    static let CLOCK_RED_TICK_Color = UIColor(red: (164/255), green: (33/255), blue: (21/255), alpha: 1.0)// faint red
+        
+//    static let CLOCK_RED_TICK_Color = UIColor(red: (244/255), green: (188/255), blue: (180/255), alpha: 1.0)// faint red orange
+    
+    
+//    static let CLOCK_RED_TICK_Color = UIColor.black
+       // UIColor.red
 
 
  //   static var minuteQuarterDiffArray = [[3.14,1.05],[1.06,-1.04],[-1.05,-3.13]]

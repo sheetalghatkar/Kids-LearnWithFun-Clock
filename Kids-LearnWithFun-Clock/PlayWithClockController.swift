@@ -57,7 +57,7 @@ class PlayWithClockController: UIViewController {
     let fontTime = UIFont(name: "ChalkboardSE-Bold", size: 25)
 //    let fontTime = UIFont.boldSystemFont(ofSize: 30)
 
-    var fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 30)
+    var fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 24)
 
     var clockTitle = " o'clock "
     var minuteTitle = " minutes"
@@ -85,10 +85,10 @@ class PlayWithClockController: UIViewController {
         lblTitle.layer.shadowOffset = CGSize(width: 2, height: 2)
         lblTitle.layer.masksToBounds = false
         if UIScreen.main.bounds.height < 750 {
-            fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 27)
+            fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 20)
         }
         if UIDevice.current.userInterfaceIdiom == .pad {
-            fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 45)
+            fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 35)
         }
 
         lblTitle.font = fontLblTime
@@ -123,8 +123,9 @@ class PlayWithClockController: UIViewController {
         if defaults.bool(forKey:"IsPrimeUser") {
             self.trailingTitleLbl.constant = -50
         } else {
-            self.trailingTitleLbl.constant = 40
+            self.trailingTitleLbl.constant = 10
         }
+//        lblTitle.backgroundColor = UIColor.yellow
         let strNote = "# Tap clock hands to move"
         let texViewAttrString: NSMutableAttributedString = NSMutableAttributedString(string:strNote)
         
@@ -259,16 +260,16 @@ class PlayWithClockController: UIViewController {
                     bannerView.removeFromSuperview()
                 }
             }
-            if let _ = trailingTitleLbl {
-                self.trailingTitleLbl.constant = -50
-            }
+//            if let _ = trailingTitleLbl {
+//                self.trailingTitleLbl.constant = -50
+//            }
         } else {
             if let _ = btnNoAds {
                 self.btnNoAds.isHidden = false
             }
-            if let _ = trailingTitleLbl {
-                self.trailingTitleLbl.constant = 40
-            }
+//            if let _ = trailingTitleLbl {
+//                self.trailingTitleLbl.constant = 40
+//            }
         }
     }
     override func viewDidAppear(_ animated: Bool) {

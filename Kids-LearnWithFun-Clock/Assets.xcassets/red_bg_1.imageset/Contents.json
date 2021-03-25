@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "red_bg_1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "HomeBgImage1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
