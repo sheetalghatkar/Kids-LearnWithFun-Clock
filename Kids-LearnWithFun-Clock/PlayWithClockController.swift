@@ -23,6 +23,7 @@ class PlayWithClockController: UIViewController {
     @IBOutlet weak var imgVwComplexTime: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var levelTitle: UILabel!
+    @IBOutlet weak var lblDigitalClock: UILabel!
     @IBOutlet weak var btnPlayComplexTextSound: UIButton!
     @IBOutlet weak var lblNote1: UILabel!
     @IBOutlet weak var widthViewParent: NSLayoutConstraint!
@@ -52,13 +53,12 @@ class PlayWithClockController: UIViewController {
     
     var previousLevel_1 = true // To set sound play preference
     var iCountQuestionArray = 0
-    var levelNumber = 1
     var indexQuestion = 0
     let fontTime = UIFont(name: "ChalkboardSE-Bold", size: 25)
 //    let fontTime = UIFont.boldSystemFont(ofSize: 30)
 
     var fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 24)
-
+    var fontDigitalClock = UIFont(name: "ChalkboardSE-Bold", size: 40)
     var clockTitle = " o'clock "
     var minuteTitle = " minutes"
     var fontLevel = UIFont(name: "System-Bold", size: 30)
@@ -89,6 +89,7 @@ class PlayWithClockController: UIViewController {
         }
         if UIDevice.current.userInterfaceIdiom == .pad {
             fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 35)
+            fontDigitalClock = UIFont(name: "ChalkboardSE-Bold", size: 40)
         }
 
         lblTitle.font = fontLblTime
@@ -115,11 +116,13 @@ class PlayWithClockController: UIViewController {
         } else {
             btnSound.setBackgroundImage(CommanCode.imgSoundOff, for: .normal)
         }
+        
+        lblDigitalClock.text = "10:10"
+        lblDigitalClock.font = fontDigitalClock
         //---------------------------------------------------------
         //Initial Clock value set
         setInitialTime()
-        viewClocket.levelNumber = 1
-        playSet()
+        //playSet()
         if defaults.bool(forKey:"IsPrimeUser") {
             self.trailingTitleLbl.constant = -50
         } else {
@@ -164,19 +167,37 @@ class PlayWithClockController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
+//        lblDigitalClock.backgroundColor = UIColor.red
+        let roAngle = CGFloat.pi / 10
+        print("rotation angle !!!!",roAngle)
+        lblDigitalClock.transform = CGAffineTransform(rotationAngle: roAngle)
+
+        
         
     }
     
 
-    func setComplexTime() {
+    func setComplexTime(getHr: Int,getMin: Int) {
         var  ComplextTimefontSize = CGFloat(23)
         if UIDevice.current.userInterfaceIdiom == .pad {
             ComplextTimefontSize = CGFloat(30)
         }
+        var getHr = getHr
+        var getMin = getMin
 
-        var getHr = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0]
-        var getMin = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]
-        if getMin == 15 {
+//        var getHr = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0]
+//        var getMin = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]
+        if getMin == 0 {
+            
+            let texViewAttrString: NSMutableAttributedString = NSMutableAttributedString(string: String(getHr)+"\(clockTitle)")
+
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: ComplextTimefontSize, weight: .bold),range: NSRange(location: 0, length:2))
+            
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: ComplextTimefontSize, weight: .regular),range: NSRange(location: 2, length:(clockTitle.count-1)))
+            
+            lblComplexTime.attributedText = texViewAttrString
+        }
+        else if getMin == 15 {
             let setStrTime = "Quarter Past \(getHr) "
             
             let texViewAttrString: NSMutableAttributedString = NSMutableAttributedString(string: setStrTime)
@@ -247,6 +268,7 @@ class PlayWithClockController: UIViewController {
             self.topLblNote.constant = 18
             self.topImgVwTime1.constant = 25
         }
+        setComplexTime(getHr: 10, getMin: 10)
     }
     
     
@@ -651,9 +673,7 @@ extension PlayWithClockController : AVAudioPlayerDelegate {
                 playHour()
             } else if fromHour {
                 fromHour = false
-                if !(levelNumber == 1) {
-                    playMinute()
-                }
+                playMinute()
             }
         }
     }
@@ -666,6 +686,21 @@ extension PlayWithClockController : PlayClocketProtocol {
         } else {
             
         }
+    }
+    func setHourOnLabel(getHr: Int, getMin: Int) {
+        var getHr = getHr
+        if getHr == 0 {
+            getHr = 12
+        }
+        setComplexTime(getHr: getHr, getMin: getMin)
+        if getMin < 10 {
+            lblDigitalClock.text = "\(getHr):0\(getMin)"
+        } else {
+            lblDigitalClock.text = "\(getHr):\(getMin)"
+        }
+    }
+    func setMinuteOnLabel(getHr: Int, getMin: Int) {
+        setComplexTime(getHr: getHr, getMin: getMin)
     }
 }
 
