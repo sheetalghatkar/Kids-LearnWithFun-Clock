@@ -118,6 +118,9 @@ class CommanCode {
     static var SCREEN_HEIGHT = UIScreen.main.bounds.height
     static var CLOCKET_WIDTH_PERCENT = UIDevice.current.userInterfaceIdiom == .pad ? ((UIScreen.main.bounds.height > 1100) ? CGFloat(0.6) : CGFloat(0.55)) : CGFloat(0.8)
     
+    static var CLOCKET_WIDTH_PERCENT_PLAY = UIDevice.current.userInterfaceIdiom == .pad ? ((UIScreen.main.bounds.height > 1100) ? CGFloat(0.6) : CGFloat(0.55)) : CGFloat(0.75)
+
+    
     //Learn clock theme
     static let CLOCK_ORANGE_BG_Color = UIColor(red: (255/255), green: (69/255), blue: (0/255), alpha: 1.0)
     static let CLOCK_PISTA_Color = UIColor(red: (76/255), green: (223/255), blue: (148/255), alpha: 1.0)

@@ -22,10 +22,9 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var lblComplexTime: UILabel!
     @IBOutlet weak var imgVwComplexTime: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var levelTitle: UILabel!
-    @IBOutlet weak var lblDigitalClock: UILabel!
     @IBOutlet weak var btnPlayComplexTextSound: UIButton!
     @IBOutlet weak var lblNote1: UILabel!
+    @IBOutlet weak var lblNote2: UILabel!
     @IBOutlet weak var widthViewParent: NSLayoutConstraint!
 
     var paymentDetailVC : PaymentDetailViewController?
@@ -45,7 +44,6 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var lblDigitalMinute: UILabel!
 
     //Sound flags
-    var fromComplexTextSound = true
     var fromSet = false
     var fromHour = false
     var fromHalfPast = false
@@ -111,14 +109,19 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
             self.pickerViewHour.isHidden = true
             pickerSelectedHour = row
             isHourPickScrolling = false
+            setClockTime(getHr: pickerSelectedHour, getMin: pickerSelectedMinute)
+            if pickerSelectedMinute != 0 {
+                viewClocket.funcResetHourAsPerMinuteHand()
+            }
         } else {
             lblDigitalMinute.text = "\(minuteArray[row])"
             self.lblDigitalMinute.isHidden = false
             self.pickerViewMinute.isHidden = true
             pickerSelectedMinute = row
             isMinutePickScrolling = false
+            setClockTime(getHr: pickerSelectedHour, getMin: pickerSelectedMinute)
+            viewClocket.funcResetHourAsPerMinuteHand()
         }
-        setClockTime(getHr: pickerSelectedHour, getMin: pickerSelectedMinute)
     }
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
 //       let row = hourArray[row]
@@ -126,6 +129,8 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
         print("Picker screool")
         
         if pickerView == pickerViewHour {
+            self.lblDigitalMinute.isHidden = false
+            self.pickerViewMinute.isHidden = true
             if !isFirstTimeHourPickerShow  {
                 self.lblDigitalHour.isHidden = true
                 self.pickerViewHour.isHidden = false
@@ -142,6 +147,8 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
             return label
 
         } else {
+            self.lblDigitalHour.isHidden = false
+            self.pickerViewHour.isHidden = true
             if !isFirstTimeMinutePickerShow  {
                 self.lblDigitalMinute.isHidden = true
                 self.pickerViewMinute.isHidden = false
@@ -166,10 +173,15 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
             isFirstTimeHourPickerShow = false
             self.lblDigitalHour.isHidden = true
             self.pickerViewHour.isHidden = false
+            self.lblDigitalMinute.isHidden = false
+            self.pickerViewMinute.isHidden = true
+
         } else {
             isFirstTimeMinutePickerShow = false
             self.lblDigitalMinute.isHidden = true
             self.pickerViewMinute.isHidden = false
+            self.lblDigitalHour.isHidden = false
+            self.pickerViewHour.isHidden = true
         }
     }
     @objc func tapOnPickerTap(_ sender: UITapGestureRecognizer) {
@@ -247,10 +259,11 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
         pickerViewMinute.delegate = self
         pickerViewMinute.dataSource = self
         self.pickerViewMinute.isHidden = true
-        
+
+    }
+    func setInitilValuePicker() {
         pickerViewHour.selectRow(pickerSelectedHour, inComponent: 0, animated: true)
         pickerViewMinute.selectRow(pickerSelectedMinute, inComponent: 0, animated: true)
-
     }
     func setPickerSwipeGesture() {
         let swipeUpHour = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
@@ -278,11 +291,27 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
         self.lblDigitalMinute.addGestureRecognizer(swipeDownMinute)
 
     }
+    func setStyleToNoteLbl(getstr: String) ->NSMutableAttributedString  {
+        let strNote =  getstr
+        let texViewAttrString: NSMutableAttributedString = NSMutableAttributedString(string:strNote)
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 42, weight: .bold),range: NSRange(location: 0, length:2))
+            
+            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "ChalkboardSE-Regular", size: 30)!,range: NSRange(location: 2, length: (strNote.count - 2)))
+        } else {
+        texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 24, weight: .bold),range: NSRange(location: 0, length:2))
+        
+        texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "ChalkboardSE-Regular", size: 19)!,range: NSRange(location: 2, length: (strNote.count - 2)))
+        }
+        return texViewAttrString
+    }
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setPickerView()
+        setInitilValuePicker()
         setPickerSwipeGesture()
 
 
@@ -321,6 +350,15 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
         lblNote1.layer.shadowOffset = CGSize(width: 4, height: 4)
         lblNote1.layer.masksToBounds = false
         
+        
+        lblNote2.textColor = UIColor.white
+        lblNote2.layer.shadowColor = UIColor.black.cgColor
+        lblNote2.layer.shadowRadius = 3.0
+        lblNote2.layer.shadowOpacity = 1.0
+        lblNote2.layer.shadowOffset = CGSize(width: 4, height: 4)
+        lblNote2.layer.masksToBounds = false
+
+        
 
         viewClocket.playClockDelegate = self
         if appDelegate.IS_Sound_ON {
@@ -329,9 +367,6 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
             btnSound.setBackgroundImage(CommanCode.imgSoundOff, for: .normal)
         }
         
-        lblDigitalClock.text = "10:10"
-        lblDigitalClock.font = fontDigitalClock
-        lblDigitalClock.isHidden = true
         
         lblDigitalHour.text = "10"
         lblDigitalHour.font = fontDigitalClock
@@ -344,29 +379,19 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
 
         //---------------------------------------------------------
         //Initial Clock value set
-        setClockTime(getHr: 10, getMin: 10)
-        //playSet()
+        setClockTime(getHr: pickerSelectedHour, getMin: pickerSelectedMinute)
         if defaults.bool(forKey:"IsPrimeUser") {
             self.trailingTitleLbl.constant = -50
         } else {
             self.trailingTitleLbl.constant = 10
         }
-//        lblTitle.backgroundColor = UIColor.yellow
-        let strNote = "# Tap clock hands to move"
-        let texViewAttrString: NSMutableAttributedString = NSMutableAttributedString(string:strNote)
         
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 42, weight: .bold),range: NSRange(location: 0, length:2))
-            
-            texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "ChalkboardSE-Regular", size: 30)!,range: NSRange(location: 2, length: (strNote.count - 2)))
-        } else {
-        texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 25, weight: .bold),range: NSRange(location: 0, length:2))
         
-        texViewAttrString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "ChalkboardSE-Regular", size: 20)!,range: NSRange(location: 2, length: (strNote.count - 2)))
-        }
-        lblNote1.attributedText = texViewAttrString
+        lblNote1.attributedText = setStyleToNoteLbl(getstr: "# Tap clock hands to move")
+        lblNote2.attributedText = setStyleToNoteLbl(getstr: "# Tap digits to change time")
+
         print("######Device size:",UIScreen.main.bounds.height)
-        widthViewParent.constant = CommanCode.SCREEN_WIDTH * CommanCode.CLOCKET_WIDTH_PERCENT
+        widthViewParent.constant = CommanCode.SCREEN_WIDTH * CommanCode.CLOCKET_WIDTH_PERCENT_PLAY
 
         viewExtend.layer.cornerRadius = widthViewParent.constant/2
         
@@ -392,6 +417,7 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
         }
         let roAngle = CGFloat.pi / 10
         print("rotation angle !!!!",roAngle)
+        lblNote2.transform = CGAffineTransform(rotationAngle: roAngle)
         lblDigitalHour.transform = CGAffineTransform(rotationAngle: roAngle)
         lblDigitalSemicolon.transform = CGAffineTransform(rotationAngle: roAngle)
         lblDigitalMinute.transform = CGAffineTransform(rotationAngle: roAngle)
@@ -479,12 +505,13 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
     func setClockTime(getHr:Int, getMin:Int) {
         var changeHrTo = getHr
         let changeMinTo = getMin
-        
+
         changeHrTo = changeHrTo+1
         if changeHrTo == 12 {
             changeHrTo = 0
         }
-        
+        setComplexTime(getHr: changeHrTo, getMin: changeMinTo)
+
         let getHourAngle = CommanCode.hourAngleArray[changeHrTo]
         viewClocket.setManualHourAngle = getHourAngle
         var handRadianAngle = ((Float.pi/2) - Float(getHourAngle))
@@ -495,13 +522,12 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
         viewClocket.viewMinuteHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
         if UIScreen.main.bounds.height > 750 {
             self.topLblNote.constant = 15
-            self.topImgVwTime1.constant = 15
+            self.topImgVwTime1.constant = 35
         }
         if UIDevice.current.userInterfaceIdiom == .pad {
             self.topLblNote.constant = 18
             self.topImgVwTime1.constant = 25
         }
-        setComplexTime(getHr: changeHrTo, getMin: changeMinTo)
     }
     
     
@@ -598,8 +624,26 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
     }
     
     @IBAction func func_Play_Sound_Clicked(_ sender: UIButton) {
-        fromComplexTextSound = true
-        playSet()
+        if (Int(lblDigitalMinute.text ?? "0")! != 0) {
+                if (Int(lblDigitalMinute.text ?? "0")! == 30) {
+                    playHalfPast()
+                    fromHalfPast = true
+                } else if (Int(lblDigitalMinute.text ?? "0")! == 15) {
+                    playQuarterPast()
+                    fromQuarterPast = true
+                } else if (Int(lblDigitalMinute.text ?? "0")! == 45) {
+                    playQuarterTo()
+                    fromQuarterTo = true
+                } else if (Int(lblDigitalMinute.text ?? "0")! < 30) {
+                    playFirstDigitPast()
+                    fromDigit = true
+                } else if (Int(lblDigitalMinute.text ?? "0")! > 30) {
+                    playFirstDigitTo()
+                    fromDigit = true
+                }
+        } else {
+            playHour()
+        }
     }
     
     
@@ -624,9 +668,9 @@ extension PlayWithClockController : AVAudioPlayerDelegate {
     }
     
     func playHour() {
-        let setHourClock = (CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0])
+        let setHourClock = Int(lblDigitalHour.text ?? "12")
         
-        let path = Bundle.main.path(forResource:String(setHourClock)+"_o'clock", ofType : "mp3")!
+        let path = Bundle.main.path(forResource:String(setHourClock!)+"_o'clock", ofType : "mp3")!
         let url = URL(fileURLWithPath : path)
         do {
             player = try AVAudioPlayer(contentsOf: url)
@@ -642,8 +686,8 @@ extension PlayWithClockController : AVAudioPlayerDelegate {
     }
     
     func playMinute() {
-        let setMinClock = (CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1])
-        let path = Bundle.main.path(forResource: String(setMinClock)+"_Minutes", ofType : "mp3")!
+        let setMinClock = Int(lblDigitalMinute.text ?? "0")
+        let path = Bundle.main.path(forResource: String(setMinClock!)+"_Minutes", ofType : "mp3")!
         let url = URL(fileURLWithPath : path)
         do {
             player = try AVAudioPlayer(contentsOf: url)
@@ -670,8 +714,8 @@ extension PlayWithClockController : AVAudioPlayerDelegate {
         }
     }
     func playHalfPastDigit() {
-        let getSoundText = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0]
-        let path = Bundle.main.path(forResource: String(getSoundText), ofType : "mp3")!
+        let getSoundText = Int(lblDigitalHour.text ?? "12")
+        let path = Bundle.main.path(forResource: String(getSoundText!), ofType : "mp3")!
         let url = URL(fileURLWithPath : path)
         do {
             player = try AVAudioPlayer(contentsOf: url)
@@ -698,8 +742,8 @@ extension PlayWithClockController : AVAudioPlayerDelegate {
         }
     }
     func playQuarterPastDigit() {
-        let getSoundText = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0]
-        let path = Bundle.main.path(forResource: String(getSoundText), ofType : "mp3")!
+        let getSoundText = Int(lblDigitalHour.text ?? "12")
+        let path = Bundle.main.path(forResource: String(getSoundText!), ofType : "mp3")!
         let url = URL(fileURLWithPath : path)
         do {
             player = try AVAudioPlayer(contentsOf: url)
@@ -726,14 +770,14 @@ extension PlayWithClockController : AVAudioPlayerDelegate {
         }
     }
     func playQuarterToDigit() {
-        var getSoundText = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0]
+        var getSoundText = Int(lblDigitalHour.text ?? "12")
         if getSoundText == 12 {
             getSoundText = 1
         } else {
-            getSoundText = getSoundText + 1
+            getSoundText = getSoundText! + 1
         }
 
-        let path = Bundle.main.path(forResource: String(getSoundText), ofType : "mp3")!
+        let path = Bundle.main.path(forResource: String(getSoundText!), ofType : "mp3")!
         let url = URL(fileURLWithPath : path)
         do {
             player = try AVAudioPlayer(contentsOf: url)
@@ -746,8 +790,8 @@ extension PlayWithClockController : AVAudioPlayerDelegate {
     }
     //----------------------------------------------------------------
     func playFirstDigitPast() {
-        let setSoundText = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]
-        let path = Bundle.main.path(forResource: String(setSoundText), ofType : "mp3")!
+        let setSoundText = Int(lblDigitalMinute.text ?? "0")
+        let path = Bundle.main.path(forResource: String(setSoundText!), ofType : "mp3")!
         let url = URL(fileURLWithPath : path)
         do {
             fromDigit = true
@@ -775,8 +819,8 @@ extension PlayWithClockController : AVAudioPlayerDelegate {
         }
     }
     func playLastDigitPast() {
-        let setSoundText = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0]
-        let path = Bundle.main.path(forResource: String(setSoundText), ofType : "mp3")!
+        let setSoundText = Int(lblDigitalHour.text ?? "12")
+        let path = Bundle.main.path(forResource: String(setSoundText!), ofType : "mp3")!
         let url = URL(fileURLWithPath : path)
         do {
             player = try AVAudioPlayer(contentsOf: url)
@@ -789,10 +833,10 @@ extension PlayWithClockController : AVAudioPlayerDelegate {
     }
     //----------------------------------------------------------------
     func playFirstDigitTo() {
-        var setSoundText = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]
-        setSoundText = (Int(60.0) - setSoundText)
+        var setSoundText = Int(lblDigitalMinute.text ?? "0")
+        setSoundText = (Int(60.0) - setSoundText!)
 
-        let path = Bundle.main.path(forResource: String(setSoundText), ofType : "mp3")!
+        let path = Bundle.main.path(forResource: String(setSoundText!), ofType : "mp3")!
         let url = URL(fileURLWithPath : path)
         do {
             fromDigit = true
@@ -820,14 +864,14 @@ extension PlayWithClockController : AVAudioPlayerDelegate {
         }
     }
     func playLastDigitTo() {
-        var setSoundText = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0]
+        var setSoundText = Int(lblDigitalHour.text ?? "12")
         if setSoundText == 12 {
             setSoundText = 1
         } else {
-            setSoundText = setSoundText + 1
+            setSoundText = setSoundText! + 1
         }
 
-        let path = Bundle.main.path(forResource: String(setSoundText), ofType : "mp3")!
+        let path = Bundle.main.path(forResource: String(setSoundText!), ofType : "mp3")!
         let url = URL(fileURLWithPath : path)
         do {
             player = try AVAudioPlayer(contentsOf: url)
@@ -843,56 +887,34 @@ extension PlayWithClockController : AVAudioPlayerDelegate {
 
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         print("finished",indexQuestion)//It is working now! printed "finished"!
-        if ((CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]) != 0) {
-                if !fromComplexTextSound {
-                    if fromSet {
-                        fromSet = false
-                        playHour()
-                    } else if fromHour {
-                        fromHour = false
-                        playMinute()
-                    }
-                } else {
-                    if ((CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]) == 30) {
-                    if fromSet {
-                        fromSet = false
-                        playHalfPast()
-                    } else if fromHalfPast {
+//        if ((CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]) != 0) {
+        
+        if Int(lblDigitalMinute.text ?? "0") != 0 {
+                if (Int(lblDigitalMinute.text ?? "0")! == 30) {
+                    if fromHalfPast {
                         fromHalfPast = false
                         playHalfPastDigit()
                     }
-                } else if ((CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]) == 15) {
-                    if fromSet {
-                        fromSet = false
-                        playQuarterPast()
-                    } else if fromQuarterPast {
+                } else if (Int(lblDigitalMinute.text ?? "0")! == 15) {
+                    if fromQuarterPast {
                         fromQuarterPast = false
                         playQuarterPastDigit()
                     }
-                } else if ((CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]) == 45) {
-                    if fromSet {
-                        fromSet = false
-                        playQuarterTo()
-                    } else if fromQuarterTo {
+                } else if (Int(lblDigitalMinute.text ?? "0")! == 45) {
+                    if fromQuarterTo {
                         fromQuarterTo = false
                         playQuarterToDigit()
                     }
-                } else if ((CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]) < 30) {
-                    if fromSet {
-                        fromSet = false
-                        playFirstDigitPast()
-                    } else if fromDigit {
+                } else if (Int(lblDigitalMinute.text ?? "0")! < 30) {
+                     if fromDigit {
                         fromDigit = false
                         playPast()
                     } else if fromPast {
                         fromPast = false
                         playLastDigitPast()
                     }
-                } else if ((CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]) > 30) {
-                    if fromSet {
-                        fromSet = false
-                        playFirstDigitTo()
-                    } else if fromDigit {
+                } else if (Int(lblDigitalMinute.text ?? "0")! > 30) {
+                    if fromDigit {
                         fromDigit = false
                         playTo()
                     } else if fromTo {
@@ -900,15 +922,6 @@ extension PlayWithClockController : AVAudioPlayerDelegate {
                         playLastDigitTo()
                     }
                 }
-            }
-        } else {
-            if fromSet {
-                fromSet = false
-                playHour()
-            } else if fromHour {
-                fromHour = false
-                playMinute()
-            }
         }
     }
 }
@@ -929,10 +942,21 @@ extension PlayWithClockController : PlayClocketProtocol {
         } else {
             lblDigitalMinute.text = "\(getMin)"
         }
+        pickerSelectedMinute = getMin
         if getHr == 0 {
             getHr = 12
+            pickerSelectedHour = 11
+        } else {
+            pickerSelectedHour = getHr - 1
         }
         lblDigitalHour.text = "\(getHr)"
+        pickerViewHour.isHidden = true
+        pickerViewMinute.isHidden = true
+        lblDigitalHour.isHidden = false
+        lblDigitalMinute.isHidden = false
+        isFirstTimeHourPickerShow = true
+        isFirstTimeMinutePickerShow = true
+        setInitilValuePicker()
     }
     func setMinuteOnLabel(getHr: Int, getMin: Int) {
         setComplexTime(getHr: getHr, getMin: getMin)
