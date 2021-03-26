@@ -167,6 +167,7 @@ class CommanCode {
 
     
     static var timerForAds = 30.0
+    static var timerForInterstitialAds = 50.0
 
     static var animateCard = 0.1
     

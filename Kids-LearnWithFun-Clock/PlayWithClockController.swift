@@ -77,6 +77,8 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
     var bannerView: GADBannerView!
     var interstitial: GADInterstitial?
     var timer: Timer?
+    var interStitialtimer: Timer?
+
     var fromHomeClick = false
     var clickCount = 0
     var setComplexTextRadioPreference = false
@@ -423,12 +425,19 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
                 DispatchQueue.main.async {
                     self.bannerView.load(GADRequest())
                 }
+                if self.interStitialtimer == nil {
+                    self.interStitialtimer = Timer.scheduledTimer(timeInterval: CommanCode.timerForInterstitialAds, target: self, selector: #selector(self.alarmToLoadInterstitialAds), userInfo: nil, repeats: true)
+                }
             } else {
                 let alert = UIAlertController(title: "", message: "No Internet Connection.", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
                     if self.timer == nil {
                         self.timer = Timer.scheduledTimer(timeInterval: CommanCode.timerForAds, target: self, selector: #selector(self.alarmToLoadBannerAds), userInfo: nil, repeats: true)
                     }
+                    if self.interStitialtimer == nil {
+                        self.interStitialtimer = Timer.scheduledTimer(timeInterval: CommanCode.timerForInterstitialAds, target: self, selector: #selector(self.alarmToLoadInterstitialAds), userInfo: nil, repeats: true)
+                    }
+
                 }))
                 self.present(alert, animated: true, completion: nil)
             }
@@ -585,7 +594,12 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
 //            }
         }
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        stopTimer()
+    }
+
     override func viewDidAppear(_ animated: Bool) {
+        print("isnide viewDidAppear")
         if !defaults.bool(forKey:"IsPrimeUser") {
             if bannerView != nil {
                 if timer == nil {
@@ -604,46 +618,48 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
                     }
                 }
             }
+            if self.interStitialtimer == nil {
+                self.interStitialtimer = Timer.scheduledTimer(timeInterval: CommanCode.timerForInterstitialAds, target: self, selector: #selector(self.alarmToLoadInterstitialAds), userInfo: nil, repeats: true)
+            }
         }
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        stopTimer()
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+////        stopTimer()
+//    }
 
     
     // MARK: - User defined Functions
-    @IBAction func funcBackToHome(_ sender: UIButton) {                          self.navigationController?.popViewController(animated: true)
-}
-//    {stopTimer()
-//         fromHomeClick = true
-//         if defaults.bool(forKey:"IsPrimeUser") {
-//             navigationController?.popViewController(animated: true)
-//         } else {
-//             self.viewTransperent.isHidden = false
-//             self.imgViewLoader.isHidden = false
-//             if Reachability.isConnectedToNetwork() {
-//                 DispatchQueue.main.async {
-//                     self.interstitial = self.createAndLoadInterstitial()
-//                 }
-//                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-//                     if !self.viewTransperent.isHidden {
-//                         self.viewTransperent.isHidden = true
-//                         self.imgViewLoader.isHidden = true
-//                         self.navigationController?.popViewController(animated: true)
-//                     }
-//                 }
-//             } else {
-//                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
-//                     self.funcHideLoader()
-//                     let alert = UIAlertController(title: "", message: "No Internet Connection.", preferredStyle: UIAlertController.Style.alert)
-//                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
-//                         self.navigationController?.popViewController(animated: true)
-//                     }))
-//                     self.present(alert, animated: true, completion: nil)
-//                 })
-//             }
-//         }
-//     }
+    @IBAction func funcBackToHome(_ sender: UIButton) {
+        stopTimer()
+         fromHomeClick = true
+         if defaults.bool(forKey:"IsPrimeUser") {
+             navigationController?.popViewController(animated: true)
+         } else {
+             self.viewTransperent.isHidden = false
+             self.imgViewLoader.isHidden = false
+             if Reachability.isConnectedToNetwork() {
+                 DispatchQueue.main.async {
+                     self.interstitial = self.createAndLoadInterstitial()
+                 }
+                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                     if !self.viewTransperent.isHidden {
+                         self.viewTransperent.isHidden = true
+                         self.imgViewLoader.isHidden = true
+                         self.navigationController?.popViewController(animated: true)
+                     }
+                 }
+             } else {
+                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+                     self.funcHideLoader()
+                     let alert = UIAlertController(title: "", message: "No Internet Connection.", preferredStyle: UIAlertController.Style.alert)
+                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
+                         self.navigationController?.popViewController(animated: true)
+                     }))
+                     self.present(alert, animated: true, completion: nil)
+                 })
+             }
+         }
+     }
     
     @IBAction func funcSound_ON_OFF(_ sender: Any) {
         if appDelegate.IS_Sound_ON {
@@ -1080,7 +1096,7 @@ extension PlayWithClockController: GADBannerViewDelegate {
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
       //print("adViewDidReceiveAd")
         if let visibleViewCtrl = UIApplication.shared.keyWindow?.visibleViewController {
-            if(visibleViewCtrl.isKind(of: GuessViewController.self)){
+            if(visibleViewCtrl.isKind(of: PlayWithClockController.self)){
                 if timer == nil {
                    // print("adViewDidReceiveAd Success")
                     timer = Timer.scheduledTimer(timeInterval: CommanCode.timerForAds, target: self, selector: #selector(self.alarmToLoadBannerAds), userInfo: nil, repeats: true)
@@ -1118,7 +1134,6 @@ extension PlayWithClockController: GADBannerViewDelegate {
 }
 extension PlayWithClockController {
     @objc func alarmToLoadBannerAds(){
-       // print("Inside alarmToLoadBannerAds")
         if Reachability.isConnectedToNetwork() {
             if bannerView != nil {
              //   print("Inside Load bannerView")
@@ -1128,7 +1143,8 @@ extension PlayWithClockController {
             }
         }
     }
-    func callInterstitialOn10Tap(){
+    @objc func alarmToLoadInterstitialAds(){
+        print("alarmToLoadInterstitialAds")
         self.viewTransperent.isHidden = false
         self.imgViewLoader.isHidden = false
         if Reachability.isConnectedToNetwork() {
@@ -1167,11 +1183,17 @@ extension PlayWithClockController {
     }
 
     func stopTimer() {
-        //print("Inside stopTimer")
+        print("Inside stopTimer")
         if timer != nil {
             timer?.invalidate()
             timer = nil
         }
+        
+        if interStitialtimer != nil {
+            interStitialtimer?.invalidate()
+            interStitialtimer = nil
+        }
+
     }
 }
 extension PlayWithClockController: GADInterstitialDelegate {
@@ -1181,6 +1203,16 @@ extension PlayWithClockController: GADInterstitialDelegate {
         ad.present(fromRootViewController: self)
         if fromHomeClick {
             navigationController?.popViewController(animated: true)
+        } else {
+          //print("adViewDidReceiveAd")
+            if let visibleViewCtrl = UIApplication.shared.keyWindow?.visibleViewController {
+                if(visibleViewCtrl.isKind(of: PlayWithClockController.self)){
+                    if interStitialtimer == nil {
+                       // print("adViewDidReceiveAd Success")
+                        interStitialtimer = Timer.scheduledTimer(timeInterval: CommanCode.timerForInterstitialAds, target: self, selector: #selector(self.alarmToLoadInterstitialAds), userInfo: nil, repeats: true)
+                    }
+                }
+            }
         }
     }
 
