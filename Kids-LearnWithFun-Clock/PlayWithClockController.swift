@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import GoogleMobileAds
 
-class PlayWithClockController: UIViewController {
+class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource,UIGestureRecognizerDelegate {
     @IBOutlet weak var viewClocket : PlayClocket!
     @IBOutlet weak var viewExtend: UIView!
     @IBOutlet weak var viewParent: UIView!
@@ -34,11 +34,16 @@ class PlayWithClockController: UIViewController {
     @IBOutlet weak var topLblNote: NSLayoutConstraint!
     @IBOutlet weak var topImgVwTime1: NSLayoutConstraint!
     @IBOutlet weak var topImgVwTime2: NSLayoutConstraint!
+    @IBOutlet weak var pickerViewHour: UIPickerView!
+    @IBOutlet weak var pickerViewMinute: UIPickerView!
 
     let defaults = UserDefaults.standard
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     var player = AVAudioPlayer()
-    
+    @IBOutlet weak var lblDigitalHour: UILabel!
+    @IBOutlet weak var lblDigitalSemicolon: UILabel!
+    @IBOutlet weak var lblDigitalMinute: UILabel!
+
     //Sound flags
     var fromComplexTextSound = true
     var fromSet = false
@@ -74,8 +79,211 @@ class PlayWithClockController: UIViewController {
     var fromHomeClick = false
     var clickCount = 0
     var setComplexTextRadioPreference = false
+    let hourArray = ["1", "2", "3", "4", "5" , "6", "7" , "8", "9", "10", "11", "12"]
+    let minuteArray = ["00","01", "02", "03", "04", "05" , "06", "07" , "08", "09", "10", "11", "12" , "13", "14", "15", "16", "17" , "18", "19" , "20", "21", "22", "23", "24" , "25", "26", "27", "28", "29" , "30", "31" , "32", "33", "34", "35", "36" , "37", "38", "39", "40", "41" , "42", "43" , "44", "45", "46", "47", "48" , "49", "50", "51" , "52", "53", "54", "55", "56" , "57", "58" , "59"]
+
+    var pickerSelectedMonth = 9 // Get selected Month value of picker so that the value we can set on clock
+    var pickerSelectedYear = 9  // Get selected Year value of picker so that the value we can set on clock
+
+    var isHourPickScrolling = false //To always to hour pickerview while scrolling
+    var isMinutePickScrolling = false //To always to minute pickerview while scrolling
+    var isFirstTimeHourPickerShow = true //To initial Hide Hour pickerview
+    var isFirstTimeMinutePickerShow = true //To initial Hide Hour pickerview
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+       return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == pickerViewHour {
+            return hourArray.count
+        } else {
+            return minuteArray.count
+        }
+    }
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 40
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print("didSelectRow")
+        if pickerView == pickerViewHour {
+            lblDigitalHour.text = "\(hourArray[row])"
+            self.lblDigitalHour.isHidden = false
+            self.pickerViewHour.isHidden = true
+            pickerSelectedYear = row
+            isHourPickScrolling = false
+        } else {
+            lblDigitalMinute.text = "\(minuteArray[row])"
+            self.lblDigitalMinute.isHidden = false
+            self.pickerViewMinute.isHidden = true
+            pickerSelectedYear = row
+            isMinutePickScrolling = false
+        }
+    }
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+//       let row = hourArray[row]
+//       return row
+        print("Picker screool")
+        
+        if pickerView == pickerViewHour {
+            if !isFirstTimeHourPickerShow  {
+                self.lblDigitalHour.isHidden = true
+                self.pickerViewHour.isHidden = false
+            }
+            isHourPickScrolling = true
+            var label = UILabel()
+            if let v = view {
+                label = v as! UILabel
+            }
+            label.font = fontDigitalClock
+    //data source means your ui picker view items array
+            label.text =  hourArray[row]
+            label.textAlignment = .center
+            return label
+
+        } else {
+            if !isFirstTimeMinutePickerShow  {
+                self.lblDigitalMinute.isHidden = true
+                self.pickerViewMinute.isHidden = false
+            }
+            isMinutePickScrolling = true
+            var label = UILabel()
+            if let v = view {
+                label = v as! UILabel
+            }
+            label.font = fontDigitalClock
+    //data source means your ui picker view items array
+            label.text =  minuteArray[row]
+            label.textAlignment = .center
+            return label
+
+        }
+
+    }
+    @objc func tapOnLblTap(_ sender: UITapGestureRecognizer) {
+        print("labelTapped")
+        if sender.view?.tag == 100 {
+            isFirstTimeHourPickerShow = false
+            self.lblDigitalHour.isHidden = true
+            self.pickerViewHour.isHidden = false
+        } else {
+            isFirstTimeMinutePickerShow = false
+            self.lblDigitalMinute.isHidden = true
+            self.pickerViewMinute.isHidden = false
+        }
+    }
+    @objc func tapOnPickerTap(_ sender: UITapGestureRecognizer) {
+        print("tapOnPickerTap")
+        if sender.view?.tag == 500 {
+            if lblDigitalHour.isHidden {
+                self.lblDigitalHour.isHidden = false
+                self.pickerViewHour.isHidden = true
+            } else {
+                self.lblDigitalHour.isHidden = true
+                self.pickerViewHour.isHidden = false
+            }
+        } else {
+            if lblDigitalMinute.isHidden {
+                self.lblDigitalMinute.isHidden = false
+                self.pickerViewMinute.isHidden = true
+            } else {
+                self.lblDigitalMinute.isHidden = true
+                self.pickerViewMinute.isHidden = false
+            }
+        }
+    }
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        // return
+        return true
+    }
+
+    func setupPickerTap() {
+        let pickerTapHour = UITapGestureRecognizer(target: self, action: #selector(self.tapOnPickerTap(_:)))
+        pickerTapHour.delegate = self
+        self.pickerViewHour.tag = 500
+        self.pickerViewHour.isUserInteractionEnabled = true
+        self.pickerViewHour.addGestureRecognizer(pickerTapHour)
+        
+        let pickerTapHour1 = UITapGestureRecognizer(target: self, action: #selector(self.tapOnPickerTap(_:)))
+        pickerTapHour1.delegate = self
+        self.pickerViewMinute.tag = 600
+        self.pickerViewMinute.isUserInteractionEnabled = true
+        self.pickerViewMinute.addGestureRecognizer(pickerTapHour1)
+
+    }
+    func setupHourLblTap() {
+        self.lblDigitalHour.tag = 100
+        let labelTap = UITapGestureRecognizer(target: self, action: #selector(self.tapOnLblTap(_:)))
+        self.lblDigitalHour.isUserInteractionEnabled = true
+        self.lblDigitalHour.addGestureRecognizer(labelTap)
+        
+        self.lblDigitalMinute.tag = 200
+        let labelTap1 = UITapGestureRecognizer(target: self, action: #selector(self.tapOnLblTap(_:)))
+        self.lblDigitalMinute.isUserInteractionEnabled = true
+        self.lblDigitalMinute.addGestureRecognizer(labelTap1)
+    }
+    @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void{
+       if gesture.direction == .up || gesture.direction == .down {
+           // print("Swipe Up")
+            print("taggggg",gesture.view?.tag ?? 0)
+        
+            if gesture.view?.tag ?? 0 == 100 {
+                isFirstTimeHourPickerShow = false
+                self.lblDigitalHour.isHidden = true
+                self.pickerViewHour.isHidden = false
+            } else {
+                isFirstTimeMinutePickerShow = false
+                self.lblDigitalMinute.isHidden = true
+                self.pickerViewMinute.isHidden = false
+            }
+       }
+    }
+
+    func setPickerView() {
+        pickerViewHour.delegate = self
+        pickerViewHour.dataSource = self
+        self.pickerViewHour.isHidden = true
+        
+        pickerViewMinute.delegate = self
+        pickerViewMinute.dataSource = self
+        self.pickerViewMinute.isHidden = true
+    }
+    func setPickerSwipeGesture() {
+        let swipeUpHour = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeUpHour.direction = .up
+        swipeUpHour.delegate = self
+        self.lblDigitalHour.tag = 100
+        self.lblDigitalHour.addGestureRecognizer(swipeUpHour)
+
+        let swipeDownHour = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeDownHour.direction = .down
+        swipeDownHour.delegate = self
+        self.lblDigitalHour.tag = 100
+        self.lblDigitalHour.addGestureRecognizer(swipeDownHour)
+
+        let swipeUpMinute = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeUpMinute.direction = .up
+        swipeUpMinute.delegate = self
+        self.lblDigitalMinute.tag = 200
+        self.lblDigitalMinute.addGestureRecognizer(swipeUpMinute)
+
+        let swipeDownMinute = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeDownMinute.direction = .down
+        swipeDownMinute.delegate = self
+        self.lblDigitalMinute.tag = 200
+        self.lblDigitalMinute.addGestureRecognizer(swipeDownMinute)
+
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setPickerView()
+        setPickerSwipeGesture()
+
+        pickerViewHour.selectRow(9, inComponent: 0, animated: true)
+
+        setupHourLblTap()
+        setupPickerTap()
         // Do any additional setup after loading the view.
         lblTitle.text = "Play With Clock"
         lblTitle.textColor = UIColor.white   //CommanCode.paymentBtnTextColor
@@ -119,6 +327,17 @@ class PlayWithClockController: UIViewController {
         
         lblDigitalClock.text = "10:10"
         lblDigitalClock.font = fontDigitalClock
+        lblDigitalClock.isHidden = true
+        
+        lblDigitalHour.text = "10"
+        lblDigitalHour.font = fontDigitalClock
+
+        lblDigitalSemicolon.text = ":"
+        lblDigitalSemicolon.font = fontDigitalClock
+        
+        lblDigitalMinute.text = "10"
+        lblDigitalMinute.font = fontDigitalClock
+
         //---------------------------------------------------------
         //Initial Clock value set
         setInitialTime()
@@ -168,15 +387,29 @@ class PlayWithClockController: UIViewController {
             }
         }
 //        lblDigitalClock.backgroundColor = UIColor.red
-        let roAngle = CGFloat.pi / 10
+        var roAngle = CGFloat.pi / 10
         print("rotation angle !!!!",roAngle)
         lblDigitalClock.transform = CGAffineTransform(rotationAngle: roAngle)
+        lblDigitalHour.transform = CGAffineTransform(rotationAngle: roAngle)
+        
+        lblDigitalHour.backgroundColor = UIColor.clear
+        lblDigitalSemicolon.backgroundColor = UIColor.clear
+        lblDigitalMinute.backgroundColor = UIColor.clear
+        
+
+       // lblDigitalSemicolon.edgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+
+
+        lblDigitalSemicolon.transform = CGAffineTransform(rotationAngle: roAngle)
+
+        lblDigitalMinute.transform = CGAffineTransform(rotationAngle: roAngle)
 
         
         
+
+        pickerViewHour.transform = CGAffineTransform(rotationAngle: roAngle)
+
     }
-    
-
     func setComplexTime(getHr: Int,getMin: Int) {
         var  ComplextTimefontSize = CGFloat(23)
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -321,37 +554,38 @@ class PlayWithClockController: UIViewController {
 
     
     // MARK: - User defined Functions
-    @IBAction func funcBackToHome(_ sender: UIButton) {
-        stopTimer()
-         fromHomeClick = true
-         if defaults.bool(forKey:"IsPrimeUser") {
-             navigationController?.popViewController(animated: true)
-         } else {
-             self.viewTransperent.isHidden = false
-             self.imgViewLoader.isHidden = false
-             if Reachability.isConnectedToNetwork() {
-                 DispatchQueue.main.async {
-                     self.interstitial = self.createAndLoadInterstitial()
-                 }
-                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-                     if !self.viewTransperent.isHidden {
-                         self.viewTransperent.isHidden = true
-                         self.imgViewLoader.isHidden = true
-                         self.navigationController?.popViewController(animated: true)
-                     }
-                 }
-             } else {
-                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
-                     self.funcHideLoader()
-                     let alert = UIAlertController(title: "", message: "No Internet Connection.", preferredStyle: UIAlertController.Style.alert)
-                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
-                         self.navigationController?.popViewController(animated: true)
-                     }))
-                     self.present(alert, animated: true, completion: nil)
-                 })
-             }
-         }
-     }
+    @IBAction func funcBackToHome(_ sender: UIButton) {                          self.navigationController?.popViewController(animated: true)
+}
+//    {stopTimer()
+//         fromHomeClick = true
+//         if defaults.bool(forKey:"IsPrimeUser") {
+//             navigationController?.popViewController(animated: true)
+//         } else {
+//             self.viewTransperent.isHidden = false
+//             self.imgViewLoader.isHidden = false
+//             if Reachability.isConnectedToNetwork() {
+//                 DispatchQueue.main.async {
+//                     self.interstitial = self.createAndLoadInterstitial()
+//                 }
+//                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+//                     if !self.viewTransperent.isHidden {
+//                         self.viewTransperent.isHidden = true
+//                         self.imgViewLoader.isHidden = true
+//                         self.navigationController?.popViewController(animated: true)
+//                     }
+//                 }
+//             } else {
+//                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+//                     self.funcHideLoader()
+//                     let alert = UIAlertController(title: "", message: "No Internet Connection.", preferredStyle: UIAlertController.Style.alert)
+//                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
+//                         self.navigationController?.popViewController(animated: true)
+//                     }))
+//                     self.present(alert, animated: true, completion: nil)
+//                 })
+//             }
+//         }
+//     }
     
     @IBAction func funcSound_ON_OFF(_ sender: Any) {
         if appDelegate.IS_Sound_ON {
@@ -694,10 +928,11 @@ extension PlayWithClockController : PlayClocketProtocol {
         }
         setComplexTime(getHr: getHr, getMin: getMin)
         if getMin < 10 {
-            lblDigitalClock.text = "\(getHr):0\(getMin)"
+            lblDigitalMinute.text = "\(getMin)"
         } else {
-            lblDigitalClock.text = "\(getHr):\(getMin)"
+            lblDigitalMinute.text = "\(getMin)"
         }
+        lblDigitalHour.text = "\(getHr)"
     }
     func setMinuteOnLabel(getHr: Int, getMin: Int) {
         setComplexTime(getHr: getHr, getMin: getMin)
