@@ -447,6 +447,22 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
             digitalClockHeight.constant = 150
             topNote2.constant = 55
         }
+        if UIScreen.main.bounds.height > 750 {
+            self.topLblNote.constant = 15
+            self.topImgVwTime1.constant = 35
+        }
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            digitalClockWidth.constant = 350
+            digitalClockHeight.constant = 240
+            topNote2.constant = 95
+            self.topLblNote.constant = 10
+            self.topImgVwTime1.constant = 45
+            
+            if (UIScreen.main.bounds.height > 1100) {
+                self.topImgVwTime1.constant = 65
+                self.topLblNote.constant = 18
+            }
+        }
     }
     func setComplexTime(getHr: Int,getMin: Int) {
         var  ComplextTimefontSize = CGFloat(23)
@@ -544,14 +560,6 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
         viewClocket.setManualMinuteAngle = getMinuteAngle
         handRadianAngle = ((Float.pi/2) - Float(getMinuteAngle))
         viewClocket.viewMinuteHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
-        if UIScreen.main.bounds.height > 750 {
-            self.topLblNote.constant = 15
-            self.topImgVwTime1.constant = 35
-        }
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            self.topLblNote.constant = 18
-            self.topImgVwTime1.constant = 25
-        }
     }
     
     

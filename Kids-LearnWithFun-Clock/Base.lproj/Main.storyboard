@@ -181,9 +181,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="aoX-3g-FuO" firstAttribute="centerX" secondItem="D95-74-XdG" secondAttribute="centerX" id="7dl-6Q-OPd"/>
-                                            <constraint firstAttribute="width" constant="250" id="PTi-b6-w1o"/>
                                             <constraint firstItem="aoX-3g-FuO" firstAttribute="centerY" secondItem="D95-74-XdG" secondAttribute="centerY" id="m5B-VA-SiT"/>
-                                            <constraint firstAttribute="height" constant="50" id="rTN-Bp-zLH"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -261,7 +259,7 @@
                                     </constraint>
                                     <constraint firstItem="33M-Mh-cHk" firstAttribute="leading" secondItem="9az-o4-B0b" secondAttribute="trailing" constant="-15" id="8v2-Gx-4hU"/>
                                     <constraint firstItem="D95-74-XdG" firstAttribute="top" secondItem="BDg-YG-NIM" secondAttribute="bottom" constant="20" id="AiZ-8r-sXp">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="17"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
                                     </constraint>
                                     <constraint firstItem="cNv-Hf-JLZ" firstAttribute="centerX" secondItem="yhg-U5-g1u" secondAttribute="centerX" id="Cxl-eW-5B4"/>
                                     <constraint firstItem="BDg-YG-NIM" firstAttribute="width" secondItem="cNv-Hf-JLZ" secondAttribute="width" id="D9X-V6-h0H"/>
@@ -274,6 +272,7 @@
                                         <variation key="heightClass=regular-widthClass=regular" constant="35"/>
                                     </constraint>
                                     <constraint firstItem="D95-74-XdG" firstAttribute="centerX" secondItem="yhg-U5-g1u" secondAttribute="centerX" id="Yug-8Y-mbO"/>
+                                    <constraint firstItem="D95-74-XdG" firstAttribute="height" secondItem="cNv-Hf-JLZ" secondAttribute="height" id="aHa-Ud-noA"/>
                                     <constraint firstItem="9az-o4-B0b" firstAttribute="centerX" secondItem="yhg-U5-g1u" secondAttribute="centerX" id="fdI-2Y-75v"/>
                                     <constraint firstItem="ac6-e6-PoD" firstAttribute="top" secondItem="cNv-Hf-JLZ" secondAttribute="bottom" constant="10" id="gFR-0Z-xWR">
                                         <variation key="heightClass=regular-widthClass=regular" constant="17"/>
@@ -285,6 +284,7 @@
                                     <constraint firstItem="BDg-YG-NIM" firstAttribute="centerX" secondItem="ac6-e6-PoD" secondAttribute="centerX" id="jv1-hM-QMf"/>
                                     <constraint firstItem="ac6-e6-PoD" firstAttribute="centerX" secondItem="yhg-U5-g1u" secondAttribute="centerX" id="oHU-vz-HOc"/>
                                     <constraint firstItem="Foj-tp-Iqp" firstAttribute="height" secondItem="cNv-Hf-JLZ" secondAttribute="height" id="rjO-m1-nyI"/>
+                                    <constraint firstItem="D95-74-XdG" firstAttribute="width" secondItem="cNv-Hf-JLZ" secondAttribute="width" id="w2J-St-SGG"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sa2-qI-ku6">
