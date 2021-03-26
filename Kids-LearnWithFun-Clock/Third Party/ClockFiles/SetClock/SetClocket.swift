@@ -333,10 +333,13 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
 //                print("heyyyyyyyyyy")
                 funcResetHourHandToMagicNumber()
                 if levelNumber != 1 {
-                    setManualMinuteAngle = CommanCode.minuteAngleArray[0]
+                    funcResetHourHandToMagicNumber()
+                    funcResetHourAsPerMinuteHand()
+
+                  /*  setManualMinuteAngle = CommanCode.minuteAngleArray[0]
 //                    print("heyyyyyyyyyy-------",setManualMinuteAngle)
                     let handRadianAngle = Double(Float.pi/2 - Float(setManualMinuteAngle))
-                    viewMinuteHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
+                    viewMinuteHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)*/
                 }
             }
             if isMinuteHandTouch {

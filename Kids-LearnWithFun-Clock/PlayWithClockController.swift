@@ -144,8 +144,16 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
     //data source means your ui picker view items array
             label.text =  hourArray[row]
             label.textAlignment = .center
-            return label
+            
+//            if !isFirstTimeHourPickerShow  {
+//                pickerSelectedHour = Int(hourArray[row])!
+//                setClockTime(getHr: pickerSelectedHour, getMin: pickerSelectedMinute)
+//                if pickerSelectedMinute != 0 {
+//                    viewClocket.funcResetHourAsPerMinuteHand()
+//                }
+//            }
 
+            return label
         } else {
             self.lblDigitalHour.isHidden = false
             self.pickerViewHour.isHidden = true
@@ -162,6 +170,13 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
     //data source means your ui picker view items array
             label.text =  minuteArray[row]
             label.textAlignment = .center
+            
+//            if !isFirstTimeMinutePickerShow  {
+//                pickerSelectedMinute = Int(minuteArray[row])!
+//                setClockTime(getHr: pickerSelectedHour, getMin: pickerSelectedMinute)
+//                viewClocket.funcResetHourAsPerMinuteHand()
+//            }
+
             return label
 
         }
