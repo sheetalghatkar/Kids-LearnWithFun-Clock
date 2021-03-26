@@ -82,8 +82,8 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
     let hourArray = ["1", "2", "3", "4", "5" , "6", "7" , "8", "9", "10", "11", "12"]
     let minuteArray = ["00","01", "02", "03", "04", "05" , "06", "07" , "08", "09", "10", "11", "12" , "13", "14", "15", "16", "17" , "18", "19" , "20", "21", "22", "23", "24" , "25", "26", "27", "28", "29" , "30", "31" , "32", "33", "34", "35", "36" , "37", "38", "39", "40", "41" , "42", "43" , "44", "45", "46", "47", "48" , "49", "50", "51" , "52", "53", "54", "55", "56" , "57", "58" , "59"]
 
-    var pickerSelectedMonth = 9 // Get selected Month value of picker so that the value we can set on clock
-    var pickerSelectedYear = 9  // Get selected Year value of picker so that the value we can set on clock
+    var pickerSelectedHour = 9  // Get selected Hour value of picker so that the value we can set on clock
+    var pickerSelectedMinute = 10 // Get selected Minute value of picker so that the value we can set on clock
 
     var isHourPickScrolling = false //To always to hour pickerview while scrolling
     var isMinutePickScrolling = false //To always to minute pickerview while scrolling
@@ -109,15 +109,16 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
             lblDigitalHour.text = "\(hourArray[row])"
             self.lblDigitalHour.isHidden = false
             self.pickerViewHour.isHidden = true
-            pickerSelectedYear = row
+            pickerSelectedHour = row
             isHourPickScrolling = false
         } else {
             lblDigitalMinute.text = "\(minuteArray[row])"
             self.lblDigitalMinute.isHidden = false
             self.pickerViewMinute.isHidden = true
-            pickerSelectedYear = row
+            pickerSelectedMinute = row
             isMinutePickScrolling = false
         }
+        setClockTime(getHr: pickerSelectedHour, getMin: pickerSelectedMinute)
     }
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
 //       let row = hourArray[row]
@@ -246,6 +247,10 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
         pickerViewMinute.delegate = self
         pickerViewMinute.dataSource = self
         self.pickerViewMinute.isHidden = true
+        
+        pickerViewHour.selectRow(pickerSelectedHour, inComponent: 0, animated: true)
+        pickerViewMinute.selectRow(pickerSelectedMinute, inComponent: 0, animated: true)
+
     }
     func setPickerSwipeGesture() {
         let swipeUpHour = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
@@ -280,7 +285,6 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
         setPickerView()
         setPickerSwipeGesture()
 
-        pickerViewHour.selectRow(9, inComponent: 0, animated: true)
 
         setupHourLblTap()
         setupPickerTap()
@@ -340,7 +344,7 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
 
         //---------------------------------------------------------
         //Initial Clock value set
-        setInitialTime()
+        setClockTime(getHr: 10, getMin: 10)
         //playSet()
         if defaults.bool(forKey:"IsPrimeUser") {
             self.trailingTitleLbl.constant = -50
@@ -386,29 +390,13 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
                 self.present(alert, animated: true, completion: nil)
             }
         }
-//        lblDigitalClock.backgroundColor = UIColor.red
-        var roAngle = CGFloat.pi / 10
+        let roAngle = CGFloat.pi / 10
         print("rotation angle !!!!",roAngle)
-        lblDigitalClock.transform = CGAffineTransform(rotationAngle: roAngle)
         lblDigitalHour.transform = CGAffineTransform(rotationAngle: roAngle)
-        
-        lblDigitalHour.backgroundColor = UIColor.clear
-        lblDigitalSemicolon.backgroundColor = UIColor.clear
-        lblDigitalMinute.backgroundColor = UIColor.clear
-        
-
-       // lblDigitalSemicolon.edgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
-
-
         lblDigitalSemicolon.transform = CGAffineTransform(rotationAngle: roAngle)
-
         lblDigitalMinute.transform = CGAffineTransform(rotationAngle: roAngle)
-
-        
-        
-
         pickerViewHour.transform = CGAffineTransform(rotationAngle: roAngle)
-
+        pickerViewMinute.transform = CGAffineTransform(rotationAngle: roAngle)
     }
     func setComplexTime(getHr: Int,getMin: Int) {
         var  ComplextTimefontSize = CGFloat(23)
@@ -417,6 +405,10 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
         }
         var getHr = getHr
         var getMin = getMin
+        
+        if getHr == 0 {
+            getHr = 12
+        }
 
 //        var getHr = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0]
 //        var getMin = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]
@@ -484,12 +476,20 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
         lblComplexTime.textColor = UIColor.white
     }
 
-    func setInitialTime() {
-        let getHourAngle = CommanCode.hourAngleArray[10]
+    func setClockTime(getHr:Int, getMin:Int) {
+        var changeHrTo = getHr
+        let changeMinTo = getMin
+        
+        changeHrTo = changeHrTo+1
+        if changeHrTo == 12 {
+            changeHrTo = 0
+        }
+        
+        let getHourAngle = CommanCode.hourAngleArray[changeHrTo]
         viewClocket.setManualHourAngle = getHourAngle
         var handRadianAngle = ((Float.pi/2) - Float(getHourAngle))
         viewClocket.viewHourHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
-        let getMinuteAngle = CommanCode.minuteAngleArray[10]
+        let getMinuteAngle = CommanCode.minuteAngleArray[changeMinTo]
         viewClocket.setManualMinuteAngle = getMinuteAngle
         handRadianAngle = ((Float.pi/2) - Float(getMinuteAngle))
         viewClocket.viewMinuteHand.updateHandAngle(angle: CGFloat(handRadianAngle), duration: 0.0)
@@ -501,7 +501,7 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
             self.topLblNote.constant = 18
             self.topImgVwTime1.constant = 25
         }
-        setComplexTime(getHr: 10, getMin: 10)
+        setComplexTime(getHr: changeHrTo, getMin: changeMinTo)
     }
     
     
@@ -923,14 +923,14 @@ extension PlayWithClockController : PlayClocketProtocol {
     }
     func setHourOnLabel(getHr: Int, getMin: Int) {
         var getHr = getHr
-        if getHr == 0 {
-            getHr = 12
-        }
         setComplexTime(getHr: getHr, getMin: getMin)
         if getMin < 10 {
-            lblDigitalMinute.text = "\(getMin)"
+            lblDigitalMinute.text = "0\(getMin)"
         } else {
             lblDigitalMinute.text = "\(getMin)"
+        }
+        if getHr == 0 {
+            getHr = 12
         }
         lblDigitalHour.text = "\(getHr)"
     }
