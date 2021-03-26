@@ -35,6 +35,9 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var topImgVwTime2: NSLayoutConstraint!
     @IBOutlet weak var pickerViewHour: UIPickerView!
     @IBOutlet weak var pickerViewMinute: UIPickerView!
+    @IBOutlet weak var digitalClockWidth: NSLayoutConstraint!
+    @IBOutlet weak var digitalClockHeight: NSLayoutConstraint!
+    @IBOutlet weak var topNote2: NSLayoutConstraint!
 
     let defaults = UserDefaults.standard
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -340,8 +343,8 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
         lblTitle.layer.shadowOpacity = 1.0
         lblTitle.layer.shadowOffset = CGSize(width: 2, height: 2)
         lblTitle.layer.masksToBounds = false
-        if UIScreen.main.bounds.height < 750 {
-            fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 20)
+        if UIScreen.main.bounds.height < 820 {
+            fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 21)
         }
         if UIDevice.current.userInterfaceIdiom == .pad {
             fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 35)
@@ -438,6 +441,12 @@ class PlayWithClockController: UIViewController,UIPickerViewDelegate, UIPickerVi
         lblDigitalMinute.transform = CGAffineTransform(rotationAngle: roAngle)
         pickerViewHour.transform = CGAffineTransform(rotationAngle: roAngle)
         pickerViewMinute.transform = CGAffineTransform(rotationAngle: roAngle)
+        
+        if UIScreen.main.bounds.height < 670 {
+            digitalClockWidth.constant = 235
+            digitalClockHeight.constant = 150
+            topNote2.constant = 55
+        }
     }
     func setComplexTime(getHr: Int,getMin: Int) {
         var  ComplextTimefontSize = CGFloat(23)

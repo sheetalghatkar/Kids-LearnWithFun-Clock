@@ -1084,12 +1084,6 @@
                                     <action selector="funcBackToHome:" destination="OOc-Mh-o8m" eventType="touchUpInside" id="SrG-2a-Zi5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLn-ZG-1y7">
-                                <rect key="frame" x="186.5" y="682.5" width="41.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3g-pL-aAf">
                                 <rect key="frame" x="186" y="337" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1227,6 +1221,12 @@
                                     <constraint firstItem="DyM-lA-kYA" firstAttribute="centerY" secondItem="ev0-SE-8fA" secondAttribute="centerY" id="xaA-bw-23M"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLn-ZG-1y7">
+                                <rect key="frame" x="186.5" y="669.5" width="41.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Hi-Bd-gUZ" userLabel="transperentView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
@@ -1296,7 +1296,7 @@
                             <constraint firstItem="uXv-Dp-SGc" firstAttribute="leading" secondItem="Ed0-TA-5KK" secondAttribute="leading" id="rJw-RK-b54"/>
                             <constraint firstItem="iTu-dH-v5J" firstAttribute="centerX" secondItem="32X-eH-NHU" secondAttribute="centerX" constant="-60" id="tG5-ME-Lkt"/>
                             <constraint firstItem="Sp7-c9-Ynx" firstAttribute="centerY" secondItem="dqK-Vi-E1b" secondAttribute="centerY" id="tsn-qE-lLr"/>
-                            <constraint firstItem="BLn-ZG-1y7" firstAttribute="top" secondItem="ev0-SE-8fA" secondAttribute="bottom" constant="10" id="uNT-Tf-Zof"/>
+                            <constraint firstItem="BLn-ZG-1y7" firstAttribute="top" secondItem="ev0-SE-8fA" secondAttribute="bottom" constant="-3" id="uNT-Tf-Zof"/>
                             <constraint firstItem="FoE-r0-Egs" firstAttribute="leading" secondItem="Tu6-FN-HOa" secondAttribute="trailing" constant="15" id="w8u-bd-hMG"/>
                             <constraint firstItem="PXN-ub-8KO" firstAttribute="width" secondItem="iTu-dH-v5J" secondAttribute="width" id="wO0-7e-m2z"/>
                             <constraint firstItem="8Hi-Bd-gUZ" firstAttribute="leading" secondItem="Ed0-TA-5KK" secondAttribute="leading" id="xIl-OW-j6k"/>
@@ -1308,6 +1308,8 @@
                     <connections>
                         <outlet property="btnNoAds" destination="FoE-r0-Egs" id="JTe-3q-JYG"/>
                         <outlet property="btnSound" destination="Sp7-c9-Ynx" id="K0V-b8-b0k"/>
+                        <outlet property="digitalClockHeight" destination="byv-WJ-BDJ" id="57U-wQ-OC8"/>
+                        <outlet property="digitalClockWidth" destination="qaf-O8-hAW" id="vjZ-AK-0c3"/>
                         <outlet property="imgViewLoader" destination="3ZM-Rd-vMs" id="06c-fh-DcN"/>
                         <outlet property="lblComplexTime" destination="FoY-fS-Qfu" id="pU7-iN-v58"/>
                         <outlet property="lblDigitalHour" destination="iTu-dH-v5J" id="qlt-9j-MRe"/>
@@ -1320,6 +1322,7 @@
                         <outlet property="pickerViewMinute" destination="FPw-c0-ZE2" id="vip-Mh-54Q"/>
                         <outlet property="topImgVwTime1" destination="G2g-M3-GOB" id="yba-uL-h7h"/>
                         <outlet property="topLblNote" destination="uNT-Tf-Zof" id="sWh-ua-tJ3"/>
+                        <outlet property="topNote2" destination="8hm-qH-AAq" id="LHX-wA-dNF"/>
                         <outlet property="trailingTitleLbl" destination="w8u-bd-hMG" id="FZN-bY-eN0"/>
                         <outlet property="viewClocket" destination="IV2-gV-VxB" id="PFU-c0-PsS"/>
                         <outlet property="viewExtend" destination="33e-sI-2ah" id="r8W-PD-f3P"/>
