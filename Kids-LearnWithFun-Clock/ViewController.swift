@@ -41,6 +41,7 @@ class ViewController: UIViewController {
     var fontImageTitleLbl = UIFont(name: "ChalkboardSE-Bold", size: 24)
     let rateUsImg = UIImage(named: "RateUs.png")
     let shareAppImg = UIImage(named: "ShareApp.png")
+    let UpdateAppImg = UIImage(named: "UpdateApp.png")
 
     var player = AVAudioPlayer()
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -146,7 +147,7 @@ class ViewController: UIViewController {
 
 
         
-        btnLearnClock.setTitle(NSLocalizedString("Learn the Time", comment: ""), for: .normal)
+        btnLearnClock.setTitle(NSLocalizedString("Learn Clock", comment: ""), for: .normal)
         btnGuessClock.setTitle(NSLocalizedString("Guess the Time", comment: ""), for: .normal)
         btnSetClock.setTitle(NSLocalizedString("Set the Time", comment: ""), for: .normal)
         btnPlayWithClock.setTitle(NSLocalizedString("Play with Clock", comment: ""), for: .normal)
@@ -168,16 +169,33 @@ class ViewController: UIViewController {
         self.floaty.floatingActionButtonDelegate = self
         self.floaty.addItem(icon: rateUsImg, handler: { [self]_ in
             self.floaty.close()
-            self.paymentDetailVC = PaymentDetailViewController(nibName: "PaymentDetailViewController", bundle: nil)
+            appstoreRateAndReview()
+
+            /*self.paymentDetailVC = PaymentDetailViewController(nibName: "PaymentDetailViewController", bundle: nil)
             self.paymentDetailVC?.showHomeScreenRateReview = true
-            self.showPaymentScreen()
+            self.showPaymentScreen()*/
         })
-        self.floaty.addItem(icon: shareAppImg, handler: {_ in
-            self.paymentDetailVC = PaymentDetailViewController(nibName: "PaymentDetailViewController", bundle: nil)
+        self.floaty.addItem(icon: shareAppImg, handler: { [self]_ in
+            shareApp()
+           /* self.paymentDetailVC = PaymentDetailViewController(nibName: "PaymentDetailViewController", bundle: nil)
             self.paymentDetailVC?.showHomeScreenShareApp = true
-            self.showPaymentScreen()
+            self.showPaymentScreen()*/
             self.floaty.close()
         })
+        self.floaty.addItem(icon: UpdateAppImg, handler: {[self]_ in
+            updateApp()
+            /*self.paymentDetailVC = PaymentDetailViewController(nibName: "PaymentDetailViewController", bundle: nil)
+            self.paymentDetailVC?.showHomeScreenShareApp = true
+            self.showPaymentScreen()*/
+            self.floaty.close()
+        })
+
+        
+        
+        
+        
+        
+        
 //        self.floaty.addItem(icon: contactUsImg, handler: { [self]_ in
 //            let mailComposeViewController = configureMailComposer()
 //              if MFMailComposeViewController.canSendMail(){
@@ -197,6 +215,7 @@ class ViewController: UIViewController {
 //        })
         floaty.items[0].title = "Rate & Review"
         floaty.items[1].title = "Share App"
+        floaty.items[2].title = "Update App"
 //        floaty.items[2].title = "Contact Us"
         
         addWaveBackground(to :viewtransperent)
@@ -252,7 +271,7 @@ class ViewController: UIViewController {
 
 
     func addWaveBackground(to view: UIView){
-          let multipler = CGFloat(0.07)  //0.13
+          let multipler = CGFloat(0.09)  //0.13
         
           let leftDrop:CGFloat = 0.4 + multipler
           let leftInflexionX: CGFloat = 0.4 + multipler
@@ -277,6 +296,7 @@ class ViewController: UIViewController {
           backLayer.fillColor = CommanCode.settingBgColor.cgColor //UIColor.blue.cgColor
           backLayer.path = path.cgPath
           backView.layer.addSublayer(backLayer)
+        
     }
     @IBAction func funcNoAds(_ sender: Any) {
        paymentDetailVC = PaymentDetailViewController(nibName: "PaymentDetailViewController", bundle: nil)
@@ -323,13 +343,13 @@ class ViewController: UIViewController {
 //        self.navigationController?.pushViewController(clockLearnVC, animated: true)
         
         
-     /*   let clockLearnVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LearnViewController") as! LearnViewController
-        self.navigationController?.pushViewController(clockLearnVC, animated: true)*/
+        let clockLearnVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LearnViewController") as! LearnViewController
+        self.navigationController?.pushViewController(clockLearnVC, animated: true)
         
-        let alert = UIAlertController(title: "", message: CommanCode.comingSoonText, preferredStyle: UIAlertController.Style.alert)
+       /* let alert = UIAlertController(title: "", message: CommanCode.comingSoonText, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
         }))
-        self.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)*/
 
    }
     //IBAction Guess Time
@@ -419,6 +439,14 @@ extension ViewController : PayementForParentProtocol {
         components?.queryItems = [
           URLQueryItem(name: "action", value: "write-review")
         ]
+        guard let writeReviewURL = components?.url else {
+          return
+        }
+        UIApplication.shared.open(writeReviewURL)
+    }
+    func updateApp() {
+        let components = URLComponents(url: CommanCode.app_AppStoreLink!, resolvingAgainstBaseURL: false)
+        
         guard let writeReviewURL = components?.url else {
           return
         }

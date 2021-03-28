@@ -39,7 +39,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhg-U5-g1u" userLabel="tileContainerView">
                                 <rect key="frame" x="25" y="383.5" width="364" height="458.5"/>
                                 <subviews>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Foj-tp-Iqp" userLabel="LearnView" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Foj-tp-Iqp" userLabel="LearnView" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
                                         <rect key="frame" x="57" y="98.5" width="250" height="50"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4cp-bD-NI7">
@@ -53,7 +53,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kit-mc-1WV" customClass="ButtonHomeMenuExt" customModule="Learn_Clock___Time" customModuleProvider="target">
                                                 <rect key="frame" x="110" y="10" width="30" height="30"/>
                                                 <connections>
-                                                    <action selector="funcLearnTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4e8-u0-YvE"/>
+                                                    <action selector="funcLearnTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SB0-Ny-3OU"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -207,9 +207,6 @@
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7YO-fa-yUr" customClass="ButtonHomeMenuExt" customModule="Learn_Clock___Time" customModuleProvider="target">
                                                 <rect key="frame" x="110" y="10" width="30" height="30"/>
-                                                <connections>
-                                                    <action selector="funcTestTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Pu-76-UK3"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -255,7 +252,7 @@
                                 <constraints>
                                     <constraint firstItem="Foj-tp-Iqp" firstAttribute="width" secondItem="cNv-Hf-JLZ" secondAttribute="width" id="3Ve-sk-fSw"/>
                                     <constraint firstItem="cNv-Hf-JLZ" firstAttribute="top" secondItem="Foj-tp-Iqp" secondAttribute="bottom" constant="20" id="4UQ-bw-0ox">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="35"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
                                     </constraint>
                                     <constraint firstItem="33M-Mh-cHk" firstAttribute="leading" secondItem="9az-o4-B0b" secondAttribute="trailing" constant="-15" id="8v2-Gx-4hU"/>
                                     <constraint firstItem="D95-74-XdG" firstAttribute="top" secondItem="BDg-YG-NIM" secondAttribute="bottom" constant="20" id="AiZ-8r-sXp">
@@ -494,7 +491,6 @@
                                 <state key="normal" backgroundImage="Sound-On_home"/>
                                 <connections>
                                     <action selector="funcSound_ON_OFF:" destination="g7z-YB-fXP" eventType="touchUpInside" id="dUT-97-509"/>
-                                    <action selector="funcSound_ON_OFF:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ht4-45-vsU"/>
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uop-HU-kPw" userLabel="transperentView">
