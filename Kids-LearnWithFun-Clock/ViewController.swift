@@ -32,6 +32,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnCancelSubscription: UIButton!
     var paymentDetailVC : PaymentDetailViewController?
     @IBOutlet weak var topToSoundBtn: NSLayoutConstraint!
+    @IBOutlet weak var notificationSettingView: UIView!
 
 
     
@@ -41,7 +42,8 @@ class ViewController: UIViewController {
     var fontImageTitleLbl = UIFont(name: "ChalkboardSE-Bold", size: 24)
     let rateUsImg = UIImage(named: "RateUs.png")
     let shareAppImg = UIImage(named: "ShareApp.png")
-    let UpdateAppImg = UIImage(named: "UpdateApp.png")
+    let updateAppImg = UIImage(named: "UpdateApp.png")
+    let otherAppsImg = UIImage(named: "OtherApps.png")
 
     var player = AVAudioPlayer()
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -49,6 +51,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var viewtransperent: UIView!
     
     var fromShareApp = false
+    var isUpdateAvaible = false
     var bannerView: GADBannerView!
     var timer: Timer?
 
@@ -63,6 +66,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.defaults.set(true, forKey: "IsPrimeUser")
         // Do any additional setup after loading the view.
         setUI()
         if !(defaults.bool(forKey:"IsPrimeUser")) {
@@ -112,6 +116,33 @@ class ViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         player.stop()
         stopTimer()
+    }
+    func checkForAppUpdate() -> Bool {
+        if Reachability.isConnectedToNetwork() {
+            let infoDictionary = Bundle.main.infoDictionary
+            let appID = infoDictionary!["CFBundleIdentifier"] as! String
+            guard let url = URL(string: "https://itunes.apple.com/lookup?bundleId=\(appID)") else { return false }
+
+            guard let data = try? Data(contentsOf: url) else {
+              print("There is an error!")
+              return false;
+            }
+            let lookup = (try? JSONSerialization.jsonObject(with: data , options: [])) as? [String: Any]
+            if let resultCount = lookup!["resultCount"] as? Int, resultCount == 1 {
+                if let results = lookup!["results"] as? [[String:Any]] {
+                    if let appStoreVersion = results[0]["version"] as? String{
+                        let currentVersion = infoDictionary!["CFBundleShortVersionString"] as? String
+                        if !(appStoreVersion == currentVersion) {
+                            print("Need to update [\(appStoreVersion) != \(currentVersion)]")
+                            return true
+                        }
+                    }
+                }
+            }
+            return false
+        } else {
+            return false
+        }
     }
     func setUI() {
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -169,60 +200,63 @@ class ViewController: UIViewController {
         self.floaty.floatingActionButtonDelegate = self
         self.floaty.addItem(icon: rateUsImg, handler: { [self]_ in
             self.floaty.close()
-            appstoreRateAndReview()
-
-            /*self.paymentDetailVC = PaymentDetailViewController(nibName: "PaymentDetailViewController", bundle: nil)
+            self.appstoreRateAndReview()
+           /* self.paymentDetailVC = PaymentDetailViewController(nibName: "PaymentDetailViewController", bundle: nil)
             self.paymentDetailVC?.showHomeScreenRateReview = true
             self.showPaymentScreen()*/
         })
-        self.floaty.addItem(icon: shareAppImg, handler: { [self]_ in
-            shareApp()
+        self.floaty.addItem(icon: shareAppImg, handler: {_ in
+            self.floaty.close()
+            self.shareApp()
            /* self.paymentDetailVC = PaymentDetailViewController(nibName: "PaymentDetailViewController", bundle: nil)
             self.paymentDetailVC?.showHomeScreenShareApp = true
-            self.showPaymentScreen()*/
-            self.floaty.close()
+            self.showPaymentScreen()
+            self.floaty.close()*/
         })
-        self.floaty.addItem(icon: UpdateAppImg, handler: {[self]_ in
-            updateApp()
-            /*self.paymentDetailVC = PaymentDetailViewController(nibName: "PaymentDetailViewController", bundle: nil)
-            self.paymentDetailVC?.showHomeScreenShareApp = true
-            self.showPaymentScreen()*/
+        self.floaty.addItem(icon: otherAppsImg, handler: { [self]_ in
             self.floaty.close()
+            let otherAppsVC = OtherAppsViewController(nibName: "OtherAppsViewController", bundle: nil)
+            self.navigationController?.pushViewController(otherAppsVC, animated: true)
         })
-
-        
-        
-        
-        
-        
-        
-//        self.floaty.addItem(icon: contactUsImg, handler: { [self]_ in
-//            let mailComposeViewController = configureMailComposer()
-//              if MFMailComposeViewController.canSendMail(){
-//                  self.present(mailComposeViewController, animated: true, completion: nil)
-//              }else{
-//                  print("Can't send email")
-//                let alert = UIAlertController(title: "", message: "Please setup mail account.", preferredStyle: UIAlertController.Style.alert)
-//
-//                // add an action (button)
-//                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-//
-//                // show the alert
-//                self.present(alert, animated: true, completion: nil)
-//
-//              }
-//            self.floaty.close()
-//        })
         floaty.items[0].title = "Rate & Review"
         floaty.items[1].title = "Share App"
-        floaty.items[2].title = "Update App"
-//        floaty.items[2].title = "Contact Us"
+        floaty.items[2].title = "Our Other Apps"
         
+        isUpdateAvaible = checkForAppUpdate()
+
+        if isUpdateAvaible {
+            notificationSettingView.layer.cornerRadius = notificationSettingView.frame.width/2
+            notificationSettingView.backgroundColor = UIColor.red
+            notificationSettingView.layer.borderWidth = 1.5
+            notificationSettingView.layer.borderColor = UIColor.white.cgColor
+            notificationSettingView.layer.shadowColor = UIColor.white.cgColor
+            notificationSettingView.layer.shadowOpacity = 1.5
+            notificationSettingView.layer.shadowOffset = CGSize.zero
+            notificationSettingView.layer.shadowRadius = 9.0
+
+            self.floaty.addItem(icon: updateAppImg, handler: {_ in
+                self.floaty.close()
+                self.redirectToAppStoreForUpdate()
+            })
+            floaty.items[3].title = "Update App"
+        } else {
+            notificationSettingView.isHidden = true
+        }
+
+        addWaveBackground(to :viewtransperent)
+
         addWaveBackground(to :viewtransperent)
         //-----------------------------------
-        
-
     }
+    func redirectToAppStoreForUpdate() {
+        let components = URLComponents(url: CommanCode.app_AppStoreLink!, resolvingAgainstBaseURL: false)
+        
+        guard let writeReviewURL = components?.url else {
+          return
+        }
+        UIApplication.shared.open(writeReviewURL)
+    }
+
     @objc func appDidEnterBackground() {
         // stop counter
         floaty.close()
@@ -271,15 +305,34 @@ class ViewController: UIViewController {
 
 
     func addWaveBackground(to view: UIView){
-          let multipler = CGFloat(0.09)  //0.13
-        
-          let leftDrop:CGFloat = 0.4 + multipler
-          let leftInflexionX: CGFloat = 0.4 + multipler
-          let leftInflexionY: CGFloat = 0.47 + multipler
+        let multipler = CGFloat(0.1)  //0.13
+        var leftDrop : CGFloat = 0.0
+        var leftInflexionX : CGFloat = 0.0
+        var leftInflexionY : CGFloat = 0.0
 
-          let rightDrop: CGFloat = 0.3 +  multipler
-          let rightInflexionX: CGFloat = 0.6  +  multipler
-          let rightInflexionY: CGFloat = 0.22 + multipler
+        if isUpdateAvaible {
+            leftDrop = 0.53 + multipler
+            leftInflexionX = 0.53 + multipler
+            leftInflexionY = 0.60 + multipler
+        } else {
+            leftDrop = 0.45 + multipler
+            leftInflexionX = 0.45 + multipler
+            leftInflexionY = 0.52 + multipler
+        }
+        var rightDrop : CGFloat = 0.0
+        var rightInflexionX : CGFloat = 0.0
+        var rightInflexionY : CGFloat = 0.0
+
+        if isUpdateAvaible {
+           rightDrop  = 0.43 +  multipler
+           rightInflexionX = 0.73  +  multipler
+           rightInflexionY = 0.28 + multipler
+        } else {
+            rightDrop = 0.37 +  multipler
+            rightInflexionX = 0.65  +  multipler
+            rightInflexionY = 0.20 + multipler
+        }
+
 
           let backView = UIView(frame: view.frame)
           backView.backgroundColor = .clear
@@ -288,15 +341,17 @@ class ViewController: UIViewController {
           let path = UIBezierPath()
           path.move(to: CGPoint(x: 0, y: 0))
           path.addLine(to: CGPoint(x:0, y: view.frame.height * leftDrop))
-          path.addCurve(to: CGPoint(x:225, y: view.frame.height * rightDrop),
+          path.addCurve(to: CGPoint(x:250, y: view.frame.height * rightDrop),
                         controlPoint1: CGPoint(x: view.frame.width * leftInflexionX, y: view.frame.height * leftInflexionY),
                         controlPoint2: CGPoint(x: view.frame.width * rightInflexionX, y: view.frame.height * rightInflexionY+30))
-          path.addLine(to: CGPoint(x:225, y: 0))
+//          path.addLine(to: CGPoint(x:225, y: 0))
+        path.addLine(to: CGPoint(x:250, y: 0))
+
           path.close()
-          backLayer.fillColor = CommanCode.settingBgColor.cgColor //UIColor.blue.cgColor
+          backLayer.fillColor = CommanCode.settingBgColor.cgColor            
+            //UIColor.blue.cgColor
           backLayer.path = path.cgPath
           backView.layer.addSublayer(backLayer)
-        
     }
     @IBAction func funcNoAds(_ sender: Any) {
        paymentDetailVC = PaymentDetailViewController(nibName: "PaymentDetailViewController", bundle: nil)

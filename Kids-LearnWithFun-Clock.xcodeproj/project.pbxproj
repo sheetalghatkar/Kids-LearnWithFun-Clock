@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4F08829B25986B9E00E99167 /* PlayWithClockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F08829A25986B9E00E99167 /* PlayWithClockController.swift */; };
+		4F08BBFE261211D00023C23A /* LearnClock1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F08BBFD261211D00023C23A /* LearnClock1.gif */; };
+		4F0A07B12610CC730040E387 /* LearnClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A07AF2610CC730040E387 /* LearnClockFace.swift */; };
+		4F0A07B22610CC730040E387 /* LearnClocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A07B02610CC730040E387 /* LearnClocket.swift */; };
 		4F0EC402259D9B76008AC986 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0EC401259D9B76008AC986 /* LearnViewController.swift */; };
 		4F1698AB25E26D0B0049452D /* CustomLiceneModelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1698A925E26D0B0049452D /* CustomLiceneModelController.xib */; };
 		4F1698AC25E26D0B0049452D /* CustomLiceneModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1698AA25E26D0B0049452D /* CustomLiceneModelController.swift */; };
@@ -17,8 +20,6 @@
 		4F1698B925E26D140049452D /* SubscriptionDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1698B325E26D140049452D /* SubscriptionDetailsController.xib */; };
 		4F1698BA25E26D140049452D /* PaymentDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1698B425E26D140049452D /* PaymentDetailViewController.xib */; };
 		4F1698BB25E26D140049452D /* PaymentCostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1698B525E26D140049452D /* PaymentCostController.swift */; };
-		4F1ABE192595F35100256AB8 /* starFalling.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F1ABE182595F35100256AB8 /* starFalling.gif */; };
-		4F1ABE1E2595F71800256AB8 /* GreenCracker.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F1ABE1D2595F71800256AB8 /* GreenCracker.gif */; };
 		4F1E7D6C259CC70000A8A39B /* GuessClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E7D6B259CC70000A8A39B /* GuessClockFace.swift */; };
 		4F1E7D71259CC7C300A8A39B /* GuessClocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E7D70259CC7C300A8A39B /* GuessClocket.swift */; };
 		4F2531BE25FE28A800A8DF1A /* 6_o'clock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F2531B225FE28A700A8DF1A /* 6_o'clock.mp3 */; };
@@ -193,9 +194,7 @@
 		4F4F791625FB901A00043A41 /* 1_Minutes.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F4F78DB25FB901A00043A41 /* 1_Minutes.mp3 */; };
 		4F5086E22603B46700FEBE2E /* LevelSelectionlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5086E02603B46700FEBE2E /* LevelSelectionlViewController.swift */; };
 		4F5086E32603B46700FEBE2E /* LevelSelectionlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F5086E12603B46700FEBE2E /* LevelSelectionlViewController.xib */; };
-		4F5086EB2603B85600FEBE2E /* climb.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F5086EA2603B85600FEBE2E /* climb.gif */; };
 		4F5F382B2594D02200992FE3 /* Cracker.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F5F382A2594D02200992FE3 /* Cracker.gif */; };
-		4F5F383E2594E87200992FE3 /* fireworks03.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F5F383D2594E87200992FE3 /* fireworks03.gif */; };
 		4F612EDC26048B4800B3D9DE /* level1_cup11.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F612EDB26048B4800B3D9DE /* level1_cup11.gif */; };
 		4F612EE126049E5500B3D9DE /* level2_cup.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F612EE026049E5500B3D9DE /* level2_cup.gif */; };
 		4F612EEE2604B7B900B3D9DE /* level3_cup.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F612EED2604B7B900B3D9DE /* level3_cup.gif */; };
@@ -204,7 +203,18 @@
 		4F96F27B260B2D16001E8F64 /* SetTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F128EB32597115E00B5575C /* SetTimeViewController.swift */; };
 		4F96F296260B7B19001E8F64 /* PlayClocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96F294260B7B19001E8F64 /* PlayClocket.swift */; };
 		4F96F297260B7B19001E8F64 /* PlayClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96F295260B7B19001E8F64 /* PlayClockFace.swift */; };
+		4FDC38542635B3E20053EF54 /* LearnClock3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FDC38532635B3E20053EF54 /* LearnClock3.gif */; };
 		4FE7FEBA25FB67F200FDA048 /* Set.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FE7FEB925FB67F200FDA048 /* Set.mp3 */; };
+		4FE83D652637029000E63ED9 /* OClock_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FE83D642637029000E63ED9 /* OClock_desc.mp3 */; };
+		4FE83D6A263702CB00E63ED9 /* ForExample_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FE83D69263702CB00E63ED9 /* ForExample_desc.mp3 */; };
+		4FE83D72263705CB00E63ED9 /* LearnClock5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FE83D71263705CB00E63ED9 /* LearnClock5.gif */; };
+		4FE83D7A2637060900E63ED9 /* LearnClock4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FE83D792637060900E63ED9 /* LearnClock4.gif */; };
+		4FE83D822637064300E63ED9 /* LearnClock2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FE83D812637064300E63ED9 /* LearnClock2.gif */; };
+		4FE83D8D2637071A00E63ED9 /* ClockLearn.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FE83D8C2637071A00E63ED9 /* ClockLearn.gif */; };
+		4FE83D9626370D3000E63ED9 /* OtherAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE83D9426370D3000E63ED9 /* OtherAppsViewController.swift */; };
+		4FE83D9726370D3000E63ED9 /* OtherAppsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FE83D9526370D3000E63ED9 /* OtherAppsViewController.xib */; };
+		4FE83D9D26370FB000E63ED9 /* OtherAppsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FE83D9B26370FB000E63ED9 /* OtherAppsTableViewCell.xib */; };
+		4FE83D9E26370FB000E63ED9 /* OtherAppsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE83D9C26370FB000E63ED9 /* OtherAppsTableViewCell.swift */; };
 		700E2E5A258A12100042EC2D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E2E59258A12100042EC2D /* UIButtonExtension.swift */; };
 		700E2E5D258A86790042EC2D /* WrongSelection.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 700E2E5C258A86790042EC2D /* WrongSelection.mp3 */; };
 		700E2E5F258A88580042EC2D /* WellDone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 700E2E5E258A88580042EC2D /* WellDone.mp3 */; };
@@ -230,7 +240,6 @@
 		709EAEB22580AFE900F8FEEC /* GuessClockHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EAEAF2580AFE800F8FEEC /* GuessClockHand.swift */; };
 		709EAEB32580AFE900F8FEEC /* SetClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EAEB02580AFE800F8FEEC /* SetClockFace.swift */; };
 		709EAEB52580CA6C00F8FEEC /* CommanCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EAEB42580CA6C00F8FEEC /* CommanCode.swift */; };
-		709EAEB82580DBA000F8FEEC /* ClockLearn.gif in Resources */ = {isa = PBXBuildFile; fileRef = 709EAEB72580DBA000F8FEEC /* ClockLearn.gif */; };
 		709EAEBA2580DD6000F8FEEC /* GIFSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EAEB92580DD6000F8FEEC /* GIFSwift.swift */; };
 		70F28466258119C100D68BDA /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F28465258119C000D68BDA /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
@@ -254,6 +263,9 @@
 
 /* Begin PBXFileReference section */
 		4F08829A25986B9E00E99167 /* PlayWithClockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayWithClockController.swift; sourceTree = "<group>"; };
+		4F08BBFD261211D00023C23A /* LearnClock1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LearnClock1.gif; sourceTree = "<group>"; };
+		4F0A07AF2610CC730040E387 /* LearnClockFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnClockFace.swift; sourceTree = "<group>"; };
+		4F0A07B02610CC730040E387 /* LearnClocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnClocket.swift; sourceTree = "<group>"; };
 		4F0EC401259D9B76008AC986 /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
 		4F128EB32597115E00B5575C /* SetTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimeViewController.swift; sourceTree = "<group>"; };
 		4F1698A925E26D0B0049452D /* CustomLiceneModelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomLiceneModelController.xib; sourceTree = "<group>"; };
@@ -264,8 +276,6 @@
 		4F1698B325E26D140049452D /* SubscriptionDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscriptionDetailsController.xib; sourceTree = "<group>"; };
 		4F1698B425E26D140049452D /* PaymentDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentDetailViewController.xib; sourceTree = "<group>"; };
 		4F1698B525E26D140049452D /* PaymentCostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentCostController.swift; sourceTree = "<group>"; };
-		4F1ABE182595F35100256AB8 /* starFalling.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = starFalling.gif; sourceTree = "<group>"; };
-		4F1ABE1D2595F71800256AB8 /* GreenCracker.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = GreenCracker.gif; sourceTree = "<group>"; };
 		4F1E7D6B259CC70000A8A39B /* GuessClockFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessClockFace.swift; sourceTree = "<group>"; };
 		4F1E7D70259CC7C300A8A39B /* GuessClocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessClocket.swift; sourceTree = "<group>"; };
 		4F2531B225FE28A700A8DF1A /* 6_o'clock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "6_o'clock.mp3"; sourceTree = "<group>"; };
@@ -441,9 +451,7 @@
 		4F4F78DB25FB901A00043A41 /* 1_Minutes.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1_Minutes.mp3; sourceTree = "<group>"; };
 		4F5086E02603B46700FEBE2E /* LevelSelectionlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelSelectionlViewController.swift; sourceTree = "<group>"; };
 		4F5086E12603B46700FEBE2E /* LevelSelectionlViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelSelectionlViewController.xib; sourceTree = "<group>"; };
-		4F5086EA2603B85600FEBE2E /* climb.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = climb.gif; sourceTree = "<group>"; };
 		4F5F382A2594D02200992FE3 /* Cracker.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Cracker.gif; sourceTree = "<group>"; };
-		4F5F383D2594E87200992FE3 /* fireworks03.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fireworks03.gif; sourceTree = "<group>"; };
 		4F612EDB26048B4800B3D9DE /* level1_cup11.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = level1_cup11.gif; sourceTree = "<group>"; };
 		4F612EE026049E5500B3D9DE /* level2_cup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = level2_cup.gif; sourceTree = "<group>"; };
 		4F612EED2604B7B900B3D9DE /* level3_cup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = level3_cup.gif; sourceTree = "<group>"; };
@@ -452,7 +460,18 @@
 		4F96F294260B7B19001E8F64 /* PlayClocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayClocket.swift; sourceTree = "<group>"; };
 		4F96F295260B7B19001E8F64 /* PlayClockFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayClockFace.swift; sourceTree = "<group>"; };
 		4FA799E22601D70800198008 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
+		4FDC38532635B3E20053EF54 /* LearnClock3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LearnClock3.gif; sourceTree = "<group>"; };
 		4FE7FEB925FB67F200FDA048 /* Set.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Set.mp3; sourceTree = "<group>"; };
+		4FE83D642637029000E63ED9 /* OClock_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OClock_desc.mp3; sourceTree = "<group>"; };
+		4FE83D69263702CB00E63ED9 /* ForExample_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ForExample_desc.mp3; sourceTree = "<group>"; };
+		4FE83D71263705CB00E63ED9 /* LearnClock5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LearnClock5.gif; sourceTree = "<group>"; };
+		4FE83D792637060900E63ED9 /* LearnClock4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LearnClock4.gif; sourceTree = "<group>"; };
+		4FE83D812637064300E63ED9 /* LearnClock2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LearnClock2.gif; sourceTree = "<group>"; };
+		4FE83D8C2637071A00E63ED9 /* ClockLearn.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ClockLearn.gif; sourceTree = "<group>"; };
+		4FE83D9426370D3000E63ED9 /* OtherAppsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherAppsViewController.swift; sourceTree = "<group>"; };
+		4FE83D9526370D3000E63ED9 /* OtherAppsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherAppsViewController.xib; sourceTree = "<group>"; };
+		4FE83D9B26370FB000E63ED9 /* OtherAppsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherAppsTableViewCell.xib; sourceTree = "<group>"; };
+		4FE83D9C26370FB000E63ED9 /* OtherAppsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherAppsTableViewCell.swift; sourceTree = "<group>"; };
 		700E2E59258A12100042EC2D /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		700E2E5C258A86790042EC2D /* WrongSelection.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WrongSelection.mp3; sourceTree = "<group>"; };
 		700E2E5E258A88580042EC2D /* WellDone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WellDone.mp3; sourceTree = "<group>"; };
@@ -484,7 +503,6 @@
 		709EAEAF2580AFE800F8FEEC /* GuessClockHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessClockHand.swift; sourceTree = "<group>"; };
 		709EAEB02580AFE800F8FEEC /* SetClockFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetClockFace.swift; sourceTree = "<group>"; };
 		709EAEB42580CA6C00F8FEEC /* CommanCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommanCode.swift; sourceTree = "<group>"; };
-		709EAEB72580DBA000F8FEEC /* ClockLearn.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ClockLearn.gif; sourceTree = "<group>"; };
 		709EAEB92580DD6000F8FEEC /* GIFSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFSwift.swift; sourceTree = "<group>"; };
 		70F28465258119C000D68BDA /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -520,6 +538,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F0A07AE2610C36A0040E387 /* LearnClock */ = {
+			isa = PBXGroup;
+			children = (
+				4F0A07B02610CC730040E387 /* LearnClocket.swift */,
+				4F0A07AF2610CC730040E387 /* LearnClockFace.swift */,
+			);
+			path = LearnClock;
+			sourceTree = "<group>";
+		};
 		4F1698A825E26D030049452D /* Payment */ = {
 			isa = PBXGroup;
 			children = (
@@ -531,6 +558,8 @@
 				4F1698B425E26D140049452D /* PaymentDetailViewController.xib */,
 				4F1698B225E26D140049452D /* SubscriptionDetailsController.swift */,
 				4F1698B325E26D140049452D /* SubscriptionDetailsController.xib */,
+				4FE83D9426370D3000E63ED9 /* OtherAppsViewController.swift */,
+				4FE83D9526370D3000E63ED9 /* OtherAppsViewController.xib */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -629,6 +658,7 @@
 		4F428F7A25EE1C2400EED0E3 /* ClockFiles */ = {
 			isa = PBXGroup;
 			children = (
+				4F0A07AE2610C36A0040E387 /* LearnClock */,
 				4F96F293260B7ADC001E8F64 /* PlayClock */,
 				4F428F7B25EE1C3100EED0E3 /* GuessClock */,
 				4F428F7F25EE1C5F00EED0E3 /* SetClock */,
@@ -693,9 +723,6 @@
 		4F5F38292594D00700992FE3 /* Gif_Images */ = {
 			isa = PBXGroup;
 			children = (
-				4F5F383D2594E87200992FE3 /* fireworks03.gif */,
-				4F1ABE182595F35100256AB8 /* starFalling.gif */,
-				4F1ABE1D2595F71800256AB8 /* GreenCracker.gif */,
 				4F2D329A2609D00F00976FAB /* Loading.gif */,
 				4F612EFF2604F1CE00B3D9DE /* nextLevel.gif */,
 				4F5F382A2594D02200992FE3 /* Cracker.gif */,
@@ -805,9 +832,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4FE83D632637020F00E63ED9 /* LearnClock_desc */ = {
+			isa = PBXGroup;
+			children = (
+				4FE83D69263702CB00E63ED9 /* ForExample_desc.mp3 */,
+				4FE83D642637029000E63ED9 /* OClock_desc.mp3 */,
+			);
+			path = LearnClock_desc;
+			sourceTree = "<group>";
+		};
 		700E2E5B258A86590042EC2D /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				4FE83D632637020F00E63ED9 /* LearnClock_desc */,
 				4F2C73BE26086EF20075F7AE /* DigitSound */,
 				4F612EF22604BA0400B3D9DE /* Applause.mp3 */,
 				4F5FCBB325EE4AB700331771 /* MinuteSound */,
@@ -887,6 +924,8 @@
 				4F128EB32597115E00B5575C /* SetTimeViewController.swift */,
 				4F08829A25986B9E00E99167 /* PlayWithClockController.swift */,
 				4F0EC401259D9B76008AC986 /* LearnViewController.swift */,
+				4FE83D9C26370FB000E63ED9 /* OtherAppsTableViewCell.swift */,
+				4FE83D9B26370FB000E63ED9 /* OtherAppsTableViewCell.xib */,
 			);
 			path = "Kids-LearnWithFun-Clock";
 			sourceTree = "<group>";
@@ -926,10 +965,14 @@
 			isa = PBXGroup;
 			children = (
 				4F612EDB26048B4800B3D9DE /* level1_cup11.gif */,
+				4F08BBFD261211D00023C23A /* LearnClock1.gif */,
 				4F612EE026049E5500B3D9DE /* level2_cup.gif */,
+				4FE83D812637064300E63ED9 /* LearnClock2.gif */,
+				4FE83D71263705CB00E63ED9 /* LearnClock5.gif */,
+				4FE83D792637060900E63ED9 /* LearnClock4.gif */,
+				4FDC38532635B3E20053EF54 /* LearnClock3.gif */,
 				4F612EED2604B7B900B3D9DE /* level3_cup.gif */,
-				4F5086EA2603B85600FEBE2E /* climb.gif */,
-				709EAEB72580DBA000F8FEEC /* ClockLearn.gif */,
+				4FE83D8C2637071A00E63ED9 /* ClockLearn.gif */,
 			);
 			path = "GIF&Image";
 			sourceTree = "<group>";
@@ -1049,10 +1092,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F2C740C26086F0A0075F7AE /* 35.mp3 in Resources */,
-				4F1ABE192595F35100256AB8 /* starFalling.gif in Resources */,
 				4F5F382B2594D02200992FE3 /* Cracker.gif in Resources */,
 				4F4F790C25FB901A00043A41 /* 50_Minutes.mp3 in Resources */,
 				4F2C741F26086F0A0075F7AE /* 25.mp3 in Resources */,
+				4F08BBFE261211D00023C23A /* LearnClock1.gif in Resources */,
 				4F2C743C2608A21A0075F7AE /* To.mp3 in Resources */,
 				4F4F791225FB901A00043A41 /* 3_Minutes.mp3 in Resources */,
 				4F4F790325FB901A00043A41 /* 53_Minutes.mp3 in Resources */,
@@ -1083,7 +1126,7 @@
 				4F2531C625FE28A800A8DF1A /* 12_o'clock.mp3 in Resources */,
 				4F2C740E26086F0A0075F7AE /* 48.mp3 in Resources */,
 				4F1698B925E26D140049452D /* SubscriptionDetailsController.xib in Resources */,
-				4F5F383E2594E87200992FE3 /* fireworks03.gif in Resources */,
+				4FE83D7A2637060900E63ED9 /* LearnClock4.gif in Resources */,
 				4F4F791325FB901A00043A41 /* 22_Minutes.mp3 in Resources */,
 				4F394C3725F4D42800F2403E /* Promises-LICENSE in Resources */,
 				4F2C742D26086F0A0075F7AE /* 29.mp3 in Resources */,
@@ -1097,20 +1140,22 @@
 				4F2C742A26086F0A0075F7AE /* 40.mp3 in Resources */,
 				4F4F78F525FB901A00043A41 /* 51_Minutes.mp3 in Resources */,
 				4F2C73FC26086F0A0075F7AE /* 30.mp3 in Resources */,
-				709EAEB82580DBA000F8FEEC /* ClockLearn.gif in Resources */,
 				4F2C740926086F0A0075F7AE /* 37.mp3 in Resources */,
 				4F2C741826086F0A0075F7AE /* 52.mp3 in Resources */,
 				4F2C740F26086F0A0075F7AE /* 4.mp3 in Resources */,
 				4F2C741126086F0A0075F7AE /* 58.mp3 in Resources */,
+				4FE83D6A263702CB00E63ED9 /* ForExample_desc.mp3 in Resources */,
 				4F2531C525FE28A800A8DF1A /* 5_o'clock.mp3 in Resources */,
 				4F2C740026086F0A0075F7AE /* 28.mp3 in Resources */,
 				4F2C742926086F0A0075F7AE /* 44.mp3 in Resources */,
 				4F4F791025FB901A00043A41 /* 57_Minutes.mp3 in Resources */,
+				4FE83D9D26370FB000E63ED9 /* OtherAppsTableViewCell.xib in Resources */,
 				4F2C73FD26086F0A0075F7AE /* 50.mp3 in Resources */,
 				4F4F790725FB901A00043A41 /* 20_Minutes.mp3 in Resources */,
 				4F2C740126086F0A0075F7AE /* 42.mp3 in Resources */,
 				4F2C740526086F0A0075F7AE /* 12.mp3 in Resources */,
 				4F4F78E025FB901A00043A41 /* 14_Minutes.mp3 in Resources */,
+				4FE83D9726370D3000E63ED9 /* OtherAppsViewController.xib in Resources */,
 				4F1698AB25E26D0B0049452D /* CustomLiceneModelController.xib in Resources */,
 				4F2C73FF26086F0A0075F7AE /* 26.mp3 in Resources */,
 				4F4F78EF25FB901A00043A41 /* 45_Minutes.mp3 in Resources */,
@@ -1130,6 +1175,7 @@
 				4F4F791525FB901A00043A41 /* 6_Minutes.mp3 in Resources */,
 				4F2C741726086F0A0075F7AE /* 19.mp3 in Resources */,
 				4F4F78F725FB901A00043A41 /* 10_Minutes.mp3 in Resources */,
+				4FE83D822637064300E63ED9 /* LearnClock2.gif in Resources */,
 				4F1698B725E26D140049452D /* PaymentCostController.xib in Resources */,
 				709EAE872580A93C00F8FEEC /* Assets.xcassets in Resources */,
 				4F4F78F225FB901A00043A41 /* 34_Minutes.mp3 in Resources */,
@@ -1145,12 +1191,13 @@
 				70111075258BCA8600159541 /* Wrong_Option_Clip.mp3 in Resources */,
 				4F4F78F025FB901A00043A41 /* 35_Minutes.mp3 in Resources */,
 				4F4F790925FB901A00043A41 /* 40_Minutes.mp3 in Resources */,
+				4FE83D72263705CB00E63ED9 /* LearnClock5.gif in Resources */,
 				4F4F790125FB901A00043A41 /* 16_Minutes.mp3 in Resources */,
 				701675FB2588EE52004F19BA /* ShowClockViewController.xib in Resources */,
 				4F2C742026086F0A0075F7AE /* 14.mp3 in Resources */,
 				4F4F78E725FB901A00043A41 /* 59_Minutes.mp3 in Resources */,
+				4FE83D8D2637071A00E63ED9 /* ClockLearn.gif in Resources */,
 				4F2C740426086F0A0075F7AE /* 20.mp3 in Resources */,
-				4F5086EB2603B85600FEBE2E /* climb.gif in Resources */,
 				4F4F78EA25FB901A00043A41 /* 54_Minutes.mp3 in Resources */,
 				4F4F790A25FB901A00043A41 /* 48_Minutes.mp3 in Resources */,
 				4F4F78E525FB901A00043A41 /* 25_Minutes.mp3 in Resources */,
@@ -1167,6 +1214,7 @@
 				4F4F78DC25FB901A00043A41 /* 2_Minutes.mp3 in Resources */,
 				4F43E69625E165130018B3E0 /* ClockBgMusic.mp3 in Resources */,
 				4F2C741026086F0A0075F7AE /* 59.mp3 in Resources */,
+				4FDC38542635B3E20053EF54 /* LearnClock3.gif in Resources */,
 				4F2531C425FE28A800A8DF1A /* 7_o'clock.mp3 in Resources */,
 				4F4F791625FB901A00043A41 /* 1_Minutes.mp3 in Resources */,
 				4F2531C325FE28A800A8DF1A /* 2_o'clock.mp3 in Resources */,
@@ -1197,6 +1245,7 @@
 				4F2C743326086F0A0075F7AE /* 47.mp3 in Resources */,
 				4F2531C125FE28A800A8DF1A /* 3_o'clock.mp3 in Resources */,
 				4F4F78EC25FB901A00043A41 /* 33_Minutes.mp3 in Resources */,
+				4FE83D652637029000E63ED9 /* OClock_desc.mp3 in Resources */,
 				4F2C741C26086F0A0075F7AE /* 33.mp3 in Resources */,
 				4F2C741226086F0A0075F7AE /* 46.mp3 in Resources */,
 				709EAE852580A93700F8FEEC /* Main.storyboard in Resources */,
@@ -1207,7 +1256,6 @@
 				4F2C73B9260866BE0075F7AE /* QuarterPast.mp3 in Resources */,
 				4F2C742F26086F0A0075F7AE /* 56.mp3 in Resources */,
 				4F394C3A25F4D42800F2403E /* GoogleUtilities-LICENSE in Resources */,
-				4F1ABE1E2595F71800256AB8 /* GreenCracker.gif in Resources */,
 				7023D4C12581FDC200B752D4 /* LocalizableEnglish.strings in Resources */,
 				4F2531BE25FE28A800A8DF1A /* 6_o'clock.mp3 in Resources */,
 				4F2C742526086F0A0075F7AE /* 3.mp3 in Resources */,
@@ -1242,6 +1290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F0A07B22610CC730040E387 /* LearnClocket.swift in Sources */,
 				4F43E64B25E153EA0018B3E0 /* FloatyWindow.swift in Sources */,
 				4F1E7D71259CC7C300A8A39B /* GuessClocket.swift in Sources */,
 				701675F52588C542004F19BA /* PictureCardView.swift in Sources */,
@@ -1254,12 +1303,14 @@
 				4F43E66F25E159F30018B3E0 /* RestorePurchasesController.swift in Sources */,
 				4F43E65025E153EA0018B3E0 /* FloatyDelegate.swift in Sources */,
 				709EAEB32580AFE900F8FEEC /* SetClockFace.swift in Sources */,
+				4FE83D9626370D3000E63ED9 /* OtherAppsViewController.swift in Sources */,
 				709EAEB12580AFE800F8FEEC /* SetClocket.swift in Sources */,
 				4F08829B25986B9E00E99167 /* PlayWithClockController.swift in Sources */,
 				4F43E64C25E153EA0018B3E0 /* FloatyManager.swift in Sources */,
 				4F1698BB25E26D140049452D /* PaymentCostController.swift in Sources */,
 				4F1E7D6C259CC70000A8A39B /* GuessClockFace.swift in Sources */,
 				709EAEB22580AFE900F8FEEC /* GuessClockHand.swift in Sources */,
+				4FE83D9E26370FB000E63ED9 /* OtherAppsTableViewCell.swift in Sources */,
 				4F43E67125E159F30018B3E0 /* InAppReceiptVerificator.swift in Sources */,
 				709EAEBA2580DD6000F8FEEC /* GIFSwift.swift in Sources */,
 				4F43E67325E159F30018B3E0 /* AppleReceiptValidator.swift in Sources */,
@@ -1288,6 +1339,7 @@
 				4F43E67225E159F30018B3E0 /* SKProductDiscount+LocalizedPrice.swift in Sources */,
 				4F43E66725E159F30018B3E0 /* InAppReceiptRefreshRequest.swift in Sources */,
 				709EAEB52580CA6C00F8FEEC /* CommanCode.swift in Sources */,
+				4F0A07B12610CC730040E387 /* LearnClockFace.swift in Sources */,
 				4F5086E22603B46700FEBE2E /* LevelSelectionlViewController.swift in Sources */,
 				4F96F297260B7B19001E8F64 /* PlayClockFace.swift in Sources */,
 			);
@@ -1466,7 +1518,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M9C32R6P4U;
-				EXCLUDED_ARCHS = "";
+				EXCLUDED_ARCHS = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Kids-LearnWithFun-Clock/Third\\ Party/GoogleMobileAdsSdkiOS-7.69.0",
@@ -1494,7 +1546,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M9C32R6P4U;
-				EXCLUDED_ARCHS = "";
+				EXCLUDED_ARCHS = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Kids-LearnWithFun-Clock/Third\\ Party/GoogleMobileAdsSdkiOS-7.69.0",

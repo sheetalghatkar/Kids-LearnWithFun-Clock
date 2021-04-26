@@ -356,19 +356,6 @@ open class SetClocket: UIView, UIGestureRecognizerDelegate {
     
 }
 
-extension UIView {
-    func updateHandAngle(angle: CGFloat, duration: Double = 0.5) {
-        UIView.animate(withDuration: duration,
-                       delay: 0.0,
-                       options: .curveEaseInOut,
-                       animations: { self.transform = CGAffineTransform(rotationAngle: angle) },
-                       completion: { (finished: Bool) in
-                        return
-        })
-    }
-}
-
-
 public protocol SetClocketProtocol: AnyObject {
     func didHandSMove()
     /*func timeIsSetManually()

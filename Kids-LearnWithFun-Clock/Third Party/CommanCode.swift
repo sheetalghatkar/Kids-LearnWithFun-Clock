@@ -38,6 +38,7 @@ class CommanCode {
 
     
     static let Clock_Dial_COLOR = UIColor(red: (30/255), green: (144/255), blue: (255/255), alpha: 1.0)  // Yellow
+//    static let Clock_Dial_COLOR = UIColor.clear
     
     static let Clock_WHITE_Dial_COLOR = UIColor.white
 
