@@ -27,6 +27,7 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
     @IBOutlet weak var topConstraintDoneBtn: NSLayoutConstraint!
     @IBOutlet weak var widthViewParent: NSLayoutConstraint!
     @IBOutlet weak var imgViewLearnGif: UIImageView!
+    @IBOutlet weak var textViewFeatures: UITextView!
 
     var paymentDetailVC : PaymentDetailViewController?
     @IBOutlet weak var imgViewLoader: UIImageView!
@@ -35,11 +36,16 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
     @IBOutlet weak var topImgVwTime1: NSLayoutConstraint!
     @IBOutlet weak var topImgVwTime2: NSLayoutConstraint!
     @IBOutlet weak var topDoneBtn: NSLayoutConstraint!
+    
+    @IBOutlet weak var imgViewFeatureBg: UIImageView!
+    @IBOutlet weak var viewFeatureBg: UIView!
+    @IBOutlet weak var heightFeatureView: NSLayoutConstraint!
+
 
     let defaults = UserDefaults.standard
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     var player = AVAudioPlayer()
-    
+    var currentIndex = 0
     //Sound flags
     var fromComplexTextSound = true
     var fromSet = false
@@ -70,6 +76,10 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
     var isLevel1Cross = false
     var isLevel2Cross = false
     
+    var arrayDesc =  ["ClockDial","HourHand","MinuteHand","SecondHand","Oclock","Past","To"]
+    
+    var arrayDescImg =  ["ClockDial","HourHand","MinuteHand","SecondHand","Oclock","Past","To"]
+
     var bannerView: GADBannerView!
     var interstitial: GADInterstitial?
     var timer: Timer?
@@ -79,12 +89,12 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    let myShadow = NSShadow()
+    var attrs: [NSAttributedString.Key: Any]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.imgViewLearnGif.animationRepeatCount = 1
-//        self.imgViewLearnGif.image  = UIImage.gifImageWithName("LearnClock5")
         lblTitle.text = "Learn Clock"
         lblTitle.textColor = UIColor.white   //CommanCode.paymentBtnTextColor
         lblTitle.layer.shadowColor = UIColor.black.cgColor
@@ -107,7 +117,6 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
         imgViewLoader.layer.borderWidth = 1
         imgViewLoader.layer.borderColor =
             CommanCode.paymentBtnTextColor.cgColor
-        viewClocket.learnClocketDelegate = self
         if appDelegate.IS_Sound_ON {
             btnSound.setBackgroundImage(CommanCode.imgSoundOn, for: .normal)
         } else {
@@ -115,7 +124,6 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
         }
         //---------------------------------------------------------
         //Initial Clock value set
-        btnDone.layer.borderColor = CommanCode.Clock_Dial_COLOR.cgColor
         btnBackward.isHidden = true
         viewClocket.levelNumber = 1
 //        playSet()
@@ -156,23 +164,72 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
 //        static var hourAngleArray: [Double] = [3.14,2.60,2.07,1.56,1.05,0.55,-0.02,-0.56,-1.04,-1.60,-2.10,-2.60]
 
         viewClocket.viewMinuteHand.updateHandAngle(angle: CGFloat(-1.55), duration: 0.0)
-        viewClocket.viewHourHand.updateHandAngle(angle: CGFloat(-2.60), duration: 0.0)
+        viewClocket.viewHourHand.updateHandAngle(angle: CGFloat(-5.2), duration: 0.0)
+        //0.55 - 4
+        //-1.55 - 12
+        //-5.20 - 5
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
-            self.gifOOOO()
-            self.playOclock(getInt : 1)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.300) {
+            self.play_1(getInt: 1)
         }
 
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
+            self.gifOOOO(strGif: "LearnClock1_1", repeatCount : 4.5)
+        }
+        textViewFeatures.backgroundColor = UIColor.clear
+        viewFeatureBg.layer.cornerRadius = 15.0
+        viewFeatureBg.layer.shadowOffset = CGSize(width: 4, height: 4)
+        viewFeatureBg.layer.shadowColor = UIColor.black.cgColor
+        viewFeatureBg.layer.shadowRadius = 4
+        viewFeatureBg.layer.shadowOpacity = 4.0
+        viewFeatureBg.layer.masksToBounds = false
         
-//        imgViewLearnGif.animationRepeatCount = 1
-        //  Converted to Swift 5.4 by Swiftify v5.4.24202 - https://swiftify.com/
-//        imgViewLearnGif.animate(withGIFNamed: "gif_name", loopCount: 1) {
-//                    print("animating image")
-//            }
+        imgViewFeatureBg.layer.cornerRadius = 15.0
+        imgViewFeatureBg.clipsToBounds = true
+        imgViewFeatureBg.layer.masksToBounds = true
+        imgViewFeatureBg.layer.borderColor = UIColor.red.cgColor
+        imgViewFeatureBg.layer.borderWidth = 1.0
+        myShadow.shadowOffset = CGSize(width: 0.5, height: 0.5)
+        myShadow.shadowColor = UIColor.clear
+
+        textViewStyle()
     }
-    
-    func gifOOOO(){
-        let jeremyGif = UIImage.gifImageWithName("LearnClock5")
+//    func textViewStyle() {
+//        if currentIndex ==  0 {
+//
+//        }
+//    }
+
+    func textViewStyle() {
+        var descFont = CGFloat(22)
+        attrs = [
+            .font: UIFont.systemFont(ofSize: descFont, weight: .regular),
+            .foregroundColor: UIColor.white,
+            .shadow: myShadow
+        ]
+
+        if (UIScreen.main.bounds.height < 820) && !(UIDevice.current.userInterfaceIdiom == .pad) {
+            descFont = 17
+             attrs = [
+                .font: UIFont.systemFont(ofSize: descFont, weight: .regular),
+                .foregroundColor: UIColor.white,
+                .shadow: myShadow
+            ]
+        }
+
+            var strTextViewTemp = NSMutableAttributedString(string: " ➤ " + "This is a Clock Dial.\n\n" + " ➤ " + "There are 3 hands Hour Hand, Minute Hand & Second Hand on the face of a clock.", attributes: attrs)
+        
+        
+        strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 11, length:12))
+        strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 47, length:9))
+        strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 58, length:11))
+        strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 73, length:11))
+
+
+        textViewFeatures.attributedText = strTextViewTemp
+    }
+    func gifOOOO(strGif: String, repeatCount: Float){
+        let jeremyGif = UIImage.gifImageWithName(strGif)
 
         // Uncomment the next line to prevent stretching the image
         // imageView.contentMode = .ScaleAspectFit
@@ -186,7 +243,7 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
         // Set the duration of the UIImage
         imgViewLearnGif.animationDuration = jeremyGif!.duration
         // Set the repetitioncount
-        imgViewLearnGif.animationRepeatCount = 1
+//        imgViewLearnGif.animationRepeatCount = 50
         // Start the animation
         imgViewLearnGif.startAnimating()
         // CAKeyframeAnimation.values are expected to be CGImageRef,
@@ -202,7 +259,7 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
         animation.duration = jeremyGif!.duration
         animation.values = values
         // Set the repeat count
-        animation.repeatCount = 1
+        animation.repeatCount = repeatCount
         // Other stuff
         animation.isRemovedOnCompletion = false
         animation.fillMode = CAMediaTimingFillMode.forwards
@@ -333,8 +390,6 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
                 callInterstitialOn10Tap()
             }
         }
-        btnDone.setBackgroundImage(CommanCode.Done_Gray_IMG, for: .normal)
-        btnDone.layer.borderColor = CommanCode.Clock_Dial_COLOR.cgColor
         var getIndex = indexQuestion + 1
         if !(getIndex >= (CommanCode.hourMinutequestLevel_1_Array.count)) {
             if (getIndex == (CommanCode.hourMinutequestLevel_1_Array.count-1)) {
@@ -366,8 +421,6 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
                 callInterstitialOn10Tap()
             }
         }
-        btnDone.setBackgroundImage(CommanCode.Done_Gray_IMG, for: .normal)
-        btnDone.layer.borderColor = CommanCode.Clock_Dial_COLOR.cgColor
         let getIndex = indexQuestion - 1
         if !(getIndex < 0) {
             if getIndex == 0 {
@@ -388,100 +441,6 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
         }
         btnForward.isHidden = false
     }
-    @IBAction func funcDoneClicked(_ sender: UIButton) {
-        var checkHour = 0.0
-        if CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0] == 12 {
-            checkHour = CommanCode.hourAngleArray[0]
-        } else {
-            checkHour = CommanCode.hourAngleArray[CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0]]
-        }
-        let checkMinute = CommanCode.minuteAngleArray [CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]]
-        var isDone = 0
-        
-        
-        if (levelNumber == 1) && (checkHour == viewClocket.setManualHourAngle){
-            isDone = isDone + 1
-        } else {
-            var getHourInd = 0
-            if !(CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0] == 12) {
-                getHourInd = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0]
-            }
-            let hourValue = CommanCode.hourCalculationArray[getHourInd]
-            let startNumber = hourValue[4]
-            let endNumber = hourValue[0]
-            let numberRange = startNumber...endNumber
-            if numberRange  ~= viewClocket.setManualHourAngle {
-                isDone = isDone + 1
-            }
-        }
-        if checkMinute == viewClocket.setManualMinuteAngle {
-            isDone = isDone + 1
-        }
-        
-        if isDone == 2 {
-            print("Correct")
-            self.view.isUserInteractionEnabled = false
-            playSoundOnDoneClick(isTrue: true)
-            btnDone.setBackgroundImage(CommanCode.Done_GREEN_IMG, for: .normal)
-            btnDone.layer.borderColor = UIColor.green.cgColor
-            if indexQuestion < 11 {
-                if !arraylevel1CorrectAnsCnt.contains(indexQuestion) {
-                    arraylevel1CorrectAnsCnt.append(indexQuestion)
-                }
-            } else if indexQuestion < 26 {
-                if !arraylevel2CorrectAnsCnt.contains(indexQuestion) {
-                    arraylevel2CorrectAnsCnt.append(indexQuestion)
-                }
-            }
-            if (indexQuestion == 10) && arraylevel1CorrectAnsCnt.count == 11 {
-                if !isLevel1Cross {
-                    arraylevel1CorrectAnsCnt.removeAll()
-                    self.showLevelCompleteScreen(level1Cross: true)
-                }
-            }  else if (indexQuestion == 25) && arraylevel2CorrectAnsCnt.count == 15 {
-                if !isLevel2Cross {
-                    arraylevel2CorrectAnsCnt.removeAll()
-                    self.showLevelCompleteScreen(level1Cross: false)
-                }
-            } else {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.9, execute: {
-                    self.view.isUserInteractionEnabled = true
-                    self.btnForward.sendActions(for: .touchUpInside)
-                })
-            }
-        } else {
-            btnDone.setBackgroundImage(CommanCode.Done_Gray_IMG, for: .normal)
-            btnDone.layer.borderColor = CommanCode.Clock_Dial_COLOR.cgColor
-            playSoundOnDoneClick(isTrue: false)
-            btnDone.setBackgroundImage(CommanCode.Done_RED_IMG, for: .normal)
-            btnDone.layer.borderColor = UIColor.red.cgColor
-            print("Incorrect")
-        }
-        
-        viewClocket.isHandsMove = true
-    }
-    
-    func playSoundOnDoneClick(isTrue: Bool) {
-        var url : URL?
-        if isTrue {
-            let path = Bundle.main.path(forResource: "WellDone", ofType : "mp3")!
-            url = URL(fileURLWithPath : path)
-        } else {
-            let path = Bundle.main.path(forResource: "Wrong_Option_Clip", ofType : "mp3")!
-            url = URL(fileURLWithPath : path)
-        }
-        do {
-            player = try AVAudioPlayer(contentsOf: url!)
-            self.player.play()
-        } catch {
-            print ("There is an issue with this code!")
-        }
-    }
-    @IBAction func funcDropDown(_ sender: Any) {
-    }
-    
-    
-
 }
 extension LearnViewController : AVAudioPlayerDelegate {
     func playSet() {
@@ -792,18 +751,6 @@ extension LearnViewController : AVAudioPlayerDelegate {
 //    }
 }
 
-extension LearnViewController : LearnClocketProtocol {
-    func didHandSMove() {
-        if viewClocket.isHandsMove == true {
-            viewClocket.isHandsMove = false
-            btnDone.setBackgroundImage(CommanCode.Done_Gray_IMG, for: .normal)
-            btnDone.layer.borderColor = CommanCode.Clock_Dial_COLOR.cgColor
-        } else {
-            
-        }
-    }
-}
-
 extension LearnViewController : LevelSelectionlProtocol {
     func showNextQuestion() {
         self.btnForward.sendActions(for: .touchUpInside)
@@ -1014,6 +961,24 @@ extension LearnViewController: GADInterstitialDelegate {
     }
 }
 extension LearnViewController  {
+    func play_1(getInt : Int) {
+        let path = Bundle.main.path(forResource: "Screen_1_" + "\(getInt)", ofType : "mp3")!
+        let url = URL(fileURLWithPath : path)
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            if appDelegate.IS_Sound_ON {
+                player.play()
+            }
+            if getInt == 1 {
+                player.delegate = self
+            } else {
+                imgViewLearnGif.stopAnimating()
+            }
+        } catch {
+            print ("There is an issue with this code!")
+        }
+    }
+
     func playOclock(getInt : Int) {
         let path = Bundle.main.path(forResource: "\(getInt)"+"_o'clock", ofType : "mp3")!
         let url = URL(fileURLWithPath : path)
@@ -1033,12 +998,31 @@ extension LearnViewController  {
         }
     }
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        digitClock = digitClock + 1
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            // your code here
-            self.playOclock(getInt : self.digitClock)
+        if currentIndex == 0 {
+//            imgViewLearnGif.stopAnimating()
+            UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+                       self.imgViewLearnGif.alpha = 0.0
+                       }, completion: {
+                           (finished: Bool) -> Void in
+            
+                        // Fade in
+                        UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
+                            self.imgViewLearnGif.layer.removeAllAnimations()
+                            self.imgViewLearnGif.image = UIImage(named: "Screen1_1.png")
+
+                            self.imgViewLearnGif.alpha = 1.0
+                               }, completion: nil)
+                   })
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.play_1(getInt: 2)
+            }
+
+        } else if currentIndex == 1 {
+            digitClock = digitClock + 1
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                // your code here
+                self.playOclock(getInt : self.digitClock)
+            }
         }
-
     }
-
 }
