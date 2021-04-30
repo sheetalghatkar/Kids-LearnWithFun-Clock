@@ -1,10 +1,12 @@
 [
-    {"description":["This is a clock dial.","There are 3 hands 'Hour Hand','Minute Hand' & 'Second Hand' on the face of a clock."]},
-    {"description":["Hour hand is the small hand on a clock that shows hours.When hour hand completes 24 hours its called 1 day."]},
+    {"description":["This is a clock dial.","There are three hands, hour hand, minute hand and second hand on the face of a clock."]},
+    
+    
+    {"description":["Hour hand is the small hand on a clock that shows hours. When hour hand completes 24 hours its called 1 day."]},
     {"description":["Minute hand is the long hand on a clock that shows minutes.When minute hand completes 60 minutes its called 1 hour."]},
     {"description":["This is the Second hand on a clock that shows seconds.When second hand completes 60 seconds its called 1 minute."]},
     {"description":["When the minute hand is at the top of the clock on the 12 use the phrase O'Clock."]},
-    {"description":["When the minutes are less than or equal to 30 we can use the phrase Past.","When the minute hand has moved halfway around the clock that means when it is on 3 we can use the phrase Quarter Past.","When the minute hand has moved halfway around the clock that means when it is on 6 we can use the phrase Half Past."]},
+    {"description":["Use the phrase past when the minute hand completes between one to 30 minutes on the dial.","Use the phrase quarter past when the minute hand completes 15 minutes on the dial.","Use the phrase half past when the minute hand completes 30 minutes on the dial."]},
     {"description":["When the minutes are greater than or equal to 30 we can use the phrase To.","When the minute hand has moved halfway around the clock that means when it is on 9 we can use the phrase Quarter To."]},
     {"description":["When the minutes are greater than or equal to 30 we can use the phrase To.","When the minute hand is on 9 we can use the phrase Quarter To."]}
 ]

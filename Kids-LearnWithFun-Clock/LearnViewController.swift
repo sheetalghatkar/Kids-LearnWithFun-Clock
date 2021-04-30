@@ -18,6 +18,7 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var btnSound: UIButton!
     @IBOutlet weak var btnNoAds: UIButton!
+    @IBOutlet weak var btnPlayAgain: UIButton!
     @IBOutlet weak var btnDone: UIButton!
     @IBOutlet weak var btnForward: UIButton!
     @IBOutlet weak var btnBackward: UIButton!
@@ -45,7 +46,6 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
     let defaults = UserDefaults.standard
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     var player = AVAudioPlayer()
-    var currentIndex = 0
     //Sound flags
     var fromComplexTextSound = true
     var fromSet = false
@@ -61,7 +61,8 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
     var previousLevel_1 = true // To set sound play preference
     var iCountQuestionArray = 0
     var levelNumber = 1
-    var indexQuestion = 0
+    var currentIndex = 0
+    var subIndex = 1
     let fontTime = UIFont(name: "ChalkboardSE-Bold", size: 25)
 //    let fontTime = UIFont.boldSystemFont(ofSize: 30)
 
@@ -163,19 +164,18 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
         }
 //        static var hourAngleArray: [Double] = [3.14,2.60,2.07,1.56,1.05,0.55,-0.02,-0.56,-1.04,-1.60,-2.10,-2.60]
 
-        viewClocket.viewMinuteHand.updateHandAngle(angle: CGFloat(-1.55), duration: 0.0)
-        viewClocket.viewHourHand.updateHandAngle(angle: CGFloat(-5.2), duration: 0.0)
+//        viewClocket.viewMinuteHand.updateHandAngle(angle: CGFloat(0.10), duration: 0.0)
+//        viewClocket.viewHourHand.updateHandAngle(angle: CGFloat(-9.3), duration: 0.0)
         //0.55 - 4
         //-1.55 - 12
         //-5.20 - 5
+        //-9.0 - 9
+        //1.57 - 6
+        //
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.300) {
-            self.play_1(getInt: 1)
-        }
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
-            self.gifOOOO(strGif: "LearnClock1_1", repeatCount : 4.5)
-        }
+        
+        playSound()
+        
         textViewFeatures.backgroundColor = UIColor.clear
         viewFeatureBg.layer.cornerRadius = 15.0
         viewFeatureBg.layer.shadowOffset = CGSize(width: 4, height: 4)
@@ -193,13 +193,59 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
         myShadow.shadowColor = UIColor.clear
 
         textViewStyle()
-    }
-//    func textViewStyle() {
-//        if currentIndex ==  0 {
-//
-//        }
-//    }
+        textViewFeatures.attributedText = CommanCode.learnClock_Array[currentIndex]
+        viewClocket.setLocalTime(hour: CommanCode.guessTimeArray[1][0], minute: CommanCode.guessTimeArray[1][1], second: 1)
 
+    }
+    func playSound() {
+        if currentIndex == 5 {
+            heightFeatureView.constant = 265
+        } else {
+            heightFeatureView.constant = 220
+        }
+        self.btnPlayAgain.alpha = 0.2
+        self.btnPlayAgain.isUserInteractionEnabled = false
+        if currentIndex == 0 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.300) {
+                self.play_1(getInt: 1)
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
+                self.imgViewLearnGif.layer.removeAllAnimations()
+                self.gifOOOO(strGif: "LearnClock1_1", repeatCount : 4.5)
+            }
+        } else if currentIndex == 1 {
+            play_1(getInt: 1)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
+                self.imgViewLearnGif.layer.removeAllAnimations()
+                self.gifOOOO(strGif: "LearnClock2", repeatCount : 50)
+            }
+        } else if currentIndex == 2 {
+            play_1(getInt: 1)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
+                self.imgViewLearnGif.layer.removeAllAnimations()
+                self.gifOOOO(strGif: "LearnClock3", repeatCount : 50)
+            }
+        } else if currentIndex == 3 {
+            play_1(getInt: 1)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
+                self.imgViewLearnGif.layer.removeAllAnimations()
+                self.gifOOOO(strGif: "LearnClock4", repeatCount : 50)
+            }
+        } else if currentIndex == 4 {
+            play_1(getInt: 1)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
+                self.imgViewLearnGif.layer.removeAllAnimations()
+                self.imgViewLearnGif.image = UIImage(named: "Clock5.png")
+            }
+        } else if currentIndex == 5 {
+            play_1(getInt: 1)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
+                self.imgViewLearnGif.layer.removeAllAnimations()
+                self.gifOOOO(strGif: "LearnClock6", repeatCount : 20)
+            }
+        }
+    }
+    
     func textViewStyle() {
         var descFont = CGFloat(22)
         attrs = [
@@ -216,17 +262,63 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
                 .shadow: myShadow
             ]
         }
-
-            var strTextViewTemp = NSMutableAttributedString(string: " ➤ " + "This is a Clock Dial.\n\n" + " ➤ " + "There are 3 hands Hour Hand, Minute Hand & Second Hand on the face of a clock.", attributes: attrs)
         
-        
-        strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 11, length:12))
-        strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 47, length:9))
-        strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 58, length:11))
-        strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 73, length:11))
+        for iCount in 0 ..< CommanCode.learnClockAnimation_Array.count {
+            var strTextViewTemp = NSMutableAttributedString(string:CommanCode.learnClockAnimation_Array[iCount], attributes: attrs)
+            if iCount == 0 {
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 13, length:10))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 52, length:9))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 63, length:11))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 79, length:11))
+            } else if iCount == 1 {
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 14, length:9))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 48, length:5))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 81, length:5))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 120, length:8))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 142, length:5))
+            } else if iCount == 2 {
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 13, length:11))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 53, length:4))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 85, length:7))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 127, length:10))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 151, length:6))
+            } else if iCount == 3 {
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 13, length:11))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 47, length:7))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 91, length:10))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 115, length:8))
+            } else if iCount == 4 {
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 12, length:11))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 51, length:5))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 73, length:7))
+            } else if iCount == 5 {
+//                descFont = CGFloat(18)
+//                attrs = [
+//                    .font: UIFont.systemFont(ofSize: descFont, weight: .regular),
+//                    .foregroundColor: UIColor.white,
+//                    .shadow: myShadow
+//                ]
+//                if (UIScreen.main.bounds.height < 820) && !(UIDevice.current.userInterfaceIdiom == .pad) {
+//                    descFont = 17
+//                     attrs = [
+//                        .font: UIFont.systemFont(ofSize: descFont, weight: .regular),
+//                        .foregroundColor: UIColor.white,
+//                        .shadow: myShadow
+//                    ]
+//                }
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 18, length:4))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 61, length:18))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 110, length:13))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 155, length:10))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 196, length:10))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 238, length:10))
 
 
-        textViewFeatures.attributedText = strTextViewTemp
+
+
+            }
+            CommanCode.learnClock_Array.append(strTextViewTemp)
+        }
     }
     func gifOOOO(strGif: String, repeatCount: Float){
         let jeremyGif = UIImage.gifImageWithName(strGif)
@@ -339,6 +431,14 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
 
     
     // MARK: - User defined Functions
+    
+    @IBAction func funcPlayAgain(_ sender: UIButton) {
+        digitClock = 1
+        subIndex = 1
+        playSound()
+    }
+    
+    
     @IBAction func funcBackToHome(_ sender: UIButton) {
         stopTimer()
          fromHomeClick = true
@@ -382,6 +482,7 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
     }
     
     @IBAction func func_Forward_Clicked(_ sender: UIButton) {
+        digitClock = 1
         if !(defaults.bool(forKey:"IsPrimeUser")) {
             clickCount = clickCount + 1
            // print("!!!!!!!!!!!!clickCount",clickCount)
@@ -390,14 +491,14 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
                 callInterstitialOn10Tap()
             }
         }
-        var getIndex = indexQuestion + 1
-        if !(getIndex >= (CommanCode.hourMinutequestLevel_1_Array.count)) {
-            if (getIndex == (CommanCode.hourMinutequestLevel_1_Array.count-1)) {
+        var getIndex = currentIndex + 1
+        if !(getIndex >= (CommanCode.learnClock_Array.count)) {
+            if (getIndex == (CommanCode.learnClock_Array.count-1)) {
                 btnForward.isHidden = true
             } else {
                 btnForward.isHidden = false
             }
-            indexQuestion = getIndex
+            currentIndex = getIndex
            // setTimeInQuestion()
             let transition = CATransition()
             transition.duration = 0.5
@@ -405,14 +506,19 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
             transition.subtype = .fromRight
             transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
             viewParent.layer.add(transition, forKey: nil)
-            playSet()
+//            playSet()
         } else {
             btnForward.isHidden = true
         }
         btnBackward.isHidden = false
+        textViewFeatures.attributedText = CommanCode.learnClock_Array[currentIndex]
+        subIndex = 1
+        playSound()
+        
     }
     
     @IBAction func func_Backward_Clicked(_ sender: UIButton) {
+        digitClock = 1
         if !(defaults.bool(forKey:"IsPrimeUser")) {
             clickCount = clickCount + 1
            // print("!!!!!!!!!!!!clickCount",clickCount)
@@ -421,334 +527,32 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
                 callInterstitialOn10Tap()
             }
         }
-        let getIndex = indexQuestion - 1
+        let getIndex = currentIndex - 1
         if !(getIndex < 0) {
             if getIndex == 0 {
                 btnBackward.isHidden = true
             } else {
                 btnBackward.isHidden = false
             }
-            indexQuestion = getIndex
+            currentIndex = getIndex
             let transition = CATransition()
             transition.duration = 0.5
             transition.type = .push
             transition.subtype = .fromLeft
             transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
             viewParent.layer.add(transition, forKey: nil)
-            playSet()
+//            playSet()
         } else {
             btnBackward.isHidden = true
         }
         btnForward.isHidden = false
+        textViewFeatures.attributedText = CommanCode.learnClock_Array[currentIndex]
+        subIndex = 1
+        playSound()
     }
 }
 extension LearnViewController : AVAudioPlayerDelegate {
-    func playSet() {
-        let path = Bundle.main.path(forResource: "Set", ofType : "mp3")!
-        let url = URL(fileURLWithPath : path)
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            fromSet = true
-            player.delegate = self
-
-            if appDelegate.IS_Sound_ON {
-                player.play()
-            }
-        } catch {
-            print ("There is an issue with this code!")
-        }
-    }
     
-    func playHour() {
-        let setHourClock = (CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0])
-        
-        let path = Bundle.main.path(forResource:String(setHourClock)+"_o'clock", ofType : "mp3")!
-        let url = URL(fileURLWithPath : path)
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            fromHour = true
-            player.delegate = self
-
-            if appDelegate.IS_Sound_ON {
-                player.play()
-            }
-        } catch {
-            print ("There is an issue with this code!")
-        }
-    }
-    
-    func playMinute() {
-        let setMinClock = (CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1])
-        let path = Bundle.main.path(forResource: String(setMinClock)+"_Minutes", ofType : "mp3")!
-        let url = URL(fileURLWithPath : path)
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            if appDelegate.IS_Sound_ON {
-                player.play()
-            }
-        } catch {
-            print ("There is an issue with this code!")
-        }
-    }
-    //----------------------------------------------------------------
-    func playHalfPast() {
-        let path = Bundle.main.path(forResource: "HalfPast", ofType : "mp3")!
-        let url = URL(fileURLWithPath : path)
-        do {
-            fromHalfPast = true
-            player = try AVAudioPlayer(contentsOf: url)
-            player.delegate = self
-            if appDelegate.IS_Sound_ON {
-                player.play()
-            }
-        } catch {
-            print ("There is an issue with this code!")
-        }
-    }
-    func playHalfPastDigit() {
-        let getSoundText = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0]
-        let path = Bundle.main.path(forResource: String(getSoundText), ofType : "mp3")!
-        let url = URL(fileURLWithPath : path)
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            if appDelegate.IS_Sound_ON {
-                player.play()
-            }
-        } catch {
-            print ("There is an issue with this code!")
-        }
-    }
-    //----------------------------------------------------------------
-    func playQuarterPast() {
-        let path = Bundle.main.path(forResource: "QuarterPast", ofType : "mp3")!
-        let url = URL(fileURLWithPath : path)
-        do {
-            fromQuarterPast = true
-            player = try AVAudioPlayer(contentsOf: url)
-            player.delegate = self
-            if appDelegate.IS_Sound_ON {
-                player.play()
-            }
-        } catch {
-            print ("There is an issue with this code!")
-        }
-    }
-    func playQuarterPastDigit() {
-        let getSoundText = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0]
-        let path = Bundle.main.path(forResource: String(getSoundText), ofType : "mp3")!
-        let url = URL(fileURLWithPath : path)
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            if appDelegate.IS_Sound_ON {
-                player.play()
-            }
-        } catch {
-            print ("There is an issue with this code!")
-        }
-    }
-    //----------------------------------------------------------------
-    func playQuarterTo() {
-        let path = Bundle.main.path(forResource: "QuarterTo", ofType : "mp3")!
-        let url = URL(fileURLWithPath : path)
-        do {
-            fromQuarterTo = true
-            player = try AVAudioPlayer(contentsOf: url)
-            player.delegate = self
-            if appDelegate.IS_Sound_ON {
-                player.play()
-            }
-        } catch {
-            print ("There is an issue with this code!")
-        }
-    }
-    func playQuarterToDigit() {
-        var getSoundText = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0]
-        if getSoundText == 12 {
-            getSoundText = 1
-        } else {
-            getSoundText = getSoundText + 1
-        }
-
-        let path = Bundle.main.path(forResource: String(getSoundText), ofType : "mp3")!
-        let url = URL(fileURLWithPath : path)
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            if appDelegate.IS_Sound_ON {
-                player.play()
-            }
-        } catch {
-            print ("There is an issue with this code!")
-        }
-    }
-    //----------------------------------------------------------------
-    func playFirstDigitPast() {
-        let setSoundText = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]
-        let path = Bundle.main.path(forResource: String(setSoundText), ofType : "mp3")!
-        let url = URL(fileURLWithPath : path)
-        do {
-            fromDigit = true
-            player = try AVAudioPlayer(contentsOf: url)
-            player.delegate = self
-            if appDelegate.IS_Sound_ON {
-                player.play()
-            }
-        } catch {
-            print ("There is an issue with this code!")
-        }
-    }
-    func playPast() {
-        let path = Bundle.main.path(forResource: "Past", ofType : "mp3")!
-        let url = URL(fileURLWithPath : path)
-        do {
-            fromPast = true
-            player = try AVAudioPlayer(contentsOf: url)
-            player.delegate = self
-            if appDelegate.IS_Sound_ON {
-                player.play()
-            }
-        } catch {
-            print ("There is an issue with this code!")
-        }
-    }
-    func playLastDigitPast() {
-        let setSoundText = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0]
-        let path = Bundle.main.path(forResource: String(setSoundText), ofType : "mp3")!
-        let url = URL(fileURLWithPath : path)
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            if appDelegate.IS_Sound_ON {
-                player.play()
-            }
-        } catch {
-            print ("There is an issue with this code!")
-        }
-    }
-    //----------------------------------------------------------------
-    func playFirstDigitTo() {
-        var setSoundText = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]
-        setSoundText = (Int(60.0) - setSoundText)
-
-        let path = Bundle.main.path(forResource: String(setSoundText), ofType : "mp3")!
-        let url = URL(fileURLWithPath : path)
-        do {
-            fromDigit = true
-            player = try AVAudioPlayer(contentsOf: url)
-            player.delegate = self
-            if appDelegate.IS_Sound_ON {
-                player.play()
-            }
-        } catch {
-            print ("There is an issue with this code!")
-        }
-    }
-    func playTo() {
-        let path = Bundle.main.path(forResource: "To", ofType : "mp3")!
-        let url = URL(fileURLWithPath : path)
-        do {
-            fromTo = true
-            player = try AVAudioPlayer(contentsOf: url)
-            player.delegate = self
-            if appDelegate.IS_Sound_ON {
-                player.play()
-            }
-        } catch {
-            print ("There is an issue with this code!")
-        }
-    }
-    func playLastDigitTo() {
-        var setSoundText = CommanCode.hourMinutequestLevel_1_Array[indexQuestion][0]
-        if setSoundText == 12 {
-            setSoundText = 1
-        } else {
-            setSoundText = setSoundText + 1
-        }
-
-        let path = Bundle.main.path(forResource: String(setSoundText), ofType : "mp3")!
-        let url = URL(fileURLWithPath : path)
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-
-            if appDelegate.IS_Sound_ON {
-                player.play()
-            }
-        } catch {
-            print ("There is an issue with this code!")
-        }
-    }
-    //----------------------------------------------------------------
-
-//    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-//        print("finished",indexQuestion)//It is working now! printed "finished"!
-//        if ((CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]) != 0) {
-//                if !fromComplexTextSound {
-//                    if fromSet {
-//                        fromSet = false
-//                        playHour()
-//                    } else if fromHour {
-//                        fromHour = false
-//                        playMinute()
-//                    }
-//                } else {
-//                    if ((CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]) == 30) {
-//                    if fromSet {
-//                        fromSet = false
-//                        playHalfPast()
-//                    } else if fromHalfPast {
-//                        fromHalfPast = false
-//                        playHalfPastDigit()
-//                    }
-//                } else if ((CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]) == 15) {
-//                    if fromSet {
-//                        fromSet = false
-//                        playQuarterPast()
-//                    } else if fromQuarterPast {
-//                        fromQuarterPast = false
-//                        playQuarterPastDigit()
-//                    }
-//                } else if ((CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]) == 45) {
-//                    if fromSet {
-//                        fromSet = false
-//                        playQuarterTo()
-//                    } else if fromQuarterTo {
-//                        fromQuarterTo = false
-//                        playQuarterToDigit()
-//                    }
-//                } else if ((CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]) < 30) {
-//                    if fromSet {
-//                        fromSet = false
-//                        playFirstDigitPast()
-//                    } else if fromDigit {
-//                        fromDigit = false
-//                        playPast()
-//                    } else if fromPast {
-//                        fromPast = false
-//                        playLastDigitPast()
-//                    }
-//                } else if ((CommanCode.hourMinutequestLevel_1_Array[indexQuestion][1]) > 30) {
-//                    if fromSet {
-//                        fromSet = false
-//                        playFirstDigitTo()
-//                    } else if fromDigit {
-//                        fromDigit = false
-//                        playTo()
-//                    } else if fromTo {
-//                        fromTo = false
-//                        playLastDigitTo()
-//                    }
-//                }
-//            }
-//        } else {
-//            if fromSet {
-//                fromSet = false
-//                playHour()
-//            } else if fromHour {
-//                fromHour = false
-//                if !(levelNumber == 1) {
-//                    playMinute()
-//                }
-//            }
-//        }
-//    }
 }
 
 extension LearnViewController : LevelSelectionlProtocol {
@@ -962,25 +766,86 @@ extension LearnViewController: GADInterstitialDelegate {
 }
 extension LearnViewController  {
     func play_1(getInt : Int) {
-        let path = Bundle.main.path(forResource: "Screen_1_" + "\(getInt)", ofType : "mp3")!
-        let url = URL(fileURLWithPath : path)
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            if appDelegate.IS_Sound_ON {
-                player.play()
-            }
-            if getInt == 1 {
+        if currentIndex == 0 {
+            let path = Bundle.main.path(forResource: "Screen_\(currentIndex)_" + "\(getInt)", ofType : "mp3")!
+            let url = URL(fileURLWithPath : path)
+            do {
+                player = try AVAudioPlayer(contentsOf: url)
                 player.delegate = self
-            } else {
-                imgViewLearnGif.stopAnimating()
+                if appDelegate.IS_Sound_ON {
+                    player.play()
+                }
+                if getInt != 1 {
+                    imgViewLearnGif.stopAnimating()
+                }
+            } catch {
+                print ("There is an issue with this code!")
             }
-        } catch {
-            print ("There is an issue with this code!")
+        } else if currentIndex == 1 {
+            let path = Bundle.main.path(forResource: "Screen_\(currentIndex)_" + "\(getInt)", ofType : "mp3")!
+            let url = URL(fileURLWithPath : path)
+            do {
+                player = try AVAudioPlayer(contentsOf: url)
+                player.delegate = self
+                if appDelegate.IS_Sound_ON {
+                    player.play()
+                }
+            } catch {
+                print ("There is an issue with this code!")
+            }
+        } else if currentIndex == 2 {
+            let path = Bundle.main.path(forResource: "Screen_\(currentIndex)_" + "\(getInt)", ofType : "mp3")!
+            let url = URL(fileURLWithPath : path)
+            do {
+                player = try AVAudioPlayer(contentsOf: url)
+                player.delegate = self
+                if appDelegate.IS_Sound_ON {
+                    player.play()
+                }
+            } catch {
+                print ("There is an issue with this code!")
+            }
+        } else if currentIndex == 3 {
+            let path = Bundle.main.path(forResource: "Screen_\(currentIndex)_" + "\(getInt)", ofType : "mp3")!
+            let url = URL(fileURLWithPath : path)
+            do {
+                player = try AVAudioPlayer(contentsOf: url)
+                player.delegate = self
+                if appDelegate.IS_Sound_ON {
+                    player.play()
+                }
+            } catch {
+                print ("There is an issue with this code!")
+            }
+        } else if currentIndex == 4 {
+            let path = Bundle.main.path(forResource: "Screen_\(currentIndex)_" + "\(getInt)", ofType : "mp3")!
+            let url = URL(fileURLWithPath : path)
+            do {
+                player = try AVAudioPlayer(contentsOf: url)
+                player.delegate = self
+                if appDelegate.IS_Sound_ON {
+                    player.play()
+                }
+            } catch {
+                print ("There is an issue with this code!")
+            }
+        } else if currentIndex == 5 {
+            let path = Bundle.main.path(forResource: "Screen_\(currentIndex)_" + "\(getInt)", ofType : "mp3")!
+            let url = URL(fileURLWithPath : path)
+            do {
+                player = try AVAudioPlayer(contentsOf: url)
+                player.delegate = self
+                if appDelegate.IS_Sound_ON {
+                    player.play()
+                }
+            } catch {
+                print ("There is an issue with this code!")
+            }
         }
     }
 
     func playOclock(getInt : Int) {
-        let path = Bundle.main.path(forResource: "\(getInt)"+"_o'clock", ofType : "mp3")!
+        let path = Bundle.main.path(forResource: "\(getInt)"+"_OClock", ofType : "mp3")!
         let url = URL(fileURLWithPath : path)
         do {
             player = try AVAudioPlayer(contentsOf: url)
@@ -990,7 +855,8 @@ extension LearnViewController  {
             if getInt < 12 {
                 player.delegate = self
             }  else {
-                imgViewLearnGif.stopAnimating()
+                self.btnPlayAgain.alpha = 1.0
+                self.btnPlayAgain.isUserInteractionEnabled = true
             }
 
         } catch {
@@ -999,8 +865,9 @@ extension LearnViewController  {
     }
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if currentIndex == 0 {
-//            imgViewLearnGif.stopAnimating()
-            UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+            if subIndex == 1 {
+                subIndex = 2
+                UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                        self.imgViewLearnGif.alpha = 0.0
                        }, completion: {
                            (finished: Bool) -> Void in
@@ -1013,15 +880,70 @@ extension LearnViewController  {
                             self.imgViewLearnGif.alpha = 1.0
                                }, completion: nil)
                    })
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                self.play_1(getInt: 2)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                        self.play_1(getInt: 2)
+                    }
+            } else {
+                self.btnPlayAgain.alpha = 1.0
+                self.btnPlayAgain.isUserInteractionEnabled = true
             }
-
         } else if currentIndex == 1 {
-            digitClock = digitClock + 1
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                // your code here
-                self.playOclock(getInt : self.digitClock)
+            if subIndex == 1 {
+                subIndex = 2
+                self.play_1(getInt: 2)
+            } else if subIndex == 2 {
+                subIndex = 3
+                self.play_1(getInt: 3)
+            } else {
+                self.btnPlayAgain.alpha = 1.0
+                self.btnPlayAgain.isUserInteractionEnabled = true
+            }
+        } else if currentIndex == 2 {
+            if subIndex == 1 {
+                subIndex = 2
+                self.play_1(getInt: 2)
+            } else if subIndex == 2 {
+                subIndex = 3
+                self.play_1(getInt: 3)
+            } else {
+                self.btnPlayAgain.alpha = 1.0
+                self.btnPlayAgain.isUserInteractionEnabled = true
+            }
+        } else if currentIndex == 3 {
+            if subIndex == 1 {
+                subIndex = 2
+                self.play_1(getInt: 2)
+            } else {
+                self.btnPlayAgain.alpha = 1.0
+                self.btnPlayAgain.isUserInteractionEnabled = true
+            }
+        } else if currentIndex == 4 {
+            if subIndex == 1 {
+                subIndex = 2
+                self.gifOOOO(strGif: "LearnClock5", repeatCount : 1)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                    self.playOclock(getInt : self.digitClock)
+                }
+            } else {
+                digitClock = digitClock + 1
+                var delaySec = 0.25
+                if digitClock > 9 {
+                    delaySec = 0.35
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + delaySec) {
+                    self.playOclock(getInt : self.digitClock)
+                }
+            }
+        } else if currentIndex == 5 {
+            if subIndex == 1 {
+                subIndex = 2
+                self.play_1(getInt: 2)
+            } else if subIndex == 2 {
+                subIndex = 3
+                self.play_1(getInt: 3)
+            } else {
+                self.btnPlayAgain.alpha = 1.0
+                self.btnPlayAgain.isUserInteractionEnabled = true
             }
         }
     }

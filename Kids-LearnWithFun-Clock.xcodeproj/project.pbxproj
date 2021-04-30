@@ -98,8 +98,7 @@
 		4F2C743426086F0A0075F7AE /* 53.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F2C73F926086F0A0075F7AE /* 53.mp3 */; };
 		4F2C743C2608A21A0075F7AE /* To.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F2C743B2608A21A0075F7AE /* To.mp3 */; };
 		4F2D329B2609D00F00976FAB /* Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F2D329A2609D00F00976FAB /* Loading.gif */; };
-		4F38DF532639AB21001A4EB9 /* Screen_1_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F38DF522639AB21001A4EB9 /* Screen_1_1.mp3 */; };
-		4F38DF582639AB26001A4EB9 /* Screen_1_2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F38DF572639AB26001A4EB9 /* Screen_1_2.mp3 */; };
+		4F38DF532639AB21001A4EB9 /* Screen_0_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F38DF522639AB21001A4EB9 /* Screen_0_1.mp3 */; };
 		4F38DF682639BB81001A4EB9 /* LearnClock1_1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F38DF672639BB81001A4EB9 /* LearnClock1_1.gif */; };
 		4F394C3525F4D42800F2403E /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F394C2925F4D42800F2403E /* nanopb.xcframework */; };
 		4F394C3625F4D42800F2403E /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F394C2A25F4D42800F2403E /* GoogleAppMeasurement.framework */; };
@@ -202,15 +201,40 @@
 		4F612EEE2604B7B900B3D9DE /* level3_cup.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F612EED2604B7B900B3D9DE /* level3_cup.gif */; };
 		4F612EF32604BA0400B3D9DE /* Applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F612EF22604BA0400B3D9DE /* Applause.mp3 */; };
 		4F612F002604F1CE00B3D9DE /* nextLevel.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F612EFF2604F1CE00B3D9DE /* nextLevel.gif */; };
+		4F897586263AE1720020AB47 /* Screen_1_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F897583263AE1720020AB47 /* Screen_1_1.mp3 */; };
+		4F89759B263AF9200020AB47 /* Screen_3_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F897599263AF9200020AB47 /* Screen_3_1.mp3 */; };
+		4F8975B0263B1E3D0020AB47 /* 9_OClock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F8975A4263B1E3C0020AB47 /* 9_OClock.mp3 */; };
+		4F8975B1263B1E3D0020AB47 /* 10_OClock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F8975A5263B1E3C0020AB47 /* 10_OClock.mp3 */; };
+		4F8975B2263B1E3D0020AB47 /* 1_OClock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F8975A6263B1E3C0020AB47 /* 1_OClock.mp3 */; };
+		4F8975B3263B1E3D0020AB47 /* 12_OClock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F8975A7263B1E3C0020AB47 /* 12_OClock.mp3 */; };
+		4F8975B4263B1E3D0020AB47 /* 2_OClock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F8975A8263B1E3C0020AB47 /* 2_OClock.mp3 */; };
+		4F8975B5263B1E3D0020AB47 /* 8_OClock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F8975A9263B1E3D0020AB47 /* 8_OClock.mp3 */; };
+		4F8975B6263B1E3D0020AB47 /* 3_OClock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F8975AA263B1E3D0020AB47 /* 3_OClock.mp3 */; };
+		4F8975B7263B1E3D0020AB47 /* 5_OClock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F8975AB263B1E3D0020AB47 /* 5_OClock.mp3 */; };
+		4F8975B8263B1E3D0020AB47 /* 7_OClock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F8975AC263B1E3D0020AB47 /* 7_OClock.mp3 */; };
+		4F8975B9263B1E3D0020AB47 /* 4_OClock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F8975AD263B1E3D0020AB47 /* 4_OClock.mp3 */; };
+		4F8975BA263B1E3D0020AB47 /* 11_OClock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F8975AE263B1E3D0020AB47 /* 11_OClock.mp3 */; };
+		4F8975BB263B1E3D0020AB47 /* 6_OClock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F8975AF263B1E3D0020AB47 /* 6_OClock.mp3 */; };
+		4F8975C6263B20BF0020AB47 /* ForExample_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F8975C5263B20BF0020AB47 /* ForExample_desc.mp3 */; };
+		4F8975E2263B32580020AB47 /* Screen_1_2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F8975E0263B32580020AB47 /* Screen_1_2.mp3 */; };
+		4F8975EB263B32C60020AB47 /* Screen_1_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F8975EA263B32C60020AB47 /* Screen_1_3.mp3 */; };
+		4F8975FB263B338E0020AB47 /* Screen_2_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F8975FA263B338E0020AB47 /* Screen_2_3.mp3 */; };
+		4F897603263B34280020AB47 /* Screen_3_2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F897602263B34280020AB47 /* Screen_3_2.mp3 */; };
+		4F897613263B354D0020AB47 /* Screen_2_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F897612263B354D0020AB47 /* Screen_2_1.mp3 */; };
+		4F89761B263B358E0020AB47 /* Screen_2_2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F89761A263B358E0020AB47 /* Screen_2_2.mp3 */; };
+		4F897623263B3CE60020AB47 /* Screen_4_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F897622263B3CE60020AB47 /* Screen_4_1.mp3 */; };
 		4F96F27B260B2D16001E8F64 /* SetTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F128EB32597115E00B5575C /* SetTimeViewController.swift */; };
 		4F96F296260B7B19001E8F64 /* PlayClocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96F294260B7B19001E8F64 /* PlayClocket.swift */; };
 		4F96F297260B7B19001E8F64 /* PlayClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96F295260B7B19001E8F64 /* PlayClockFace.swift */; };
 		4FB7E8972638248E00F611EB /* Desc.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FB7E8962638248E00F611EB /* Desc.json */; };
+		4FCFAF9D263C06A200397299 /* LearnClock5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FCFAF9C263C06A200397299 /* LearnClock5.gif */; };
+		4FCFAFA5263C13C200397299 /* Screen_0_2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FCFAFA4263C13C200397299 /* Screen_0_2.mp3 */; };
+		4FCFAFAC263C1A3B00397299 /* Screen_5_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FCFAFA9263C1A3B00397299 /* Screen_5_1.mp3 */; };
+		4FCFAFAD263C1A3B00397299 /* Screen_5_2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FCFAFAA263C1A3B00397299 /* Screen_5_2.mp3 */; };
+		4FCFAFAE263C1A3B00397299 /* Screen_5_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FCFAFAB263C1A3B00397299 /* Screen_5_3.mp3 */; };
+		4FCFAFB3263C24A700397299 /* LearnClock6.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FCFAFB2263C24A700397299 /* LearnClock6.gif */; };
 		4FDC38542635B3E20053EF54 /* LearnClock3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FDC38532635B3E20053EF54 /* LearnClock3.gif */; };
 		4FE7FEBA25FB67F200FDA048 /* Set.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FE7FEB925FB67F200FDA048 /* Set.mp3 */; };
-		4FE83D652637029000E63ED9 /* OClock_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FE83D642637029000E63ED9 /* OClock_desc.mp3 */; };
-		4FE83D6A263702CB00E63ED9 /* ForExample_desc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FE83D69263702CB00E63ED9 /* ForExample_desc.mp3 */; };
-		4FE83D72263705CB00E63ED9 /* LearnClock5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FE83D71263705CB00E63ED9 /* LearnClock5.gif */; };
 		4FE83D7A2637060900E63ED9 /* LearnClock4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FE83D792637060900E63ED9 /* LearnClock4.gif */; };
 		4FE83D822637064300E63ED9 /* LearnClock2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FE83D812637064300E63ED9 /* LearnClock2.gif */; };
 		4FE83D8D2637071A00E63ED9 /* ClockLearn.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FE83D8C2637071A00E63ED9 /* ClockLearn.gif */; };
@@ -357,8 +381,7 @@
 		4F2C73F926086F0A0075F7AE /* 53.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 53.mp3; sourceTree = "<group>"; };
 		4F2C743B2608A21A0075F7AE /* To.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = To.mp3; sourceTree = "<group>"; };
 		4F2D329A2609D00F00976FAB /* Loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Loading.gif; sourceTree = "<group>"; };
-		4F38DF522639AB21001A4EB9 /* Screen_1_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Screen_1_1.mp3; sourceTree = "<group>"; };
-		4F38DF572639AB26001A4EB9 /* Screen_1_2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Screen_1_2.mp3; sourceTree = "<group>"; };
+		4F38DF522639AB21001A4EB9 /* Screen_0_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Screen_0_1.mp3; sourceTree = "<group>"; };
 		4F38DF672639BB81001A4EB9 /* LearnClock1_1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LearnClock1_1.gif; sourceTree = "<group>"; };
 		4F394C2925F4D42800F2403E /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = nanopb.xcframework; sourceTree = "<group>"; };
 		4F394C2A25F4D42800F2403E /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAppMeasurement.framework; sourceTree = "<group>"; };
@@ -462,15 +485,40 @@
 		4F612EED2604B7B900B3D9DE /* level3_cup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = level3_cup.gif; sourceTree = "<group>"; };
 		4F612EF22604BA0400B3D9DE /* Applause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Applause.mp3; sourceTree = "<group>"; };
 		4F612EFF2604F1CE00B3D9DE /* nextLevel.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = nextLevel.gif; sourceTree = "<group>"; };
+		4F897583263AE1720020AB47 /* Screen_1_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Screen_1_1.mp3; sourceTree = "<group>"; };
+		4F897599263AF9200020AB47 /* Screen_3_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Screen_3_1.mp3; sourceTree = "<group>"; };
+		4F8975A4263B1E3C0020AB47 /* 9_OClock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 9_OClock.mp3; sourceTree = "<group>"; };
+		4F8975A5263B1E3C0020AB47 /* 10_OClock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 10_OClock.mp3; sourceTree = "<group>"; };
+		4F8975A6263B1E3C0020AB47 /* 1_OClock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1_OClock.mp3; sourceTree = "<group>"; };
+		4F8975A7263B1E3C0020AB47 /* 12_OClock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 12_OClock.mp3; sourceTree = "<group>"; };
+		4F8975A8263B1E3C0020AB47 /* 2_OClock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2_OClock.mp3; sourceTree = "<group>"; };
+		4F8975A9263B1E3D0020AB47 /* 8_OClock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 8_OClock.mp3; sourceTree = "<group>"; };
+		4F8975AA263B1E3D0020AB47 /* 3_OClock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 3_OClock.mp3; sourceTree = "<group>"; };
+		4F8975AB263B1E3D0020AB47 /* 5_OClock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 5_OClock.mp3; sourceTree = "<group>"; };
+		4F8975AC263B1E3D0020AB47 /* 7_OClock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 7_OClock.mp3; sourceTree = "<group>"; };
+		4F8975AD263B1E3D0020AB47 /* 4_OClock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 4_OClock.mp3; sourceTree = "<group>"; };
+		4F8975AE263B1E3D0020AB47 /* 11_OClock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 11_OClock.mp3; sourceTree = "<group>"; };
+		4F8975AF263B1E3D0020AB47 /* 6_OClock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 6_OClock.mp3; sourceTree = "<group>"; };
+		4F8975C5263B20BF0020AB47 /* ForExample_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ForExample_desc.mp3; sourceTree = "<group>"; };
+		4F8975E0263B32580020AB47 /* Screen_1_2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Screen_1_2.mp3; sourceTree = "<group>"; };
+		4F8975EA263B32C60020AB47 /* Screen_1_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Screen_1_3.mp3; sourceTree = "<group>"; };
+		4F8975FA263B338E0020AB47 /* Screen_2_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Screen_2_3.mp3; sourceTree = "<group>"; };
+		4F897602263B34280020AB47 /* Screen_3_2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Screen_3_2.mp3; sourceTree = "<group>"; };
+		4F897612263B354D0020AB47 /* Screen_2_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Screen_2_1.mp3; sourceTree = "<group>"; };
+		4F89761A263B358E0020AB47 /* Screen_2_2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Screen_2_2.mp3; sourceTree = "<group>"; };
+		4F897622263B3CE60020AB47 /* Screen_4_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Screen_4_1.mp3; sourceTree = "<group>"; };
 		4F96F294260B7B19001E8F64 /* PlayClocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayClocket.swift; sourceTree = "<group>"; };
 		4F96F295260B7B19001E8F64 /* PlayClockFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayClockFace.swift; sourceTree = "<group>"; };
 		4FA799E22601D70800198008 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		4FB7E8962638248E00F611EB /* Desc.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Desc.json; sourceTree = "<group>"; };
+		4FCFAF9C263C06A200397299 /* LearnClock5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LearnClock5.gif; sourceTree = "<group>"; };
+		4FCFAFA4263C13C200397299 /* Screen_0_2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Screen_0_2.mp3; sourceTree = "<group>"; };
+		4FCFAFA9263C1A3B00397299 /* Screen_5_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Screen_5_1.mp3; sourceTree = "<group>"; };
+		4FCFAFAA263C1A3B00397299 /* Screen_5_2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Screen_5_2.mp3; sourceTree = "<group>"; };
+		4FCFAFAB263C1A3B00397299 /* Screen_5_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Screen_5_3.mp3; sourceTree = "<group>"; };
+		4FCFAFB2263C24A700397299 /* LearnClock6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LearnClock6.gif; sourceTree = "<group>"; };
 		4FDC38532635B3E20053EF54 /* LearnClock3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LearnClock3.gif; sourceTree = "<group>"; };
 		4FE7FEB925FB67F200FDA048 /* Set.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Set.mp3; sourceTree = "<group>"; };
-		4FE83D642637029000E63ED9 /* OClock_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OClock_desc.mp3; sourceTree = "<group>"; };
-		4FE83D69263702CB00E63ED9 /* ForExample_desc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ForExample_desc.mp3; sourceTree = "<group>"; };
-		4FE83D71263705CB00E63ED9 /* LearnClock5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LearnClock5.gif; sourceTree = "<group>"; };
 		4FE83D792637060900E63ED9 /* LearnClock4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LearnClock4.gif; sourceTree = "<group>"; };
 		4FE83D812637064300E63ED9 /* LearnClock2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LearnClock2.gif; sourceTree = "<group>"; };
 		4FE83D8C2637071A00E63ED9 /* ClockLearn.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ClockLearn.gif; sourceTree = "<group>"; };
@@ -841,10 +889,33 @@
 		4FE83D632637020F00E63ED9 /* LearnClock_desc */ = {
 			isa = PBXGroup;
 			children = (
-				4F38DF522639AB21001A4EB9 /* Screen_1_1.mp3 */,
-				4F38DF572639AB26001A4EB9 /* Screen_1_2.mp3 */,
-				4FE83D69263702CB00E63ED9 /* ForExample_desc.mp3 */,
-				4FE83D642637029000E63ED9 /* OClock_desc.mp3 */,
+				4F38DF522639AB21001A4EB9 /* Screen_0_1.mp3 */,
+				4F897583263AE1720020AB47 /* Screen_1_1.mp3 */,
+				4F8975E0263B32580020AB47 /* Screen_1_2.mp3 */,
+				4F8975EA263B32C60020AB47 /* Screen_1_3.mp3 */,
+				4F897612263B354D0020AB47 /* Screen_2_1.mp3 */,
+				4F897599263AF9200020AB47 /* Screen_3_1.mp3 */,
+				4FCFAFA4263C13C200397299 /* Screen_0_2.mp3 */,
+				4F8975FA263B338E0020AB47 /* Screen_2_3.mp3 */,
+				4F897602263B34280020AB47 /* Screen_3_2.mp3 */,
+				4F89761A263B358E0020AB47 /* Screen_2_2.mp3 */,
+				4F8975A6263B1E3C0020AB47 /* 1_OClock.mp3 */,
+				4F8975A8263B1E3C0020AB47 /* 2_OClock.mp3 */,
+				4F8975AA263B1E3D0020AB47 /* 3_OClock.mp3 */,
+				4F8975AD263B1E3D0020AB47 /* 4_OClock.mp3 */,
+				4F8975AB263B1E3D0020AB47 /* 5_OClock.mp3 */,
+				4F8975AF263B1E3D0020AB47 /* 6_OClock.mp3 */,
+				4F8975AC263B1E3D0020AB47 /* 7_OClock.mp3 */,
+				4F897622263B3CE60020AB47 /* Screen_4_1.mp3 */,
+				4F8975A9263B1E3D0020AB47 /* 8_OClock.mp3 */,
+				4F8975A4263B1E3C0020AB47 /* 9_OClock.mp3 */,
+				4F8975A5263B1E3C0020AB47 /* 10_OClock.mp3 */,
+				4F8975AE263B1E3D0020AB47 /* 11_OClock.mp3 */,
+				4F8975A7263B1E3C0020AB47 /* 12_OClock.mp3 */,
+				4F8975C5263B20BF0020AB47 /* ForExample_desc.mp3 */,
+				4FCFAFA9263C1A3B00397299 /* Screen_5_1.mp3 */,
+				4FCFAFAA263C1A3B00397299 /* Screen_5_2.mp3 */,
+				4FCFAFAB263C1A3B00397299 /* Screen_5_3.mp3 */,
 			);
 			path = LearnClock_desc;
 			sourceTree = "<group>";
@@ -977,10 +1048,11 @@
 				4F612EE026049E5500B3D9DE /* level2_cup.gif */,
 				4F38DF672639BB81001A4EB9 /* LearnClock1_1.gif */,
 				4FE83D812637064300E63ED9 /* LearnClock2.gif */,
-				4FE83D71263705CB00E63ED9 /* LearnClock5.gif */,
 				4FE83D792637060900E63ED9 /* LearnClock4.gif */,
 				4FDC38532635B3E20053EF54 /* LearnClock3.gif */,
+				4FCFAFB2263C24A700397299 /* LearnClock6.gif */,
 				4F612EED2604B7B900B3D9DE /* level3_cup.gif */,
+				4FCFAF9C263C06A200397299 /* LearnClock5.gif */,
 				4FE83D8C2637071A00E63ED9 /* ClockLearn.gif */,
 			);
 			path = "GIF&Image";
@@ -1106,23 +1178,28 @@
 				4F2C741F26086F0A0075F7AE /* 25.mp3 in Resources */,
 				4F2C743C2608A21A0075F7AE /* To.mp3 in Resources */,
 				4F4F791225FB901A00043A41 /* 3_Minutes.mp3 in Resources */,
+				4F8975B7263B1E3D0020AB47 /* 5_OClock.mp3 in Resources */,
+				4F897603263B34280020AB47 /* Screen_3_2.mp3 in Resources */,
 				4F38DF682639BB81001A4EB9 /* LearnClock1_1.gif in Resources */,
 				4F4F790325FB901A00043A41 /* 53_Minutes.mp3 in Resources */,
 				4F394C3825F4D42800F2403E /* NanoPB-LICENSE in Resources */,
 				4F4F78DF25FB901A00043A41 /* 32_Minutes.mp3 in Resources */,
 				4F2C743226086F0A0075F7AE /* 23.mp3 in Resources */,
+				4F8975B1263B1E3D0020AB47 /* 10_OClock.mp3 in Resources */,
 				4F612F002604F1CE00B3D9DE /* nextLevel.gif in Resources */,
 				4F43E67F25E163810018B3E0 /* BackgroundMusic.mp3 in Resources */,
 				4F2C741E26086F0A0075F7AE /* 55.mp3 in Resources */,
 				4FE7FEBA25FB67F200FDA048 /* Set.mp3 in Resources */,
 				4F4F78E825FB901A00043A41 /* 47_Minutes.mp3 in Resources */,
+				4F8975B9263B1E3D0020AB47 /* 4_OClock.mp3 in Resources */,
 				4F2C740826086F0A0075F7AE /* 27.mp3 in Resources */,
 				4F4F78DE25FB901A00043A41 /* 31_Minutes.mp3 in Resources */,
 				4F2C742B26086F0A0075F7AE /* 18.mp3 in Resources */,
 				4F2531C725FE28A800A8DF1A /* 4_o'clock.mp3 in Resources */,
 				4F2C73FA26086F0A0075F7AE /* 36.mp3 in Resources */,
+				4FCFAFAD263C1A3B00397299 /* Screen_5_2.mp3 in Resources */,
+				4F8975B4263B1E3D0020AB47 /* 2_OClock.mp3 in Resources */,
 				4F4F78FC25FB901A00043A41 /* 36_Minutes.mp3 in Resources */,
-				4F38DF582639AB26001A4EB9 /* Screen_1_2.mp3 in Resources */,
 				4F4F790F25FB901A00043A41 /* 18_Minutes.mp3 in Resources */,
 				4F4F78F825FB901A00043A41 /* 29_Minutes.mp3 in Resources */,
 				4F2C740626086F0A0075F7AE /* 6.mp3 in Resources */,
@@ -1133,17 +1210,21 @@
 				4F2C740B26086F0A0075F7AE /* 34.mp3 in Resources */,
 				4F2C742E26086F0A0075F7AE /* 57.mp3 in Resources */,
 				4F2C743426086F0A0075F7AE /* 53.mp3 in Resources */,
+				4F8975B0263B1E3D0020AB47 /* 9_OClock.mp3 in Resources */,
 				4F2531C625FE28A800A8DF1A /* 12_o'clock.mp3 in Resources */,
 				4F2C740E26086F0A0075F7AE /* 48.mp3 in Resources */,
 				4F1698B925E26D140049452D /* SubscriptionDetailsController.xib in Resources */,
+				4F897613263B354D0020AB47 /* Screen_2_1.mp3 in Resources */,
 				4FE83D7A2637060900E63ED9 /* LearnClock4.gif in Resources */,
 				4F4F791325FB901A00043A41 /* 22_Minutes.mp3 in Resources */,
 				4F394C3725F4D42800F2403E /* Promises-LICENSE in Resources */,
 				4F2C742D26086F0A0075F7AE /* 29.mp3 in Resources */,
 				4F2C742326086F0A0075F7AE /* 24.mp3 in Resources */,
 				4F4F790425FB901A00043A41 /* 56_Minutes.mp3 in Resources */,
+				4FCFAFB3263C24A700397299 /* LearnClock6.gif in Resources */,
 				4F4F791425FB901A00043A41 /* 23_Minutes.mp3 in Resources */,
 				4F4F78E625FB901A00043A41 /* 9_Minutes.mp3 in Resources */,
+				4F8975BB263B1E3D0020AB47 /* 6_OClock.mp3 in Resources */,
 				4F4F790D25FB901A00043A41 /* 21_Minutes.mp3 in Resources */,
 				4F2C73BA260866BE0075F7AE /* HalfPast.mp3 in Resources */,
 				4F612EDC26048B4800B3D9DE /* level1_cup11.gif in Resources */,
@@ -1155,14 +1236,15 @@
 				4F2C741826086F0A0075F7AE /* 52.mp3 in Resources */,
 				4F2C740F26086F0A0075F7AE /* 4.mp3 in Resources */,
 				4F2C741126086F0A0075F7AE /* 58.mp3 in Resources */,
-				4FE83D6A263702CB00E63ED9 /* ForExample_desc.mp3 in Resources */,
 				4F2531C525FE28A800A8DF1A /* 5_o'clock.mp3 in Resources */,
 				4F2C740026086F0A0075F7AE /* 28.mp3 in Resources */,
 				4F2C742926086F0A0075F7AE /* 44.mp3 in Resources */,
 				4F4F791025FB901A00043A41 /* 57_Minutes.mp3 in Resources */,
+				4F8975B5263B1E3D0020AB47 /* 8_OClock.mp3 in Resources */,
 				4FE83D9D26370FB000E63ED9 /* OtherAppsTableViewCell.xib in Resources */,
 				4F2C73FD26086F0A0075F7AE /* 50.mp3 in Resources */,
 				4F4F790725FB901A00043A41 /* 20_Minutes.mp3 in Resources */,
+				4F89761B263B358E0020AB47 /* Screen_2_2.mp3 in Resources */,
 				4F2C740126086F0A0075F7AE /* 42.mp3 in Resources */,
 				4F2C740526086F0A0075F7AE /* 12.mp3 in Resources */,
 				4F4F78E025FB901A00043A41 /* 14_Minutes.mp3 in Resources */,
@@ -1174,6 +1256,7 @@
 				709EAE8A2580A93C00F8FEEC /* LaunchScreen.storyboard in Resources */,
 				700E2E61258A8B290042EC2D /* Wrong1.mp3 in Resources */,
 				4F2531C825FE28A800A8DF1A /* 8_o'clock.mp3 in Resources */,
+				4FCFAFAC263C1A3B00397299 /* Screen_5_1.mp3 in Resources */,
 				4F2C743126086F0A0075F7AE /* 39.mp3 in Resources */,
 				4F2531C925FE28A800A8DF1A /* 11_o'clock.mp3 in Resources */,
 				4F2C740726086F0A0075F7AE /* 1.mp3 in Resources */,
@@ -1187,9 +1270,13 @@
 				4F2C741726086F0A0075F7AE /* 19.mp3 in Resources */,
 				4F4F78F725FB901A00043A41 /* 10_Minutes.mp3 in Resources */,
 				4FE83D822637064300E63ED9 /* LearnClock2.gif in Resources */,
+				4F8975B2263B1E3D0020AB47 /* 1_OClock.mp3 in Resources */,
 				4F1698B725E26D140049452D /* PaymentCostController.xib in Resources */,
+				4F8975BA263B1E3D0020AB47 /* 11_OClock.mp3 in Resources */,
 				709EAE872580A93C00F8FEEC /* Assets.xcassets in Resources */,
+				4F8975FB263B338E0020AB47 /* Screen_2_3.mp3 in Resources */,
 				4F4F78F225FB901A00043A41 /* 34_Minutes.mp3 in Resources */,
+				4F897586263AE1720020AB47 /* Screen_1_1.mp3 in Resources */,
 				4F4F790525FB901A00043A41 /* 26_Minutes.mp3 in Resources */,
 				4F2C740D26086F0A0075F7AE /* 41.mp3 in Resources */,
 				4F4F791125FB901A00043A41 /* 43_Minutes.mp3 in Resources */,
@@ -1201,8 +1288,8 @@
 				4F4F790B25FB901A00043A41 /* 42_Minutes.mp3 in Resources */,
 				70111075258BCA8600159541 /* Wrong_Option_Clip.mp3 in Resources */,
 				4F4F78F025FB901A00043A41 /* 35_Minutes.mp3 in Resources */,
+				4F897623263B3CE60020AB47 /* Screen_4_1.mp3 in Resources */,
 				4F4F790925FB901A00043A41 /* 40_Minutes.mp3 in Resources */,
-				4FE83D72263705CB00E63ED9 /* LearnClock5.gif in Resources */,
 				4F4F790125FB901A00043A41 /* 16_Minutes.mp3 in Resources */,
 				701675FB2588EE52004F19BA /* ShowClockViewController.xib in Resources */,
 				4F2C742026086F0A0075F7AE /* 14.mp3 in Resources */,
@@ -1211,7 +1298,7 @@
 				4F2C740426086F0A0075F7AE /* 20.mp3 in Resources */,
 				4F4F78EA25FB901A00043A41 /* 54_Minutes.mp3 in Resources */,
 				4F4F790A25FB901A00043A41 /* 48_Minutes.mp3 in Resources */,
-				4F38DF532639AB21001A4EB9 /* Screen_1_1.mp3 in Resources */,
+				4F38DF532639AB21001A4EB9 /* Screen_0_1.mp3 in Resources */,
 				4F4F78E525FB901A00043A41 /* 25_Minutes.mp3 in Resources */,
 				4F4F78DD25FB901A00043A41 /* 11_Minutes.mp3 in Resources */,
 				4F2C740226086F0A0075F7AE /* 8.mp3 in Resources */,
@@ -1226,7 +1313,9 @@
 				4F4F78DC25FB901A00043A41 /* 2_Minutes.mp3 in Resources */,
 				4F43E69625E165130018B3E0 /* ClockBgMusic.mp3 in Resources */,
 				4F2C741026086F0A0075F7AE /* 59.mp3 in Resources */,
+				4F8975E2263B32580020AB47 /* Screen_1_2.mp3 in Resources */,
 				4FDC38542635B3E20053EF54 /* LearnClock3.gif in Resources */,
+				4F8975B8263B1E3D0020AB47 /* 7_OClock.mp3 in Resources */,
 				4F2531C425FE28A800A8DF1A /* 7_o'clock.mp3 in Resources */,
 				4F4F791625FB901A00043A41 /* 1_Minutes.mp3 in Resources */,
 				4F2531C325FE28A800A8DF1A /* 2_o'clock.mp3 in Resources */,
@@ -1240,6 +1329,7 @@
 				4F4F78F625FB901A00043A41 /* 19_Minutes.mp3 in Resources */,
 				4F4F78E325FB901A00043A41 /* 49_Minutes.mp3 in Resources */,
 				4F4F790025FB901A00043A41 /* 46_Minutes.mp3 in Resources */,
+				4FCFAFAE263C1A3B00397299 /* Screen_5_3.mp3 in Resources */,
 				4F5086E32603B46700FEBE2E /* LevelSelectionlViewController.xib in Resources */,
 				4F4F78E125FB901A00043A41 /* 37_Minutes.mp3 in Resources */,
 				4F2D329B2609D00F00976FAB /* Loading.gif in Resources */,
@@ -1248,16 +1338,19 @@
 				4F2C741326086F0A0075F7AE /* 43.mp3 in Resources */,
 				4F4F78F325FB901A00043A41 /* 30_Minutes.mp3 in Resources */,
 				4F2C741526086F0A0075F7AE /* 5.mp3 in Resources */,
+				4F8975EB263B32C60020AB47 /* Screen_1_3.mp3 in Resources */,
 				4F2C740326086F0A0075F7AE /* 32.mp3 in Resources */,
 				701675F42588C542004F19BA /* PictureCardView.xib in Resources */,
 				4F2C73FE26086F0A0075F7AE /* 16.mp3 in Resources */,
 				4F2C741626086F0A0075F7AE /* 2.mp3 in Resources */,
+				4F89759B263AF9200020AB47 /* Screen_3_1.mp3 in Resources */,
 				4F4F78FA25FB901A00043A41 /* 39_Minutes.mp3 in Resources */,
+				4F8975B6263B1E3D0020AB47 /* 3_OClock.mp3 in Resources */,
 				4F2C741D26086F0A0075F7AE /* 22.mp3 in Resources */,
 				4F2C743326086F0A0075F7AE /* 47.mp3 in Resources */,
 				4F2531C125FE28A800A8DF1A /* 3_o'clock.mp3 in Resources */,
+				4F8975B3263B1E3D0020AB47 /* 12_OClock.mp3 in Resources */,
 				4F4F78EC25FB901A00043A41 /* 33_Minutes.mp3 in Resources */,
-				4FE83D652637029000E63ED9 /* OClock_desc.mp3 in Resources */,
 				4F2C741C26086F0A0075F7AE /* 33.mp3 in Resources */,
 				4F2C741226086F0A0075F7AE /* 46.mp3 in Resources */,
 				709EAE852580A93700F8FEEC /* Main.storyboard in Resources */,
@@ -1273,10 +1366,13 @@
 				4F2C742526086F0A0075F7AE /* 3.mp3 in Resources */,
 				4F4F790225FB901A00043A41 /* 12_Minutes.mp3 in Resources */,
 				4F2C73B7260866BE0075F7AE /* QuarterTo.mp3 in Resources */,
+				4F8975C6263B20BF0020AB47 /* ForExample_desc.mp3 in Resources */,
 				4F2C742226086F0A0075F7AE /* 51.mp3 in Resources */,
 				700E2E5F258A88580042EC2D /* WellDone.mp3 in Resources */,
 				4F4F78FD25FB901A00043A41 /* 58_Minutes.mp3 in Resources */,
+				4FCFAF9D263C06A200397299 /* LearnClock5.gif in Resources */,
 				700E2E5D258A86790042EC2D /* WrongSelection.mp3 in Resources */,
+				4FCFAFA5263C13C200397299 /* Screen_0_2.mp3 in Resources */,
 				4F612EF32604BA0400B3D9DE /* Applause.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

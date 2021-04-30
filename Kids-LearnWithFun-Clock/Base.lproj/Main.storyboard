@@ -1278,10 +1278,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n2W-AN-ZJq">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n2W-AN-ZJq">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2eM-uJ-Zys" userLabel="parentView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2eM-uJ-Zys" userLabel="parentView">
                                 <rect key="frame" x="57" y="129" width="300" height="300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EVm-k8-zjb" customClass="UIViewExtend" customModule="Learn_Clock___Time" customModuleProvider="target">
@@ -1334,7 +1334,7 @@
                                     <constraint firstItem="us4-lF-HfK" firstAttribute="centerY" secondItem="ULg-og-cZA" secondAttribute="centerY" id="pSt-3t-ilb"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgLblTitle" translatesAutoresizingMaskIntoConstraints="NO" id="VIc-AR-Qk3">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgLblTitle" translatesAutoresizingMaskIntoConstraints="NO" id="VIc-AR-Qk3">
                                 <rect key="frame" x="57.5" y="44" width="260" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Fs1-Zh-oe0">
@@ -1345,7 +1345,7 @@
                                     </constraint>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5J4-Ga-CbX">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5J4-Ga-CbX">
                                 <rect key="frame" x="358" y="58.5" width="41" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="41" id="LSe-H7-dNq">
@@ -1358,7 +1358,7 @@
                                     <action selector="funcSound_ON_OFF:" destination="uLn-wH-LOB" eventType="touchUpInside" id="wOV-52-nBu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yg5-RK-N23">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yg5-RK-N23">
                                 <rect key="frame" x="290" y="57.5" width="43" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yg5-RK-N23" secondAttribute="height" multiplier="1:1" id="Bci-81-MhW"/>
@@ -1368,7 +1368,7 @@
                                     <action selector="funcNoAds:" destination="uLn-wH-LOB" eventType="touchUpInside" id="2hu-R5-A8b"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4D-19-fXS" userLabel="homeButton">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4D-19-fXS" userLabel="homeButton">
                                 <rect key="frame" x="5" y="44" width="70" height="70"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -1382,13 +1382,13 @@
                                     <action selector="funcBackToHome:" destination="uLn-wH-LOB" eventType="touchUpInside" id="d1y-sV-jo8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFe-LD-bcb">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFe-LD-bcb">
                                 <rect key="frame" x="80" y="61.5" width="195" height="35.5"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4g-eT-Bwr">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4g-eT-Bwr">
                                 <rect key="frame" x="47" y="454" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Q4g-eT-Bwr" secondAttribute="height" multiplier="1:1" id="9gf-tL-yff"/>
@@ -1401,7 +1401,7 @@
                                     <action selector="func_Backward_Clicked:" destination="uLn-wH-LOB" eventType="touchUpInside" id="VXS-sP-czz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zj6-T2-kJz">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zj6-T2-kJz">
                                 <rect key="frame" x="187" y="459" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Zj6-T2-kJz" secondAttribute="height" multiplier="1:1" id="02Y-YJ-8Dl"/>
@@ -1411,10 +1411,11 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="PlayAgain_red"/>
                                 <connections>
+                                    <action selector="funcPlayAgain:" destination="uLn-wH-LOB" eventType="touchUpInside" id="OSv-n4-Yod"/>
                                     <action selector="func_Play_SimpleText_Clicked:" destination="irR-tW-XvX" eventType="touchUpInside" id="U4z-hS-wa8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iI-td-9AU">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iI-td-9AU">
                                 <rect key="frame" x="317" y="454" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7iI-td-9AU" secondAttribute="height" multiplier="1:1" id="8zd-1Y-xT9"/>
@@ -1427,11 +1428,11 @@
                                     <action selector="func_Forward_Clicked:" destination="uLn-wH-LOB" eventType="touchUpInside" id="9d7-eg-0pJ"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yy-jT-3o8">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yy-jT-3o8">
                                 <rect key="frame" x="10" y="514" width="394" height="298"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3U-Xj-Dkr">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3U-Xj-Dkr">
                                 <rect key="frame" x="18" y="556" width="378" height="214"/>
                                 <color key="backgroundColor" red="0.93333333330000001" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
@@ -1440,7 +1441,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clockdesc_bg" translatesAutoresizingMaskIntoConstraints="NO" id="UcH-5S-JJ6" customClass="white_bubble">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clockdesc_bg" translatesAutoresizingMaskIntoConstraints="NO" id="UcH-5S-JJ6" customClass="white_bubble">
                                 <rect key="frame" x="15" y="553" width="384" height="220"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -1449,7 +1450,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vjf-jY-GV1">
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vjf-jY-GV1">
                                 <rect key="frame" x="15" y="553" width="384" height="220"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -1546,6 +1547,7 @@
                         <outlet property="btnBackward" destination="Q4g-eT-Bwr" id="mmp-Xd-ANZ"/>
                         <outlet property="btnForward" destination="7iI-td-9AU" id="HWo-W1-xzZ"/>
                         <outlet property="btnNoAds" destination="yg5-RK-N23" id="mz4-Mo-qrX"/>
+                        <outlet property="btnPlayAgain" destination="Zj6-T2-kJz" id="42j-VL-240"/>
                         <outlet property="btnSound" destination="5J4-Ga-CbX" id="aIN-aM-Jpa"/>
                         <outlet property="heightFeatureView" destination="vF4-FI-zpB" id="Zux-Mx-Q6V"/>
                         <outlet property="imgViewFeatureBg" destination="UcH-5S-JJ6" id="FQH-uk-hFO"/>

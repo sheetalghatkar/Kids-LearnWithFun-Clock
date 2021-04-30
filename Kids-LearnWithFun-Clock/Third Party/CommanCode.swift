@@ -100,6 +100,13 @@ class CommanCode {
    // static var imgSoundOn = UIImage(named: "Sound-On.png")
   //  static var imgSoundOff = UIImage(named: "Sound-Off.png")
     
+    
+    static var learnClockAnimation_Array: [String] = [" ➤ " + "This is a clock dial.\n\n" + " ➤ " + "There are three hands, hour hand, minute hand and second hand on the face of a clock.", " ➤ " + "This is an hour hand.\n\n" +  " ➤ " + "The hour hand is a small hand on a clock that shows hours.\n\n" +  " ➤ " + "When an hour hand completes 24 hours, it's called 1 day."," ➤ " + "This is a minute hand.\n\n" + " ➤ " + "The minute hand is the long hand on a clock that shows minutes.\n\n" +  " ➤ " + "When a minute hand completes 60 minutes, it's called 1 hour."," ➤ " + "This is a second hand on a clock that shows seconds.\n\n" + " ➤ " + "When the second hand completes 60 seconds, it's called 1 minute.", " ➤ " + "When the minute hand is at the top of the clock at 12, use the phrase O'clock."," ➤ " + "Use the phrase past when the minute hand completes between one to 30 minutes on the dial.\n" + " ➤ " + "Use the phrase quarter past when the minute hand completes 15 minutes on the dial.\n" + " ➤ " + "Use the phrase half past when the minute hand completes 30 minutes on the dial."
+]
+    
+    static var learnClock_Array: [NSMutableAttributedString] = []
+
+    
     static var HOUR_HAND_IMG = UIImage(named: "HourHandShadow.png")
     static var MINUTE_HAND_IMG = UIImage(named: "MinuteHandShadow.png")
     static var CLOCK_CENTER_IMG = UIImage(named: "CenterClockImg1.png")

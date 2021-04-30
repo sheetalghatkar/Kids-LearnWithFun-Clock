@@ -42,19 +42,6 @@ class GuessViewController: UIViewController, PictureCardViewProtocol {
    // @IBOutlet weak var lblPictureName: UILabel!
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     @IBOutlet var gifImageview : UIImageView!
-    var birdImageArray: [UIImage] = [
-        UIImage(named: "Pigeon.png")!,
-        UIImage(named: "Owl.png")!,
-        UIImage(named: "Kingfisher.png")!,
-        UIImage(named: "Peacock.png")!,
-        UIImage(named: "Sparrow.png")!,
-        UIImage(named: "Crow.png")!,
-        UIImage(named: "Ostrich.png")!,
-        UIImage(named: "Cuckoo.png")!,
-        UIImage(named: "Hen.png")!
-    ]
-    var birdNameArray: [String] = ["Pigeon",
-        "Owl","Kingfisher","Peacock","Sparrow","Crow","Ostrich","Cuckoo","Hen"]
 
     @IBOutlet weak var bgScreen: UIImageView!
     @IBOutlet weak var picViewcontainer: UIView!
