@@ -66,7 +66,7 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
     let fontTime = UIFont(name: "ChalkboardSE-Bold", size: 25)
 //    let fontTime = UIFont.boldSystemFont(ofSize: 30)
 
-    var fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 30)
+    var fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 25)
 
     var clockTitle = " o'clock "
     var minuteTitle = " minutes"
@@ -89,7 +89,7 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
     var setComplexTextRadioPreference = false
     override var prefersStatusBarHidden: Bool {
         return true
-    }
+    } 
     let myShadow = NSShadow()
     var attrs: [NSAttributedString.Key: Any]?
 
@@ -109,7 +109,14 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
         if UIDevice.current.userInterfaceIdiom == .pad {
             fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 45)
         }
+        if UIScreen.main.bounds.height == 812 {
+            fontLblTime = UIFont(name: "ChalkboardSE-Bold", size: 23)
+        }
 
+        if UIScreen.main.bounds.height < 800 {
+            heightFeatureView.constant = 160
+        }
+        
         lblTitle.font = fontLblTime
         
         let loaderGif = UIImage.gifImageWithName("Loading")
@@ -198,12 +205,6 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
 
     }
     func playSound() {
-        if currentIndex == 5 {
-            heightFeatureView.constant = 265
-        } else {
-            heightFeatureView.constant = 220
-        }
-        self.btnPlayAgain.alpha = 0.2
         self.btnPlayAgain.isUserInteractionEnabled = false
         if currentIndex == 0 {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.300) {
@@ -241,27 +242,52 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
             play_1(getInt: 1)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
                 self.imgViewLearnGif.layer.removeAllAnimations()
-                self.gifOOOO(strGif: "LearnClock6", repeatCount : 20)
+                self.gifOOOO(strGif: "LearnClock6_1", repeatCount : 20)
+            }
+        } else if currentIndex == 6 {
+            play_1(getInt: 1)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
+                self.imgViewLearnGif.layer.removeAllAnimations()
+                self.gifOOOO(strGif: "LearnClock7_1", repeatCount : 200)
+            }
+        } else if currentIndex == 7 {
+            play_1(getInt: 1)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
+                self.imgViewLearnGif.layer.removeAllAnimations()
+                self.gifOOOO(strGif: "LearnClock8_1", repeatCount : 200)
             }
         }
     }
     
     func textViewStyle() {
         var descFont = CGFloat(22)
+        
+        if UIScreen.main.bounds.height < 800 {
+            descFont = CGFloat(17)
+        }
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            descFont = CGFloat(35)
+            if UIScreen.main.bounds.height < 1100 {
+                descFont = CGFloat(32)
+            }
+
+            heightFeatureView.constant = 280.0
+        }
+
         attrs = [
             .font: UIFont.systemFont(ofSize: descFont, weight: .regular),
             .foregroundColor: UIColor.white,
             .shadow: myShadow
         ]
 
-        if (UIScreen.main.bounds.height < 820) && !(UIDevice.current.userInterfaceIdiom == .pad) {
-            descFont = 17
-             attrs = [
-                .font: UIFont.systemFont(ofSize: descFont, weight: .regular),
-                .foregroundColor: UIColor.white,
-                .shadow: myShadow
-            ]
-        }
+//        if (UIScreen.main.bounds.height < 820) && !(UIDevice.current.userInterfaceIdiom == .pad) {
+//            descFont = 17
+//             attrs = [
+//                .font: UIFont.systemFont(ofSize: descFont, weight: .regular),
+//                .foregroundColor: UIColor.white,
+//                .shadow: myShadow
+//            ]
+//        }
         
         for iCount in 0 ..< CommanCode.learnClockAnimation_Array.count {
             var strTextViewTemp = NSMutableAttributedString(string:CommanCode.learnClockAnimation_Array[iCount], attributes: attrs)
@@ -273,14 +299,14 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
             } else if iCount == 1 {
                 strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 14, length:9))
                 strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 48, length:5))
-                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 81, length:5))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 81, length:6))
                 strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 120, length:8))
                 strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 142, length:5))
             } else if iCount == 2 {
                 strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 13, length:11))
                 strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 53, length:4))
-                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 85, length:7))
-                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 127, length:10))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 85, length:8))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 127, length:11))
                 strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 151, length:6))
             } else if iCount == 3 {
                 strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 13, length:11))
@@ -292,30 +318,18 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
                 strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 51, length:5))
                 strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 73, length:7))
             } else if iCount == 5 {
-//                descFont = CGFloat(18)
-//                attrs = [
-//                    .font: UIFont.systemFont(ofSize: descFont, weight: .regular),
-//                    .foregroundColor: UIColor.white,
-//                    .shadow: myShadow
-//                ]
-//                if (UIScreen.main.bounds.height < 820) && !(UIDevice.current.userInterfaceIdiom == .pad) {
-//                    descFont = 17
-//                     attrs = [
-//                        .font: UIFont.systemFont(ofSize: descFont, weight: .regular),
-//                        .foregroundColor: UIColor.white,
-//                        .shadow: myShadow
-//                    ]
-//                }
                 strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 18, length:4))
-                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 61, length:18))
-                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 110, length:13))
-                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 155, length:10))
-                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 196, length:10))
-                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 238, length:10))
-
-
-
-
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 61, length:19))
+            } else if iCount == 6 {
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 18, length:13))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 62, length:10))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 105, length:9))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 146, length:10))
+            } else if iCount == 7 {
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 18, length:3))
+                    strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 60, length:16))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 109, length:10))
+                strTextViewTemp.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: descFont, weight: .bold),range: NSRange(location: 151, length:10))
             }
             CommanCode.learnClock_Array.append(strTextViewTemp)
         }
@@ -841,6 +855,30 @@ extension LearnViewController  {
             } catch {
                 print ("There is an issue with this code!")
             }
+        } else if currentIndex == 6 {
+            let path = Bundle.main.path(forResource: "Screen_\(currentIndex)_" + "\(getInt)", ofType : "mp3")!
+            let url = URL(fileURLWithPath : path)
+            do {
+                player = try AVAudioPlayer(contentsOf: url)
+                player.delegate = self
+                if appDelegate.IS_Sound_ON {
+                    player.play()
+                }
+            } catch {
+                print ("There is an issue with this code!")
+            }
+        } else if currentIndex == 7 {
+            let path = Bundle.main.path(forResource: "Screen_\(currentIndex)_" + "\(getInt)", ofType : "mp3")!
+            let url = URL(fileURLWithPath : path)
+            do {
+                player = try AVAudioPlayer(contentsOf: url)
+                player.delegate = self
+                if appDelegate.IS_Sound_ON {
+                    player.play()
+                }
+            } catch {
+                print ("There is an issue with this code!")
+            }
         }
     }
 
@@ -937,10 +975,95 @@ extension LearnViewController  {
         } else if currentIndex == 5 {
             if subIndex == 1 {
                 subIndex = 2
-                self.play_1(getInt: 2)
+                self.btnPlayAgain.alpha = 1.0
+                self.btnPlayAgain.isUserInteractionEnabled = true
+            }
+        } else if currentIndex == 6 {
+            if subIndex == 1 {
+                subIndex = 2
+                UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+                       self.imgViewLearnGif.alpha = 0.0
+                       }, completion: {
+                           (finished: Bool) -> Void in
+            
+                        // Fade in
+                        UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
+                            self.imgViewLearnGif.layer.removeAllAnimations()
+                            self.gifOOOO(strGif: "LearnClock7_2", repeatCount : 200)
+
+                            self.imgViewLearnGif.alpha = 1.0
+                               }, completion: nil)
+                   })
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                        self.play_1(getInt: 2)
+                    }
             } else if subIndex == 2 {
                 subIndex = 3
-                self.play_1(getInt: 3)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.play_1(getInt: 3)
+                }
+                UIView.animate(withDuration: 2.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+                       self.imgViewLearnGif.alpha = 0.0
+                       }, completion: {
+                           (finished: Bool) -> Void in
+            
+                        // Fade in
+                        UIView.animate(withDuration: 2.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
+                            self.imgViewLearnGif.layer.removeAllAnimations()
+
+                            self.imgViewLearnGif.alpha = 1.0
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                                self.gifOOOO(strGif: "LearnClock7_3", repeatCount : 1)
+                                self.play_1(getInt: 4)
+                            }
+
+                               }, completion: nil)
+                   })
+            } else {
+                self.btnPlayAgain.alpha = 1.0
+                self.btnPlayAgain.isUserInteractionEnabled = true
+            }
+        } else if currentIndex == 7 {
+            if subIndex == 1 {
+                subIndex = 2
+                UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+                       self.imgViewLearnGif.alpha = 0.0
+                       }, completion: {
+                           (finished: Bool) -> Void in
+            
+                        // Fade in
+                        UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
+                            self.imgViewLearnGif.layer.removeAllAnimations()
+                            self.gifOOOO(strGif: "LearnClock8_2", repeatCount : 10)
+
+                            self.imgViewLearnGif.alpha = 1.0
+                               }, completion: nil)
+                   })
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                        self.play_1(getInt: 2)
+                    }
+            } else if subIndex == 2 {
+                subIndex = 3
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.play_1(getInt: 3)
+                }
+                UIView.animate(withDuration: 2.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+                       self.imgViewLearnGif.alpha = 0.0
+                       }, completion: {
+                           (finished: Bool) -> Void in
+            
+                        // Fade in
+                        UIView.animate(withDuration: 2.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
+                            self.imgViewLearnGif.layer.removeAllAnimations()
+
+                            self.imgViewLearnGif.alpha = 1.0
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                                self.gifOOOO(strGif: "LearnClock8_3", repeatCount : 1)
+                                self.play_1(getInt: 4)
+                            }
+
+                               }, completion: nil)
+                   })
             } else {
                 self.btnPlayAgain.alpha = 1.0
                 self.btnPlayAgain.isUserInteractionEnabled = true

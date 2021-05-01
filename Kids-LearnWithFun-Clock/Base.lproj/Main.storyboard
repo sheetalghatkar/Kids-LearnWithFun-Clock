@@ -1389,7 +1389,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4g-eT-Bwr">
-                                <rect key="frame" x="47" y="454" width="50" height="50"/>
+                                <rect key="frame" x="47" y="436" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Q4g-eT-Bwr" secondAttribute="height" multiplier="1:1" id="9gf-tL-yff"/>
                                     <constraint firstAttribute="width" constant="50" id="G8w-Q5-bUP">
@@ -1402,7 +1402,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zj6-T2-kJz">
-                                <rect key="frame" x="187" y="459" width="40" height="40"/>
+                                <rect key="frame" x="187" y="441" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Zj6-T2-kJz" secondAttribute="height" multiplier="1:1" id="02Y-YJ-8Dl"/>
                                     <constraint firstAttribute="width" constant="40" id="Kd4-MJ-ALF">
@@ -1416,7 +1416,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iI-td-9AU">
-                                <rect key="frame" x="317" y="454" width="50" height="50"/>
+                                <rect key="frame" x="317" y="436" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7iI-td-9AU" secondAttribute="height" multiplier="1:1" id="8zd-1Y-xT9"/>
                                     <constraint firstAttribute="width" constant="50" id="kfZ-Op-6Jx">
@@ -1429,11 +1429,11 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yy-jT-3o8">
-                                <rect key="frame" x="10" y="514" width="394" height="298"/>
+                                <rect key="frame" x="10" y="496" width="394" height="316"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3U-Xj-Dkr">
-                                <rect key="frame" x="18" y="556" width="378" height="214"/>
+                                <rect key="frame" x="18" y="547.5" width="378" height="213"/>
                                 <color key="backgroundColor" red="0.93333333330000001" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1442,7 +1442,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clockdesc_bg" translatesAutoresizingMaskIntoConstraints="NO" id="UcH-5S-JJ6" customClass="white_bubble">
-                                <rect key="frame" x="15" y="553" width="384" height="220"/>
+                                <rect key="frame" x="15" y="544.5" width="384" height="219"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1451,10 +1451,10 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vjf-jY-GV1">
-                                <rect key="frame" x="15" y="553" width="384" height="220"/>
+                                <rect key="frame" x="15" y="544.5" width="384" height="219"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="vF4-FI-zpB">
+                                    <constraint firstAttribute="height" constant="219" id="vF4-FI-zpB">
                                         <variation key="heightClass=regular-widthClass=regular" constant="135"/>
                                     </constraint>
                                 </constraints>
@@ -1522,7 +1522,9 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="30"/>
                             </constraint>
                             <constraint firstItem="Vjf-jY-GV1" firstAttribute="centerY" secondItem="2yy-jT-3o8" secondAttribute="centerY" id="cvz-XS-zBl"/>
-                            <constraint firstItem="Zj6-T2-kJz" firstAttribute="top" secondItem="2eM-uJ-Zys" secondAttribute="bottom" constant="30" id="dih-d3-hX7"/>
+                            <constraint firstItem="Zj6-T2-kJz" firstAttribute="top" secondItem="2eM-uJ-Zys" secondAttribute="bottom" constant="12" id="dih-d3-hX7">
+                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                            </constraint>
                             <constraint firstItem="uFe-LD-bcb" firstAttribute="leading" secondItem="c4D-19-fXS" secondAttribute="trailing" constant="5" id="g7m-Tq-U6B"/>
                             <constraint firstItem="yg5-RK-N23" firstAttribute="leading" secondItem="uFe-LD-bcb" secondAttribute="trailing" constant="15" id="gat-AN-ldI"/>
                             <constraint firstItem="Zj6-T2-kJz" firstAttribute="centerX" secondItem="aFl-mP-tw7" secondAttribute="centerX" id="gta-ry-mZb"/>
