@@ -66,7 +66,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.defaults.set(true, forKey: "IsPrimeUser")
         // Do any additional setup after loading the view.
         setUI()
         if !(defaults.bool(forKey:"IsPrimeUser")) {
@@ -131,9 +130,9 @@ class ViewController: UIViewController {
             if let resultCount = lookup!["resultCount"] as? Int, resultCount == 1 {
                 if let results = lookup!["results"] as? [[String:Any]] {
                     if let appStoreVersion = results[0]["version"] as? String{
-                        let currentVersion = infoDictionary!["CFBundleShortVersionString"] as? String
+                        let currentVersion = infoDictionary!["CFBundleShortVersionString"]as! String
                         if !(appStoreVersion == currentVersion) {
-                            print("Need to update [\(appStoreVersion) != \(currentVersion)]")
+                            print("Need to update [\(appStoreVersion) != \(currentVersion )]")
                             return true
                         }
                     }

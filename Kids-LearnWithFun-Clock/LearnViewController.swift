@@ -543,16 +543,15 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
             transition.subtype = .fromRight
             transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
             viewParent.layer.add(transition, forKey: nil)
+            btnBackward.isHidden = false
         } else {
-//            btnForward.isHidden = true
+            btnBackward.isHidden = true
             currentIndex = 0
             btnForward.setBackgroundImage(UIImage(named: "nextQuestion.png")!, for: .normal)
         }
-        btnBackward.isHidden = false
         textViewFeatures.attributedText = CommanCode.learnClock_Array[currentIndex]
         subIndex = 1
         playSound()
-        
     }
     
     @IBAction func func_Backward_Clicked(_ sender: UIButton) {
@@ -583,6 +582,7 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
         } else {
             btnBackward.isHidden = true
         }
+        btnForward.setBackgroundImage(UIImage(named: "nextQuestion.png")!, for: .normal)
         btnForward.isHidden = false
         textViewFeatures.attributedText = CommanCode.learnClock_Array[currentIndex]
         subIndex = 1
