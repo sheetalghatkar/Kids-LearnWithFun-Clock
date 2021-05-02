@@ -76,7 +76,6 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
     var arraylevel2CorrectAnsCnt : [Int] = []
     var isLevel1Cross = false
     var isLevel2Cross = false
-    
     var arrayDesc =  ["ClockDial","HourHand","MinuteHand","SecondHand","Oclock","Past","To"]
     
     var arrayDescImg =  ["ClockDial","HourHand","MinuteHand","SecondHand","Oclock","Past","To"]
@@ -205,56 +204,76 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
 
     }
     func playSound() {
+        self.btnPlayAgain.alpha = 0.3
         self.btnPlayAgain.isUserInteractionEnabled = false
         if currentIndex == 0 {
+            self.imgViewLearnGif.layer.removeAllAnimations()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.300) {
-                self.play_1(getInt: 1)
+                if self.currentIndex == 0 {
+                    self.play_1(getInt: 1)
+                }
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
-                self.imgViewLearnGif.layer.removeAllAnimations()
-                self.gifOOOO(strGif: "LearnClock1_1", repeatCount : 4.5)
+                if self.currentIndex == 0 {
+                    self.imgViewLearnGif.layer.removeAllAnimations()
+                    self.gifOOOO(strGif: "LearnClock1_1", repeatCount : 4.5)
+                }
             }
         } else if currentIndex == 1 {
             play_1(getInt: 1)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
-                self.imgViewLearnGif.layer.removeAllAnimations()
-                self.gifOOOO(strGif: "LearnClock2", repeatCount : 50)
+                if self.currentIndex == 1 {
+                    self.imgViewLearnGif.layer.removeAllAnimations()
+                    self.gifOOOO(strGif: "LearnClock2", repeatCount : 50.5)
+                }
             }
         } else if currentIndex == 2 {
             play_1(getInt: 1)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
-                self.imgViewLearnGif.layer.removeAllAnimations()
-                self.gifOOOO(strGif: "LearnClock3", repeatCount : 50)
+                if self.currentIndex == 2 {
+                    self.imgViewLearnGif.layer.removeAllAnimations()
+                    self.gifOOOO(strGif: "LearnClock3", repeatCount : 50.5)
+                }
             }
         } else if currentIndex == 3 {
             play_1(getInt: 1)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
-                self.imgViewLearnGif.layer.removeAllAnimations()
-                self.gifOOOO(strGif: "LearnClock4", repeatCount : 50)
+                if self.currentIndex == 3 {
+                    self.imgViewLearnGif.layer.removeAllAnimations()
+                    self.gifOOOO(strGif: "LearnClock4", repeatCount : 50.5)
+                }
             }
         } else if currentIndex == 4 {
             play_1(getInt: 1)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
-                self.imgViewLearnGif.layer.removeAllAnimations()
-                self.imgViewLearnGif.image = UIImage(named: "Clock5.png")
+                if self.currentIndex == 4 {
+                    self.imgViewLearnGif.layer.removeAllAnimations()
+                    self.imgViewLearnGif.image = UIImage(named: "Clock5.png")
+                }
             }
         } else if currentIndex == 5 {
             play_1(getInt: 1)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
-                self.imgViewLearnGif.layer.removeAllAnimations()
-                self.gifOOOO(strGif: "LearnClock6_1", repeatCount : 20)
+                if self.currentIndex == 5 {
+                    self.imgViewLearnGif.layer.removeAllAnimations()
+                    self.gifOOOO(strGif: "LearnClock6_1", repeatCount : 20)
+                }
             }
         } else if currentIndex == 6 {
             play_1(getInt: 1)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
-                self.imgViewLearnGif.layer.removeAllAnimations()
-                self.gifOOOO(strGif: "LearnClock7_1", repeatCount : 200)
+                if self.currentIndex == 6 {
+                    self.imgViewLearnGif.layer.removeAllAnimations()
+                    self.gifOOOO(strGif: "LearnClock7_1", repeatCount : 200)
+                }
             }
         } else if currentIndex == 7 {
             play_1(getInt: 1)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
-                self.imgViewLearnGif.layer.removeAllAnimations()
-                self.gifOOOO(strGif: "LearnClock8_1", repeatCount : 200)
+                if self.currentIndex == 7 {
+                    self.imgViewLearnGif.layer.removeAllAnimations()
+                    self.gifOOOO(strGif: "LearnClock8_1", repeatCount : 200)
+                }
             }
         }
     }
@@ -440,6 +459,8 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
         }
     }
     override func viewWillDisappear(_ animated: Bool) {
+        player.volume = 1.0
+        player.stop()
         stopTimer()
     }
 
@@ -487,9 +508,10 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
     
     @IBAction func funcSound_ON_OFF(_ sender: Any) {
         if appDelegate.IS_Sound_ON {
+            player.volume = 0.0
             btnSound.setBackgroundImage(CommanCode.imgSoundOff, for: .normal)
-            player.stop()
         } else {
+            player.volume = 1.0
             btnSound.setBackgroundImage(CommanCode.imgSoundOn, for: .normal)
         }
         appDelegate.IS_Sound_ON = !appDelegate.IS_Sound_ON
@@ -508,8 +530,9 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
         var getIndex = currentIndex + 1
         if !(getIndex >= (CommanCode.learnClock_Array.count)) {
             if (getIndex == (CommanCode.learnClock_Array.count-1)) {
-                btnForward.isHidden = true
+                btnForward.setBackgroundImage(UIImage(named: "reload.png")!, for: .normal)
             } else {
+                btnForward.setBackgroundImage(UIImage(named: "nextQuestion.png")!, for: .normal)
                 btnForward.isHidden = false
             }
             currentIndex = getIndex
@@ -520,9 +543,10 @@ class LearnViewController: UIViewController,CAAnimationDelegate {
             transition.subtype = .fromRight
             transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
             viewParent.layer.add(transition, forKey: nil)
-//            playSet()
         } else {
-            btnForward.isHidden = true
+//            btnForward.isHidden = true
+            currentIndex = 0
+            btnForward.setBackgroundImage(UIImage(named: "nextQuestion.png")!, for: .normal)
         }
         btnBackward.isHidden = false
         textViewFeatures.attributedText = CommanCode.learnClock_Array[currentIndex]
@@ -786,8 +810,11 @@ extension LearnViewController  {
             do {
                 player = try AVAudioPlayer(contentsOf: url)
                 player.delegate = self
+                player.play()
                 if appDelegate.IS_Sound_ON {
-                    player.play()
+                    player.volume = 1.0
+                } else {
+                    player.volume = 0.0
                 }
                 if getInt != 1 {
                     imgViewLearnGif.stopAnimating()
@@ -801,8 +828,11 @@ extension LearnViewController  {
             do {
                 player = try AVAudioPlayer(contentsOf: url)
                 player.delegate = self
+                player.play()
                 if appDelegate.IS_Sound_ON {
-                    player.play()
+                    player.volume = 1.0
+                } else {
+                    player.volume = 0.0
                 }
             } catch {
                 print ("There is an issue with this code!")
@@ -813,8 +843,11 @@ extension LearnViewController  {
             do {
                 player = try AVAudioPlayer(contentsOf: url)
                 player.delegate = self
+                player.play()
                 if appDelegate.IS_Sound_ON {
-                    player.play()
+                    player.volume = 1.0
+                } else {
+                    player.volume = 0.0
                 }
             } catch {
                 print ("There is an issue with this code!")
@@ -825,8 +858,11 @@ extension LearnViewController  {
             do {
                 player = try AVAudioPlayer(contentsOf: url)
                 player.delegate = self
+                player.play()
                 if appDelegate.IS_Sound_ON {
-                    player.play()
+                    player.volume = 1.0
+                } else {
+                    player.volume = 0.0
                 }
             } catch {
                 print ("There is an issue with this code!")
@@ -837,8 +873,11 @@ extension LearnViewController  {
             do {
                 player = try AVAudioPlayer(contentsOf: url)
                 player.delegate = self
+                player.play()
                 if appDelegate.IS_Sound_ON {
-                    player.play()
+                    player.volume = 1.0
+                } else {
+                    player.volume = 0.0
                 }
             } catch {
                 print ("There is an issue with this code!")
@@ -849,8 +888,11 @@ extension LearnViewController  {
             do {
                 player = try AVAudioPlayer(contentsOf: url)
                 player.delegate = self
+                player.play()
                 if appDelegate.IS_Sound_ON {
-                    player.play()
+                    player.volume = 1.0
+                } else {
+                    player.volume = 0.0
                 }
             } catch {
                 print ("There is an issue with this code!")
@@ -861,8 +903,11 @@ extension LearnViewController  {
             do {
                 player = try AVAudioPlayer(contentsOf: url)
                 player.delegate = self
+                player.play()
                 if appDelegate.IS_Sound_ON {
-                    player.play()
+                    player.volume = 1.0
+                } else {
+                    player.volume = 0.0
                 }
             } catch {
                 print ("There is an issue with this code!")
@@ -873,8 +918,11 @@ extension LearnViewController  {
             do {
                 player = try AVAudioPlayer(contentsOf: url)
                 player.delegate = self
+                player.play()
                 if appDelegate.IS_Sound_ON {
-                    player.play()
+                    player.volume = 1.0
+                } else {
+                    player.volume = 0.0
                 }
             } catch {
                 print ("There is an issue with this code!")
@@ -887,8 +935,11 @@ extension LearnViewController  {
         let url = URL(fileURLWithPath : path)
         do {
             player = try AVAudioPlayer(contentsOf: url)
+            player.play()
             if appDelegate.IS_Sound_ON {
-                player.play()
+                player.volume = 1.0
+            } else {
+                player.volume = 0.0
             }
             if getInt < 12 {
                 player.delegate = self
@@ -896,7 +947,6 @@ extension LearnViewController  {
                 self.btnPlayAgain.alpha = 1.0
                 self.btnPlayAgain.isUserInteractionEnabled = true
             }
-
         } catch {
             print ("There is an issue with this code!")
         }
@@ -909,17 +959,16 @@ extension LearnViewController  {
                        self.imgViewLearnGif.alpha = 0.0
                        }, completion: {
                            (finished: Bool) -> Void in
-            
-                        // Fade in
                         UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
                             self.imgViewLearnGif.layer.removeAllAnimations()
                             self.imgViewLearnGif.image = UIImage(named: "Screen1_1.png")
-
                             self.imgViewLearnGif.alpha = 1.0
-                               }, completion: nil)
+                        }, completion: nil)
                    })
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                        self.play_1(getInt: 2)
+                        if self.currentIndex == 0 {
+                            self.play_1(getInt: 2)
+                        }
                     }
             } else {
                 self.btnPlayAgain.alpha = 1.0
@@ -928,10 +977,14 @@ extension LearnViewController  {
         } else if currentIndex == 1 {
             if subIndex == 1 {
                 subIndex = 2
-                self.play_1(getInt: 2)
+                if self.currentIndex == 1 {
+                    self.play_1(getInt: 2)
+                }
             } else if subIndex == 2 {
                 subIndex = 3
-                self.play_1(getInt: 3)
+                if self.currentIndex == 1 {
+                    self.play_1(getInt: 3)
+                }
             } else {
                 self.btnPlayAgain.alpha = 1.0
                 self.btnPlayAgain.isUserInteractionEnabled = true
@@ -939,10 +992,14 @@ extension LearnViewController  {
         } else if currentIndex == 2 {
             if subIndex == 1 {
                 subIndex = 2
-                self.play_1(getInt: 2)
+                if self.currentIndex == 2 {
+                    self.play_1(getInt: 2)
+                }
             } else if subIndex == 2 {
                 subIndex = 3
-                self.play_1(getInt: 3)
+                if self.currentIndex == 2 {
+                    self.play_1(getInt: 3)
+                }
             } else {
                 self.btnPlayAgain.alpha = 1.0
                 self.btnPlayAgain.isUserInteractionEnabled = true
@@ -950,7 +1007,9 @@ extension LearnViewController  {
         } else if currentIndex == 3 {
             if subIndex == 1 {
                 subIndex = 2
-                self.play_1(getInt: 2)
+                if self.currentIndex == 3 {
+                    self.play_1(getInt: 2)
+                }
             } else {
                 self.btnPlayAgain.alpha = 1.0
                 self.btnPlayAgain.isUserInteractionEnabled = true
@@ -960,7 +1019,9 @@ extension LearnViewController  {
                 subIndex = 2
                 self.gifOOOO(strGif: "LearnClock5", repeatCount : 1)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                    self.playOclock(getInt : self.digitClock)
+                    if self.currentIndex == 4 {
+                        self.playOclock(getInt : self.digitClock)
+                    }
                 }
             } else {
                 digitClock = digitClock + 1
@@ -969,7 +1030,9 @@ extension LearnViewController  {
                     delaySec = 0.35
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + delaySec) {
-                    self.playOclock(getInt : self.digitClock)
+                    if self.currentIndex == 4 {
+                        self.playOclock(getInt : self.digitClock)
+                    }
                 }
             }
         } else if currentIndex == 5 {
@@ -985,22 +1048,23 @@ extension LearnViewController  {
                        self.imgViewLearnGif.alpha = 0.0
                        }, completion: {
                            (finished: Bool) -> Void in
-            
-                        // Fade in
                         UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
                             self.imgViewLearnGif.layer.removeAllAnimations()
                             self.gifOOOO(strGif: "LearnClock7_2", repeatCount : 200)
-
                             self.imgViewLearnGif.alpha = 1.0
                                }, completion: nil)
                    })
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                        self.play_1(getInt: 2)
+                        if self.currentIndex == 6 {
+                            self.play_1(getInt: 2)
+                        }
                     }
             } else if subIndex == 2 {
                 subIndex = 3
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    self.play_1(getInt: 3)
+                    if self.currentIndex == 6 {
+                        self.play_1(getInt: 3)
+                    }
                 }
                 UIView.animate(withDuration: 2.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                        self.imgViewLearnGif.alpha = 0.0
@@ -1013,11 +1077,13 @@ extension LearnViewController  {
 
                             self.imgViewLearnGif.alpha = 1.0
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                                self.gifOOOO(strGif: "LearnClock7_3", repeatCount : 1)
-                                self.play_1(getInt: 4)
+                                if self.currentIndex == 6 {
+                                    self.gifOOOO(strGif: "LearnClock7_3", repeatCount : 1)
+                                    self.play_1(getInt: 4)
+                                }
                             }
 
-                               }, completion: nil)
+                        }, completion: nil)
                    })
             } else {
                 self.btnPlayAgain.alpha = 1.0
@@ -1035,17 +1101,20 @@ extension LearnViewController  {
                         UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
                             self.imgViewLearnGif.layer.removeAllAnimations()
                             self.gifOOOO(strGif: "LearnClock8_2", repeatCount : 10)
-
                             self.imgViewLearnGif.alpha = 1.0
                                }, completion: nil)
                    })
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                        self.play_1(getInt: 2)
+                        if self.currentIndex == 7 {
+                            self.play_1(getInt: 2)
+                        }
                     }
             } else if subIndex == 2 {
                 subIndex = 3
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    self.play_1(getInt: 3)
+                    if self.currentIndex == 7 {
+                        self.play_1(getInt: 3)
+                    }
                 }
                 UIView.animate(withDuration: 2.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                        self.imgViewLearnGif.alpha = 0.0
@@ -1055,14 +1124,15 @@ extension LearnViewController  {
                         // Fade in
                         UIView.animate(withDuration: 2.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
                             self.imgViewLearnGif.layer.removeAllAnimations()
-
                             self.imgViewLearnGif.alpha = 1.0
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                                self.gifOOOO(strGif: "LearnClock8_3", repeatCount : 1)
-                                self.play_1(getInt: 4)
+                                if self.currentIndex == 7 {
+                                    self.gifOOOO(strGif: "LearnClock8_3", repeatCount : 1)
+                                    self.play_1(getInt: 4)
+                                }
                             }
 
-                               }, completion: nil)
+                        }, completion: nil)
                    })
             } else {
                 self.btnPlayAgain.alpha = 1.0
